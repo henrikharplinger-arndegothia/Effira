@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effira OPTi — Annonsförslag per segment (V2)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #dde0e5;
+      font-family: 'Inter', system-ui, sans-serif;
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .page-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .page-sub {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 64px;
+      text-align: center;
+    }
+
+    /* ── SEGMENT GROUPS ── */
+    .segments-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+      width: 100%;
+      max-width: 1140px;
+    }
+
+    .segment-group {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .group-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .group-header-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .group-header-line {
+      flex: 1;
+      height: 1px;
+      background: #c5c8ce;
+    }
+
+    .ads-row {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .ad-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .segment-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    /* ── AD BASE ── */
+    .ad {
+      width: 540px;
+      height: 540px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+      flex-shrink: 0;
+    }
+
+    /* ── EXPLANATION CARD ── */
+    .explanation {
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 24px 26px;
+      margin-top: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      width: 540px;
+    }
+
+    .explanation .ex-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .explanation .ex-who {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.55;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .explanation ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .explanation ul li {
+      font-size: 12px;
+      color: #333;
+      line-height: 1.55;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .explanation ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #aaa;
+      font-size: 11px;
+      top: 1px;
+    }
+
+    .explanation ul li strong {
+      font-weight: 700;
+      color: #111;
+    }
+
+
+    /* ════════════════════════════
+       AD A1 — OPTIMERAREN
+    ════════════════════════════ */
+    .ad-a1 { background: #141e2b; }
+
+    .ad-a1 .product-img {
+      position: absolute;
+      right: -30px;
+      top: -10px;
+      width: 310px;
+      opacity: 0.18;
+      mix-blend-mode: luminosity;
+    }
+
+    .ad-a1 .content {
+      position: absolute;
+      inset: 0;
+      padding: 30px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ad-a1 .logo { width: 86px; filter: brightness(0) invert(1); }
+
+    .ad-a1 .eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 14px;
+    }
+
+    .ad-a1 .headline-number {
+      font-size: 68px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .ad-a1 .headline-unit {
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      margin-top: 6px;
+      margin-bottom: 20px;
+    }
+
+    .ad-a1 .sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.6;
+      max-width: 290px;
+    }
+
+    .ad-a1 .stats {
+      display: flex;
+      margin-top: 26px;
+    }
+
+    .ad-a1 .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding-right: 22px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      margin-right: 22px;
+    }
+
+    .ad-a1 .stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+
+    .ad-a1 .stat-value { font-size: 17px; font-weight: 800; color: #fff; }
+
+    .ad-a1 .stat-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .ad-a1 .cta {
+      display: inline-block;
+      background: #ffffff;
+      color: #141e2b;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      align-self: flex-start;
+    }
+
+
+    /* ════════════════════════════
+       AD A2 — 70-ÅRINGEN
+    ════════════════════════════ */
+    .ad-a2 { background: #1c1508; }
+
+    .ad-a2 .bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .ad-a2 .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(20,12,4,0.50) 0%,
+        rgba(20,12,4,0.28) 30%,
+        rgba(20,12,4,0.68) 58%,
+        rgba(20,12,4,0.93) 100%
+      );
+    }
+
+    .ad-a2 .content {
+      position: absolute;
+      inset: 0;
+      padding: 30px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ad-a2 .logo { width: 86px; filter: brightness(0) invert(1); }
+
+    .ad-a2 .knowledge-tag {
+      display: inline-block;
+      background: rgba(200,165,80,0.15);
+      border: 1px solid rgba(200,165,80,0.38);
+      color: rgba(210,178,100,0.92);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      margin-top: 20px;
+      align-self: flex-start;
+      letter-spacing: 0.5px;
+    }
+
+    .ad-a2 .bottom { display: flex; flex-direction: column; gap: 14px; }
+
+    .ad-a2 .headline {
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: -0.3px;
+    }
+
+    .ad-a2 .mechanism {
+      font-size: 13px;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.65;
+      max-width: 400px;
+    }
+
+    .ad-a2 .cta {
+      display: inline-block;
+      background: rgba(205,172,95,0.92);
+      color: #1c1508;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+
+    /* ════════════════════════════
+       AD B1 — DEN VÄCKTA
+    ════════════════════════════ */
+    .ad-b1 { background: #1a1a2e; }
+
+    .ad-b1 .bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      opacity: 0.30;
+      mix-blend-mode: luminosity;
+    }
+
+    .ad-b1 .content {
+      position: absolute;
+      inset: 0;
+      padding: 30px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ad-b1 .logo { width: 86px; filter: brightness(0) invert(1); }
+
+    .ad-b1 .problem-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+
+    .ad-b1 .headline {
+      font-size: 46px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .ad-b1 .sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+      max-width: 360px;
+      margin-bottom: 24px;
+    }
+
+    .ad-b1 .features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 0;
+    }
+
+    .ad-b1 .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .ad-b1 .feature::before {
+      content: "✓";
+      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+    }
+
+    .ad-b1 .cta {
+      display: inline-block;
+      background: #ffffff;
+      color: #1a1a2e;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      align-self: flex-start;
+    }
+
+
+    /* ════════════════════════════
+       AD B2 — DEN AVVAKTANDE
+    ════════════════════════════ */
+    .ad-b2 { background: #2a3040; }
+
+    .ad-b2 .bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .ad-b2 .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,16,26,0.25) 0%,
+        rgba(10,16,26,0.10) 30%,
+        rgba(10,16,26,0.60) 58%,
+        rgba(10,16,26,0.88) 100%
+      );
+    }
+
+    .ad-b2 .content {
+      position: absolute;
+      inset: 0;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ad-b2 .logo { width: 78px; filter: brightness(0) invert(1); }
+
+    .ad-b2 .bottom { display: flex; flex-direction: column; gap: 11px; }
+
+    .ad-b2 .headline {
+      font-size: 36px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .ad-b2 .sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.55;
+      max-width: 380px;
+    }
+
+    .ad-b2 .trust {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .ad-b2 .cta {
+      display: inline-block;
+      background: #ffffff;
+      color: #141e2b;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+
+    /* ════════════════════════════
+       AD B3 — LIVSNJUTAREN
+    ════════════════════════════ */
+    .ad-b3 { background: #1a1008; }
+
+    .ad-b3 .bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .ad-b3 .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,8,4,0.40) 0%,
+        rgba(10,8,4,0.20) 35%,
+        rgba(10,8,4,0.65) 62%,
+        rgba(10,8,4,0.90) 100%
+      );
+    }
+
+    .ad-b3 .content {
+      position: absolute;
+      inset: 0;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ad-b3 .logo { width: 78px; filter: brightness(0) invert(1); }
+
+    .ad-b3 .bottom { display: flex; flex-direction: column; gap: 12px; }
+
+    .ad-b3 .headline {
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+
+    .ad-b3 .sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.55;
+      max-width: 400px;
+    }
+
+    .ad-b3 .trust {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.42);
+    }
+
+    .ad-b3 .cta {
+      display: inline-block;
+      background: #ffffff;
+      color: #1a1008;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">Effira OPTi — Annonsförslag per segment (V2)</h1>
+  <p class="page-sub">Facebook / Instagram feed &nbsp;·&nbsp; 1080×1080 (visas i 540×540) &nbsp;·&nbsp; Fem segment, fem budskap</p>
+
+  <div class="segments-wrapper">
+
+
+    <!-- ══════════════════════════════════════════
+         SEGMENT A — SJÄLVDRIVNA
+    ══════════════════════════════════════════ -->
+    <div class="segment-group">
+      <div class="group-header">
+        <span class="group-header-label">Segment A — Självdrivna</span>
+        <div class="group-header-line"></div>
+      </div>
+      <div class="ads-row">
+
+
+        <!-- AD A1 — OPTIMERAREN -->
+        <div class="ad-col">
+          <div class="segment-label">A1 — Optimeraren</div>
+          <div class="ad ad-a1">
+            <img class="product-img"
+                 src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/03/S1255-inkl-app-3b-korr.png" alt="">
+            <div class="content">
+              <img class="logo"
+                   src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/effira_logo-1.svg" alt="Effira">
+              <div>
+                <div class="eyebrow">Värmepumpsoptimering</div>
+                <div class="headline-number">9–12 000 kr</div>
+                <div class="headline-unit">i besparing per år</div>
+                <div class="sub">OPTi optimerar din värmepump automatiskt mot kvartspriset — 15× mer lönsamt än ett hemsbatteri.</div>
+                <div class="stats">
+                  <div class="stat">
+                    <span class="stat-value">~8 mån</span>
+                    <span class="stat-label">Återbetalningstid</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-value">75%</span>
+                    <span class="stat-label">Av husets energi</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-value">15×</span>
+                    <span class="stat-label">vs. batteri</span>
+                  </div>
+                </div>
+              </div>
+              <a class="cta" href="#">Räkna ut din besparing →</a>
+            </div>
+          </div>
+
+          <div class="explanation">
+            <div class="ex-title">Varför ser den här annonsen ut så här</div>
+            <div class="ex-who">A1 är redan på kvartspris och aktivt jämför alternativ. De konverteras av data, inte av känslor. De ställer sig frågan: "Är det här bättre än vad jag gör idag?"</div>
+            <ul>
+              <li><strong>Siffror i fokus (9–12 000 kr, 15×, ~8 mån)</strong> — den här köparen vill verifiera innan de agerar. Konkreta tal ger dem något att hålla fast vid.</li>
+              <li><strong>"15× mer lönsamt än ett hemsbatteri"</strong> — direktjämförelse med det alternativ de troligtvis redan övervägt. Positionerar OPTi som det självklara valet utan att säga det.</li>
+              <li><strong>Tre stats-rutor</strong> — svarar på de tre frågorna Optimeraren alltid ställer: Hur mycket sparar jag? Hur stor del av min energi hanteras? Vad är ROI?</li>
+              <li><strong>CTA "Räkna ut din besparing"</strong> — ger dem kontrollen att verifiera själva, istället för att be dem lita på Effira. Passar en köpare som vill äga beslutet.</li>
+              <li><strong>Mörk, teknisk känsla</strong> — matchar självbilden hos en person som ser sig som smart med sin ekonomi och sina system.</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <!-- AD A2 — 70-ÅRINGEN -->
+        <div class="ad-col">
+          <div class="segment-label">A2 — 70-åringen</div>
+          <div class="ad ad-a2">
+            <img class="bg-img"
+                 src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/Hus_80_firefly_new_new_light.jpg" alt="">
+            <div class="overlay"></div>
+            <div class="content">
+              <div>
+                <img class="logo"
+                     src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/effira_logo-1.svg" alt="Effira">
+                <div class="knowledge-tag">Värmepumpsoptimering</div>
+              </div>
+              <div class="bottom">
+                <div class="headline">Bra val av värmepump.<br>Nu kan den spara ännu mer åt dig.</div>
+                <div class="mechanism">OPTi flyttar värme och varmvatten till de timmar då elen kostar minst — automatiskt. Din värmepump kopplas upp mot den nya elmarknaden.</div>
+                <a class="cta" href="#">Läs hur OPTi fungerar →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="explanation">
+            <div class="ex-title">Varför ser den här annonsen ut så här</div>
+            <div class="ex-who">70-åringen är självdriven — söker upp information på eget initiativ och ställer frågor. Men till skillnad från A1 behöver hen inte förstå varje detalj. En övergripande förklaring som känns rimlig räcker. Identiteten är "jag gör kloka val", inte "jag vet bäst".</div>
+            <ul>
+              <li><strong>Öppnar med värde, inte med mekanism</strong> — "din värmepump kan spara mer" ger en tydlig anledning att läsa vidare, utan att kräva förkunskaper eller teknisk nyfikenhet.</li>
+              <li><strong>"Utan att du behöver göra något"</strong> — den starkaste Reassurance-signalen i en mening. Matchar en köpare vars primära fråga är "blir det krångligt?" snarare än "hur fungerar det exakt?"</li>
+              <li><strong>Mekaniken i en mening</strong> — "flyttar värme och varmvatten till billigare timmar" är tillräckligt för att förstå principen. Inget kvartspris, inga detaljerade steg — good enough.</li>
+              <li><strong>CTA "Läs hur OPTi fungerar"</strong> — bjuder in till fördjupning utan att pressa ett beslut. Matchar en köpare som vill landa i slutsatsen själv, i sin egen takt.</li>
+              <li><strong>Varm ton och guldfärgad accent</strong> — kontrasterar mot A1:s kyliga dataestetik. Signalerar förtroende och lugn, inte maximal ROI.</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════
+         SEGMENT B — KÖPARE ATT NÅ AKTIVT
+    ══════════════════════════════════════════ -->
+    <div class="segment-group">
+      <div class="group-header">
+        <span class="group-header-label">Segment B — Köpare att nå aktivt</span>
+        <div class="group-header-line"></div>
+      </div>
+      <div class="ads-row">
+
+
+        <!-- AD B1 — DEN VÄCKTA -->
+        <div class="ad-col">
+          <div class="segment-label">B1 — Den Väckta</div>
+          <div class="ad ad-b1">
+            <img class="bg-img"
+                 src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/03/Nibe-utsida-sno1-korr-3.png" alt="">
+            <div class="content">
+              <img class="logo"
+                   src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/effira_logo-1.svg" alt="Effira">
+              <div>
+                <div class="problem-tag">Ny effekttariff på din räkning?</div>
+                <div class="headline">OPTi hanterar det.<br>Automatiskt.</div>
+                <div class="sub">Flytta värme och varmvatten till rätt tid — och slipp betala när alla drar som mest.</div>
+                <div class="features">
+                  <div class="feature">Minskar effekttoppar automatiskt</div>
+                  <div class="feature">Laddar varmvatten på natten</div>
+                  <div class="feature">Kräver inget av dig</div>
+                </div>
+              </div>
+              <a class="cta" href="#">Se hur OPTi minskar din effekttopp →</a>
+            </div>
+          </div>
+
+          <div class="explanation">
+            <div class="ex-title">Varför ser den här annonsen ut så här</div>
+            <div class="ex-who">Den Väckta har sett sin räkning förändras och letar aktivt efter en lösning på ett specifikt problem. De är motiverade men vill ha en enkel, konkret lösning — inte en marknadsutbildning.</div>
+            <ul>
+              <li><strong>Öppnar med deras problem ("Ny effekttariff?")</strong> — signalerar omedelbart att vi förstår deras situation. Om de inte känner igen sig, är de inte målgruppen. Om de gör det, är de fast.</li>
+              <li><strong>Lösningen kommer direkt</strong> — ingen förklaring av elpriset, ingen bakgrund. De vet redan vad problemet är. De behöver veta att vi löser det.</li>
+              <li><strong>Tre checkmarks med konkreta mekaniker</strong> — "laddar varmvatten på natten" är specifikt nog att vara trovärdigt, enkelt nog att inte kräva förkunskaper.</li>
+              <li><strong>CTA kopplar till problemet</strong> — "minskar din effekttopp", inte "besparing". Den väckta köparen har ett namngivet problem och vill ha ett namngivet svar.</li>
+              <li><strong>Inga stora siffror</strong> — till skillnad från A1, är Den Väckta inte i ROI-läge ännu. De vill först veta att problemet löses.</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <!-- AD B2 — DEN AVVAKTANDE -->
+        <div class="ad-col">
+          <div class="segment-label">B2 — Den Avvaktande</div>
+          <div class="ad ad-b2">
+            <img class="bg-img"
+                 src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/01/Firefly_add-a-10-year-old-child-and-a-dog-553017-1.jpg" alt="">
+            <div class="overlay"></div>
+            <div class="content">
+              <img class="logo"
+                   src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/effira_logo-1.svg" alt="Effira">
+              <div class="bottom">
+                <div class="headline">Varmt hem.<br>Lägre räkning.<br>Inget att göra.</div>
+                <div class="sub">OPTi sköter din värmepump automatiskt — temperaturen i ditt hem påverkas aldrig.</div>
+                <div class="trust">Professionell installation ingår &nbsp;·&nbsp; Besparingsgaranti</div>
+                <a class="cta" href="#">Se hur mycket du kan spara</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="explanation">
+            <div class="ex-title">Varför ser den här annonsen ut så här</div>
+            <div class="ex-who">Den Avvaktande är tidspressad och vill att energi fungerar utan att kräva uppmärksamhet. Komfort är icke-förhandlingsbart. Beslutet fattas snabbt om budskapet är enkelt nog.</div>
+            <ul>
+              <li><strong>Tre korta meningar som rubrik</strong> — enkla, utan siffror, utan jargong. Kommunicerar hela värdepropositionen på tre rader som en trött förälder hinner läsa i flödet.</li>
+              <li><strong>Familjebild</strong> — kommunicerar målgrupp utan ord. Den Avvaktande ser sig själv i bilden innan de läst en bokstav.</li>
+              <li><strong>"Temperaturen i ditt hem påverkas aldrig"</strong> — löser komfortångesten innan den hinner uppstå. Detta är köpvillkoret för hela segment B: om det här inte sägs, konverterar budskapet inte.</li>
+              <li><strong>Trust-signaler i botten</strong> — professionell installation och besparingsgaranti tar bort de två vanligaste riskupplevelserna: krångel och pengar.</li>
+              <li><strong>CTA öppnare och mjukare än Ad A1</strong> — "Se hur mycket" bjuder in till nyfikenhet, snarare än att be om ett beslut. Matchar en köpare som inte är i aktivt läge.</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <!-- AD B3 — LIVSNJUTAREN -->
+        <div class="ad-col">
+          <div class="segment-label">B3 — Livsnjutaren</div>
+          <div class="ad ad-b3">
+            <img class="bg-img"
+                 src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/Firefly_Byt-till-en-stor-mysig-mjuk-fatolj-76043.jpg" alt="">
+            <div class="overlay"></div>
+            <div class="content">
+              <img class="logo"
+                   src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/effira_logo-1.svg" alt="Effira">
+              <div class="bottom">
+                <div class="headline">Din granne sparar redan tusenlappar på sin värmepump.</div>
+                <div class="sub">OPTi gör det automatiskt — ingen förändring i vardagen, bara en lägre elräkning.</div>
+                <div class="trust">Professionell installation ingår &nbsp;·&nbsp; Besparingsgaranti</div>
+                <a class="cta" href="#">Se vad OPTi kan göra i ditt hem</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="explanation">
+            <div class="ex-title">Varför ser den här annonsen ut så här</div>
+            <div class="ex-who">Livsnjutaren söker inte aktivt och har inget namngivet problem. Annonsen måste skapa medvetenhet från noll — och göra det utan att kräva energikunskap av läsaren.</div>
+            <ul>
+              <li><strong>Social proof som öppningsrubrik</strong> — "Din granne sparar redan..." är den mest effektiva triggern för en passiv köpare. Det aktiverar nyfikenhet och en lätt känsla av att missa något, utan att vara påträngande.</li>
+              <li><strong>"Tusenlappar" istället för exakt belopp</strong> — ett specifikt kr-belopp kräver att läsaren sätter det i relation till sin situation. "Tusenlappar" är konkret nog att väcka intresse, vagt nog att inte ifrågasättas.</li>
+              <li><strong>Inga tekniska termer</strong> — inte "kvartspris", inte "effekttariff", inte "kWh". Orden som konverterar A1 skapar friktion här. Livsnjutaren ska inte behöva förstå elprismarknaden för att klicka.</li>
+              <li><strong>"Ingen förändring i vardagen"</strong> — den enda ångesten en omedveten köpare kan ha är att det ska bli krångligt. Den meningen tar bort det hindret.</li>
+              <li><strong>CTA börjar en resa, avslutar inte ett beslut</strong> — "Se vad OPTi kan göra i ditt hem" är en inbjudan, inte en uppmaning att köpa. Matchar en köpare som inte vet om de ens har ett problem ännu.</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>
