@@ -28,7 +28,7 @@ OPTi:s starkaste differentiator — komfortskyddsmekanismen — syns inte i publ
 | Segment | Andel SAM | Kärna |
 |---|---|---|
 | **A1 — Optimeraren** | ~10–13% | Självdriven, Smart-primär. Konverteras med data och bevis. |
-| **A2 — 70-åringen** | ~3–5% | Självdriven, Reassurance-primär. Konverteras med respekt och "good enough". |
+| **A2 — 70-åringen** | ~5–10% | Självdriven, Reassurance-primär. Konverteras med respekt och "good enough". |
 | **B1 — Den Väckta** | ~15–20% | Problemdriven (effekttariff/solceller). Konverteras med trigger-specifikt budskap. |
 | **B2 — Den Avvaktande** | ~25–35% | Tidsfattig familj. Konverteras med enkelhet och trygghet. |
 | **B3 — Livsnjutaren** | ~30–40% | Omedveten. Konverteras via installatör och lokal social proof. |

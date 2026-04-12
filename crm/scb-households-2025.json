@@ -1,0 +1,1452 @@
+{
+  "0114": {
+    "total": 21472,
+    "families": 6738,
+    "family_pct": 31.4
+  },
+  "0115": {
+    "total": 14585,
+    "families": 5234,
+    "family_pct": 35.9
+  },
+  "0117": {
+    "total": 20448,
+    "families": 7084,
+    "family_pct": 34.6
+  },
+  "0120": {
+    "total": 19693,
+    "families": 6623,
+    "family_pct": 33.6
+  },
+  "0123": {
+    "total": 38959,
+    "families": 11399,
+    "family_pct": 29.3
+  },
+  "0125": {
+    "total": 11245,
+    "families": 4383,
+    "family_pct": 39.0
+  },
+  "0126": {
+    "total": 46348,
+    "families": 15584,
+    "family_pct": 33.6
+  },
+  "0127": {
+    "total": 38054,
+    "families": 11918,
+    "family_pct": 31.3
+  },
+  "0128": {
+    "total": 6827,
+    "families": 2559,
+    "family_pct": 37.5
+  },
+  "0136": {
+    "total": 42793,
+    "families": 13375,
+    "family_pct": 31.3
+  },
+  "0138": {
+    "total": 21232,
+    "families": 7206,
+    "family_pct": 33.9
+  },
+  "0139": {
+    "total": 13733,
+    "families": 4499,
+    "family_pct": 32.8
+  },
+  "0140": {
+    "total": 5182,
+    "families": 1873,
+    "family_pct": 36.1
+  },
+  "0160": {
+    "total": 33608,
+    "families": 11247,
+    "family_pct": 33.5
+  },
+  "0162": {
+    "total": 13128,
+    "families": 4456,
+    "family_pct": 33.9
+  },
+  "0163": {
+    "total": 32664,
+    "families": 11096,
+    "family_pct": 34.0
+  },
+  "0180": {
+    "total": 489482,
+    "families": 120299,
+    "family_pct": 24.6
+  },
+  "0181": {
+    "total": 43757,
+    "families": 12571,
+    "family_pct": 28.7
+  },
+  "0182": {
+    "total": 47882,
+    "families": 16656,
+    "family_pct": 34.8
+  },
+  "0183": {
+    "total": 27710,
+    "families": 6793,
+    "family_pct": 24.5
+  },
+  "0184": {
+    "total": 43922,
+    "families": 9851,
+    "family_pct": 22.4
+  },
+  "0186": {
+    "total": 21275,
+    "families": 6725,
+    "family_pct": 31.6
+  },
+  "0187": {
+    "total": 5033,
+    "families": 1579,
+    "family_pct": 31.4
+  },
+  "0188": {
+    "total": 33119,
+    "families": 7112,
+    "family_pct": 21.5
+  },
+  "0191": {
+    "total": 21598,
+    "families": 6793,
+    "family_pct": 31.5
+  },
+  "0192": {
+    "total": 14052,
+    "families": 3658,
+    "family_pct": 26.0
+  },
+  "0305": {
+    "total": 9863,
+    "families": 3217,
+    "family_pct": 32.6
+  },
+  "0319": {
+    "total": 4537,
+    "families": 1192,
+    "family_pct": 26.3
+  },
+  "0330": {
+    "total": 9030,
+    "families": 3307,
+    "family_pct": 36.6
+  },
+  "0331": {
+    "total": 6741,
+    "families": 1622,
+    "family_pct": 24.1
+  },
+  "0360": {
+    "total": 10065,
+    "families": 2460,
+    "family_pct": 24.4
+  },
+  "0380": {
+    "total": 120685,
+    "families": 28808,
+    "family_pct": 23.9
+  },
+  "0381": {
+    "total": 22145,
+    "families": 6139,
+    "family_pct": 27.7
+  },
+  "0382": {
+    "total": 10878,
+    "families": 2494,
+    "family_pct": 22.9
+  },
+  "0428": {
+    "total": 4135,
+    "families": 941,
+    "family_pct": 22.8
+  },
+  "0461": {
+    "total": 5238,
+    "families": 1373,
+    "family_pct": 26.2
+  },
+  "0480": {
+    "total": 28020,
+    "families": 6985,
+    "family_pct": 24.9
+  },
+  "0481": {
+    "total": 6069,
+    "families": 1392,
+    "family_pct": 22.9
+  },
+  "0482": {
+    "total": 7317,
+    "families": 1494,
+    "family_pct": 20.4
+  },
+  "0483": {
+    "total": 16541,
+    "families": 3877,
+    "family_pct": 23.4
+  },
+  "0484": {
+    "total": 50344,
+    "families": 13344,
+    "family_pct": 26.5
+  },
+  "0486": {
+    "total": 18084,
+    "families": 5097,
+    "family_pct": 28.2
+  },
+  "0488": {
+    "total": 6748,
+    "families": 1885,
+    "family_pct": 27.9
+  },
+  "0509": {
+    "total": 2553,
+    "families": 578,
+    "family_pct": 22.6
+  },
+  "0512": {
+    "total": 1744,
+    "families": 369,
+    "family_pct": 21.2
+  },
+  "0513": {
+    "total": 4717,
+    "families": 1104,
+    "family_pct": 23.4
+  },
+  "0560": {
+    "total": 2677,
+    "families": 619,
+    "family_pct": 23.1
+  },
+  "0561": {
+    "total": 5493,
+    "families": 1375,
+    "family_pct": 25.0
+  },
+  "0562": {
+    "total": 10520,
+    "families": 2557,
+    "family_pct": 24.3
+  },
+  "0563": {
+    "total": 3737,
+    "families": 722,
+    "family_pct": 19.3
+  },
+  "0580": {
+    "total": 83057,
+    "families": 20030,
+    "family_pct": 24.1
+  },
+  "0581": {
+    "total": 68925,
+    "families": 18217,
+    "family_pct": 26.4
+  },
+  "0582": {
+    "total": 6708,
+    "families": 1891,
+    "family_pct": 28.2
+  },
+  "0583": {
+    "total": 20790,
+    "families": 5174,
+    "family_pct": 24.9
+  },
+  "0584": {
+    "total": 3910,
+    "families": 768,
+    "family_pct": 19.6
+  },
+  "0586": {
+    "total": 13485,
+    "families": 3710,
+    "family_pct": 27.5
+  },
+  "0604": {
+    "total": 3131,
+    "families": 853,
+    "family_pct": 27.2
+  },
+  "0617": {
+    "total": 3987,
+    "families": 1073,
+    "family_pct": 26.9
+  },
+  "0642": {
+    "total": 3417,
+    "families": 966,
+    "family_pct": 28.3
+  },
+  "0643": {
+    "total": 5271,
+    "families": 2174,
+    "family_pct": 41.2
+  },
+  "0662": {
+    "total": 12872,
+    "families": 3446,
+    "family_pct": 26.8
+  },
+  "0665": {
+    "total": 6353,
+    "families": 1986,
+    "family_pct": 31.3
+  },
+  "0680": {
+    "total": 69012,
+    "families": 18091,
+    "family_pct": 26.2
+  },
+  "0682": {
+    "total": 14433,
+    "families": 3764,
+    "family_pct": 26.1
+  },
+  "0683": {
+    "total": 15900,
+    "families": 4319,
+    "family_pct": 27.2
+  },
+  "0684": {
+    "total": 5124,
+    "families": 1385,
+    "family_pct": 27.0
+  },
+  "0685": {
+    "total": 12813,
+    "families": 3228,
+    "family_pct": 25.2
+  },
+  "0686": {
+    "total": 8562,
+    "families": 2064,
+    "family_pct": 24.1
+  },
+  "0687": {
+    "total": 8964,
+    "families": 2148,
+    "family_pct": 24.0
+  },
+  "0760": {
+    "total": 4224,
+    "families": 1001,
+    "family_pct": 23.7
+  },
+  "0761": {
+    "total": 3696,
+    "families": 966,
+    "family_pct": 26.1
+  },
+  "0763": {
+    "total": 5964,
+    "families": 1232,
+    "family_pct": 20.7
+  },
+  "0764": {
+    "total": 8795,
+    "families": 2425,
+    "family_pct": 27.6
+  },
+  "0765": {
+    "total": 7911,
+    "families": 2386,
+    "family_pct": 30.2
+  },
+  "0767": {
+    "total": 4726,
+    "families": 1131,
+    "family_pct": 23.9
+  },
+  "0780": {
+    "total": 47003,
+    "families": 12239,
+    "family_pct": 26.0
+  },
+  "0781": {
+    "total": 13465,
+    "families": 3357,
+    "family_pct": 24.9
+  },
+  "0821": {
+    "total": 2539,
+    "families": 498,
+    "family_pct": 19.6
+  },
+  "0834": {
+    "total": 3461,
+    "families": 761,
+    "family_pct": 22.0
+  },
+  "0840": {
+    "total": 7432,
+    "families": 2014,
+    "family_pct": 27.1
+  },
+  "0860": {
+    "total": 6488,
+    "families": 1481,
+    "family_pct": 22.8
+  },
+  "0861": {
+    "total": 6385,
+    "families": 1442,
+    "family_pct": 22.6
+  },
+  "0862": {
+    "total": 4425,
+    "families": 893,
+    "family_pct": 20.2
+  },
+  "0880": {
+    "total": 35876,
+    "families": 9110,
+    "family_pct": 25.4
+  },
+  "0881": {
+    "total": 9733,
+    "families": 2268,
+    "family_pct": 23.3
+  },
+  "0882": {
+    "total": 13071,
+    "families": 3171,
+    "family_pct": 24.3
+  },
+  "0883": {
+    "total": 18355,
+    "families": 3960,
+    "family_pct": 21.6
+  },
+  "0884": {
+    "total": 7419,
+    "families": 1781,
+    "family_pct": 24.0
+  },
+  "0885": {
+    "total": 5536,
+    "families": 907,
+    "family_pct": 16.4
+  },
+  "0980": {
+    "total": 29408,
+    "families": 6489,
+    "family_pct": 22.1
+  },
+  "1060": {
+    "total": 6468,
+    "families": 1412,
+    "family_pct": 21.8
+  },
+  "1080": {
+    "total": 32352,
+    "families": 7979,
+    "family_pct": 24.7
+  },
+  "1081": {
+    "total": 13742,
+    "families": 3391,
+    "family_pct": 24.7
+  },
+  "1082": {
+    "total": 15667,
+    "families": 3718,
+    "family_pct": 23.7
+  },
+  "1083": {
+    "total": 8584,
+    "families": 1983,
+    "family_pct": 23.1
+  },
+  "1214": {
+    "total": 6229,
+    "families": 1915,
+    "family_pct": 30.7
+  },
+  "1230": {
+    "total": 10866,
+    "families": 4242,
+    "family_pct": 39.0
+  },
+  "1231": {
+    "total": 8383,
+    "families": 2701,
+    "family_pct": 32.2
+  },
+  "1233": {
+    "total": 15493,
+    "families": 5552,
+    "family_pct": 35.8
+  },
+  "1256": {
+    "total": 6242,
+    "families": 1640,
+    "family_pct": 26.3
+  },
+  "1257": {
+    "total": 4885,
+    "families": 1165,
+    "family_pct": 23.8
+  },
+  "1260": {
+    "total": 6771,
+    "families": 2035,
+    "family_pct": 30.1
+  },
+  "1261": {
+    "total": 13567,
+    "families": 4993,
+    "family_pct": 36.8
+  },
+  "1262": {
+    "total": 10139,
+    "families": 3825,
+    "family_pct": 37.7
+  },
+  "1263": {
+    "total": 9544,
+    "families": 3760,
+    "family_pct": 39.4
+  },
+  "1264": {
+    "total": 7559,
+    "families": 2293,
+    "family_pct": 30.3
+  },
+  "1265": {
+    "total": 9092,
+    "families": 2335,
+    "family_pct": 25.7
+  },
+  "1266": {
+    "total": 7320,
+    "families": 1828,
+    "family_pct": 25.0
+  },
+  "1267": {
+    "total": 7842,
+    "families": 2376,
+    "family_pct": 30.3
+  },
+  "1270": {
+    "total": 6538,
+    "families": 1591,
+    "family_pct": 24.3
+  },
+  "1272": {
+    "total": 5826,
+    "families": 1555,
+    "family_pct": 26.7
+  },
+  "1273": {
+    "total": 6148,
+    "families": 1514,
+    "family_pct": 24.6
+  },
+  "1275": {
+    "total": 3308,
+    "families": 791,
+    "family_pct": 23.9
+  },
+  "1276": {
+    "total": 8352,
+    "families": 2039,
+    "family_pct": 24.4
+  },
+  "1277": {
+    "total": 6787,
+    "families": 2225,
+    "family_pct": 32.8
+  },
+  "1278": {
+    "total": 7712,
+    "families": 1768,
+    "family_pct": 22.9
+  },
+  "1280": {
+    "total": 174327,
+    "families": 44700,
+    "family_pct": 25.6
+  },
+  "1281": {
+    "total": 66625,
+    "families": 15109,
+    "family_pct": 22.7
+  },
+  "1282": {
+    "total": 21699,
+    "families": 5956,
+    "family_pct": 27.4
+  },
+  "1283": {
+    "total": 71220,
+    "families": 19605,
+    "family_pct": 27.5
+  },
+  "1284": {
+    "total": 13138,
+    "families": 3698,
+    "family_pct": 28.1
+  },
+  "1285": {
+    "total": 15528,
+    "families": 4628,
+    "family_pct": 29.8
+  },
+  "1286": {
+    "total": 15956,
+    "families": 3814,
+    "family_pct": 23.9
+  },
+  "1287": {
+    "total": 21609,
+    "families": 6062,
+    "family_pct": 28.1
+  },
+  "1290": {
+    "total": 40098,
+    "families": 10426,
+    "family_pct": 26.0
+  },
+  "1291": {
+    "total": 9688,
+    "families": 1738,
+    "family_pct": 17.9
+  },
+  "1292": {
+    "total": 21215,
+    "families": 5614,
+    "family_pct": 26.5
+  },
+  "1293": {
+    "total": 24619,
+    "families": 6155,
+    "family_pct": 25.0
+  },
+  "1315": {
+    "total": 4523,
+    "families": 1149,
+    "family_pct": 25.4
+  },
+  "1380": {
+    "total": 50249,
+    "families": 13100,
+    "family_pct": 26.1
+  },
+  "1381": {
+    "total": 12067,
+    "families": 3126,
+    "family_pct": 25.9
+  },
+  "1382": {
+    "total": 21595,
+    "families": 5579,
+    "family_pct": 25.8
+  },
+  "1383": {
+    "total": 32039,
+    "families": 8698,
+    "family_pct": 27.1
+  },
+  "1384": {
+    "total": 35736,
+    "families": 12481,
+    "family_pct": 34.9
+  },
+  "1401": {
+    "total": 16232,
+    "families": 6221,
+    "family_pct": 38.3
+  },
+  "1402": {
+    "total": 17226,
+    "families": 6217,
+    "family_pct": 36.1
+  },
+  "1407": {
+    "total": 5315,
+    "families": 1307,
+    "family_pct": 24.6
+  },
+  "1415": {
+    "total": 12333,
+    "families": 3831,
+    "family_pct": 31.1
+  },
+  "1419": {
+    "total": 7319,
+    "families": 1767,
+    "family_pct": 24.1
+  },
+  "1421": {
+    "total": 7322,
+    "families": 1611,
+    "family_pct": 22.0
+  },
+  "1427": {
+    "total": 4770,
+    "families": 757,
+    "family_pct": 15.9
+  },
+  "1430": {
+    "total": 4917,
+    "families": 1210,
+    "family_pct": 24.6
+  },
+  "1435": {
+    "total": 6238,
+    "families": 1272,
+    "family_pct": 20.4
+  },
+  "1438": {
+    "total": 2350,
+    "families": 494,
+    "family_pct": 21.0
+  },
+  "1439": {
+    "total": 3088,
+    "families": 708,
+    "family_pct": 22.9
+  },
+  "1440": {
+    "total": 13426,
+    "families": 4800,
+    "family_pct": 35.8
+  },
+  "1441": {
+    "total": 17430,
+    "families": 6970,
+    "family_pct": 40.0
+  },
+  "1442": {
+    "total": 5452,
+    "families": 1646,
+    "family_pct": 30.2
+  },
+  "1443": {
+    "total": 4150,
+    "families": 1358,
+    "family_pct": 32.7
+  },
+  "1444": {
+    "total": 2708,
+    "families": 622,
+    "family_pct": 23.0
+  },
+  "1445": {
+    "total": 2639,
+    "families": 649,
+    "family_pct": 24.6
+  },
+  "1446": {
+    "total": 3613,
+    "families": 714,
+    "family_pct": 19.8
+  },
+  "1447": {
+    "total": 2576,
+    "families": 441,
+    "family_pct": 17.1
+  },
+  "1452": {
+    "total": 5465,
+    "families": 1421,
+    "family_pct": 26.0
+  },
+  "1460": {
+    "total": 4613,
+    "families": 884,
+    "family_pct": 19.2
+  },
+  "1461": {
+    "total": 4397,
+    "families": 953,
+    "family_pct": 21.7
+  },
+  "1462": {
+    "total": 6386,
+    "families": 1801,
+    "family_pct": 28.2
+  },
+  "1463": {
+    "total": 16004,
+    "families": 4432,
+    "family_pct": 27.7
+  },
+  "1465": {
+    "total": 4930,
+    "families": 1215,
+    "family_pct": 24.6
+  },
+  "1466": {
+    "total": 4517,
+    "families": 1068,
+    "family_pct": 23.6
+  },
+  "1470": {
+    "total": 7519,
+    "families": 1805,
+    "family_pct": 24.0
+  },
+  "1471": {
+    "total": 6195,
+    "families": 1554,
+    "family_pct": 25.1
+  },
+  "1472": {
+    "total": 5419,
+    "families": 1334,
+    "family_pct": 24.6
+  },
+  "1473": {
+    "total": 4465,
+    "families": 955,
+    "family_pct": 21.4
+  },
+  "1480": {
+    "total": 298120,
+    "families": 71169,
+    "family_pct": 23.9
+  },
+  "1481": {
+    "total": 32144,
+    "families": 10082,
+    "family_pct": 31.4
+  },
+  "1482": {
+    "total": 22241,
+    "families": 6964,
+    "family_pct": 31.3
+  },
+  "1484": {
+    "total": 6974,
+    "families": 1426,
+    "family_pct": 20.4
+  },
+  "1485": {
+    "total": 26978,
+    "families": 7082,
+    "family_pct": 26.3
+  },
+  "1486": {
+    "total": 6419,
+    "families": 1575,
+    "family_pct": 24.5
+  },
+  "1487": {
+    "total": 19134,
+    "families": 4941,
+    "family_pct": 25.8
+  },
+  "1488": {
+    "total": 27871,
+    "families": 7456,
+    "family_pct": 26.8
+  },
+  "1489": {
+    "total": 19696,
+    "families": 5619,
+    "family_pct": 28.5
+  },
+  "1490": {
+    "total": 53731,
+    "families": 14457,
+    "family_pct": 26.9
+  },
+  "1491": {
+    "total": 11659,
+    "families": 3041,
+    "family_pct": 26.1
+  },
+  "1492": {
+    "total": 5974,
+    "families": 1300,
+    "family_pct": 21.8
+  },
+  "1493": {
+    "total": 12140,
+    "families": 2775,
+    "family_pct": 22.9
+  },
+  "1494": {
+    "total": 19622,
+    "families": 4884,
+    "family_pct": 24.9
+  },
+  "1495": {
+    "total": 9047,
+    "families": 2240,
+    "family_pct": 24.8
+  },
+  "1496": {
+    "total": 28413,
+    "families": 7065,
+    "family_pct": 24.9
+  },
+  "1497": {
+    "total": 4490,
+    "families": 1100,
+    "family_pct": 24.5
+  },
+  "1498": {
+    "total": 6156,
+    "families": 1498,
+    "family_pct": 24.3
+  },
+  "1499": {
+    "total": 15361,
+    "families": 3951,
+    "family_pct": 25.7
+  },
+  "1715": {
+    "total": 5569,
+    "families": 1598,
+    "family_pct": 28.7
+  },
+  "1730": {
+    "total": 4121,
+    "families": 925,
+    "family_pct": 22.4
+  },
+  "1737": {
+    "total": 5940,
+    "families": 1131,
+    "family_pct": 19.0
+  },
+  "1760": {
+    "total": 1922,
+    "families": 386,
+    "family_pct": 20.1
+  },
+  "1761": {
+    "total": 7396,
+    "families": 2637,
+    "family_pct": 35.7
+  },
+  "1762": {
+    "total": 1930,
+    "families": 386,
+    "family_pct": 20.0
+  },
+  "1763": {
+    "total": 5276,
+    "families": 1542,
+    "family_pct": 29.2
+  },
+  "1764": {
+    "total": 4407,
+    "families": 1014,
+    "family_pct": 23.0
+  },
+  "1765": {
+    "total": 4800,
+    "families": 1098,
+    "family_pct": 22.9
+  },
+  "1766": {
+    "total": 6621,
+    "families": 1498,
+    "family_pct": 22.6
+  },
+  "1780": {
+    "total": 51317,
+    "families": 11669,
+    "family_pct": 22.7
+  },
+  "1781": {
+    "total": 12159,
+    "families": 2616,
+    "family_pct": 21.5
+  },
+  "1782": {
+    "total": 5187,
+    "families": 960,
+    "family_pct": 18.5
+  },
+  "1783": {
+    "total": 5988,
+    "families": 1126,
+    "family_pct": 18.8
+  },
+  "1784": {
+    "total": 12965,
+    "families": 2930,
+    "family_pct": 22.6
+  },
+  "1785": {
+    "total": 7449,
+    "families": 1580,
+    "family_pct": 21.2
+  },
+  "1814": {
+    "total": 3793,
+    "families": 1213,
+    "family_pct": 32.0
+  },
+  "1860": {
+    "total": 2791,
+    "families": 548,
+    "family_pct": 19.6
+  },
+  "1861": {
+    "total": 7498,
+    "families": 1971,
+    "family_pct": 26.3
+  },
+  "1862": {
+    "total": 4712,
+    "families": 987,
+    "family_pct": 20.9
+  },
+  "1863": {
+    "total": 3369,
+    "families": 568,
+    "family_pct": 16.9
+  },
+  "1864": {
+    "total": 2416,
+    "families": 359,
+    "family_pct": 14.9
+  },
+  "1880": {
+    "total": 78747,
+    "families": 19764,
+    "family_pct": 25.1
+  },
+  "1881": {
+    "total": 10272,
+    "families": 3166,
+    "family_pct": 30.8
+  },
+  "1882": {
+    "total": 5712,
+    "families": 1234,
+    "family_pct": 21.6
+  },
+  "1883": {
+    "total": 15256,
+    "families": 3527,
+    "family_pct": 23.1
+  },
+  "1884": {
+    "total": 5161,
+    "families": 1240,
+    "family_pct": 24.0
+  },
+  "1885": {
+    "total": 11195,
+    "families": 2551,
+    "family_pct": 22.8
+  },
+  "1904": {
+    "total": 2191,
+    "families": 411,
+    "family_pct": 18.8
+  },
+  "1907": {
+    "total": 4609,
+    "families": 1205,
+    "family_pct": 26.1
+  },
+  "1960": {
+    "total": 3984,
+    "families": 1031,
+    "family_pct": 25.9
+  },
+  "1961": {
+    "total": 7820,
+    "families": 2052,
+    "family_pct": 26.2
+  },
+  "1962": {
+    "total": 2747,
+    "families": 596,
+    "family_pct": 21.7
+  },
+  "1980": {
+    "total": 75912,
+    "families": 20545,
+    "family_pct": 27.1
+  },
+  "1981": {
+    "total": 10897,
+    "families": 2625,
+    "family_pct": 24.1
+  },
+  "1982": {
+    "total": 6404,
+    "families": 1517,
+    "family_pct": 23.7
+  },
+  "1983": {
+    "total": 12509,
+    "families": 2973,
+    "family_pct": 23.8
+  },
+  "1984": {
+    "total": 6935,
+    "families": 1554,
+    "family_pct": 22.4
+  },
+  "2021": {
+    "total": 3437,
+    "families": 714,
+    "family_pct": 20.8
+  },
+  "2023": {
+    "total": 5235,
+    "families": 1046,
+    "family_pct": 20.0
+  },
+  "2026": {
+    "total": 4654,
+    "families": 1283,
+    "family_pct": 27.6
+  },
+  "2029": {
+    "total": 7767,
+    "families": 1787,
+    "family_pct": 23.0
+  },
+  "2031": {
+    "total": 5664,
+    "families": 1070,
+    "family_pct": 18.9
+  },
+  "2034": {
+    "total": 3521,
+    "families": 754,
+    "family_pct": 21.4
+  },
+  "2039": {
+    "total": 3424,
+    "families": 703,
+    "family_pct": 20.5
+  },
+  "2061": {
+    "total": 5416,
+    "families": 1140,
+    "family_pct": 21.0
+  },
+  "2062": {
+    "total": 10143,
+    "families": 2325,
+    "family_pct": 22.9
+  },
+  "2080": {
+    "total": 29008,
+    "families": 7515,
+    "family_pct": 25.9
+  },
+  "2081": {
+    "total": 24807,
+    "families": 6044,
+    "family_pct": 24.4
+  },
+  "2082": {
+    "total": 5366,
+    "families": 1329,
+    "family_pct": 24.8
+  },
+  "2083": {
+    "total": 7622,
+    "families": 1639,
+    "family_pct": 21.5
+  },
+  "2084": {
+    "total": 11287,
+    "families": 2531,
+    "family_pct": 22.4
+  },
+  "2085": {
+    "total": 13506,
+    "families": 3096,
+    "family_pct": 22.9
+  },
+  "2101": {
+    "total": 2936,
+    "families": 583,
+    "family_pct": 19.9
+  },
+  "2104": {
+    "total": 4608,
+    "families": 1025,
+    "family_pct": 22.2
+  },
+  "2121": {
+    "total": 5608,
+    "families": 1250,
+    "family_pct": 22.3
+  },
+  "2132": {
+    "total": 4536,
+    "families": 1049,
+    "family_pct": 23.1
+  },
+  "2161": {
+    "total": 9253,
+    "families": 2072,
+    "family_pct": 22.4
+  },
+  "2180": {
+    "total": 51245,
+    "families": 12816,
+    "family_pct": 25.0
+  },
+  "2181": {
+    "total": 18928,
+    "families": 4448,
+    "family_pct": 23.5
+  },
+  "2182": {
+    "total": 12405,
+    "families": 2618,
+    "family_pct": 21.1
+  },
+  "2183": {
+    "total": 13202,
+    "families": 2972,
+    "family_pct": 22.5
+  },
+  "2184": {
+    "total": 18862,
+    "families": 4371,
+    "family_pct": 23.2
+  },
+  "2260": {
+    "total": 4689,
+    "families": 954,
+    "family_pct": 20.3
+  },
+  "2262": {
+    "total": 8522,
+    "families": 2164,
+    "family_pct": 25.4
+  },
+  "2280": {
+    "total": 12267,
+    "families": 2796,
+    "family_pct": 22.8
+  },
+  "2281": {
+    "total": 49448,
+    "families": 12137,
+    "family_pct": 24.5
+  },
+  "2282": {
+    "total": 9060,
+    "families": 1794,
+    "family_pct": 19.8
+  },
+  "2283": {
+    "total": 9435,
+    "families": 1943,
+    "family_pct": 20.6
+  },
+  "2284": {
+    "total": 26587,
+    "families": 6673,
+    "family_pct": 25.1
+  },
+  "2303": {
+    "total": 2646,
+    "families": 542,
+    "family_pct": 20.5
+  },
+  "2305": {
+    "total": 3086,
+    "families": 584,
+    "family_pct": 18.9
+  },
+  "2309": {
+    "total": 6977,
+    "families": 2214,
+    "family_pct": 31.7
+  },
+  "2313": {
+    "total": 5724,
+    "families": 1059,
+    "family_pct": 18.5
+  },
+  "2321": {
+    "total": 5930,
+    "families": 1530,
+    "family_pct": 25.8
+  },
+  "2326": {
+    "total": 3480,
+    "families": 779,
+    "family_pct": 22.4
+  },
+  "2361": {
+    "total": 5211,
+    "families": 1020,
+    "family_pct": 19.6
+  },
+  "2380": {
+    "total": 32957,
+    "families": 7969,
+    "family_pct": 24.2
+  },
+  "2401": {
+    "total": 3326,
+    "families": 765,
+    "family_pct": 23.0
+  },
+  "2403": {
+    "total": 1102,
+    "families": 245,
+    "family_pct": 22.2
+  },
+  "2404": {
+    "total": 2561,
+    "families": 602,
+    "family_pct": 23.5
+  },
+  "2409": {
+    "total": 3134,
+    "families": 742,
+    "family_pct": 23.7
+  },
+  "2417": {
+    "total": 1914,
+    "families": 414,
+    "family_pct": 21.6
+  },
+  "2418": {
+    "total": 1458,
+    "families": 305,
+    "family_pct": 20.9
+  },
+  "2421": {
+    "total": 2852,
+    "families": 558,
+    "family_pct": 19.6
+  },
+  "2422": {
+    "total": 1212,
+    "families": 235,
+    "family_pct": 19.4
+  },
+  "2425": {
+    "total": 1233,
+    "families": 224,
+    "family_pct": 18.2
+  },
+  "2460": {
+    "total": 4125,
+    "families": 1223,
+    "family_pct": 29.6
+  },
+  "2462": {
+    "total": 3192,
+    "families": 642,
+    "family_pct": 20.1
+  },
+  "2463": {
+    "total": 1419,
+    "families": 267,
+    "family_pct": 18.8
+  },
+  "2480": {
+    "total": 67767,
+    "families": 15836,
+    "family_pct": 23.4
+  },
+  "2481": {
+    "total": 6022,
+    "families": 1376,
+    "family_pct": 22.8
+  },
+  "2482": {
+    "total": 37014,
+    "families": 8794,
+    "family_pct": 23.8
+  },
+  "2505": {
+    "total": 3217,
+    "families": 661,
+    "family_pct": 20.5
+  },
+  "2506": {
+    "total": 1385,
+    "families": 256,
+    "family_pct": 18.5
+  },
+  "2510": {
+    "total": 2469,
+    "families": 481,
+    "family_pct": 19.5
+  },
+  "2513": {
+    "total": 1672,
+    "families": 277,
+    "family_pct": 16.6
+  },
+  "2514": {
+    "total": 7902,
+    "families": 1623,
+    "family_pct": 20.5
+  },
+  "2518": {
+    "total": 2081,
+    "families": 332,
+    "family_pct": 16.0
+  },
+  "2521": {
+    "total": 2928,
+    "families": 513,
+    "family_pct": 17.5
+  },
+  "2523": {
+    "total": 9044,
+    "families": 1920,
+    "family_pct": 21.2
+  },
+  "2560": {
+    "total": 3947,
+    "families": 874,
+    "family_pct": 22.1
+  },
+  "2580": {
+    "total": 40868,
+    "families": 9249,
+    "family_pct": 22.6
+  },
+  "2581": {
+    "total": 20876,
+    "families": 5052,
+    "family_pct": 24.2
+  },
+  "2582": {
+    "total": 14648,
+    "families": 3229,
+    "family_pct": 22.0
+  },
+  "2583": {
+    "total": 4747,
+    "families": 840,
+    "family_pct": 17.7
+  },
+  "2584": {
+    "total": 11163,
+    "families": 2473,
+    "family_pct": 22.2
+  }
+}

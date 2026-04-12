@@ -228,7 +228,7 @@ Sök (hög intent: "optimera kvartspris värmepump", "Tibber värmepump styrning
 
 ### Segment A2 — 70-åringen
 
-**Andel av SAM**: ~3–5% (~12 000–20 000 hushåll)
+**Andel av SAM**: ~5–10% (~20 000–40 000 hushåll)
 **Medvetandenivå**: Lösningsmedveten
 **Primär motivation**: Reassurance — men med stark kunskapsidentitet
 
@@ -386,7 +386,9 @@ Energi ingår inte i självbilden. Beslutet att köpa OPTi måste kopplas till e
 
 #### Nyckelbudskap
 
-*"Din värmepump kan spara dig X kr/år — automatiskt. Inget att göra. Vi installerar allt."*
+*"Det här är det senaste som effektiviserar ditt hus maximalt och ökar värdet på din kåk. Vi installerar nu det i grannskapet — du bör hänga på."* (via installatör)
+
+*Tonalitet: social proof/grannskapsnorm. Pengafokus är sekundärt för B3 — identitets- och statusdrivna argument konverterar bättre.*
 
 ---
 
@@ -407,7 +409,7 @@ Händelser som höjer medvetandenivån och skapar hög intent inom befintliga se
 | Segment | Andel SAM | Medvetande | Motivation | Primärkanal |
 |---|---|---|---|---|
 | **A1 — Optimeraren** | ~10–13% | Lösningsmedveten | Smart | Sök, forum, webinar |
-| **A2 — 70-åringen** | ~3–5% | Lösningsmedveten | Reassurance (kunskapsidentitet) | Seminarier, webinar, energipress |
+| **A2 — 70-åringen** | ~5–10% | Lösningsmedveten | Reassurance (kunskapsidentitet) | Seminarier, webinar, energipress |
 | **B1 — Den Väckta** | ~15–20% | Problemmedveten | Reassurance (specifik) | Sök, solcellspartner |
 | **B2 — Den Avvaktande** | ~25–35% | Omedveten–problem | Reassurance | Meta, installatör |
 | **B3 — Livsnjutaren** | ~30–40% | Omedveten | Reassurance (ej aktiverad) | Installatör, lokal |
