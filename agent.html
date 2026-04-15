@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effira — Besparingsagent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #062121;
+      --bg-mid: #0b3333;
+      --bg-bubble: #0f3d3d;
+      --highlight: #2dd4a8;
+      --orange: #FF8C2D;
+      --white: #fff;
+      --grey: rgba(255,255,255,0.45);
+      --user-bubble: #1a5454;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .header {
+      width: 100%;
+      max-width: 700px;
+      padding: 28px 24px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--highlight);
+      text-transform: uppercase;
+    }
+    .header-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--grey);
+    }
+
+    /* ── Chat area ── */
+    .chat-wrap {
+      width: 100%;
+      max-width: 700px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 16px;
+      overflow: hidden;
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 0 24px;
+      scroll-behavior: smooth;
+    }
+    .messages::-webkit-scrollbar { width: 4px; }
+    .messages::-webkit-scrollbar-thumb { background: var(--bg-mid); border-radius: 2px; }
+
+    /* ── Bubbles ── */
+    .msg {
+      display: flex;
+      margin-bottom: 16px;
+      animation: fadeUp 0.2s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg.agent { justify-content: flex-start; }
+    .msg.user  { justify-content: flex-end; }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--highlight);
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-right: 10px;
+      margin-top: 2px;
+    }
+
+    .bubble {
+      max-width: 78%;
+      padding: 13px 16px;
+      border-radius: 18px;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .msg.agent .bubble {
+      background: var(--bg-bubble);
+      border-bottom-left-radius: 4px;
+      color: var(--white);
+    }
+    .msg.user .bubble {
+      background: var(--user-bubble);
+      border-bottom-right-radius: 4px;
+      color: var(--white);
+    }
+
+    /* Typing indicator */
+    .typing .bubble {
+      padding: 14px 18px;
+    }
+    .dots {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .dots span {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--highlight);
+      opacity: 0.6;
+      animation: blink 1.2s infinite;
+    }
+    .dots span:nth-child(2) { animation-delay: 0.2s; }
+    .dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes blink {
+      0%, 80%, 100% { opacity: 0.3; transform: scale(0.9); }
+      40%           { opacity: 1;   transform: scale(1.1); }
+    }
+
+    /* ── Result card (inline in chat) ── */
+    .result-card {
+      background: linear-gradient(135deg, #0f4a3a, #0b3333);
+      border: 1px solid rgba(45,212,168,0.25);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 10px;
+      max-width: 78%;
+    }
+    .result-card .eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--highlight);
+      margin-bottom: 8px;
+    }
+    .result-card .amount {
+      font-size: 38px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+    .result-card .amount small {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--grey);
+      margin-right: 4px;
+    }
+    .result-card .range {
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 14px;
+    }
+    .result-card .period-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .result-card .period-btn {
+      padding: 5px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: transparent;
+      color: var(--grey);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .result-card .period-btn.active {
+      background: var(--highlight);
+      border-color: var(--highlight);
+      color: var(--bg);
+    }
+    .result-card .disclaimer {
+      font-size: 11px;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+    .result-card .cta-btn {
+      display: block;
+      width: 100%;
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background: var(--highlight);
+      color: var(--bg);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: opacity 0.15s;
+    }
+    .result-card .cta-btn:hover { opacity: 0.9; }
+    .feedback-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+    .feedback-row span {
+      font-size: 11px;
+      color: var(--grey);
+    }
+    .fb-btn {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .fb-btn:hover { background: rgba(255,255,255,0.15); }
+    .fb-btn.active { background: rgba(45,212,168,0.25); }
+
+    /* ── Input area ── */
+    .input-area {
+      width: 100%;
+      max-width: 700px;
+      padding: 12px 16px 28px;
+    }
+    .input-row {
+      display: flex;
+      gap: 10px;
+      background: var(--bg-mid);
+      border-radius: 16px;
+      padding: 8px 8px 8px 18px;
+      border: 1.5px solid rgba(255,255,255,0.08);
+      transition: border-color 0.15s;
+    }
+    .input-row:focus-within {
+      border-color: rgba(45,212,168,0.4);
+    }
+    .chat-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--white);
+      padding: 6px 0;
+      resize: none;
+      max-height: 120px;
+    }
+    .chat-input::placeholder { color: var(--grey); }
+    .send-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--highlight);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: opacity 0.15s;
+    }
+    .send-btn:hover { opacity: 0.85; }
+    .send-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .send-btn svg { width: 18px; height: 18px; fill: var(--bg); }
+
+    /* ── Quick replies ── */
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 4px 0 12px 42px;
+      animation: fadeUp 0.2s ease;
+    }
+    .qr-btn {
+      padding: 9px 18px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(45,212,168,0.4);
+      background: transparent;
+      color: var(--highlight);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .qr-btn:hover {
+      background: rgba(45,212,168,0.12);
+      border-color: var(--highlight);
+    }
+
+    .hint {
+      text-align: center;
+      font-size: 11px;
+      color: var(--grey);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">Effira Energy</div>
+    <div class="header-title">Besparingsrådgivaren</div>
+  </div>
+
+  <div class="chat-wrap">
+    <div class="messages" id="messages"></div>
+  </div>
+
+  <div class="input-area">
+    <div class="input-row">
+      <textarea
+        class="chat-input"
+        id="chat-input"
+        placeholder="Skriv här..."
+        rows="1"
+        onkeydown="handleKey(event)"
+        oninput="autoResize(this)"
+      ></textarea>
+      <button class="send-btn" id="send-btn" onclick="sendMessage()" title="Skicka">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 21L23 12 2 3v7l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="hint">Tryck Enter för att skicka</div>
+  </div>
+
+<script>
+const API_URL = window.location.origin;
+let conversationHistory = [];
+let lastResult = null;
+
+// ── Init: show greeting ──
+window.onload = () => {
+  addMessage('agent',
+    'Hej! Jag hjälper dig räkna ut vad du kan spara med OPTi — Effiras smarta styrsystem för uppvärmning. Det tar ungefär en minut.\n\nOPTi fungerar med bergvärme, luft/vatten-värmepump och frånluftsvärmepump — vilket har du?',
+    null,
+    ['Bergvärme', 'Luft/vatten', 'Frånluft', 'Osäker']
+  );
+};
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+}
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+
+  input.value = '';
+  input.style.height = 'auto';
+  document.getElementById('send-btn').disabled = true;
+
+  addMessage('user', text);
+  conversationHistory.push({ role: 'user', content: text });
+
+  const typingId = showTyping();
+
+  try {
+    const res = await fetch(`${API_URL}/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: conversationHistory })
+    });
+    const data = await res.json();
+
+    removeTyping(typingId);
+
+    if (data.error) {
+      addMessage('agent', 'Något gick fel. Försök igen.');
+      return;
+    }
+
+    conversationHistory.push({ role: 'assistant', content: data.reply });
+    addMessage('agent', data.reply, data.result, data.quickReplies);
+    lastResult = data.result;
+
+  } catch (err) {
+    removeTyping(typingId);
+    addMessage('agent', 'Kunde inte nå servern. Är den igång?');
+  } finally {
+    document.getElementById('send-btn').disabled = false;
+    document.getElementById('chat-input').focus();
+  }
+}
+
+function addMessage(role, text, result = null, quickReplies = null) {
+  const msgs = document.getElementById('messages');
+
+  // Remove previous quick replies if any
+  document.querySelectorAll('.quick-replies').forEach(el => el.remove());
+
+  const wrap = document.createElement('div');
+  wrap.className = `msg ${role}`;
+
+  if (role === 'agent') {
+    wrap.innerHTML = `
+      <div class="avatar">E</div>
+      <div>
+        <div class="bubble">${formatText(text)}</div>
+        ${result ? renderResultCard(result) : ''}
+      </div>`;
+  } else {
+    wrap.innerHTML = `<div class="bubble">${formatText(text)}</div>`;
+  }
+
+  msgs.appendChild(wrap);
+
+  // Render quick reply buttons after the message
+  if (quickReplies?.length) {
+    const qr = document.createElement('div');
+    qr.className = 'quick-replies';
+    qr.innerHTML = quickReplies.map(label =>
+      `<button class="qr-btn" onclick="sendQuickReply(this, '${label}')">${label}</button>`
+    ).join('');
+    msgs.appendChild(qr);
+  }
+
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function sendQuickReply(btn, text) {
+  // Remove all quick reply rows
+  document.querySelectorAll('.quick-replies').forEach(el => el.remove());
+  // Send as normal message
+  document.getElementById('chat-input').value = text;
+  sendMessage();
+}
+
+function formatText(text) {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+}
+
+function renderResultCard(result) {
+  const id = 'rc-' + Date.now();
+  const fmt = n => new Intl.NumberFormat('sv-SE').format(n) + ' kr';
+  return `
+    <div class="result-card" id="${id}">
+      <div class="eyebrow">Uppskattad besparing med OPTi</div>
+      <div class="amount" id="${id}-amount"><small>ca</small>${fmt(result.avg)}</div>
+      <div class="range" id="${id}-range">Troligt spann: <strong>${fmt(result.low)} – ${fmt(result.high)}</strong> per år</div>
+      <div class="period-row">
+        <button class="period-btn active" onclick="switchPeriod('${id}', 'year', this, ${JSON.stringify(result).replace(/"/g,'&quot;')})">Per år</button>
+        <button class="period-btn" onclick="switchPeriod('${id}', 'month', this, ${JSON.stringify(result).replace(/"/g,'&quot;')})">Per månad</button>
+        <button class="period-btn" onclick="switchPeriod('${id}', '5year', this, ${JSON.stringify(result).replace(/"/g,'&quot;')})">5 år</button>
+      </div>
+      ${(result.breakdown?.elbil || result.breakdown?.sol) ? `
+      <div style="margin-bottom:12px;padding:10px 12px;background:rgba(255,255,255,0.05);border-radius:10px;font-size:12px;color:rgba(255,255,255,0.6);line-height:1.8">
+        ${result.breakdown?.opti ? `<div>Uppvärmningsoptimering: <strong style="color:white">ca ${new Intl.NumberFormat('sv-SE').format(result.breakdown.opti)} kr/år</strong></div>` : ''}
+        ${result.breakdown?.sol ? `<div>Solceller: <strong style="color:white">+ca ${new Intl.NumberFormat('sv-SE').format(result.breakdown.sol)} kr/år</strong></div>` : ''}
+        ${result.breakdown?.elbil ? `<div>Elbil (laddar billig el): <strong style="color:white">+ca ${new Intl.NumberFormat('sv-SE').format(result.breakdown.elbil)} kr/år</strong></div>` : ''}
+      </div>` : ''}
+      <div class="disclaimer">Bruttobesparing — före kostnad för OPTi-abonnemang. Baserat på genomsnitt 2023–2024 spotpriser.${result.systemUnknown ? ' Spannet täcker bergvärme, luft/vatten och frånluft — preciseras när systemtyp är känd.' : ''}${result.scenario?.includes('elbil') ? ' Elbilsbesparingen förutsätter att du laddar när elpriset är lågt — det styr du själv, inte OPTi.' : ''}</div>
+      <button class="cta-btn" onclick="clickCTA()">Vill du ha en exaktare kalkyl? Kontakta oss →</button>
+      <div class="feedback-row">
+        <span>Verkar det rimligt?</span>
+        <button class="fb-btn" id="${id}-yes" onclick="sendFeedback('${id}', 'yes')">👍</button>
+        <button class="fb-btn" id="${id}-no" onclick="sendFeedback('${id}', 'no')">👎</button>
+        <span style="font-size:10px;opacity:0.5">Hjälper oss förbättra kalkylatorn</span>
+      </div>
+    </div>`;
+}
+
+function switchPeriod(id, period, btn, result) {
+  const fmt = n => new Intl.NumberFormat('sv-SE').format(Math.round(n / 500) * 500) + ' kr';
+  const amountEl = document.getElementById(id + '-amount');
+  const rangeEl = document.getElementById(id + '-range');
+
+  document.querySelectorAll(`#${id} .period-btn`).forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  if (period === 'year') {
+    amountEl.innerHTML = `<small>ca</small>${fmt(result.avg)}`;
+    rangeEl.innerHTML = `Troligt spann: <strong>${fmt(result.low)} – ${fmt(result.high)}</strong> per år`;
+  } else if (period === 'month') {
+    amountEl.innerHTML = `<small>ca</small>${fmt(result.avg / 12)}`;
+    rangeEl.innerHTML = `Troligt spann: <strong>${fmt(result.low / 12)} – ${fmt(result.high / 12)}</strong> per månad`;
+  } else {
+    amountEl.innerHTML = `<small>ca</small>${fmt(result.avg * 5)}`;
+    rangeEl.innerHTML = `Troligt spann: <strong>${fmt(result.low * 5)} – ${fmt(result.high * 5)}</strong> över 5 år`;
+  }
+}
+
+function sendFeedback(id, val) {
+  document.getElementById(id + '-yes').classList.toggle('active', val === 'yes');
+  document.getElementById(id + '-no').classList.toggle('active', val === 'no');
+  fetch(`${API_URL}/feedback`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ feedback: val, result: lastResult, conversation: conversationHistory.length })
+  });
+}
+
+function clickCTA() {
+  // TODO: open HubSpot form
+  alert('HubSpot-formulär kopplas in här.');
+}
+
+let typingCounter = 0;
+function showTyping() {
+  const id = 'typing-' + (++typingCounter);
+  const msgs = document.getElementById('messages');
+  const wrap = document.createElement('div');
+  wrap.className = 'msg agent typing';
+  wrap.id = id;
+  wrap.innerHTML = `
+    <div class="avatar">E</div>
+    <div class="bubble">
+      <div class="dots"><span></span><span></span><span></span></div>
+    </div>`;
+  msgs.appendChild(wrap);
+  msgs.scrollTop = msgs.scrollHeight;
+  return id;
+}
+function removeTyping(id) {
+  document.getElementById(id)?.remove();
+}
+</script>
+
+</body>
+</html>
