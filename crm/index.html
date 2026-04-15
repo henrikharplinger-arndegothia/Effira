@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effira CRM — Prospekt & Segment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --teal-dark: #072022;
+      --teal-mid: #0a3035;
+      --teal-light: #e6f0f0;
+      --warm-white: #fafaf8;
+      --white: #ffffff;
+      --black: #1a1a1a;
+      --grey: #6b7280;
+      --grey-light: #f3f4f6;
+      --highlight: #2dd4a8;
+      --highlight-dim: rgba(45,212,168,0.1);
+      --orange: #FF8C2D;
+      --red: #ef4444;
+      --card-radius: 12px;
+      --pill-radius: 9999px;
+      --sidebar-width: 260px;
+    }
+
+    body {
+      font-family: 'Work Sans', -apple-system, sans-serif;
+      background: var(--grey-light);
+      color: var(--black);
+      line-height: 1.5;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Layout */
+    .app { display: flex; height: 100vh; }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--teal-dark);
+      color: var(--white);
+      padding: 24px 0;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .sidebar-logo {
+      padding: 0 24px 24px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-logo span { color: var(--highlight); }
+
+    .sidebar-nav { flex: 1; }
+
+    .nav-item {
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-item:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.04); }
+    .nav-item.active { color: var(--highlight); background: rgba(45,212,168,0.08); }
+    .nav-item .nav-icon { font-size: 16px; width: 20px; text-align: center; }
+
+    .sidebar-stats {
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .sidebar-stat {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 6px;
+    }
+
+    .sidebar-stat .stat-val { color: var(--highlight); font-weight: 600; }
+
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 32px;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .main-title { font-size: 24px; font-weight: 300; letter-spacing: -0.02em; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: var(--pill-radius);
+      font-size: 13px;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+
+    .btn-primary { background: var(--teal-dark); color: var(--white); }
+    .btn-primary:hover { background: var(--teal-mid); }
+    .btn-outline { background: none; border: 1px solid rgba(0,0,0,0.15); color: var(--black); }
+    .btn-outline:hover { border-color: var(--black); }
+    .btn-sm { padding: 5px 12px; font-size: 11px; }
+    .btn-danger { background: none; border: 1px solid var(--red); color: var(--red); }
+    .btn-danger:hover { background: var(--red); color: white; }
+
+    .btn-group { display: flex; gap: 8px; }
+
+    /* Segment badges */
+    .seg-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: var(--pill-radius);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .seg-A1 { background: rgba(45,212,168,0.15); color: #1a9a78; }
+    .seg-A2 { background: rgba(59,130,246,0.12); color: #2563eb; }
+    .seg-B1 { background: rgba(255,140,45,0.15); color: #d97706; }
+    .seg-B2 { background: rgba(168,85,247,0.12); color: #7c3aed; }
+    .seg-B3 { background: rgba(107,114,128,0.12); color: #4b5563; }
+    .seg-unknown { background: rgba(0,0,0,0.06); color: var(--grey); }
+
+    /* Status badges */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: var(--pill-radius);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .status-new { background: rgba(45,212,168,0.12); color: #1a9a78; }
+    .status-contacted { background: rgba(59,130,246,0.12); color: #2563eb; }
+    .status-meeting { background: rgba(255,140,45,0.12); color: #d97706; }
+    .status-converted { background: rgba(34,197,94,0.15); color: #16a34a; }
+    .status-lost { background: rgba(239,68,68,0.1); color: #dc2626; }
+
+    /* Cards */
+    .card {
+      background: var(--white);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    /* Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .data-table td {
+      padding: 12px 14px;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      vertical-align: middle;
+    }
+
+    .data-table tr:hover { background: rgba(0,0,0,0.015); }
+    .data-table tr { cursor: pointer; }
+
+    .prospect-name { font-weight: 500; }
+    .prospect-meta { font-size: 11px; color: var(--grey); margin-top: 2px; }
+
+    /* Stats grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .stat-card .stat-label {
+      font-size: 11px;
+      color: var(--grey);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+    }
+
+    .stat-card .stat-value {
+      font-size: 28px;
+      font-weight: 300;
+      margin-top: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-card .stat-sub {
+      font-size: 11px;
+      color: var(--grey);
+      margin-top: 2px;
+    }
+
+    /* Segment breakdown bar */
+    .seg-bar {
+      display: flex;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 12px;
+      gap: 2px;
+    }
+
+    .seg-bar-part { border-radius: 4px; transition: width 0.3s; }
+    .seg-bar-part.A1 { background: #2dd4a8; }
+    .seg-bar-part.A2 { background: #3b82f6; }
+    .seg-bar-part.B1 { background: #f59e0b; }
+    .seg-bar-part.B2 { background: #8b5cf6; }
+    .seg-bar-part.B3 { background: #6b7280; }
+
+    .seg-legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .seg-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--grey);
+    }
+
+    .seg-legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.visible { display: flex; }
+
+    .modal {
+      background: var(--white);
+      border-radius: 16px;
+      width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .modal h2 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.15s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--highlight);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 60px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    /* Messaging panel */
+    .messaging-panel {
+      background: var(--teal-dark);
+      color: var(--white);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .messaging-panel h4 {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--highlight);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .msg-primary {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+      border-left: 3px solid var(--highlight);
+      padding-left: 16px;
+      margin-bottom: 16px;
+    }
+
+    .msg-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .msg-points li {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .msg-points li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--highlight);
+    }
+
+    .msg-avoid {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .msg-avoid h4 { color: rgba(255,255,255,0.3); }
+    .msg-avoid li { color: rgba(255,255,255,0.35); }
+    .msg-avoid li::before { color: rgba(239,68,68,0.6); content: '✕'; font-size: 10px; }
+
+    /* Detail panel */
+    .detail-panel {
+      display: none;
+    }
+
+    .detail-panel.visible {
+      display: block;
+    }
+
+    .detail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .detail-name { font-size: 22px; font-weight: 500; }
+    .detail-location { font-size: 13px; color: var(--grey); margin-top: 4px; }
+
+    .interaction-log {
+      margin-top: 16px;
+    }
+
+    .interaction-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      font-size: 13px;
+    }
+
+    .interaction-date {
+      font-size: 11px;
+      color: var(--grey);
+      white-space: nowrap;
+      min-width: 70px;
+    }
+
+    /* Tabs */
+    .tab-row {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      padding: 10px 20px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--grey);
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+
+    .tab-btn:hover { color: var(--black); }
+    .tab-btn.active { color: var(--teal-dark); border-bottom-color: var(--highlight); }
+
+    /* Filter bar */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-chip {
+      padding: 5px 14px;
+      border-radius: var(--pill-radius);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.1);
+      background: var(--white);
+      color: var(--grey);
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .filter-chip:hover { border-color: var(--black); color: var(--black); }
+    .filter-chip.active { background: var(--teal-dark); color: var(--white); border-color: var(--teal-dark); }
+
+    /* Import section */
+    .import-zone {
+      border: 2px dashed rgba(0,0,0,0.12);
+      border-radius: var(--card-radius);
+      padding: 40px;
+      text-align: center;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.15s;
+      margin-bottom: 20px;
+    }
+
+    .import-zone:hover { border-color: var(--highlight); color: var(--black); }
+    .import-zone .import-icon { font-size: 32px; margin-bottom: 8px; }
+    .import-zone p { font-size: 13px; }
+
+    /* Views */
+    .view { display: none; }
+    .view.active { display: block; }
+
+    /* Feedback view */
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .feedback-col h4 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .feedback-metric {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .feedback-metric .metric-val { font-size: 24px; font-weight: 300; }
+    .feedback-metric .metric-label { font-size: 10px; color: var(--grey); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--teal-dark);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      z-index: 600;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.visible { opacity: 1; transform: translateY(0); }
+
+    /* Message generator */
+    .generated-message {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .copy-btn {
+      margin-top: 8px;
+      font-size: 11px;
+    }
+
+    /* Geo table compact */
+    #view-geo .data-table th { font-size: 9px; padding: 8px 10px; }
+    #view-geo .data-table td { padding: 10px 10px; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-logo">Effira <span>CRM</span></div>
+    <div class="sidebar-nav">
+      <div class="nav-item active" data-view="dashboard"><span class="nav-icon">◉</span> Dashboard</div>
+      <div class="nav-item" data-view="prospects"><span class="nav-icon">◎</span> Prospekt</div>
+      <div class="nav-item" data-view="messaging"><span class="nav-icon">◈</span> Budskap</div>
+      <div class="nav-item" data-view="feedback"><span class="nav-icon">◇</span> Feedbackloop</div>
+      <div class="nav-item" data-view="geo"><span class="nav-icon">◐</span> Geografi</div>
+      <div class="nav-item" data-view="import"><span class="nav-icon">◆</span> Import</div>
+    </div>
+    <div class="sidebar-stats" id="sidebarStats">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+    <!-- DASHBOARD VIEW -->
+    <div class="view active" id="view-dashboard">
+      <div class="main-header">
+        <div class="main-title">Dashboard</div>
+        <button class="btn btn-primary" onclick="showModal('add')">+ Ny prospekt</button>
+      </div>
+
+      <div class="stats-grid" id="dashStats"></div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h3 style="font-size: 14px; font-weight: 500;">Segmentfördelning</h3>
+        </div>
+        <div class="seg-bar" id="segBar"></div>
+        <div class="seg-legend" id="segLegend"></div>
+      </div>
+
+      <div class="card" style="margin-top: 12px;">
+        <h3 style="font-size: 14px; font-weight: 500; margin-bottom: 12px;">Senaste aktivitet</h3>
+        <div id="recentActivity"></div>
+      </div>
+    </div>
+
+    <!-- PROSPECTS VIEW -->
+    <div class="view" id="view-prospects">
+      <div class="main-header">
+        <div class="main-title">Prospekt</div>
+        <div class="btn-group">
+          <button class="btn btn-outline" onclick="exportCSV()">Exportera CSV</button>
+          <button class="btn btn-primary" onclick="showModal('add')">+ Ny prospekt</button>
+        </div>
+      </div>
+
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-chip active" data-filter="all">Alla</button>
+        <button class="filter-chip" data-filter="A1">A1</button>
+        <button class="filter-chip" data-filter="A2">A2</button>
+        <button class="filter-chip" data-filter="B1">B1</button>
+        <button class="filter-chip" data-filter="B2">B2</button>
+        <button class="filter-chip" data-filter="B3">B3</button>
+        <span style="color: var(--grey); font-size: 11px; margin-left: 8px;">|</span>
+        <button class="filter-chip" data-filter="new">Nya</button>
+        <button class="filter-chip" data-filter="contacted">Kontaktade</button>
+        <button class="filter-chip" data-filter="meeting">Möte</button>
+        <button class="filter-chip" data-filter="converted">Konverterade</button>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Namn</th>
+              <th>Segment</th>
+              <th>Status</th>
+              <th>Ort</th>
+              <th>Elområde</th>
+              <th>Kanal</th>
+              <th>Tillagd</th>
+            </tr>
+          </thead>
+          <tbody id="prospectTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MESSAGING VIEW -->
+    <div class="view" id="view-messaging">
+      <div class="main-header">
+        <div class="main-title">Budskapsgenerator</div>
+      </div>
+
+      <div class="card">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Välj segment</label>
+            <select id="msgSegment" onchange="updateMessaging()">
+              <option value="">— Välj segment —</option>
+              <option value="A1">A1 — Optimeraren</option>
+              <option value="A2">A2 — 70-åringen</option>
+              <option value="B1">B1 — Den Väckta</option>
+              <option value="B2">B2 — Den Avvaktande</option>
+              <option value="B3">B3 — Livsnjutaren</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Kanal</label>
+            <select id="msgChannel" onchange="updateMessaging()">
+              <option value="email">Email</option>
+              <option value="sms">SMS</option>
+              <option value="installer">Installatörsmaterial</option>
+              <option value="ad">Annons</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Trigger (valfritt)</label>
+            <select id="msgTrigger" onchange="updateMessaging()">
+              <option value="">Ingen specifik</option>
+              <option value="effect_tariff">Effekttariff</option>
+              <option value="solar">Solceller</option>
+              <option value="high_bill">Hög elräkning</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Kundens namn (valfritt)</label>
+            <input type="text" id="msgName" placeholder="Förnamn" oninput="updateMessaging()">
+          </div>
+        </div>
+      </div>
+
+      <div id="messagingOutput"></div>
+    </div>
+
+    <!-- FEEDBACK VIEW -->
+    <div class="view" id="view-feedback">
+      <div class="main-header">
+        <div class="main-title">Feedbackloop</div>
+      </div>
+
+      <div class="card" style="margin-bottom: 20px;">
+        <p style="font-size: 14px; color: var(--grey); line-height: 1.7;">
+          Segmenten är operativa verktyg som förfinas med data. Nedan visas konverteringsdata per segment —
+          underlaget som styr om vi bekräftar, förfinar eller förenklar ramverket.
+        </p>
+      </div>
+
+      <div class="feedback-grid" id="feedbackGrid"></div>
+
+      <div class="card" style="margin-top: 20px;">
+        <h3 style="font-size: 14px; font-weight: 500; margin-bottom: 12px;">Insikter</h3>
+        <div id="feedbackInsights"></div>
+      </div>
+    </div>
+
+    <!-- GEO VIEW -->
+    <div class="view" id="view-geo">
+      <div class="main-header">
+        <div class="main-title">Geografisk segmentpotential</div>
+        <div class="btn-group">
+          <select id="geoAreaFilter" onchange="renderGeo()" style="padding: 8px 14px; border: 1px solid rgba(0,0,0,0.12); border-radius: 20px; font-family: inherit; font-size: 13px;">
+            <option value="all">Alla elområden</option>
+            <option value="SE3">SE3 — Mellersta Sverige</option>
+            <option value="SE4">SE4 — Södra Sverige</option>
+            <option value="SE1">SE1 — Norra Norrland</option>
+            <option value="SE2">SE2 — Södra Norrland</option>
+          </select>
+          <select id="geoSortBy" onchange="renderGeo()" style="padding: 8px 14px; border: 1px solid rgba(0,0,0,0.12); border-radius: 20px; font-family: inherit; font-size: 13px;">
+            <option value="total_score">Totalpoäng</option>
+            <option value="a1_score">A1-potential</option>
+            <option value="a2_score">A2-potential</option>
+            <option value="b1_score">B1-potential</option>
+            <option value="b2_score">B2-potential</option>
+            <option value="b3_score">B3-potential</option>
+            <option value="villas">Antal villor</option>
+            <option value="heatpump_pct">El-andel småhus</option>
+            <option value="solar_installs">Solproduktion</option>
+            <option value="family_pct">Familjeandel</option>
+            <option value="senior_pct">60+ andel</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 16px;">
+        <p style="font-size: 13px; color: var(--grey); line-height: 1.7;">
+          262 kommuner med 2 000+ småhus, rankade efter segmentpotential. Reella data från SCB (2024): småhus ägda av fysiska personer, elanvändningsandel för småhus (proxy för VP-prevalens), solkraftsproduktion per kommun. Effekttariffstatus baserad på nätägare (Ei).
+        </p>
+      </div>
+
+      <div class="stats-grid" id="geoStats"></div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Kommun</th>
+              <th>Elområde</th>
+              <th>Villor</th>
+              <th>El%</th>
+              <th>Sol</th>
+              <th>Fam%</th>
+              <th>60+%</th>
+              <th>Tariff</th>
+              <th>A1</th>
+              <th>A2</th>
+              <th>B1</th>
+              <th>B2</th>
+              <th>B3</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="geoTable"></tbody>
+        </table>
+      </div>
+
+      <div class="card" style="margin-top: 16px;">
+        <h3 style="font-size: 14px; font-weight: 500; margin-bottom: 8px;">Datakällor</h3>
+        <div style="font-size: 12px; color: var(--grey); line-height: 1.8;">
+          <strong>Villor per kommun:</strong> SCB Bostadsbestånd (BO0104T03), småhus ägda av fysiska personer, 2024. <em>Reell data, 290 kommuner.</em><br>
+          <strong>El-andel småhus:</strong> SCB Kommunal energistatistik (EN0203), slutanvändning el / totalt för småhus per kommun, 2024. <em>Reell data, proxy för VP-prevalens — hög el-andel + låg fjärrvärme = sannolikt VP.</em><br>
+          <strong>Solkraftsproduktion:</strong> SCB Kommunal energistatistik (EN0203), elproduktion solkraft (MWh) per kommun, 2024. <em>Reell data.</em><br>
+          <strong>Effekttariff:</strong> Baserad på nätägare per kommun — major operators med känd effektkomponent (E.ON, Ellevio, Vattenfall, m.fl.). <em>Delvis manuell mappning.</em><br>
+          <strong>Elområde:</strong> Kommun-till-elområde via länskod. <em>Approximation — enstaka gränskommuner kan avvika.</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPORT VIEW -->
+    <div class="view" id="view-import">
+      <div class="main-header">
+        <div class="main-title">Importera prospekt</div>
+      </div>
+
+      <div class="import-zone" id="importZone" onclick="document.getElementById('csvFile').click()">
+        <div class="import-icon">↑</div>
+        <p><strong>Dra en CSV-fil hit</strong> eller klicka för att välja</p>
+        <p style="font-size: 11px; margin-top: 8px;">Format: namn, ort, postnummer, elavtal, solceller, värmepumpstyp, kanal</p>
+        <input type="file" id="csvFile" accept=".csv" style="display: none;" onchange="handleCSVImport(event)">
+      </div>
+
+      <div class="card">
+        <h3 style="font-size: 14px; font-weight: 500; margin-bottom: 12px;">Manuell import</h3>
+        <p style="font-size: 13px; color: var(--grey); margin-bottom: 16px;">Klistra in en lista med prospekt. En rad per prospekt, kommaseparerad.</p>
+        <textarea id="manualImport" style="width: 100%; min-height: 120px; padding: 12px; font-family: monospace; font-size: 12px; border: 1px solid rgba(0,0,0,0.12); border-radius: 8px;" placeholder="Anna Andersson, Stockholm, 11234, kvartspris, ja, bergvärme, webinar
+Erik Eriksson, Malmö, 21145, fast, nej, luft-vatten, meta"></textarea>
+        <button class="btn btn-primary" style="margin-top: 12px;" onclick="handleManualImport()">Importera</button>
+      </div>
+
+      <div class="card" style="margin-top: 12px;">
+        <h3 style="font-size: 14px; font-weight: 500; margin-bottom: 8px;">Segment-klassificeringslogik</h3>
+        <p style="font-size: 13px; color: var(--grey); line-height: 1.7;">
+          Prospekt klassificeras automatiskt baserat på tillgängliga signaler:<br>
+          <strong>Kvartspris + aktivt sökande</strong> → A1 (Optimeraren)<br>
+          <strong>60+ + självdriven</strong> → A2 (70-åringen)<br>
+          <strong>Effekttariff-trigger ELLER solcells-ROI-trigger</strong> → B1 (Den Väckta)<br>
+          <strong>Familj + lågt energiengagemang</strong> → B2 (Den Avvaktande)<br>
+          <strong>Inget engagemang + installatörskanal</strong> → B3 (Livsnjutaren)<br>
+          <strong>Otillräcklig data</strong> → Oklassificerad (kräver manuell bedömning)
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ADD/EDIT MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2 id="modalTitle">Ny prospekt</h2>
+    <input type="hidden" id="editId">
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Namn</label>
+        <input type="text" id="fName" placeholder="Förnamn Efternamn">
+      </div>
+      <div class="form-group">
+        <label>Ort</label>
+        <input type="text" id="fCity" placeholder="Stockholm">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Postnummer</label>
+        <input type="text" id="fPostal" placeholder="11234" maxlength="5">
+      </div>
+      <div class="form-group">
+        <label>Elområde</label>
+        <select id="fArea">
+          <option value="">Auto (från postnummer)</option>
+          <option value="SE1">SE1</option>
+          <option value="SE2">SE2</option>
+          <option value="SE3">SE3</option>
+          <option value="SE4">SE4</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Elavtal</label>
+        <select id="fContract">
+          <option value="">Okänt</option>
+          <option value="quarterly">Kvartspris</option>
+          <option value="hourly">Timpris</option>
+          <option value="monthly">Månadsrörligt</option>
+          <option value="fixed">Fast</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Värmepumpstyp</label>
+        <select id="fHeatpump">
+          <option value="">Okänt</option>
+          <option value="ground">Bergvärme</option>
+          <option value="air_water">Luft/vatten</option>
+          <option value="exhaust">Frånluft</option>
+          <option value="air_air">Luft/luft (ej kompatibel)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Solceller</label>
+        <select id="fSolar">
+          <option value="">Okänt</option>
+          <option value="yes">Ja</option>
+          <option value="no">Nej</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Kanal</label>
+        <select id="fChannel">
+          <option value="">Okänd</option>
+          <option value="search">Sök</option>
+          <option value="webinar">Webinar</option>
+          <option value="seminar">Seminarium</option>
+          <option value="meta">Meta/Facebook</option>
+          <option value="installer">Installatör</option>
+          <option value="referral">Referral</option>
+          <option value="forum">Forum/Reddit</option>
+          <option value="solar_partner">Solcellspartner</option>
+          <option value="website">Webbplats</option>
+          <option value="other">Annat</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Trigger</label>
+        <select id="fTrigger">
+          <option value="">Ingen specifik</option>
+          <option value="effect_tariff">Effekttariff</option>
+          <option value="solar_roi">Solcells-ROI</option>
+          <option value="high_bill">Hög elräkning</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Segment (auto eller manuell)</label>
+        <select id="fSegment">
+          <option value="auto">Automatisk klassificering</option>
+          <option value="A1">A1 — Optimeraren</option>
+          <option value="A2">A2 — 70-åringen</option>
+          <option value="B1">B1 — Den Väckta</option>
+          <option value="B2">B2 — Den Avvaktande</option>
+          <option value="B3">B3 — Livsnjutaren</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Anteckningar</label>
+      <textarea id="fNotes" placeholder="Valfria anteckningar..."></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-outline" onclick="closeModal()">Avbryt</button>
+      <button class="btn btn-primary" onclick="saveProspect()">Spara</button>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="detailOverlay">
+  <div class="modal" style="width: 700px;" id="detailModal">
+    <!-- Filled by JS -->
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// DATA LAYER — localStorage backed
+// ═══════════════════════════════════════════════════════════════
+
+const STORAGE_KEY = 'effira_crm_prospects';
+const SEGMENTS_DATA = {"A1":{"name":"Optimeraren","color":"#2dd4a8"},"A2":{"name":"70-åringen","color":"#3b82f6"},"B1":{"name":"Den Väckta","color":"#f59e0b"},"B2":{"name":"Den Avvaktande","color":"#8b5cf6"},"B3":{"name":"Livsnjutaren","color":"#6b7280"}};
+
+const MESSAGING = {
+  A1: {
+    tone: "Teknisk, jämbördig",
+    primary: "OPTi styr ~75% av husets energi — mer avancerat än vad du kan bygga själv, utan att du behöver bygga något.",
+    points: ["10x billigare än batteri", "~8 månaders återbetalningstid", "Granulär besparingsdata i appen", "Styr både uppvärmning och varmvatten i realtid"],
+    avoid: ["Vaga AI-formuleringar", "Förenklingar", "Emotionella argument innan fakta"],
+    email: "Hej {name},\n\nDu vet redan att värmepumpen är husets största energipost. Frågan är om du optimerar den.\n\nOPTi styr ~75% av husets energi i realtid — uppvärmning och varmvatten, baserat på kvartspris, solproduktion och effekthantering. Automatiskt.\n\n10x billigare än batteri. ~8 månaders återbetalningstid. Besparingsdata direkt i appen.\n\nIntresserad av att se hur det fungerar för din typ av installation?",
+    sms: "Hej {name} — OPTi optimerar din värmepump mot kvartspris i realtid. 10x billigare än batteri, ~8 mån payback. Mer info: effira.se",
+    ad: "Din värmepump kan mer. OPTi styr 75% av husets energi — smartare än du kan bygga själv.",
+    installer: "OPTi-kunder med kvartspris sparar 6 000–14 000 kr/år. Systemet styr uppvärmning + varmvatten i realtid baserat på spotpris. 10x billigare än batteri. Professionell installation — vi hanterar allt."
+  },
+  A2: {
+    tone: "Respektfull, lugn",
+    primary: "Bra val av värmepump. Nu kan den spara ännu mer åt dig. OPTi flyttar värme och varmvatten till de timmar då elen kostar minst — automatiskt.",
+    points: ["Övergripande princip, inte detaljer", "Komfortlöfte", "Rimlig ekonomi", "Professionell installation ingår"],
+    avoid: ["Övertydligt säljspråk", "Behandla som naiv konsument", "Pusha beslut"],
+    email: "Hej {name},\n\nBra val av värmepump. Den kan faktiskt spara ännu mer åt dig.\n\nOPTi flyttar värme och varmvatten till de timmar då elen kostar minst — automatiskt. Temperaturen i huset påverkas inte.\n\nInstallation ingår och utförs av en Effira-tekniker. Ingen ombyggnad krävs.\n\nVill du veta mer? Vi berättar gärna i lugn och ro — ring oss eller delta på vårt nästa webinar.",
+    sms: "Hej {name} — din värmepump kan spara mer åt dig. OPTi flyttar värmen till billigaste timmarna, automatiskt. Komforten påverkas inte. Vill du veta mer?",
+    ad: "Bra val av värmepump. Nu kan den spara ännu mer — automatiskt. Komforten påverkas inte.",
+    installer: "Kunden har en bra värmepump som kan spara mer. OPTi optimerar automatiskt — inga inställningar, komforten bibehålls. Professionell installation ingår. Bra alternativ att nämna vid servicebesök."
+  },
+  B1_effect: {
+    tone: "Empatisk, lösningsfokuserad",
+    primary: "Slipp dyra effekttoppar — OPTi hanterar det automatiskt.",
+    points: ["OPTi laddar varmvatten på natten", "Undviker dyra effekttoppar automatiskt", "Konkret ROI kopplad till effekttariff"],
+    avoid: ["Generiska besparingsbudskap", "Marknadsutbildning före lösning"],
+    email: "Hej {name},\n\nHar du märkt att elräkningen förändrats? Nya effekttariffer innebär att toppar kostar — ibland mer än du tror.\n\nOPTi laddar varmvatten på natten och sprider ut värmepumpens drift för att undvika dyra effekttoppar. Automatiskt.\n\nIngen ombyggnad. Professionell installation ingår.\n\nVill du se hur mycket du kan spara baserat på din nätägares tariff?",
+    sms: "Hej {name} — effekttariffer gör toppar dyra. OPTi sprider ut värmepumpens drift automatiskt och sänker din effektavgift. Vill du veta mer?",
+    ad: "Effekttoppar kostar. OPTi hanterar det automatiskt — sänker din effektavgift utan att du behöver göra något.",
+    installer: "Kunden har sett effekttariffer på räkningen. OPTi undviker effekttoppar genom att sprida värmepumps- och varmvattendrift automatiskt. Bra argument vid kundkontakt efter tariffhöjning."
+  },
+  B1_solar: {
+    tone: "Empatisk, lösningsfokuserad",
+    primary: "Dina solceller producerar. OPTi ser till att värmen använder dem.",
+    points: ["+35–45% egenanvändning av solel", "~2 500 kr/år i extra värde", "Flyttar värmepumpsproduktionen till solcellstimmarna"],
+    avoid: ["Generiska besparingsbudskap", "Teknisk komplexitet"],
+    email: "Hej {name},\n\nDina solceller producerar el — men använder du den optimalt? Med reducerad exportersättning är egenanvändning nyckeln till bra ROI.\n\nOPTi flyttar värmepumpsproduktionen till de timmar din solel produceras. +35–45% egenanvändning, motsvarande ~2 500 kr/år extra.\n\nAutomatiskt. Professionell installation ingår.\n\nVill du se vad det betyder för din anläggning?",
+    sms: "Hej {name} — dina solceller kan ge mer. OPTi flyttar värmepumpen till solcellstimmarna. +35-45% egenanvändning. Automatiskt.",
+    ad: "Dina solceller producerar. Använder du dem? OPTi ökar egenanvändningen med 35-45% — automatiskt.",
+    installer: "Kunden har solceller. OPTi ökar egenanvändningen med 35-45% genom att flytta värmepumpsproduktionen till solcellstimmarna. ~2 500 kr/år i extra värde. Bra tillägg vid solcellsinstallation eller service."
+  },
+  B2: {
+    tone: "Trygg, enkel",
+    primary: "Trygg besparing — utan att du behöver tänka på det. Professionell installation ingår.",
+    points: ["Besparing i kronor per månad", "Komfortgaranti", "Professionell installation ingår", "Social proof"],
+    avoid: ["Tekniskt språk", "Krav på engagemang", "Kvartspris som krav"],
+    email: "Hej {name},\n\nVad skulle du göra med 500–1 000 kr extra i månaden?\n\nOPTi optimerar din värmepump automatiskt — du sparar pengar utan att behöva göra något. Temperaturen i huset påverkas inte.\n\nEn Effira-tekniker installerar allt hemma hos dig. Inget att ställa in, inget att övervaka.\n\nFamiljer runt om i ditt område sparar redan. Vill du veta mer?",
+    sms: "Hej {name} — spara 500-1 000 kr/mån på din värmepump. Automatiskt, utan att komforten påverkas. Installation ingår. Vill du veta mer?",
+    ad: "Spara 500-1 000 kr/mån — automatiskt. Din värmepump gör jobbet. Komforten är oförändrad. Installation ingår.",
+    installer: "Enkel pitch: kunden sparar 500-1 000 kr/mån utan att göra något. Komforten påverkas inte. Vi installerar allt. Bäst vid hembesök — kort, konkret, inga tekniska förklaringar."
+  },
+  B3: {
+    tone: "Minimal, lokal",
+    primary: "Din värmepump kan spara dig tusentals kronor per år — automatiskt. Inget att göra. Vi installerar allt.",
+    points: ["Besparing i kronor", "En mening om komfort", "Inget att göra", "Lokal social proof"],
+    avoid: ["Allt tekniskt", "Kvartspris", "Teknikköps-känsla"],
+    email: "Hej {name},\n\nVisste du att din värmepump kan spara dig tusentals kronor om året — helt automatiskt?\n\nVi installerar allt. Du behöver inte göra någonting. Temperaturen i huset är precis som vanligt.\n\nFlera i ditt område har redan OPTi. Vill du veta mer?",
+    sms: "Hej {name} — din värmepump kan spara dig tusentals kronor/år. Automatiskt. Vi installerar allt. Intresserad?",
+    ad: "Din värmepump kan mer. Spara tusentals kronor — automatiskt. Vi installerar allt.",
+    installer: "Enklaste möjliga pitch: 'Vi kan koppla upp din värmepump så den sparar dig X tusen kronor om året. Automatiskt. Vi installerar allt, du behöver inte göra nåt.' Nämn inte kvartspris. Nämn att grannar har det."
+  }
+};
+
+function getProspects() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+  catch { return []; }
+}
+
+function saveProspects(data) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function genId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// SEGMENT CLASSIFIER
+// ═══════════════════════════════════════════════════════════════
+
+function classifySegment(p) {
+  // B1: trigger-driven
+  if (p.trigger === 'effect_tariff' || p.trigger === 'solar_roi') return 'B1';
+
+  // A1: quarterly/hourly + self-driven channel
+  const selfDrivenChannels = ['search', 'forum', 'webinar'];
+  if ((p.contract === 'quarterly' || p.contract === 'hourly') && selfDrivenChannels.includes(p.channel)) return 'A1';
+  if (p.contract === 'quarterly' && p.solar === 'yes') return 'A1';
+
+  // A2: seminar/webinar + older or long-tenure signals
+  if (['seminar', 'webinar'].includes(p.channel) && p.contract !== 'quarterly') return 'A2';
+
+  // B3: installer channel or no engagement signal
+  if (p.channel === 'installer') return 'B3';
+
+  // B2: family / meta / referral / low engagement
+  if (['meta', 'referral'].includes(p.channel)) return 'B2';
+  if (p.contract === 'fixed' || p.contract === 'monthly') return 'B2';
+
+  // Default
+  return 'B2';
+}
+
+function getElArea(postal) {
+  if (!postal) return '';
+  const prefix = parseInt(postal.toString().substring(0, 2));
+  if (prefix >= 10 && prefix <= 19) return 'SE3';
+  if (prefix >= 20 && prefix <= 29) return 'SE4';
+  if (prefix >= 30 && prefix <= 39) return 'SE3';
+  if (prefix >= 40 && prefix <= 44) return 'SE3';
+  if (prefix >= 45 && prefix <= 49) return 'SE3';
+  if (prefix >= 50 && prefix <= 59) return 'SE3';
+  if (prefix >= 60 && prefix <= 69) return 'SE3';
+  if (prefix >= 70 && prefix <= 76) return 'SE3';
+  if (prefix >= 77 && prefix <= 79) return 'SE2';
+  if (prefix >= 80 && prefix <= 84) return 'SE2';
+  if (prefix >= 85 && prefix <= 89) return 'SE1';
+  if (prefix >= 90 && prefix <= 98) return 'SE1';
+  return 'SE3';
+}
+
+// ═══════════════════════════════════════════════════════════════
+// UI RENDERING
+// ═══════════════════════════════════════════════════════════════
+
+function render() {
+  const prospects = getProspects();
+  renderSidebar(prospects);
+  renderDashboard(prospects);
+  renderProspectTable(prospects);
+  renderFeedback(prospects);
+}
+
+function renderSidebar(prospects) {
+  const counts = { A1: 0, A2: 0, B1: 0, B2: 0, B3: 0 };
+  prospects.forEach(p => { if (counts[p.segment] !== undefined) counts[p.segment]++; });
+
+  document.getElementById('sidebarStats').innerHTML = `
+    <div class="sidebar-stat"><span>Totalt</span><span class="stat-val">${prospects.length}</span></div>
+    ${Object.entries(counts).map(([k, v]) =>
+      `<div class="sidebar-stat"><span>${k} ${SEGMENTS_DATA[k].name}</span><span class="stat-val">${v}</span></div>`
+    ).join('')}
+  `;
+}
+
+function renderDashboard(prospects) {
+  const total = prospects.length;
+  const newCount = prospects.filter(p => p.status === 'new').length;
+  const contacted = prospects.filter(p => p.status === 'contacted').length;
+  const converted = prospects.filter(p => p.status === 'converted').length;
+  const convRate = total > 0 ? ((converted / total) * 100).toFixed(1) : '0.0';
+
+  document.getElementById('dashStats').innerHTML = `
+    <div class="stat-card"><div class="stat-label">Totalt prospekt</div><div class="stat-value">${total}</div></div>
+    <div class="stat-card"><div class="stat-label">Nya</div><div class="stat-value" style="color: var(--highlight);">${newCount}</div></div>
+    <div class="stat-card"><div class="stat-label">Kontaktade</div><div class="stat-value">${contacted}</div></div>
+    <div class="stat-card"><div class="stat-label">Konverterade</div><div class="stat-value">${converted}</div><div class="stat-sub">${convRate}% konvertering</div></div>
+  `;
+
+  // Segment bar
+  const counts = {};
+  Object.keys(SEGMENTS_DATA).forEach(k => counts[k] = 0);
+  prospects.forEach(p => { if (counts[p.segment] !== undefined) counts[p.segment]++; });
+
+  const bar = document.getElementById('segBar');
+  const legend = document.getElementById('segLegend');
+
+  if (total === 0) {
+    bar.innerHTML = '<div style="width:100%; background: rgba(0,0,0,0.06); border-radius: 4px;"></div>';
+    legend.innerHTML = '';
+  } else {
+    bar.innerHTML = Object.entries(counts).map(([k, v]) =>
+      `<div class="seg-bar-part ${k}" style="width: ${(v/total*100)}%;"></div>`
+    ).join('');
+    legend.innerHTML = Object.entries(counts).map(([k, v]) =>
+      `<div class="seg-legend-item"><div class="seg-legend-dot" style="background: ${SEGMENTS_DATA[k].color};"></div>${k} ${SEGMENTS_DATA[k].name} (${v})</div>`
+    ).join('');
+  }
+
+  // Recent activity
+  const recent = [...prospects].sort((a, b) => new Date(b.updated || b.created) - new Date(a.updated || a.created)).slice(0, 5);
+  document.getElementById('recentActivity').innerHTML = recent.length === 0
+    ? '<p style="font-size: 13px; color: var(--grey);">Inga prospekt ännu. Lägg till ditt första prospekt.</p>'
+    : recent.map(p => `
+      <div class="interaction-item" onclick="showDetail('${p.id}')">
+        <div class="interaction-date">${formatDate(p.updated || p.created)}</div>
+        <div><span class="prospect-name">${p.name}</span> <span class="seg-badge seg-${p.segment}">${p.segment}</span> <span class="status-badge status-${p.status}">${statusLabel(p.status)}</span></div>
+      </div>
+    `).join('');
+}
+
+let currentFilter = 'all';
+
+function renderProspectTable(prospects) {
+  let filtered = prospects;
+  if (['A1','A2','B1','B2','B3'].includes(currentFilter)) {
+    filtered = prospects.filter(p => p.segment === currentFilter);
+  } else if (['new','contacted','meeting','converted'].includes(currentFilter)) {
+    filtered = prospects.filter(p => p.status === currentFilter);
+  }
+
+  filtered.sort((a, b) => new Date(b.created) - new Date(a.created));
+
+  document.getElementById('prospectTable').innerHTML = filtered.length === 0
+    ? `<tr><td colspan="7" style="text-align: center; padding: 40px; color: var(--grey);">Inga prospekt att visa</td></tr>`
+    : filtered.map(p => `
+      <tr onclick="showDetail('${p.id}')">
+        <td><div class="prospect-name">${p.name}</div></td>
+        <td><span class="seg-badge seg-${p.segment}">${p.segment}</span></td>
+        <td><span class="status-badge status-${p.status}">${statusLabel(p.status)}</span></td>
+        <td>${p.city || '—'}</td>
+        <td>${p.area || '—'}</td>
+        <td>${channelLabel(p.channel)}</td>
+        <td style="font-size: 11px; color: var(--grey);">${formatDate(p.created)}</td>
+      </tr>
+    `).join('');
+}
+
+function renderFeedback(prospects) {
+  const grid = document.getElementById('feedbackGrid');
+  const insights = document.getElementById('feedbackInsights');
+  const segs = ['A1','A2','B1','B2','B3'];
+
+  grid.innerHTML = segs.map(s => {
+    const sp = prospects.filter(p => p.segment === s);
+    const total = sp.length;
+    const conv = sp.filter(p => p.status === 'converted').length;
+    const lost = sp.filter(p => p.status === 'lost').length;
+    const rate = total > 0 ? ((conv / total) * 100).toFixed(0) : '—';
+
+    return `
+      <div class="feedback-col">
+        <h4><span class="seg-badge seg-${s}">${s}</span></h4>
+        <div class="feedback-metric"><div class="metric-val">${total}</div><div class="metric-label">Prospekt</div></div>
+        <div class="feedback-metric"><div class="metric-val">${conv}</div><div class="metric-label">Konv.</div></div>
+        <div class="feedback-metric"><div class="metric-val">${lost}</div><div class="metric-label">Förlorade</div></div>
+        <div class="feedback-metric"><div class="metric-val">${rate}%</div><div class="metric-label">Konv.grad</div></div>
+      </div>
+    `;
+  }).join('');
+
+  // Insights
+  const totalP = prospects.length;
+  if (totalP === 0) {
+    insights.innerHTML = '<p style="font-size: 13px; color: var(--grey);">Lägg till prospekt för att börja samla feedbackdata.</p>';
+  } else {
+    const segCounts = {};
+    segs.forEach(s => {
+      const sp = prospects.filter(p => p.segment === s);
+      segCounts[s] = { total: sp.length, conv: sp.filter(p => p.status === 'converted').length };
+    });
+
+    const topSeg = Object.entries(segCounts).sort((a, b) => b[1].total - a[1].total)[0];
+    const topConv = Object.entries(segCounts).filter(([, v]) => v.total > 0).sort((a, b) => (b[1].conv / b[1].total) - (a[1].conv / a[1].total))[0];
+
+    insights.innerHTML = `
+      <p style="font-size: 13px; line-height: 1.7; color: var(--grey);">
+        Störst volym: <strong style="color: var(--black);">${topSeg[0]} ${SEGMENTS_DATA[topSeg[0]].name}</strong> (${topSeg[1].total} prospekt).
+        ${topConv ? `Högst konverteringsgrad: <strong style="color: var(--black);">${topConv[0]} ${SEGMENTS_DATA[topConv[0]].name}</strong> (${topConv[1].total > 0 ? ((topConv[1].conv / topConv[1].total) * 100).toFixed(0) : 0}%).` : ''}
+        <br>Data samlas löpande — månadsvis review rekommenderas.
+      </p>
+    `;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MESSAGING
+// ═══════════════════════════════════════════════════════════════
+
+function updateMessaging() {
+  const seg = document.getElementById('msgSegment').value;
+  const channel = document.getElementById('msgChannel').value;
+  const trigger = document.getElementById('msgTrigger').value;
+  const name = document.getElementById('msgName').value || '{namn}';
+  const output = document.getElementById('messagingOutput');
+
+  if (!seg) { output.innerHTML = ''; return; }
+
+  let msgKey = seg;
+  if (seg === 'B1') {
+    msgKey = trigger === 'solar_roi' || trigger === 'solar' ? 'B1_solar' : 'B1_effect';
+  }
+
+  const m = MESSAGING[msgKey];
+  if (!m) { output.innerHTML = ''; return; }
+
+  const msgText = (m[channel] || m.email).replace(/\{name\}/g, name);
+
+  output.innerHTML = `
+    <div class="messaging-panel">
+      <h4>Ton: ${m.tone}</h4>
+      <div class="msg-primary">${m.primary}</div>
+      <h4>Led med</h4>
+      <ul class="msg-points">${m.points.map(p => `<li>${p}</li>`).join('')}</ul>
+      <div class="msg-avoid">
+        <h4>Undvik</h4>
+        <ul class="msg-points">${m.avoid.map(p => `<li>${p}</li>`).join('')}</ul>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <h3 style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">Genererat meddelande (${channelLabel(channel)})</h3>
+      <div class="generated-message">${msgText}</div>
+      <button class="btn btn-outline btn-sm copy-btn" onclick="copyMessage(this)">Kopiera</button>
+    </div>
+  `;
+}
+
+function copyMessage(btn) {
+  const text = btn.previousElementSibling.textContent;
+  navigator.clipboard.writeText(text).then(() => toast('Kopierat!'));
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MODALS & CRUD
+// ═══════════════════════════════════════════════════════════════
+
+function showModal(mode, id) {
+  document.getElementById('modalOverlay').classList.add('visible');
+  if (mode === 'edit' && id) {
+    const p = getProspects().find(x => x.id === id);
+    if (!p) return;
+    document.getElementById('modalTitle').textContent = 'Redigera prospekt';
+    document.getElementById('editId').value = id;
+    document.getElementById('fName').value = p.name;
+    document.getElementById('fCity').value = p.city || '';
+    document.getElementById('fPostal').value = p.postal || '';
+    document.getElementById('fArea').value = p.area || '';
+    document.getElementById('fContract').value = p.contract || '';
+    document.getElementById('fHeatpump').value = p.heatpump || '';
+    document.getElementById('fSolar').value = p.solar || '';
+    document.getElementById('fChannel').value = p.channel || '';
+    document.getElementById('fTrigger').value = p.trigger || '';
+    document.getElementById('fSegment').value = p.segment || 'auto';
+    document.getElementById('fNotes').value = p.notes || '';
+  } else {
+    document.getElementById('modalTitle').textContent = 'Ny prospekt';
+    document.getElementById('editId').value = '';
+    ['fName','fCity','fPostal','fNotes'].forEach(id => document.getElementById(id).value = '');
+    ['fArea','fContract','fHeatpump','fSolar','fChannel','fTrigger'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('fSegment').value = 'auto';
+  }
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('visible');
+  document.getElementById('detailOverlay').classList.remove('visible');
+}
+
+function saveProspect() {
+  const name = document.getElementById('fName').value.trim();
+  if (!name) { toast('Namn krävs'); return; }
+
+  const editId = document.getElementById('editId').value;
+  const prospects = getProspects();
+
+  const data = {
+    name,
+    city: document.getElementById('fCity').value.trim(),
+    postal: document.getElementById('fPostal').value.trim(),
+    area: document.getElementById('fArea').value || getElArea(document.getElementById('fPostal').value.trim()),
+    contract: document.getElementById('fContract').value,
+    heatpump: document.getElementById('fHeatpump').value,
+    solar: document.getElementById('fSolar').value,
+    channel: document.getElementById('fChannel').value,
+    trigger: document.getElementById('fTrigger').value,
+    notes: document.getElementById('fNotes').value.trim(),
+  };
+
+  const segChoice = document.getElementById('fSegment').value;
+  data.segment = segChoice === 'auto' ? classifySegment(data) : segChoice;
+
+  if (editId) {
+    const idx = prospects.findIndex(p => p.id === editId);
+    if (idx >= 0) {
+      prospects[idx] = { ...prospects[idx], ...data, updated: new Date().toISOString() };
+    }
+    toast('Prospekt uppdaterat');
+  } else {
+    data.id = genId();
+    data.status = 'new';
+    data.created = new Date().toISOString();
+    data.updated = new Date().toISOString();
+    data.interactions = [];
+    prospects.push(data);
+    toast('Prospekt tillagt');
+  }
+
+  saveProspects(prospects);
+  closeModal();
+  render();
+}
+
+function showDetail(id) {
+  const prospects = getProspects();
+  const p = prospects.find(x => x.id === id);
+  if (!p) return;
+
+  const msgKey = p.segment === 'B1' ? (p.trigger === 'solar_roi' ? 'B1_solar' : 'B1_effect') : p.segment;
+  const m = MESSAGING[msgKey];
+
+  document.getElementById('detailModal').innerHTML = `
+    <div class="detail-header">
+      <div>
+        <div class="detail-name">${p.name}</div>
+        <div class="detail-location">${p.city || ''}${p.area ? ' · ' + p.area : ''}${p.postal ? ' · ' + p.postal : ''}</div>
+      </div>
+      <div class="btn-group">
+        <span class="seg-badge seg-${p.segment}" style="font-size: 12px; padding: 5px 14px;">${p.segment} ${SEGMENTS_DATA[p.segment]?.name || ''}</span>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+      <select onchange="updateStatus('${p.id}', this.value)" style="padding: 6px 12px; border: 1px solid rgba(0,0,0,0.12); border-radius: 8px; font-family: inherit; font-size: 13px;">
+        ${['new','contacted','meeting','converted','lost'].map(s =>
+          `<option value="${s}" ${p.status === s ? 'selected' : ''}>${statusLabel(s)}</option>`
+        ).join('')}
+      </select>
+      <button class="btn btn-outline btn-sm" onclick="closeModal(); showModal('edit', '${p.id}')">Redigera</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteProspect('${p.id}')">Ta bort</button>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 13px; margin-bottom: 20px;">
+      <div><strong>Elavtal:</strong> ${contractLabel(p.contract)}</div>
+      <div><strong>Värmepump:</strong> ${heatpumpLabel(p.heatpump)}</div>
+      <div><strong>Solceller:</strong> ${p.solar === 'yes' ? 'Ja' : p.solar === 'no' ? 'Nej' : 'Okänt'}</div>
+      <div><strong>Kanal:</strong> ${channelLabel(p.channel)}</div>
+      <div><strong>Trigger:</strong> ${triggerLabel(p.trigger)}</div>
+      <div><strong>Tillagd:</strong> ${formatDate(p.created)}</div>
+    </div>
+
+    ${p.notes ? `<div class="card" style="background: var(--grey-light); font-size: 13px;"><strong>Anteckningar:</strong> ${p.notes}</div>` : ''}
+
+    ${m ? `
+    <div class="messaging-panel" style="margin-top: 16px;">
+      <h4>Rekommenderat budskap (${m.tone})</h4>
+      <div class="msg-primary">${m.primary}</div>
+      <ul class="msg-points">${m.points.map(pt => `<li>${pt}</li>`).join('')}</ul>
+    </div>` : ''}
+
+    <div class="interaction-log">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+        <h3 style="font-size: 14px; font-weight: 500;">Interaktionslogg</h3>
+        <button class="btn btn-outline btn-sm" onclick="addInteraction('${p.id}')">+ Lägg till</button>
+      </div>
+      ${(p.interactions || []).length === 0
+        ? '<p style="font-size: 13px; color: var(--grey); margin-top: 8px;">Inga interaktioner loggade.</p>'
+        : (p.interactions || []).sort((a, b) => new Date(b.date) - new Date(a.date)).map(i => `
+          <div class="interaction-item">
+            <div class="interaction-date">${formatDate(i.date)}</div>
+            <div>${i.note}</div>
+          </div>
+        `).join('')
+      }
+    </div>
+  `;
+
+  document.getElementById('detailOverlay').classList.add('visible');
+}
+
+function updateStatus(id, status) {
+  const prospects = getProspects();
+  const p = prospects.find(x => x.id === id);
+  if (p) {
+    p.status = status;
+    p.updated = new Date().toISOString();
+    if (!p.interactions) p.interactions = [];
+    p.interactions.push({ date: new Date().toISOString(), note: `Status ändrad till: ${statusLabel(status)}` });
+    saveProspects(prospects);
+    render();
+    toast('Status uppdaterad');
+  }
+}
+
+function addInteraction(id) {
+  const note = prompt('Beskriv interaktionen:');
+  if (!note) return;
+  const prospects = getProspects();
+  const p = prospects.find(x => x.id === id);
+  if (p) {
+    if (!p.interactions) p.interactions = [];
+    p.interactions.push({ date: new Date().toISOString(), note });
+    p.updated = new Date().toISOString();
+    saveProspects(prospects);
+    showDetail(id);
+    render();
+  }
+}
+
+function deleteProspect(id) {
+  if (!confirm('Ta bort detta prospekt?')) return;
+  const prospects = getProspects().filter(p => p.id !== id);
+  saveProspects(prospects);
+  closeModal();
+  render();
+  toast('Prospekt borttaget');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// IMPORT
+// ═══════════════════════════════════════════════════════════════
+
+function handleCSVImport(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const lines = e.target.result.split('\n').filter(l => l.trim());
+    importLines(lines);
+  };
+  reader.readAsText(file);
+}
+
+function handleManualImport() {
+  const text = document.getElementById('manualImport').value.trim();
+  if (!text) return;
+  const lines = text.split('\n').filter(l => l.trim());
+  importLines(lines);
+  document.getElementById('manualImport').value = '';
+}
+
+function importLines(lines) {
+  const prospects = getProspects();
+  let added = 0;
+
+  lines.forEach(line => {
+    const parts = line.split(',').map(s => s.trim());
+    if (parts.length < 1 || !parts[0]) return;
+
+    const data = {
+      id: genId(),
+      name: parts[0],
+      city: parts[1] || '',
+      postal: parts[2] || '',
+      area: getElArea(parts[2]),
+      contract: mapContract(parts[3]),
+      solar: mapSolar(parts[4]),
+      heatpump: mapHeatpump(parts[5]),
+      channel: mapChannel(parts[6]),
+      trigger: '',
+      notes: '',
+      status: 'new',
+      created: new Date().toISOString(),
+      updated: new Date().toISOString(),
+      interactions: []
+    };
+
+    data.segment = classifySegment(data);
+    prospects.push(data);
+    added++;
+  });
+
+  saveProspects(prospects);
+  render();
+  toast(`${added} prospekt importerade`);
+}
+
+function mapContract(val) {
+  if (!val) return '';
+  val = val.toLowerCase();
+  if (val.includes('kvartal') || val.includes('kvartspris') || val.includes('quarter')) return 'quarterly';
+  if (val.includes('tim') || val.includes('hour')) return 'hourly';
+  if (val.includes('månad') || val.includes('month')) return 'monthly';
+  if (val.includes('fast') || val.includes('fix')) return 'fixed';
+  return '';
+}
+
+function mapSolar(val) {
+  if (!val) return '';
+  val = val.toLowerCase();
+  if (val === 'ja' || val === 'yes') return 'yes';
+  if (val === 'nej' || val === 'no') return 'no';
+  return '';
+}
+
+function mapHeatpump(val) {
+  if (!val) return '';
+  val = val.toLowerCase();
+  if (val.includes('berg')) return 'ground';
+  if (val.includes('luft/vatten') || val.includes('luft-vatten')) return 'air_water';
+  if (val.includes('från')) return 'exhaust';
+  if (val.includes('luft/luft') || val.includes('luft-luft')) return 'air_air';
+  return '';
+}
+
+function mapChannel(val) {
+  if (!val) return '';
+  val = val.toLowerCase();
+  if (val.includes('sök') || val.includes('search') || val.includes('google')) return 'search';
+  if (val.includes('webinar')) return 'webinar';
+  if (val.includes('semin')) return 'seminar';
+  if (val.includes('meta') || val.includes('facebook')) return 'meta';
+  if (val.includes('install')) return 'installer';
+  if (val.includes('referr') || val.includes('rekomm')) return 'referral';
+  if (val.includes('forum') || val.includes('reddit')) return 'forum';
+  if (val.includes('sol')) return 'solar_partner';
+  if (val.includes('webb') || val.includes('web')) return 'website';
+  return 'other';
+}
+
+function exportCSV() {
+  const prospects = getProspects();
+  if (prospects.length === 0) { toast('Inga prospekt att exportera'); return; }
+
+  const headers = ['Namn','Segment','Status','Ort','Postnummer','Elområde','Elavtal','Solceller','Värmepump','Kanal','Trigger','Tillagd','Anteckningar'];
+  const rows = prospects.map(p => [
+    p.name, p.segment, p.status, p.city, p.postal, p.area,
+    contractLabel(p.contract), p.solar === 'yes' ? 'Ja' : p.solar === 'no' ? 'Nej' : '',
+    heatpumpLabel(p.heatpump), channelLabel(p.channel), triggerLabel(p.trigger),
+    formatDate(p.created), p.notes
+  ]);
+
+  const csv = [headers, ...rows].map(r => r.map(c => `"${(c || '').replace(/"/g, '""')}"`).join(',')).join('\n');
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `effira-prospekt-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('CSV exporterad');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════
+
+function formatDate(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function statusLabel(s) {
+  return { new: 'Ny', contacted: 'Kontaktad', meeting: 'Möte', converted: 'Konverterad', lost: 'Förlorad' }[s] || s;
+}
+
+function channelLabel(c) {
+  return { search: 'Sök', webinar: 'Webinar', seminar: 'Seminarium', meta: 'Meta', installer: 'Installatör', referral: 'Referral', forum: 'Forum', solar_partner: 'Solcellspartner', website: 'Webbplats', other: 'Annat' }[c] || c || '—';
+}
+
+function contractLabel(c) {
+  return { quarterly: 'Kvartspris', hourly: 'Timpris', monthly: 'Månadsrörligt', fixed: 'Fast' }[c] || c || 'Okänt';
+}
+
+function heatpumpLabel(h) {
+  return { ground: 'Bergvärme', air_water: 'Luft/vatten', exhaust: 'Frånluft', air_air: 'Luft/luft' }[h] || h || 'Okänt';
+}
+
+function triggerLabel(t) {
+  return { effect_tariff: 'Effekttariff', solar_roi: 'Solcells-ROI', high_bill: 'Hög elräkning' }[t] || t || '—';
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('visible');
+  setTimeout(() => t.classList.remove('visible'), 2500);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════════════════════
+
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById(`view-${item.dataset.view}`).classList.add('active');
+  });
+});
+
+document.querySelectorAll('.filter-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    currentFilter = chip.dataset.filter;
+    renderProspectTable(getProspects());
+  });
+});
+
+// Close modals on overlay click
+document.getElementById('modalOverlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeModal();
+});
+document.getElementById('detailOverlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeModal();
+});
+
+// ═══════════════════════════════════════════════════════════════
+// SEED DATA (demo)
+// ═══════════════════════════════════════════════════════════════
+
+function seedDemo() {
+  if (getProspects().length > 0) return;
+
+  const demo = [
+    { name: 'Tekniker Olle', city: 'Täby', postal: '18734', contract: 'quarterly', solar: 'yes', heatpump: 'ground', channel: 'search', trigger: '', notes: 'Hittade oss via Google. Frågade om API-tillgång.' },
+    { name: 'Karin Svensson', city: 'Lund', postal: '22220', contract: 'monthly', solar: 'no', heatpump: 'air_water', channel: 'meta', trigger: '', notes: 'Klickade på Meta-annons. Två barn, villa.' },
+    { name: 'Bo Lindqvist', city: 'Uppsala', postal: '75236', contract: 'fixed', solar: 'no', heatpump: 'ground', channel: 'seminar', trigger: '', notes: 'Deltog på energiseminarium. Ställde genomtänkta frågor.' },
+    { name: 'Maria Johansson', city: 'Helsingborg', postal: '25234', contract: 'monthly', solar: 'yes', heatpump: 'ground', channel: 'solar_partner', trigger: 'solar_roi', notes: 'Solcellsinstallatören rekommenderade OPTi. Orolig för sjunkande exportersättning.' },
+    { name: 'Anders Persson', city: 'Norrköping', postal: '60221', contract: 'fixed', solar: 'no', heatpump: 'air_water', channel: 'installer', trigger: '', notes: 'VVS-tekniker nämnde OPTi vid servicebesök.' },
+    { name: 'Eva Lindström', city: 'Västerås', postal: '72218', contract: 'quarterly', solar: 'yes', heatpump: 'ground', channel: 'webinar', trigger: '', notes: 'Deltog i webinar. Frågade om Tibber-integration.' },
+    { name: 'Johan Bergström', city: 'Malmö', postal: '21139', contract: 'monthly', solar: 'no', heatpump: 'air_water', channel: 'meta', trigger: 'effect_tariff', notes: 'Reagerade på höjd effektavgift. Klickade på display-annons.' },
+    { name: 'Lena Nilsson', city: 'Göteborg', postal: '41328', contract: 'fixed', solar: 'no', heatpump: 'ground', channel: 'referral', trigger: '', notes: 'Granne har OPTi och rekommenderade.' },
+  ];
+
+  const prospects = demo.map(d => {
+    const p = {
+      ...d,
+      id: genId(),
+      area: getElArea(d.postal),
+      status: 'new',
+      created: new Date(Date.now() - Math.random() * 14 * 24 * 60 * 60 * 1000).toISOString(),
+      updated: new Date().toISOString(),
+      interactions: []
+    };
+    p.segment = classifySegment(p);
+    return p;
+  });
+
+  saveProspects(prospects);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// GEOGRAPHIC SEGMENT SCORING
+// ═══════════════════════════════════════════════════════════════
+
+// Municipality data — based on SCB, Energimyndigheten, Ei
+// villas: antal småhus (SCB 2025), heatpump_pct: andel VP-uppvärmda småhus (SCB energistatistik),
+// solar_installs: solcellsinstallationer (Energimyndigheten + grönt avdrag),
+// effect_tariff: nätägare har effekttariff, grid_operator: primär nätägare
+const GEO_DATA = [
+  { municipality: "Göteborg", area: "SE3", villas: 50087, heatpump_pct: 73.4, solar_installs: 141883, family_pct: 23.9, senior_pct: 21.4, effect_tariff: true, grid_operator: "Göteborg Energi Nät" },
+  { municipality: "Stockholm", area: "SE3", villas: 40631, heatpump_pct: 78.5, solar_installs: 75265, family_pct: 24.6, senior_pct: 22.4, effect_tariff: true, grid_operator: "Ellevio" },
+  { municipality: "Uppsala", area: "SE3", villas: 27934, heatpump_pct: 62.8, solar_installs: 79563, family_pct: 23.9, senior_pct: 22.3, effect_tariff: false, grid_operator: "Uppsala Elnät" },
+  { municipality: "Jönköping", area: "SE3", villas: 24681, heatpump_pct: 62.3, solar_installs: 64965, family_pct: 26.2, senior_pct: 24.7, effect_tariff: true, grid_operator: "Jönköping Energi" },
+  { municipality: "Malmö", area: "SE4", villas: 24305, heatpump_pct: 65.5, solar_installs: 75737, family_pct: 25.6, senior_pct: 20.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Västerås", area: "SE3", villas: 24104, heatpump_pct: 43.6, solar_installs: 67410, family_pct: 27.1, senior_pct: 25.7, effect_tariff: true, grid_operator: "Mälarenergi" },
+  { municipality: "Kungsbacka", area: "SE4", villas: 23149, heatpump_pct: 50, solar_installs: 61853, family_pct: 34.9, senior_pct: 27.9, effect_tariff: true, grid_operator: "Ellevio" },
+  { municipality: "Linköping", area: "SE3", villas: 23117, heatpump_pct: 46.4, solar_installs: 74636, family_pct: 24.1, senior_pct: 23.6, effect_tariff: true, grid_operator: "Tekniska verken" },
+  { municipality: "Norrköping", area: "SE3", villas: 21773, heatpump_pct: 60.0, solar_installs: 58268, family_pct: 26.4, senior_pct: 26.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Umeå", area: "SE2", villas: 20929, heatpump_pct: 57.9, solar_installs: 20839, family_pct: 23.4, senior_pct: 22.8, effect_tariff: false, grid_operator: "Umeå Energi" },
+  { municipality: "Örebro", area: "SE3", villas: 20710, heatpump_pct: 66.7, solar_installs: 52779, family_pct: 25.1, senior_pct: 24.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Halmstad", area: "SE4", villas: 20555, heatpump_pct: 64.1, solar_installs: 66411, family_pct: 26.1, senior_pct: 27.2, effect_tariff: false, grid_operator: "HEM Nät" },
+  { municipality: "Kristianstad", area: "SE4", villas: 19743, heatpump_pct: 67.3, solar_installs: 57736, family_pct: 26.0, senior_pct: 29.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Borås", area: "SE3", villas: 19506, heatpump_pct: 62.2, solar_installs: 41814, family_pct: 26.9, senior_pct: 25.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sundsvall", area: "SE2", villas: 19308, heatpump_pct: 70.2, solar_installs: 17362, family_pct: 24.5, senior_pct: 28.9, effect_tariff: false, grid_operator: "Sundsvall Elnät" },
+  { municipality: "Helsingborg", area: "SE4", villas: 18474, heatpump_pct: 55.1, solar_installs: 50677, family_pct: 27.5, senior_pct: 25.6, effect_tariff: true, grid_operator: "Öresundskraft" },
+  { municipality: "Huddinge", area: "SE3", villas: 18023, heatpump_pct: 79.7, solar_installs: 24171, family_pct: 33.6, senior_pct: 20.4, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Skellefteå", area: "SE2", villas: 17616, heatpump_pct: 58.7, solar_installs: 8295, family_pct: 23.8, senior_pct: 30.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Norrtälje", area: "SE3", villas: 17412, heatpump_pct: 75.2, solar_installs: 38665, family_pct: 21.5, senior_pct: 36.3, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Växjö", area: "SE4", villas: 16831, heatpump_pct: 43.3, solar_installs: 36661, family_pct: 26.0, senior_pct: 24.4, effect_tariff: false, grid_operator: "VEAB" },
+  { municipality: "Gävle", area: "SE2", villas: 16566, heatpump_pct: 50, solar_installs: 27580, family_pct: 25.0, senior_pct: 27.8, effect_tariff: true, grid_operator: "Gävle Energi" },
+  { municipality: "Eskilstuna", area: "SE3", villas: 16536, heatpump_pct: 50, solar_installs: 51962, family_pct: 26.5, senior_pct: 27.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Karlskrona", area: "SE4", villas: 16008, heatpump_pct: 71.4, solar_installs: 47267, family_pct: 24.7, senior_pct: 28.9, effect_tariff: false, grid_operator: "Affärsverken" },
+  { municipality: "Örnsköldsvik", area: "SE2", villas: 15928, heatpump_pct: 59.4, solar_installs: 15774, family_pct: 25.1, senior_pct: 32.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Karlstad", area: "SE3", villas: 15613, heatpump_pct: 59.5, solar_installs: 33771, family_pct: 22.7, senior_pct: 26.7, effect_tariff: true, grid_operator: "Karlstads Elnät" },
+  { municipality: "Varberg", area: "SE4", villas: 15588, heatpump_pct: 50, solar_installs: 53153, family_pct: 27.1, senior_pct: 31.7, effect_tariff: false, grid_operator: "Varberg Energi" },
+  { municipality: "Lund", area: "SE4", villas: 15386, heatpump_pct: 64.4, solar_installs: 44808, family_pct: 22.7, senior_pct: 22.4, effect_tariff: true, grid_operator: "Kraftringen" },
+  { municipality: "Gotland", area: "SE3", villas: 15049, heatpump_pct: 55.1, solar_installs: 33171, family_pct: 22.1, senior_pct: 34.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nacka", area: "SE3", villas: 14955, heatpump_pct: 91.4, solar_installs: 27340, family_pct: 34.8, senior_pct: 23.1, effect_tariff: true, grid_operator: "Ellevio" },
+  { municipality: "Luleå", area: "SE1", villas: 14645, heatpump_pct: 44.8, solar_installs: 8448, family_pct: 22.6, senior_pct: 27.8, effect_tariff: false, grid_operator: "Luleå Energi" },
+  { municipality: "Täby", area: "SE3", villas: 13926, heatpump_pct: 93.9, solar_installs: 21742, family_pct: 33.5, senior_pct: 25.0, effect_tariff: true, grid_operator: "Ellevio" },
+  { municipality: "Hässleholm", area: "SE4", villas: 13864, heatpump_pct: 52.3, solar_installs: 32223, family_pct: 25.0, senior_pct: 30.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Haninge", area: "SE3", villas: 13620, heatpump_pct: 50, solar_installs: 24627, family_pct: 31.3, senior_pct: 20.2, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Falun", area: "SE2", villas: 13495, heatpump_pct: 63.9, solar_installs: 24449, family_pct: 25.9, senior_pct: 29.6, effect_tariff: true, grid_operator: "Ellevio" },
+  { municipality: "Kalmar", area: "SE4", villas: 13071, heatpump_pct: 59.0, solar_installs: 38815, family_pct: 25.4, senior_pct: 26.4, effect_tariff: false, grid_operator: "Kalmar Energi" },
+  { municipality: "Falkenberg", area: "SE4", villas: 11990, heatpump_pct: 61.9, solar_installs: 48744, family_pct: 25.8, senior_pct: 32.2, effect_tariff: false, grid_operator: "Falkenberg Energi" },
+  { municipality: "Österåker", area: "SE3", villas: 11867, heatpump_pct: 88.0, solar_installs: 21932, family_pct: 34.6, senior_pct: 25.1, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Piteå", area: "SE1", villas: 11696, heatpump_pct: 61.2, solar_installs: 6544, family_pct: 24.2, senior_pct: 31.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lerum", area: "SE3", villas: 11619, heatpump_pct: 0.0, solar_installs: 18803, family_pct: 40.0, senior_pct: 23.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Mölndal", area: "SE3", villas: 11602, heatpump_pct: 50, solar_installs: 26990, family_pct: 31.4, senior_pct: 21.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Värmdö", area: "SE3", villas: 11354, heatpump_pct: 88.0, solar_installs: 20039, family_pct: 33.6, senior_pct: 26.4, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Botkyrka", area: "SE3", villas: 11341, heatpump_pct: 57.4, solar_installs: 19728, family_pct: 31.3, senior_pct: 20.5, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Sollentuna", area: "SE3", villas: 11262, heatpump_pct: 82.4, solar_installs: 18282, family_pct: 34.0, senior_pct: 22.0, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Uddevalla", area: "SE3", villas: 11190, heatpump_pct: 64.6, solar_installs: 25879, family_pct: 26.3, senior_pct: 29.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vellinge", area: "SE4", villas: 11152, heatpump_pct: 94.0, solar_installs: 24493, family_pct: 35.8, senior_pct: 29.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kungälv", area: "SE3", villas: 10947, heatpump_pct: 82.3, solar_installs: 25381, family_pct: 31.3, senior_pct: 27.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Södertälje", area: "SE3", villas: 10906, heatpump_pct: 0.0, solar_installs: 28067, family_pct: 28.7, senior_pct: 22.8, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Skövde", area: "SE3", villas: 10758, heatpump_pct: 68.5, solar_installs: 25243, family_pct: 24.9, senior_pct: 25.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Östersund", area: "SE2", villas: 10620, heatpump_pct: 52.0, solar_installs: 18845, family_pct: 24.2, senior_pct: 28.2, effect_tariff: true, grid_operator: "Jämtkraft" },
+  { municipality: "Borlänge", area: "SE2", villas: 10537, heatpump_pct: 45.2, solar_installs: 16944, family_pct: 24.4, senior_pct: 27.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Trelleborg", area: "SE4", villas: 10286, heatpump_pct: 80.5, solar_installs: 27413, family_pct: 28.1, senior_pct: 28.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Trollhättan", area: "SE3", villas: 10280, heatpump_pct: 77.1, solar_installs: 17635, family_pct: 26.8, senior_pct: 26.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Motala", area: "SE3", villas: 10167, heatpump_pct: 64.5, solar_installs: 22761, family_pct: 24.9, senior_pct: 32.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ängelholm", area: "SE4", villas: 10157, heatpump_pct: 60.5, solar_installs: 26718, family_pct: 26.5, senior_pct: 31.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nyköping", area: "SE3", villas: 10150, heatpump_pct: 64.0, solar_installs: 59522, family_pct: 24.9, senior_pct: 30.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Enköping", area: "SE3", villas: 10147, heatpump_pct: 60.9, solar_installs: 29562, family_pct: 27.7, senior_pct: 27.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Mark", area: "SE3", villas: 10040, heatpump_pct: 58.6, solar_installs: 19416, family_pct: 27.7, senior_pct: 30.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hudiksvall", area: "SE2", villas: 10032, heatpump_pct: 59.0, solar_installs: 13544, family_pct: 23.2, senior_pct: 34.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Härryda", area: "SE3", villas: 9999, heatpump_pct: 81.1, solar_installs: 22193, family_pct: 38.3, senior_pct: 23.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Järfälla", area: "SE3", villas: 9597, heatpump_pct: 92.1, solar_installs: 19903, family_pct: 29.3, senior_pct: 20.9, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Lidköping", area: "SE3", villas: 9450, heatpump_pct: 52.1, solar_installs: 36531, family_pct: 24.9, senior_pct: 31.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Västervik", area: "SE4", villas: 9425, heatpump_pct: 50, solar_installs: 18708, family_pct: 21.6, senior_pct: 37.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sandviken", area: "SE2", villas: 9160, heatpump_pct: 57.1, solar_installs: 10974, family_pct: 23.5, senior_pct: 31.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Alingsås", area: "SE3", villas: 9037, heatpump_pct: 70.3, solar_installs: 19502, family_pct: 28.5, senior_pct: 29.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tyresö", area: "SE3", villas: 8928, heatpump_pct: 87.2, solar_installs: 12295, family_pct: 33.9, senior_pct: 24.3, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Laholm", area: "SE4", villas: 8677, heatpump_pct: 50, solar_installs: 22866, family_pct: 25.9, senior_pct: 33.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ronneby", area: "SE4", villas: 8639, heatpump_pct: 66.7, solar_installs: 17748, family_pct: 24.7, senior_pct: 32.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vänersborg", area: "SE3", villas: 8554, heatpump_pct: 69.8, solar_installs: 15555, family_pct: 25.8, senior_pct: 30.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Falköping", area: "SE3", villas: 8339, heatpump_pct: 50, solar_installs: 13055, family_pct: 25.7, senior_pct: 29.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Strängnäs", area: "SE3", villas: 8311, heatpump_pct: 69.9, solar_installs: 35799, family_pct: 28.2, senior_pct: 29.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Karlshamn", area: "SE4", villas: 8309, heatpump_pct: 62.8, solar_installs: 14041, family_pct: 23.7, senior_pct: 33.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vallentuna", area: "SE3", villas: 8218, heatpump_pct: 85.1, solar_installs: 12599, family_pct: 35.9, senior_pct: 23.0, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Värnamo", area: "SE3", villas: 8142, heatpump_pct: 52.2, solar_installs: 25677, family_pct: 27.2, senior_pct: 29.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vetlanda", area: "SE3", villas: 7961, heatpump_pct: 42.8, solar_installs: 21036, family_pct: 25.2, senior_pct: 31.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nässjö", area: "SE3", villas: 7888, heatpump_pct: 54.8, solar_installs: 14929, family_pct: 26.1, senior_pct: 28.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ekerö", area: "SE3", villas: 7859, heatpump_pct: 87.7, solar_installs: 14148, family_pct: 39.0, senior_pct: 25.3, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Kävlinge", area: "SE4", villas: 7819, heatpump_pct: 90.5, solar_installs: 22915, family_pct: 36.8, senior_pct: 24.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ljungby", area: "SE4", villas: 7698, heatpump_pct: 41.5, solar_installs: 18531, family_pct: 24.9, senior_pct: 31.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Gislaved", area: "SE3", villas: 7661, heatpump_pct: 67.2, solar_installs: 26443, family_pct: 26.8, senior_pct: 29.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Höganäs", area: "SE4", villas: 7584, heatpump_pct: 0.0, solar_installs: 19820, family_pct: 28.1, senior_pct: 34.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ale", area: "SE3", villas: 7331, heatpump_pct: 69.7, solar_installs: 12457, family_pct: 35.8, senior_pct: 23.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Eslöv", area: "SE4", villas: 7314, heatpump_pct: 72.8, solar_installs: 22132, family_pct: 29.8, senior_pct: 25.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Boden", area: "SE1", villas: 7289, heatpump_pct: 43.4, solar_installs: 2375, family_pct: 22.0, senior_pct: 31.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Arvika", area: "SE3", villas: 7240, heatpump_pct: 62.2, solar_installs: 12151, family_pct: 22.6, senior_pct: 34.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Bollnäs", area: "SE2", villas: 7110, heatpump_pct: 51.1, solar_installs: 6443, family_pct: 22.5, senior_pct: 34.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lidingö", area: "SE3", villas: 7010, heatpump_pct: 87.5, solar_installs: 7071, family_pct: 31.6, senior_pct: 27.8, effect_tariff: true, grid_operator: "Ellevio" },
+  { municipality: "Stenungsund", area: "SE3", villas: 6945, heatpump_pct: 65.7, solar_installs: 16093, family_pct: 31.1, senior_pct: 27.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Karlskoga", area: "SE3", villas: 6910, heatpump_pct: 64.9, solar_installs: 8337, family_pct: 23.1, senior_pct: 32.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Mjölby", area: "SE3", villas: 6723, heatpump_pct: 50.2, solar_installs: 19076, family_pct: 27.5, senior_pct: 27.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Partille", area: "SE3", villas: 6722, heatpump_pct: 71.2, solar_installs: 12675, family_pct: 36.1, senior_pct: 23.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Katrineholm", area: "SE3", villas: 6715, heatpump_pct: 62.9, solar_installs: 21889, family_pct: 23.4, senior_pct: 31.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ulricehamn", area: "SE3", villas: 6703, heatpump_pct: 52.6, solar_installs: 15178, family_pct: 26.1, senior_pct: 31.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Söderhamn", area: "SE2", villas: 6701, heatpump_pct: 62.9, solar_installs: 5802, family_pct: 21.1, senior_pct: 37.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sjöbo", area: "SE4", villas: 6655, heatpump_pct: 77.9, solar_installs: 27587, family_pct: 25.7, senior_pct: 31.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Landskrona", area: "SE4", villas: 6622, heatpump_pct: 62.8, solar_installs: 20326, family_pct: 27.4, senior_pct: 27.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ystad", area: "SE4", villas: 6613, heatpump_pct: 66.8, solar_installs: 19293, family_pct: 23.9, senior_pct: 35.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lindesberg", area: "SE3", villas: 6611, heatpump_pct: 0.0, solar_installs: 13541, family_pct: 22.8, senior_pct: 33.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Oskarshamn", area: "SE4", villas: 6593, heatpump_pct: 57.1, solar_installs: 12523, family_pct: 24.3, senior_pct: 32.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ludvika", area: "SE2", villas: 6474, heatpump_pct: 67.7, solar_installs: 7555, family_pct: 22.9, senior_pct: 31.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Danderyd", area: "SE3", villas: 6467, heatpump_pct: 94.7, solar_installs: 6771, family_pct: 33.9, senior_pct: 27.2, effect_tariff: true, grid_operator: "Ellevio" },
+  { municipality: "Östhammar", area: "SE3", villas: 6466, heatpump_pct: 61.2, solar_installs: 12553, family_pct: 22.9, senior_pct: 36.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Staffanstorp", area: "SE4", villas: 6400, heatpump_pct: 90.7, solar_installs: 16732, family_pct: 39.0, senior_pct: 23.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Mora", area: "SE2", villas: 6376, heatpump_pct: 68.3, solar_installs: 9055, family_pct: 22.9, senior_pct: 35.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sigtuna", area: "SE3", villas: 6333, heatpump_pct: 50, solar_installs: 24417, family_pct: 31.5, senior_pct: 20.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kramfors", area: "SE2", villas: 6303, heatpump_pct: 59.3, solar_installs: 5502, family_pct: 19.8, senior_pct: 38.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sollefteå", area: "SE2", villas: 6185, heatpump_pct: 64.6, solar_installs: 3841, family_pct: 20.6, senior_pct: 37.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lomma", area: "SE4", villas: 6017, heatpump_pct: 70.7, solar_installs: 12483, family_pct: 37.7, senior_pct: 28.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Härnösand", area: "SE2", villas: 5984, heatpump_pct: 54.8, solar_installs: 5061, family_pct: 22.8, senior_pct: 34.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Simrishamn", area: "SE4", villas: 5982, heatpump_pct: 0.0, solar_installs: 19518, family_pct: 17.9, senior_pct: 45.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ljusdal", area: "SE2", villas: 5975, heatpump_pct: 60.0, solar_installs: 4339, family_pct: 22.4, senior_pct: 36.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Upplands Väsby", area: "SE3", villas: 5843, heatpump_pct: 93.9, solar_installs: 9882, family_pct: 31.4, senior_pct: 22.0, effect_tariff: true, grid_operator: "Vattenfall" },
+  { municipality: "Mariestad", area: "SE3", villas: 5842, heatpump_pct: 57.1, solar_installs: 11029, family_pct: 22.9, senior_pct: 34.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nynäshamn", area: "SE3", villas: 5792, heatpump_pct: 80.6, solar_installs: 11249, family_pct: 26.0, senior_pct: 29.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tierp", area: "SE3", villas: 5763, heatpump_pct: 48.6, solar_installs: 9572, family_pct: 24.4, senior_pct: 32.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sala", area: "SE3", villas: 5730, heatpump_pct: 47.2, solar_installs: 12831, family_pct: 24.1, senior_pct: 33.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kristinehamn", area: "SE3", villas: 5703, heatpump_pct: 69.2, solar_installs: 11775, family_pct: 21.5, senior_pct: 35.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Alvesta", area: "SE4", villas: 5683, heatpump_pct: 45.8, solar_installs: 13814, family_pct: 27.6, senior_pct: 30.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Håbo", area: "SE3", villas: 5675, heatpump_pct: 88.9, solar_installs: 18152, family_pct: 32.6, senior_pct: 24.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Avesta", area: "SE2", villas: 5616, heatpump_pct: 49.4, solar_installs: 10283, family_pct: 22.4, senior_pct: 34.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tjörn", area: "SE3", villas: 5491, heatpump_pct: 83.0, solar_installs: 15434, family_pct: 24.1, senior_pct: 38.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Orust", area: "SE3", villas: 5490, heatpump_pct: 71.0, solar_installs: 13874, family_pct: 22.0, senior_pct: 40.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Höör", area: "SE4", villas: 5487, heatpump_pct: 71.9, solar_installs: 10288, family_pct: 30.3, senior_pct: 28.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nybro", area: "SE4", villas: 5462, heatpump_pct: 37.5, solar_installs: 12212, family_pct: 23.3, senior_pct: 33.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Svedala", area: "SE4", villas: 5417, heatpump_pct: 87.9, solar_installs: 13294, family_pct: 39.4, senior_pct: 22.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Mörbylånga", area: "SE4", villas: 5355, heatpump_pct: 67.6, solar_installs: 18990, family_pct: 27.1, senior_pct: 35.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sölvesborg", area: "SE4", villas: 5297, heatpump_pct: 72.2, solar_installs: 26704, family_pct: 23.1, senior_pct: 35.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Leksand", area: "SE2", villas: 5268, heatpump_pct: 62.2, solar_installs: 7975, family_pct: 23.0, senior_pct: 36.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Finspång", area: "SE3", villas: 5240, heatpump_pct: 55.9, solar_installs: 8792, family_pct: 24.3, senior_pct: 32.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vara", area: "SE3", villas: 5238, heatpump_pct: 49.8, solar_installs: 10343, family_pct: 24.0, senior_pct: 32.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Krokom", area: "SE2", villas: 5183, heatpump_pct: 69.5, solar_installs: 6886, family_pct: 31.7, senior_pct: 28.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Köping", area: "SE3", villas: 5153, heatpump_pct: 50.6, solar_installs: 13990, family_pct: 23.8, senior_pct: 32.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Båstad", area: "SE4", villas: 5095, heatpump_pct: 0.0, solar_installs: 16572, family_pct: 22.9, senior_pct: 39.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hörby", area: "SE4", villas: 5080, heatpump_pct: 64.9, solar_installs: 8240, family_pct: 25.0, senior_pct: 31.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kalix", area: "SE1", villas: 5062, heatpump_pct: 64.2, solar_installs: 1517, family_pct: 20.5, senior_pct: 37.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kumla", area: "SE3", villas: 5051, heatpump_pct: 67.7, solar_installs: 9868, family_pct: 30.8, senior_pct: 25.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Klippan", area: "SE4", villas: 4831, heatpump_pct: 63.1, solar_installs: 10947, family_pct: 24.4, senior_pct: 29.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kiruna", area: "SE1", villas: 4759, heatpump_pct: 63.0, solar_installs: 809, family_pct: 22.2, senior_pct: 28.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Säffle", area: "SE3", villas: 4753, heatpump_pct: 59.0, solar_installs: 6028, family_pct: 21.2, senior_pct: 36.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Älmhult", area: "SE4", villas: 4617, heatpump_pct: 52.2, solar_installs: 10979, family_pct: 30.2, senior_pct: 27.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Timrå", area: "SE2", villas: 4612, heatpump_pct: 61.9, solar_installs: 4032, family_pct: 25.4, senior_pct: 31.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Upplands-Bro", area: "SE3", villas: 4601, heatpump_pct: 50, solar_installs: 12218, family_pct: 32.8, senior_pct: 20.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Eksjö", area: "SE3", villas: 4528, heatpump_pct: 45.8, solar_installs: 10612, family_pct: 24.1, senior_pct: 32.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Heby", area: "SE3", villas: 4510, heatpump_pct: 54.1, solar_installs: 11328, family_pct: 24.1, senior_pct: 33.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Skurup", area: "SE4", villas: 4507, heatpump_pct: 0.0, solar_installs: 25738, family_pct: 30.3, senior_pct: 27.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sunne", area: "SE3", villas: 4493, heatpump_pct: 52.5, solar_installs: 7821, family_pct: 22.6, senior_pct: 35.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tanum", area: "SE3", villas: 4455, heatpump_pct: 69.7, solar_installs: 13398, family_pct: 20.4, senior_pct: 39.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hedemora", area: "SE2", villas: 4440, heatpump_pct: 51.9, solar_installs: 5924, family_pct: 21.5, senior_pct: 35.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hallsberg", area: "SE3", villas: 4423, heatpump_pct: 0.0, solar_installs: 7143, family_pct: 26.3, senior_pct: 29.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vimmerby", area: "SE4", villas: 4332, heatpump_pct: 36.4, solar_installs: 13666, family_pct: 24.0, senior_pct: 33.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lilla Edet", area: "SE3", villas: 4313, heatpump_pct: 71.8, solar_installs: 6337, family_pct: 28.2, senior_pct: 27.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Skara", area: "SE3", villas: 4270, heatpump_pct: 59.3, solar_installs: 15615, family_pct: 24.8, senior_pct: 30.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Östra Göinge", area: "SE4", villas: 4251, heatpump_pct: 60.9, solar_installs: 8968, family_pct: 26.3, senior_pct: 31.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hultsfred", area: "SE4", villas: 4249, heatpump_pct: 47.7, solar_installs: 8379, family_pct: 22.8, senior_pct: 36.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Mönsterås", area: "SE4", villas: 4246, heatpump_pct: 48.4, solar_installs: 8804, family_pct: 22.6, senior_pct: 35.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Knivsta", area: "SE3", villas: 4220, heatpump_pct: 70.9, solar_installs: 10209, family_pct: 36.6, senior_pct: 18.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Svalöv", area: "SE4", villas: 4196, heatpump_pct: 71.6, solar_installs: 11820, family_pct: 30.7, senior_pct: 25.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Torsby", area: "SE3", villas: 4196, heatpump_pct: 58.4, solar_installs: 6865, family_pct: 19.0, senior_pct: 38.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tingsryd", area: "SE4", villas: 4129, heatpump_pct: 43.2, solar_installs: 9318, family_pct: 20.7, senior_pct: 37.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hammarö", area: "SE3", villas: 4123, heatpump_pct: 64.6, solar_installs: 7335, family_pct: 35.7, senior_pct: 26.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tomelilla", area: "SE4", villas: 4108, heatpump_pct: 69.9, solar_installs: 11475, family_pct: 24.3, senior_pct: 34.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Götene", area: "SE3", villas: 4089, heatpump_pct: 61.4, solar_installs: 9147, family_pct: 25.1, senior_pct: 34.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vaggeryd", area: "SE3", villas: 4063, heatpump_pct: 53.8, solar_installs: 9706, family_pct: 31.3, senior_pct: 26.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hagfors", area: "SE3", villas: 4063, heatpump_pct: 50, solar_installs: 4212, family_pct: 18.8, senior_pct: 40.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Gällivare", area: "SE1", villas: 4062, heatpump_pct: 59.4, solar_installs: 507, family_pct: 21.2, senior_pct: 33.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Flen", area: "SE3", villas: 4052, heatpump_pct: 60.6, solar_installs: 10561, family_pct: 20.4, senior_pct: 38.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Söderköping", area: "SE3", villas: 4048, heatpump_pct: 66.8, solar_installs: 9493, family_pct: 28.2, senior_pct: 33.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Bjuv", area: "SE4", villas: 4021, heatpump_pct: 79.4, solar_installs: 8614, family_pct: 30.1, senior_pct: 24.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Borgholm", area: "SE4", villas: 3999, heatpump_pct: 56.7, solar_installs: 17335, family_pct: 16.4, senior_pct: 48.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tranås", area: "SE3", villas: 3988, heatpump_pct: 56.1, solar_installs: 10862, family_pct: 24.0, senior_pct: 31.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Öckerö", area: "SE3", villas: 3985, heatpump_pct: 90.7, solar_installs: 8605, family_pct: 24.6, senior_pct: 36.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Strömsund", area: "SE2", villas: 3963, heatpump_pct: 57.5, solar_installs: 2297, family_pct: 18.5, senior_pct: 39.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Olofström", area: "SE4", villas: 3877, heatpump_pct: 50, solar_installs: 7868, family_pct: 21.8, senior_pct: 35.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Härjedalen", area: "SE2", villas: 3862, heatpump_pct: 69.3, solar_installs: 3932, family_pct: 19.6, senior_pct: 37.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Gagnef", area: "SE2", villas: 3782, heatpump_pct: 61.5, solar_installs: 5474, family_pct: 27.6, senior_pct: 33.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Osby", area: "SE4", villas: 3776, heatpump_pct: 47.1, solar_installs: 8800, family_pct: 24.6, senior_pct: 33.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tranemo", area: "SE3", villas: 3775, heatpump_pct: 48.3, solar_installs: 8089, family_pct: 26.0, senior_pct: 33.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lysekil", area: "SE3", villas: 3752, heatpump_pct: 80.3, solar_installs: 8025, family_pct: 20.4, senior_pct: 41.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Bromölla", area: "SE4", villas: 3735, heatpump_pct: 72.3, solar_installs: 7314, family_pct: 26.7, senior_pct: 31.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hallstahammar", area: "SE3", villas: 3715, heatpump_pct: 60.2, solar_installs: 13280, family_pct: 26.2, senior_pct: 30.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Smedjebacken", area: "SE2", villas: 3710, heatpump_pct: 64.2, solar_installs: 5328, family_pct: 21.0, senior_pct: 38.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Malung-Sälen", area: "SE2", villas: 3674, heatpump_pct: 69.9, solar_installs: 4239, family_pct: 20.0, senior_pct: 34.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tidaholm", area: "SE3", villas: 3656, heatpump_pct: 54.6, solar_installs: 5758, family_pct: 24.3, senior_pct: 32.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Askersund", area: "SE3", villas: 3656, heatpump_pct: 61.7, solar_installs: 8239, family_pct: 21.6, senior_pct: 38.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ovanåker", area: "SE2", villas: 3635, heatpump_pct: 51.1, solar_installs: 3927, family_pct: 22.3, senior_pct: 36.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Forshaga", area: "SE3", villas: 3609, heatpump_pct: 79.2, solar_installs: 4865, family_pct: 29.2, senior_pct: 30.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Rättvik", area: "SE2", villas: 3589, heatpump_pct: 52.6, solar_installs: 6033, family_pct: 18.9, senior_pct: 41.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Åre", area: "SE2", villas: 3581, heatpump_pct: 69.5, solar_installs: 4664, family_pct: 25.8, senior_pct: 24.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Åstorp", area: "SE4", villas: 3550, heatpump_pct: 74.4, solar_installs: 7797, family_pct: 32.8, senior_pct: 23.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Svenljunga", area: "SE3", villas: 3517, heatpump_pct: 50, solar_installs: 6466, family_pct: 24.6, senior_pct: 33.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kil", area: "SE3", villas: 3492, heatpump_pct: 54.2, solar_installs: 5384, family_pct: 28.7, senior_pct: 31.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Habo", area: "SE3", villas: 3481, heatpump_pct: 70.1, solar_installs: 8553, family_pct: 41.2, senior_pct: 23.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Säter", area: "SE2", villas: 3481, heatpump_pct: 52.3, solar_installs: 5362, family_pct: 24.8, senior_pct: 34.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Åtvidaberg", area: "SE3", villas: 3457, heatpump_pct: 61.0, solar_installs: 6080, family_pct: 25.0, senior_pct: 33.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sävsjö", area: "SE3", villas: 3412, heatpump_pct: 44.7, solar_installs: 6624, family_pct: 27.0, senior_pct: 30.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nordanstig", area: "SE2", villas: 3360, heatpump_pct: 50.5, solar_installs: 3977, family_pct: 23.1, senior_pct: 35.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Munkedal", area: "SE3", villas: 3335, heatpump_pct: 63.8, solar_installs: 6986, family_pct: 24.6, senior_pct: 33.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Trosa", area: "SE3", villas: 3329, heatpump_pct: 50, solar_installs: 12284, family_pct: 27.9, senior_pct: 32.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vårgårda", area: "SE3", villas: 3328, heatpump_pct: 52.2, solar_installs: 8141, family_pct: 30.2, senior_pct: 27.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Åmål", area: "SE3", villas: 3294, heatpump_pct: 50, solar_installs: 4831, family_pct: 21.8, senior_pct: 36.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ånge", area: "SE2", villas: 3265, heatpump_pct: 61.0, solar_installs: 1658, family_pct: 20.3, senior_pct: 37.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Arboga", area: "SE3", villas: 3250, heatpump_pct: 58.1, solar_installs: 7561, family_pct: 22.4, senior_pct: 34.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Strömstad", area: "SE3", villas: 3225, heatpump_pct: 79.6, solar_installs: 8721, family_pct: 24.5, senior_pct: 29.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Örkelljunga", area: "SE4", villas: 3210, heatpump_pct: 55.0, solar_installs: 6600, family_pct: 23.8, senior_pct: 31.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lycksele", area: "SE2", villas: 3182, heatpump_pct: 52.8, solar_installs: 1447, family_pct: 22.8, senior_pct: 31.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Bengtsfors", area: "SE3", villas: 3165, heatpump_pct: 61.9, solar_installs: 3858, family_pct: 19.2, senior_pct: 39.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Årjäng", area: "SE3", villas: 3159, heatpump_pct: 58.3, solar_installs: 4348, family_pct: 22.9, senior_pct: 33.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Filipstad", area: "SE3", villas: 3138, heatpump_pct: 61.3, solar_installs: 2561, family_pct: 18.5, senior_pct: 38.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Salem", area: "SE3", villas: 3127, heatpump_pct: 84.8, solar_installs: 3693, family_pct: 37.5, senior_pct: 22.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kinda", area: "SE3", villas: 3109, heatpump_pct: 57.0, solar_installs: 8217, family_pct: 23.4, senior_pct: 35.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hylte", area: "SE4", villas: 3105, heatpump_pct: 50.8, solar_installs: 6977, family_pct: 25.4, senior_pct: 30.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Tibro", area: "SE3", villas: 3075, heatpump_pct: 60.0, solar_installs: 5024, family_pct: 24.6, senior_pct: 31.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Markaryd", area: "SE4", villas: 3046, heatpump_pct: 58.1, solar_installs: 7163, family_pct: 23.9, senior_pct: 32.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Uppvidinge", area: "SE4", villas: 3023, heatpump_pct: 52.1, solar_installs: 7600, family_pct: 23.7, senior_pct: 33.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Mellerud", area: "SE3", villas: 3017, heatpump_pct: 54.3, solar_installs: 6904, family_pct: 21.7, senior_pct: 36.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Gnesta", area: "SE3", villas: 3012, heatpump_pct: 62.8, solar_installs: 6316, family_pct: 26.2, senior_pct: 31.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Degerfors", area: "SE3", villas: 2978, heatpump_pct: 59.0, solar_installs: 5801, family_pct: 20.9, senior_pct: 36.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Sotenäs", area: "SE3", villas: 2969, heatpump_pct: 83.7, solar_installs: 6034, family_pct: 15.9, senior_pct: 44.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Emmaboda", area: "SE4", villas: 2965, heatpump_pct: 38.8, solar_installs: 7118, family_pct: 20.2, senior_pct: 37.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Herrljunga", area: "SE3", villas: 2937, heatpump_pct: 48.0, solar_installs: 5161, family_pct: 23.6, senior_pct: 32.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nora", area: "SE3", villas: 2883, heatpump_pct: 69.5, solar_installs: 4931, family_pct: 24.0, senior_pct: 35.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Eda", area: "SE3", villas: 2832, heatpump_pct: 60.8, solar_installs: 2548, family_pct: 22.4, senior_pct: 34.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nykvarn", area: "SE3", villas: 2831, heatpump_pct: 50, solar_installs: 6601, family_pct: 36.1, senior_pct: 22.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Älvkarleby", area: "SE3", villas: 2828, heatpump_pct: 72.4, solar_installs: 2995, family_pct: 26.3, senior_pct: 32.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Töreboda", area: "SE3", villas: 2814, heatpump_pct: 61.7, solar_installs: 8092, family_pct: 21.4, senior_pct: 35.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Surahammar", area: "SE3", villas: 2795, heatpump_pct: 63.1, solar_installs: 3442, family_pct: 26.1, senior_pct: 32.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Grums", area: "SE3", villas: 2776, heatpump_pct: 54.6, solar_installs: 4519, family_pct: 23.0, senior_pct: 34.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Bollebygd", area: "SE3", villas: 2774, heatpump_pct: 68.1, solar_installs: 4632, family_pct: 32.7, senior_pct: 28.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Berg", area: "SE2", villas: 2761, heatpump_pct: 62.6, solar_installs: 3246, family_pct: 22.4, senior_pct: 37.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lekeberg", area: "SE3", villas: 2715, heatpump_pct: 56.5, solar_installs: 5694, family_pct: 32.0, senior_pct: 27.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vingåker", area: "SE3", villas: 2683, heatpump_pct: 58.3, solar_installs: 6396, family_pct: 22.8, senior_pct: 36.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hjo", area: "SE3", villas: 2681, heatpump_pct: 50, solar_installs: 5360, family_pct: 24.5, senior_pct: 34.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Burlöv", area: "SE4", villas: 2680, heatpump_pct: 77.6, solar_installs: 9117, family_pct: 32.2, senior_pct: 22.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Älvsbyn", area: "SE1", villas: 2673, heatpump_pct: 44.3, solar_installs: 646, family_pct: 22.1, senior_pct: 33.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Älvdalen", area: "SE2", villas: 2656, heatpump_pct: 72.7, solar_installs: 3598, family_pct: 20.5, senior_pct: 37.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Torsås", area: "SE4", villas: 2641, heatpump_pct: 46.5, solar_installs: 6191, family_pct: 22.0, senior_pct: 38.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hofors", area: "SE2", villas: 2628, heatpump_pct: 68.1, solar_installs: 2499, family_pct: 22.2, senior_pct: 36.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Fagersta", area: "SE3", villas: 2591, heatpump_pct: 71.1, solar_installs: 2830, family_pct: 23.7, senior_pct: 31.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Gnosjö", area: "SE3", villas: 2579, heatpump_pct: 66.2, solar_installs: 9223, family_pct: 26.9, senior_pct: 29.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Valdemarsvik", area: "SE3", villas: 2538, heatpump_pct: 52.8, solar_installs: 7262, family_pct: 19.3, senior_pct: 41.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vansbro", area: "SE2", villas: 2515, heatpump_pct: 53.4, solar_installs: 3191, family_pct: 20.8, senior_pct: 35.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vännäs", area: "SE2", villas: 2503, heatpump_pct: 50, solar_installs: 2426, family_pct: 29.6, senior_pct: 27.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Lessebo", area: "SE4", villas: 2475, heatpump_pct: 44.7, solar_installs: 4020, family_pct: 26.1, senior_pct: 32.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vaxholm", area: "SE3", villas: 2451, heatpump_pct: 86.8, solar_installs: 3293, family_pct: 31.4, senior_pct: 32.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Haparanda", area: "SE1", villas: 2451, heatpump_pct: 73.2, solar_installs: 286, family_pct: 17.7, senior_pct: 40.3, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Robertsfors", area: "SE2", villas: 2423, heatpump_pct: 62.7, solar_installs: 1401, family_pct: 23.7, senior_pct: 35.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Nordmaling", area: "SE2", villas: 2420, heatpump_pct: 56.5, solar_installs: 1879, family_pct: 23.0, senior_pct: 35.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Kungsör", area: "SE3", villas: 2381, heatpump_pct: 69.8, solar_installs: 3419, family_pct: 25.9, senior_pct: 32.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Bräcke", area: "SE2", villas: 2338, heatpump_pct: 69.7, solar_installs: 1671, family_pct: 18.9, senior_pct: 39.4, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Oxelösund", area: "SE3", villas: 2291, heatpump_pct: 45.5, solar_installs: 2813, family_pct: 22.9, senior_pct: 34.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Orsa", area: "SE2", villas: 2269, heatpump_pct: 68.8, solar_installs: 2996, family_pct: 21.4, senior_pct: 36.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Pajala", area: "SE1", villas: 2256, heatpump_pct: 58.9, solar_installs: 1244, family_pct: 17.5, senior_pct: 43.0, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Mullsjö", area: "SE3", villas: 2202, heatpump_pct: 66.4, solar_installs: 3950, family_pct: 28.3, senior_pct: 30.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Färgelanda", area: "SE3", villas: 2197, heatpump_pct: 54.1, solar_installs: 3150, family_pct: 22.9, senior_pct: 34.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Vilhelmina", area: "SE2", villas: 2168, heatpump_pct: 56.9, solar_installs: 1163, family_pct: 20.1, senior_pct: 36.5, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Karlsborg", area: "SE3", villas: 2152, heatpump_pct: 50, solar_installs: 3017, family_pct: 19.8, senior_pct: 37.7, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Aneby", area: "SE3", villas: 2116, heatpump_pct: 59.2, solar_installs: 4199, family_pct: 27.2, senior_pct: 31.8, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Hällefors", area: "SE3", villas: 2063, heatpump_pct: 52.1, solar_installs: 1743, family_pct: 16.9, senior_pct: 39.1, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Storuman", area: "SE2", villas: 2049, heatpump_pct: 56.6, solar_installs: 692, family_pct: 19.6, senior_pct: 38.6, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ragunda", area: "SE2", villas: 2031, heatpump_pct: 68.8, solar_installs: 808, family_pct: 20.5, senior_pct: 38.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Högsby", area: "SE4", villas: 2023, heatpump_pct: 39.7, solar_installs: 3558, family_pct: 19.6, senior_pct: 39.9, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Ockelbo", area: "SE2", villas: 2014, heatpump_pct: 31.0, solar_installs: 2164, family_pct: 19.9, senior_pct: 39.2, effect_tariff: true, grid_operator: "E.ON" },
+  { municipality: "Arvidsjaur", area: "SE1", villas: 2014, heatpump_pct: 58.0, solar_installs: 613, family_pct: 20.5, senior_pct: 35.6, effect_tariff: true, grid_operator: "E.ON" }
+];
+
+function scoreGeo(m) {
+  // Scoring weights — calibrated for real SCB data (2024-2025)
+  // villas: 2000-50000, solar: 0-142000 MWh, el_share: 30-95%, family: 15-41%, senior: 15-48%
+  const villaScore = Math.min(m.villas / 5000, 10);
+  const vpScore = Math.min(m.heatpump_pct / 10, 10); // el-share as VP proxy
+  const solarScore = Math.min(m.solar_installs / 15000, 10);
+  const tariffScore = m.effect_tariff ? 5 : 0;
+  const areaBonus = (m.area === 'SE3' || m.area === 'SE4') ? 3 : 1;
+  const familyScore = Math.min((m.family_pct || 0) / 4, 10); // family density 0-10
+  const seniorScore = Math.min((m.senior_pct || 0) / 5, 10); // 60+ density 0-10
+
+  // A1 score: high el-share (VP) + solar + tech-friendly area
+  const a1 = Math.round(((vpScore * 1.5) + (solarScore * 1.2) + areaBonus) * 10) / 10;
+
+  // A2 score: senior density + el-share + seminar-reachable
+  const a2 = Math.round(((seniorScore * 2.0) + (vpScore * 1.0) + areaBonus) * 10) / 10;
+
+  // B1 score: tariff trigger + solar trigger
+  const b1 = Math.round(((tariffScore * 2) + (solarScore * 1.5) + areaBonus) * 10) / 10;
+
+  // B2 score: family density + villa density + VP
+  const b2 = Math.round(((familyScore * 2.0) + (villaScore * 1.0) + (vpScore * 0.8) + areaBonus) * 10) / 10;
+
+  // B3 score: raw villa volume + VP (installer-driven)
+  const b3 = Math.round(((villaScore * 2.0) + (vpScore * 0.8) + areaBonus) * 10) / 10;
+
+  const total = Math.round((a1 + a2 + b1 + b2 + b3) * 10) / 10;
+
+  return { ...m, a1_score: a1, a2_score: a2, b1_score: b1, b2_score: b2, b3_score: b3, total_score: total };
+}
+
+function renderGeo() {
+  const areaFilter = document.getElementById('geoAreaFilter').value;
+  const sortBy = document.getElementById('geoSortBy').value;
+
+  let data = GEO_DATA.map(scoreGeo);
+
+  if (areaFilter !== 'all') {
+    data = data.filter(m => m.area === areaFilter);
+  }
+
+  data.sort((a, b) => b[sortBy] - a[sortBy]);
+
+  // Stats
+  const totalVillas = data.reduce((s, m) => s + m.villas, 0);
+  const avgVP = data.length > 0 ? Math.round(data.reduce((s, m) => s + m.heatpump_pct, 0) / data.length) : 0;
+  const totalSolar = data.reduce((s, m) => s + m.solar_installs, 0);
+  const withTariff = data.filter(m => m.effect_tariff).length;
+
+  document.getElementById('geoStats').innerHTML = `
+    <div class="stat-card"><div class="stat-label">Kommuner</div><div class="stat-value">${data.length}</div></div>
+    <div class="stat-card"><div class="stat-label">Villor totalt</div><div class="stat-value">${(totalVillas / 1000).toFixed(0)}k</div></div>
+    <div class="stat-card"><div class="stat-label">Snitt el-andel</div><div class="stat-value">${avgVP}%</div></div>
+    <div class="stat-card"><div class="stat-label">Solproduktion</div><div class="stat-value">${(totalSolar / 1000000).toFixed(1)} TWh</div></div>
+    <div class="stat-card"><div class="stat-label">Med effekttariff</div><div class="stat-value">${withTariff}/${data.length}</div></div>
+  `;
+
+  // Table
+  const maxTotal = Math.max(...data.map(m => m.total_score));
+
+  document.getElementById('geoTable').innerHTML = data.map((m, i) => {
+    const barWidth = maxTotal > 0 ? (m.total_score / maxTotal * 100) : 0;
+    return `
+      <tr>
+        <td>
+          <div class="prospect-name">${m.municipality}</div>
+          <div class="prospect-meta">${m.grid_operator}</div>
+        </td>
+        <td><span class="seg-badge seg-${m.area === 'SE3' ? 'A1' : m.area === 'SE4' ? 'B1' : 'B3'}">${m.area}</span></td>
+        <td>${m.villas.toLocaleString('sv')}</td>
+        <td>${m.heatpump_pct}%</td>
+        <td>${(m.solar_installs/1000).toFixed(0)}k</td>
+        <td>${m.family_pct || 0}%</td>
+        <td>${m.senior_pct || 0}%</td>
+        <td>${m.effect_tariff ? '<span style="color: var(--highlight);">Ja</span>' : '<span style="color: var(--grey);">Nej</span>'}</td>
+        <td><span style="font-weight: 500; color: #1a9a78;">${m.a1_score}</span></td>
+        <td><span style="font-weight: 500; color: #3b82f6;">${m.a2_score}</span></td>
+        <td><span style="font-weight: 500; color: #d97706;">${m.b1_score}</span></td>
+        <td><span style="font-weight: 500; color: #7c3aed;">${m.b2_score}</span></td>
+        <td><span style="font-weight: 500; color: #4b5563;">${m.b3_score}</span></td>
+        <td>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 60px; height: 6px; background: rgba(0,0,0,0.06); border-radius: 3px; overflow: hidden;">
+              <div style="width: ${barWidth}%; height: 100%; background: var(--highlight); border-radius: 3px;"></div>
+            </div>
+            <span style="font-weight: 600; font-size: 13px;">${m.total_score}</span>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// INIT
+seedDemo();
+render();
+renderGeo();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1885 @@
+{
+  "0114": {
+    "el_mwh": 112364.0,
+    "fv_mwh": 2297.0,
+    "total_mwh": 119721.0,
+    "el_share_pct": 93.9,
+    "fv_share_pct": 1.9
+  },
+  "0115": {
+    "el_mwh": 130908.0,
+    "fv_mwh": 8168.0,
+    "total_mwh": 153877.0,
+    "el_share_pct": 85.1,
+    "fv_share_pct": 5.3
+  },
+  "0117": {
+    "el_mwh": 186335.0,
+    "fv_mwh": 3844.0,
+    "total_mwh": 211791.0,
+    "el_share_pct": 88.0,
+    "fv_share_pct": 1.8
+  },
+  "0120": {
+    "el_mwh": 149753.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 170229.0,
+    "el_share_pct": 88.0,
+    "fv_share_pct": 0.0
+  },
+  "0123": {
+    "el_mwh": 171404.0,
+    "fv_mwh": 4591.0,
+    "total_mwh": 186067.0,
+    "el_share_pct": 92.1,
+    "fv_share_pct": 2.5
+  },
+  "0125": {
+    "el_mwh": 144435.0,
+    "fv_mwh": 4148.0,
+    "total_mwh": 164677.0,
+    "el_share_pct": 87.7,
+    "fv_share_pct": 2.5
+  },
+  "0126": {
+    "el_mwh": 265444.0,
+    "fv_mwh": 46662.0,
+    "total_mwh": 332983.0,
+    "el_share_pct": 79.7,
+    "fv_share_pct": 14.0
+  },
+  "0127": {
+    "el_mwh": 130691.0,
+    "fv_mwh": 84750.0,
+    "total_mwh": 227811.0,
+    "el_share_pct": 57.4,
+    "fv_share_pct": 37.2
+  },
+  "0128": {
+    "el_mwh": 50652.0,
+    "fv_mwh": 7266.0,
+    "total_mwh": 59748.0,
+    "el_share_pct": 84.8,
+    "fv_share_pct": 12.2
+  },
+  "0138": {
+    "el_mwh": 131984.0,
+    "fv_mwh": 1825.0,
+    "total_mwh": 151410.0,
+    "el_share_pct": 87.2,
+    "fv_share_pct": 1.2
+  },
+  "0160": {
+    "el_mwh": 250110.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 266342.0,
+    "el_share_pct": 93.9,
+    "fv_share_pct": 0.0
+  },
+  "0162": {
+    "el_mwh": 158657.0,
+    "fv_mwh": 285.0,
+    "total_mwh": 167555.0,
+    "el_share_pct": 94.7,
+    "fv_share_pct": 0.2
+  },
+  "0163": {
+    "el_mwh": 193603.0,
+    "fv_mwh": 27634.0,
+    "total_mwh": 234853.0,
+    "el_share_pct": 82.4,
+    "fv_share_pct": 11.8
+  },
+  "0180": {
+    "el_mwh": 615953.0,
+    "fv_mwh": 124606.0,
+    "total_mwh": 784500.0,
+    "el_share_pct": 78.5,
+    "fv_share_pct": 15.9
+  },
+  "0181": {
+    "el_mwh": 0,
+    "fv_mwh": 22613.0,
+    "total_mwh": 229185.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 9.9
+  },
+  "0182": {
+    "el_mwh": 281194.0,
+    "fv_mwh": 2346.0,
+    "total_mwh": 307598.0,
+    "el_share_pct": 91.4,
+    "fv_share_pct": 0.8
+  },
+  "0183": {
+    "el_mwh": 20489.0,
+    "fv_mwh": 2105.0,
+    "total_mwh": 24149.0,
+    "el_share_pct": 84.8,
+    "fv_share_pct": 8.7
+  },
+  "0184": {
+    "el_mwh": 9140.0,
+    "fv_mwh": 10142.0,
+    "total_mwh": 20108.0,
+    "el_share_pct": 45.5,
+    "fv_share_pct": 50.4
+  },
+  "0186": {
+    "el_mwh": 138100.0,
+    "fv_mwh": 14809.0,
+    "total_mwh": 157908.0,
+    "el_share_pct": 87.5,
+    "fv_share_pct": 9.4
+  },
+  "0187": {
+    "el_mwh": 39989.0,
+    "fv_mwh": 1408.0,
+    "total_mwh": 46078.0,
+    "el_share_pct": 86.8,
+    "fv_share_pct": 3.1
+  },
+  "0188": {
+    "el_mwh": 213242.0,
+    "fv_mwh": 7336.0,
+    "total_mwh": 283695.0,
+    "el_share_pct": 75.2,
+    "fv_share_pct": 2.6
+  },
+  "0192": {
+    "el_mwh": 67178.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 83311.0,
+    "el_share_pct": 80.6,
+    "fv_share_pct": 0.0
+  },
+  "0305": {
+    "el_mwh": 91797.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 103246.0,
+    "el_share_pct": 88.9,
+    "fv_share_pct": 0.0
+  },
+  "0319": {
+    "el_mwh": 35048.0,
+    "fv_mwh": 3379.0,
+    "total_mwh": 48410.0,
+    "el_share_pct": 72.4,
+    "fv_share_pct": 7.0
+  },
+  "0330": {
+    "el_mwh": 53482.0,
+    "fv_mwh": 13751.0,
+    "total_mwh": 75422.0,
+    "el_share_pct": 70.9,
+    "fv_share_pct": 18.2
+  },
+  "0331": {
+    "el_mwh": 53886.0,
+    "fv_mwh": 3314.0,
+    "total_mwh": 99694.0,
+    "el_share_pct": 54.1,
+    "fv_share_pct": 3.3
+  },
+  "0360": {
+    "el_mwh": 62607.0,
+    "fv_mwh": 6507.0,
+    "total_mwh": 128925.0,
+    "el_share_pct": 48.6,
+    "fv_share_pct": 5.0
+  },
+  "0380": {
+    "el_mwh": 334339.0,
+    "fv_mwh": 137964.0,
+    "total_mwh": 532353.0,
+    "el_share_pct": 62.8,
+    "fv_share_pct": 25.9
+  },
+  "0381": {
+    "el_mwh": 115283.0,
+    "fv_mwh": 29034.0,
+    "total_mwh": 189385.0,
+    "el_share_pct": 60.9,
+    "fv_share_pct": 15.3
+  },
+  "0382": {
+    "el_mwh": 78307.0,
+    "fv_mwh": 4831.0,
+    "total_mwh": 127940.0,
+    "el_share_pct": 61.2,
+    "fv_share_pct": 3.8
+  },
+  "0428": {
+    "el_mwh": 31602.0,
+    "fv_mwh": 1202.0,
+    "total_mwh": 54161.0,
+    "el_share_pct": 58.3,
+    "fv_share_pct": 2.2
+  },
+  "0461": {
+    "el_mwh": 28647.0,
+    "fv_mwh": 137.0,
+    "total_mwh": 45606.0,
+    "el_share_pct": 62.8,
+    "fv_share_pct": 0.3
+  },
+  "0480": {
+    "el_mwh": 115342.0,
+    "fv_mwh": 21730.0,
+    "total_mwh": 180195.0,
+    "el_share_pct": 64.0,
+    "fv_share_pct": 12.1
+  },
+  "0481": {
+    "el_mwh": 21415.0,
+    "fv_mwh": 22892.0,
+    "total_mwh": 47106.0,
+    "el_share_pct": 45.5,
+    "fv_share_pct": 48.6
+  },
+  "0482": {
+    "el_mwh": 48255.0,
+    "fv_mwh": 4343.0,
+    "total_mwh": 79631.0,
+    "el_share_pct": 60.6,
+    "fv_share_pct": 5.5
+  },
+  "0483": {
+    "el_mwh": 85820.0,
+    "fv_mwh": 15001.0,
+    "total_mwh": 136470.0,
+    "el_share_pct": 62.9,
+    "fv_share_pct": 11.0
+  },
+  "0486": {
+    "el_mwh": 115951.0,
+    "fv_mwh": 17859.0,
+    "total_mwh": 165898.0,
+    "el_share_pct": 69.9,
+    "fv_share_pct": 10.8
+  },
+  "0509": {
+    "el_mwh": 16852.0,
+    "fv_mwh": 809.0,
+    "total_mwh": 33834.0,
+    "el_share_pct": 49.8,
+    "fv_share_pct": 2.4
+  },
+  "0512": {
+    "el_mwh": 16824.0,
+    "fv_mwh": 207.0,
+    "total_mwh": 36119.0,
+    "el_share_pct": 46.6,
+    "fv_share_pct": 0.6
+  },
+  "0513": {
+    "el_mwh": 34961.0,
+    "fv_mwh": 2032.0,
+    "total_mwh": 61311.0,
+    "el_share_pct": 57.0,
+    "fv_share_pct": 3.3
+  },
+  "0560": {
+    "el_mwh": 16826.0,
+    "fv_mwh": 185.0,
+    "total_mwh": 31536.0,
+    "el_share_pct": 53.4,
+    "fv_share_pct": 0.6
+  },
+  "0561": {
+    "el_mwh": 41981.0,
+    "fv_mwh": 903.0,
+    "total_mwh": 68861.0,
+    "el_share_pct": 61.0,
+    "fv_share_pct": 1.3
+  },
+  "0562": {
+    "el_mwh": 57470.0,
+    "fv_mwh": 12370.0,
+    "total_mwh": 102867.0,
+    "el_share_pct": 55.9,
+    "fv_share_pct": 12.0
+  },
+  "0563": {
+    "el_mwh": 31030.0,
+    "fv_mwh": 1042.0,
+    "total_mwh": 58808.0,
+    "el_share_pct": 52.8,
+    "fv_share_pct": 1.8
+  },
+  "0580": {
+    "el_mwh": 232563.0,
+    "fv_mwh": 203690.0,
+    "total_mwh": 501698.0,
+    "el_share_pct": 46.4,
+    "fv_share_pct": 40.6
+  },
+  "0581": {
+    "el_mwh": 253156.0,
+    "fv_mwh": 114915.0,
+    "total_mwh": 422136.0,
+    "el_share_pct": 60.0,
+    "fv_share_pct": 27.2
+  },
+  "0582": {
+    "el_mwh": 49724.0,
+    "fv_mwh": 1963.0,
+    "total_mwh": 74428.0,
+    "el_share_pct": 66.8,
+    "fv_share_pct": 2.6
+  },
+  "0583": {
+    "el_mwh": 113342.0,
+    "fv_mwh": 8489.0,
+    "total_mwh": 175745.0,
+    "el_share_pct": 64.5,
+    "fv_share_pct": 4.8
+  },
+  "0584": {
+    "el_mwh": 20657.0,
+    "fv_mwh": 3733.0,
+    "total_mwh": 28440.0,
+    "el_share_pct": 72.6,
+    "fv_share_pct": 13.1
+  },
+  "0586": {
+    "el_mwh": 63080.0,
+    "fv_mwh": 40073.0,
+    "total_mwh": 125561.0,
+    "el_share_pct": 50.2,
+    "fv_share_pct": 31.9
+  },
+  "0604": {
+    "el_mwh": 30933.0,
+    "fv_mwh": 3399.0,
+    "total_mwh": 52216.0,
+    "el_share_pct": 59.2,
+    "fv_share_pct": 6.5
+  },
+  "0617": {
+    "el_mwh": 35664.0,
+    "fv_mwh": 197.0,
+    "total_mwh": 53861.0,
+    "el_share_pct": 66.2,
+    "fv_share_pct": 0.4
+  },
+  "0642": {
+    "el_mwh": 25918.0,
+    "fv_mwh": 2076.0,
+    "total_mwh": 39006.0,
+    "el_share_pct": 66.4,
+    "fv_share_pct": 5.3
+  },
+  "0643": {
+    "el_mwh": 46289.0,
+    "fv_mwh": 5140.0,
+    "total_mwh": 66076.0,
+    "el_share_pct": 70.1,
+    "fv_share_pct": 7.8
+  },
+  "0662": {
+    "el_mwh": 97757.0,
+    "fv_mwh": 767.0,
+    "total_mwh": 145431.0,
+    "el_share_pct": 67.2,
+    "fv_share_pct": 0.5
+  },
+  "0665": {
+    "el_mwh": 47806.0,
+    "fv_mwh": 8966.0,
+    "total_mwh": 88904.0,
+    "el_share_pct": 53.8,
+    "fv_share_pct": 10.1
+  },
+  "0680": {
+    "el_mwh": 285754.0,
+    "fv_mwh": 91305.0,
+    "total_mwh": 458608.0,
+    "el_share_pct": 62.3,
+    "fv_share_pct": 19.9
+  },
+  "0682": {
+    "el_mwh": 86953.0,
+    "fv_mwh": 28290.0,
+    "total_mwh": 158559.0,
+    "el_share_pct": 54.8,
+    "fv_share_pct": 17.8
+  },
+  "0683": {
+    "el_mwh": 88149.0,
+    "fv_mwh": 19800.0,
+    "total_mwh": 168923.0,
+    "el_share_pct": 52.2,
+    "fv_share_pct": 11.7
+  },
+  "0684": {
+    "el_mwh": 33485.0,
+    "fv_mwh": 7520.0,
+    "total_mwh": 74967.0,
+    "el_share_pct": 44.7,
+    "fv_share_pct": 10.0
+  },
+  "0685": {
+    "el_mwh": 76739.0,
+    "fv_mwh": 20175.0,
+    "total_mwh": 179217.0,
+    "el_share_pct": 42.8,
+    "fv_share_pct": 11.3
+  },
+  "0686": {
+    "el_mwh": 45732.0,
+    "fv_mwh": 25304.0,
+    "total_mwh": 99881.0,
+    "el_share_pct": 45.8,
+    "fv_share_pct": 25.3
+  },
+  "0687": {
+    "el_mwh": 48696.0,
+    "fv_mwh": 17746.0,
+    "total_mwh": 86833.0,
+    "el_share_pct": 56.1,
+    "fv_share_pct": 20.4
+  },
+  "0760": {
+    "el_mwh": 30457.0,
+    "fv_mwh": 2290.0,
+    "total_mwh": 58476.0,
+    "el_share_pct": 52.1,
+    "fv_share_pct": 3.9
+  },
+  "0761": {
+    "el_mwh": 24924.0,
+    "fv_mwh": 15500.0,
+    "total_mwh": 55725.0,
+    "el_share_pct": 44.7,
+    "fv_share_pct": 27.8
+  },
+  "0763": {
+    "el_mwh": 39858.0,
+    "fv_mwh": 7836.0,
+    "total_mwh": 92366.0,
+    "el_share_pct": 43.2,
+    "fv_share_pct": 8.5
+  },
+  "0764": {
+    "el_mwh": 49863.0,
+    "fv_mwh": 22265.0,
+    "total_mwh": 108830.0,
+    "el_share_pct": 45.8,
+    "fv_share_pct": 20.5
+  },
+  "0765": {
+    "el_mwh": 47699.0,
+    "fv_mwh": 9594.0,
+    "total_mwh": 91410.0,
+    "el_share_pct": 52.2,
+    "fv_share_pct": 10.5
+  },
+  "0767": {
+    "el_mwh": 32523.0,
+    "fv_mwh": 979.0,
+    "total_mwh": 56000.0,
+    "el_share_pct": 58.1,
+    "fv_share_pct": 1.7
+  },
+  "0780": {
+    "el_mwh": 153405.0,
+    "fv_mwh": 123617.0,
+    "total_mwh": 353880.0,
+    "el_share_pct": 43.3,
+    "fv_share_pct": 34.9
+  },
+  "0781": {
+    "el_mwh": 64573.0,
+    "fv_mwh": 41994.0,
+    "total_mwh": 155411.0,
+    "el_share_pct": 41.5,
+    "fv_share_pct": 27.0
+  },
+  "0821": {
+    "el_mwh": 16636.0,
+    "fv_mwh": 1900.0,
+    "total_mwh": 41880.0,
+    "el_share_pct": 39.7,
+    "fv_share_pct": 4.5
+  },
+  "0834": {
+    "el_mwh": 24731.0,
+    "fv_mwh": 2506.0,
+    "total_mwh": 53170.0,
+    "el_share_pct": 46.5,
+    "fv_share_pct": 4.7
+  },
+  "0840": {
+    "el_mwh": 55116.0,
+    "fv_mwh": 3646.0,
+    "total_mwh": 81477.0,
+    "el_share_pct": 67.6,
+    "fv_share_pct": 4.5
+  },
+  "0860": {
+    "el_mwh": 44772.0,
+    "fv_mwh": 2427.0,
+    "total_mwh": 93820.0,
+    "el_share_pct": 47.7,
+    "fv_share_pct": 2.6
+  },
+  "0861": {
+    "el_mwh": 36852.0,
+    "fv_mwh": 14860.0,
+    "total_mwh": 76063.0,
+    "el_share_pct": 48.4,
+    "fv_share_pct": 19.5
+  },
+  "0862": {
+    "el_mwh": 24165.0,
+    "fv_mwh": 11594.0,
+    "total_mwh": 62308.0,
+    "el_share_pct": 38.8,
+    "fv_share_pct": 18.6
+  },
+  "0880": {
+    "el_mwh": 127583.0,
+    "fv_mwh": 37727.0,
+    "total_mwh": 216167.0,
+    "el_share_pct": 59.0,
+    "fv_share_pct": 17.5
+  },
+  "0881": {
+    "el_mwh": 48064.0,
+    "fv_mwh": 34672.0,
+    "total_mwh": 128046.0,
+    "el_share_pct": 37.5,
+    "fv_share_pct": 27.1
+  },
+  "0882": {
+    "el_mwh": 70000.0,
+    "fv_mwh": 5141.0,
+    "total_mwh": 122607.0,
+    "el_share_pct": 57.1,
+    "fv_share_pct": 4.2
+  },
+  "0884": {
+    "el_mwh": 36829.0,
+    "fv_mwh": 29995.0,
+    "total_mwh": 101132.0,
+    "el_share_pct": 36.4,
+    "fv_share_pct": 29.7
+  },
+  "0885": {
+    "el_mwh": 38833.0,
+    "fv_mwh": 7025.0,
+    "total_mwh": 68454.0,
+    "el_share_pct": 56.7,
+    "fv_share_pct": 10.3
+  },
+  "0980": {
+    "el_mwh": 164715.0,
+    "fv_mwh": 11278.0,
+    "total_mwh": 298764.0,
+    "el_share_pct": 55.1,
+    "fv_share_pct": 3.8
+  },
+  "1080": {
+    "el_mwh": 163530.0,
+    "fv_mwh": 4356.0,
+    "total_mwh": 229120.0,
+    "el_share_pct": 71.4,
+    "fv_share_pct": 1.9
+  },
+  "1081": {
+    "el_mwh": 91821.0,
+    "fv_mwh": 11798.0,
+    "total_mwh": 137737.0,
+    "el_share_pct": 66.7,
+    "fv_share_pct": 8.6
+  },
+  "1082": {
+    "el_mwh": 86507.0,
+    "fv_mwh": 18340.0,
+    "total_mwh": 137788.0,
+    "el_share_pct": 62.8,
+    "fv_share_pct": 13.3
+  },
+  "1083": {
+    "el_mwh": 59281.0,
+    "fv_mwh": 7353.0,
+    "total_mwh": 82150.0,
+    "el_share_pct": 72.2,
+    "fv_share_pct": 9.0
+  },
+  "1214": {
+    "el_mwh": 48278.0,
+    "fv_mwh": 1381.0,
+    "total_mwh": 67381.0,
+    "el_share_pct": 71.6,
+    "fv_share_pct": 2.0
+  },
+  "1230": {
+    "el_mwh": 90872.0,
+    "fv_mwh": 4838.0,
+    "total_mwh": 100235.0,
+    "el_share_pct": 90.7,
+    "fv_share_pct": 4.8
+  },
+  "1231": {
+    "el_mwh": 32797.0,
+    "fv_mwh": 5355.0,
+    "total_mwh": 42268.0,
+    "el_share_pct": 77.6,
+    "fv_share_pct": 12.7
+  },
+  "1233": {
+    "el_mwh": 166780.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 177455.0,
+    "el_share_pct": 94.0,
+    "fv_share_pct": 0.0
+  },
+  "1256": {
+    "el_mwh": 47976.0,
+    "fv_mwh": 1109.0,
+    "total_mwh": 78842.0,
+    "el_share_pct": 60.9,
+    "fv_share_pct": 1.4
+  },
+  "1257": {
+    "el_mwh": 30365.0,
+    "fv_mwh": 6302.0,
+    "total_mwh": 55225.0,
+    "el_share_pct": 55.0,
+    "fv_share_pct": 11.4
+  },
+  "1260": {
+    "el_mwh": 52834.0,
+    "fv_mwh": 6456.0,
+    "total_mwh": 66501.0,
+    "el_share_pct": 79.4,
+    "fv_share_pct": 9.7
+  },
+  "1261": {
+    "el_mwh": 107245.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 118552.0,
+    "el_share_pct": 90.5,
+    "fv_share_pct": 0.0
+  },
+  "1262": {
+    "el_mwh": 78595.0,
+    "fv_mwh": 27224.0,
+    "total_mwh": 111140.0,
+    "el_share_pct": 70.7,
+    "fv_share_pct": 24.5
+  },
+  "1263": {
+    "el_mwh": 69560.0,
+    "fv_mwh": 1608.0,
+    "total_mwh": 79109.0,
+    "el_share_pct": 87.9,
+    "fv_share_pct": 2.0
+  },
+  "1264": {
+    "el_mwh": 0,
+    "fv_mwh": 1208.0,
+    "total_mwh": 77680.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 1.6
+  },
+  "1265": {
+    "el_mwh": 66980.0,
+    "fv_mwh": 3983.0,
+    "total_mwh": 85973.0,
+    "el_share_pct": 77.9,
+    "fv_share_pct": 4.6
+  },
+  "1266": {
+    "el_mwh": 57643.0,
+    "fv_mwh": 2729.0,
+    "total_mwh": 88772.0,
+    "el_share_pct": 64.9,
+    "fv_share_pct": 3.1
+  },
+  "1267": {
+    "el_mwh": 62841.0,
+    "fv_mwh": 1306.0,
+    "total_mwh": 87363.0,
+    "el_share_pct": 71.9,
+    "fv_share_pct": 1.5
+  },
+  "1270": {
+    "el_mwh": 43838.0,
+    "fv_mwh": 3649.0,
+    "total_mwh": 62728.0,
+    "el_share_pct": 69.9,
+    "fv_share_pct": 5.8
+  },
+  "1272": {
+    "el_mwh": 44396.0,
+    "fv_mwh": 4613.0,
+    "total_mwh": 61385.0,
+    "el_share_pct": 72.3,
+    "fv_share_pct": 7.5
+  },
+  "1273": {
+    "el_mwh": 39555.0,
+    "fv_mwh": 4265.0,
+    "total_mwh": 84037.0,
+    "el_share_pct": 47.1,
+    "fv_share_pct": 5.1
+  },
+  "1275": {
+    "el_mwh": 13373.0,
+    "fv_mwh": 14739.0,
+    "total_mwh": 36146.0,
+    "el_share_pct": 37.0,
+    "fv_share_pct": 40.8
+  },
+  "1276": {
+    "el_mwh": 55767.0,
+    "fv_mwh": 7970.0,
+    "total_mwh": 88374.0,
+    "el_share_pct": 63.1,
+    "fv_share_pct": 9.0
+  },
+  "1277": {
+    "el_mwh": 46508.0,
+    "fv_mwh": 3340.0,
+    "total_mwh": 62532.0,
+    "el_share_pct": 74.4,
+    "fv_share_pct": 5.3
+  },
+  "1278": {
+    "el_mwh": 0,
+    "fv_mwh": 200.0,
+    "total_mwh": 100588.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 0.2
+  },
+  "1280": {
+    "el_mwh": 284239.0,
+    "fv_mwh": 0,
+    "total_mwh": 433632.0,
+    "el_share_pct": 65.5,
+    "fv_share_pct": 0.0
+  },
+  "1281": {
+    "el_mwh": 172442.0,
+    "fv_mwh": 62485.0,
+    "total_mwh": 267670.0,
+    "el_share_pct": 64.4,
+    "fv_share_pct": 23.3
+  },
+  "1282": {
+    "el_mwh": 79657.0,
+    "fv_mwh": 37679.0,
+    "total_mwh": 126837.0,
+    "el_share_pct": 62.8,
+    "fv_share_pct": 29.7
+  },
+  "1283": {
+    "el_mwh": 204562.0,
+    "fv_mwh": 151369.0,
+    "total_mwh": 371417.0,
+    "el_share_pct": 55.1,
+    "fv_share_pct": 40.8
+  },
+  "1284": {
+    "el_mwh": 0,
+    "fv_mwh": 0,
+    "total_mwh": 137260.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 0.0
+  },
+  "1285": {
+    "el_mwh": 103211.0,
+    "fv_mwh": 10812.0,
+    "total_mwh": 141682.0,
+    "el_share_pct": 72.8,
+    "fv_share_pct": 7.6
+  },
+  "1286": {
+    "el_mwh": 89992.0,
+    "fv_mwh": 29833.0,
+    "total_mwh": 134678.0,
+    "el_share_pct": 66.8,
+    "fv_share_pct": 22.2
+  },
+  "1287": {
+    "el_mwh": 139529.0,
+    "fv_mwh": 4400.0,
+    "total_mwh": 173343.0,
+    "el_share_pct": 80.5,
+    "fv_share_pct": 2.5
+  },
+  "1290": {
+    "el_mwh": 219918.0,
+    "fv_mwh": 46216.0,
+    "total_mwh": 326732.0,
+    "el_share_pct": 67.3,
+    "fv_share_pct": 14.1
+  },
+  "1291": {
+    "el_mwh": 0,
+    "fv_mwh": 0,
+    "total_mwh": 103800.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 0.0
+  },
+  "1292": {
+    "el_mwh": 107275.0,
+    "fv_mwh": 41665.0,
+    "total_mwh": 177209.0,
+    "el_share_pct": 60.5,
+    "fv_share_pct": 23.5
+  },
+  "1293": {
+    "el_mwh": 143228.0,
+    "fv_mwh": 48663.0,
+    "total_mwh": 273741.0,
+    "el_share_pct": 52.3,
+    "fv_share_pct": 17.8
+  },
+  "1315": {
+    "el_mwh": 30697.0,
+    "fv_mwh": 2898.0,
+    "total_mwh": 60416.0,
+    "el_share_pct": 50.8,
+    "fv_share_pct": 4.8
+  },
+  "1380": {
+    "el_mwh": 237408.0,
+    "fv_mwh": 51730.0,
+    "total_mwh": 370421.0,
+    "el_share_pct": 64.1,
+    "fv_share_pct": 14.0
+  },
+  "1382": {
+    "el_mwh": 120905.0,
+    "fv_mwh": 5928.0,
+    "total_mwh": 195202.0,
+    "el_share_pct": 61.9,
+    "fv_share_pct": 3.0
+  },
+  "1401": {
+    "el_mwh": 138522.0,
+    "fv_mwh": 10497.0,
+    "total_mwh": 170854.0,
+    "el_share_pct": 81.1,
+    "fv_share_pct": 6.1
+  },
+  "1402": {
+    "el_mwh": 99231.0,
+    "fv_mwh": 34595.0,
+    "total_mwh": 139354.0,
+    "el_share_pct": 71.2,
+    "fv_share_pct": 24.8
+  },
+  "1407": {
+    "el_mwh": 55465.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 61124.0,
+    "el_share_pct": 90.7,
+    "fv_share_pct": 0.0
+  },
+  "1415": {
+    "el_mwh": 75782.0,
+    "fv_mwh": 17968.0,
+    "total_mwh": 115308.0,
+    "el_share_pct": 65.7,
+    "fv_share_pct": 15.6
+  },
+  "1419": {
+    "el_mwh": 71184.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 85814.0,
+    "el_share_pct": 83.0,
+    "fv_share_pct": 0.0
+  },
+  "1421": {
+    "el_mwh": 74060.0,
+    "fv_mwh": 467.0,
+    "total_mwh": 104330.0,
+    "el_share_pct": 71.0,
+    "fv_share_pct": 0.4
+  },
+  "1427": {
+    "el_mwh": 42982.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 51380.0,
+    "el_share_pct": 83.7,
+    "fv_share_pct": 0.0
+  },
+  "1430": {
+    "el_mwh": 42513.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 66612.0,
+    "el_share_pct": 63.8,
+    "fv_share_pct": 0.0
+  },
+  "1435": {
+    "el_mwh": 66515.0,
+    "fv_mwh": 69.0,
+    "total_mwh": 95487.0,
+    "el_share_pct": 69.7,
+    "fv_share_pct": 0.1
+  },
+  "1438": {
+    "el_mwh": 14998.0,
+    "fv_mwh": 132.0,
+    "total_mwh": 29921.0,
+    "el_share_pct": 50.1,
+    "fv_share_pct": 0.4
+  },
+  "1439": {
+    "el_mwh": 18952.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 35014.0,
+    "el_share_pct": 54.1,
+    "fv_share_pct": 0.0
+  },
+  "1440": {
+    "el_mwh": 99717.0,
+    "fv_mwh": 22500.0,
+    "total_mwh": 143114.0,
+    "el_share_pct": 69.7,
+    "fv_share_pct": 15.7
+  },
+  "1441": {
+    "el_mwh": 0,
+    "fv_mwh": 0,
+    "total_mwh": 219542.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 0.0
+  },
+  "1442": {
+    "el_mwh": 34639.0,
+    "fv_mwh": 593.0,
+    "total_mwh": 66332.0,
+    "el_share_pct": 52.2,
+    "fv_share_pct": 0.9
+  },
+  "1443": {
+    "el_mwh": 33023.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 48499.0,
+    "el_share_pct": 68.1,
+    "fv_share_pct": 0.0
+  },
+  "1444": {
+    "el_mwh": 0,
+    "fv_mwh": 1733.0,
+    "total_mwh": 37472.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 4.6
+  },
+  "1445": {
+    "el_mwh": 17529.0,
+    "fv_mwh": 99.0,
+    "total_mwh": 34102.0,
+    "el_share_pct": 51.4,
+    "fv_share_pct": 0.3
+  },
+  "1447": {
+    "el_mwh": 23015.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 40268.0,
+    "el_share_pct": 57.2,
+    "fv_share_pct": 0.0
+  },
+  "1452": {
+    "el_mwh": 39041.0,
+    "fv_mwh": 15583.0,
+    "total_mwh": 80778.0,
+    "el_share_pct": 48.3,
+    "fv_share_pct": 19.3
+  },
+  "1460": {
+    "el_mwh": 36408.0,
+    "fv_mwh": 2435.0,
+    "total_mwh": 58835.0,
+    "el_share_pct": 61.9,
+    "fv_share_pct": 4.1
+  },
+  "1461": {
+    "el_mwh": 28665.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 52759.0,
+    "el_share_pct": 54.3,
+    "fv_share_pct": 0.0
+  },
+  "1462": {
+    "el_mwh": 50235.0,
+    "fv_mwh": 100.0,
+    "total_mwh": 69969.0,
+    "el_share_pct": 71.8,
+    "fv_share_pct": 0.1
+  },
+  "1463": {
+    "el_mwh": 101024.0,
+    "fv_mwh": 13342.0,
+    "total_mwh": 172450.0,
+    "el_share_pct": 58.6,
+    "fv_share_pct": 7.7
+  },
+  "1466": {
+    "el_mwh": 29262.0,
+    "fv_mwh": 3265.0,
+    "total_mwh": 60949.0,
+    "el_share_pct": 48.0,
+    "fv_share_pct": 5.4
+  },
+  "1470": {
+    "el_mwh": 44574.0,
+    "fv_mwh": 5374.0,
+    "total_mwh": 89570.0,
+    "el_share_pct": 49.8,
+    "fv_share_pct": 6.0
+  },
+  "1471": {
+    "el_mwh": 52053.0,
+    "fv_mwh": 10033.0,
+    "total_mwh": 84790.0,
+    "el_share_pct": 61.4,
+    "fv_share_pct": 11.8
+  },
+  "1472": {
+    "el_mwh": 35843.0,
+    "fv_mwh": 6750.0,
+    "total_mwh": 59784.0,
+    "el_share_pct": 60.0,
+    "fv_share_pct": 11.3
+  },
+  "1473": {
+    "el_mwh": 35129.0,
+    "fv_mwh": 615.0,
+    "total_mwh": 56923.0,
+    "el_share_pct": 61.7,
+    "fv_share_pct": 1.1
+  },
+  "1480": {
+    "el_mwh": 671764.0,
+    "fv_mwh": 197350.0,
+    "total_mwh": 915148.0,
+    "el_share_pct": 73.4,
+    "fv_share_pct": 21.6
+  },
+  "1482": {
+    "el_mwh": 151302.0,
+    "fv_mwh": 6190.0,
+    "total_mwh": 183746.0,
+    "el_share_pct": 82.3,
+    "fv_share_pct": 3.4
+  },
+  "1484": {
+    "el_mwh": 54591.0,
+    "fv_mwh": 686.0,
+    "total_mwh": 68026.0,
+    "el_share_pct": 80.3,
+    "fv_share_pct": 1.0
+  },
+  "1485": {
+    "el_mwh": 128661.0,
+    "fv_mwh": 20075.0,
+    "total_mwh": 199208.0,
+    "el_share_pct": 64.6,
+    "fv_share_pct": 10.1
+  },
+  "1486": {
+    "el_mwh": 48716.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 61172.0,
+    "el_share_pct": 79.6,
+    "fv_share_pct": 0.0
+  },
+  "1487": {
+    "el_mwh": 95787.0,
+    "fv_mwh": 5204.0,
+    "total_mwh": 137266.0,
+    "el_share_pct": 69.8,
+    "fv_share_pct": 3.8
+  },
+  "1488": {
+    "el_mwh": 127402.0,
+    "fv_mwh": 14600.0,
+    "total_mwh": 165142.0,
+    "el_share_pct": 77.1,
+    "fv_share_pct": 8.8
+  },
+  "1489": {
+    "el_mwh": 114299.0,
+    "fv_mwh": 10016.0,
+    "total_mwh": 162668.0,
+    "el_share_pct": 70.3,
+    "fv_share_pct": 6.2
+  },
+  "1490": {
+    "el_mwh": 239351.0,
+    "fv_mwh": 54343.0,
+    "total_mwh": 384572.0,
+    "el_share_pct": 62.2,
+    "fv_share_pct": 14.1
+  },
+  "1491": {
+    "el_mwh": 67802.0,
+    "fv_mwh": 2080.0,
+    "total_mwh": 128963.0,
+    "el_share_pct": 52.6,
+    "fv_share_pct": 1.6
+  },
+  "1493": {
+    "el_mwh": 71723.0,
+    "fv_mwh": 24023.0,
+    "total_mwh": 125636.0,
+    "el_share_pct": 57.1,
+    "fv_share_pct": 19.1
+  },
+  "1494": {
+    "el_mwh": 95998.0,
+    "fv_mwh": 50958.0,
+    "total_mwh": 184159.0,
+    "el_share_pct": 52.1,
+    "fv_share_pct": 27.7
+  },
+  "1495": {
+    "el_mwh": 47911.0,
+    "fv_mwh": 6661.0,
+    "total_mwh": 80741.0,
+    "el_share_pct": 59.3,
+    "fv_share_pct": 8.2
+  },
+  "1496": {
+    "el_mwh": 134635.0,
+    "fv_mwh": 19629.0,
+    "total_mwh": 196574.0,
+    "el_share_pct": 68.5,
+    "fv_share_pct": 10.0
+  },
+  "1498": {
+    "el_mwh": 40013.0,
+    "fv_mwh": 2059.0,
+    "total_mwh": 73325.0,
+    "el_share_pct": 54.6,
+    "fv_share_pct": 2.8
+  },
+  "1715": {
+    "el_mwh": 43236.0,
+    "fv_mwh": 11791.0,
+    "total_mwh": 79843.0,
+    "el_share_pct": 54.2,
+    "fv_share_pct": 14.8
+  },
+  "1730": {
+    "el_mwh": 38066.0,
+    "fv_mwh": 2175.0,
+    "total_mwh": 62649.0,
+    "el_share_pct": 60.8,
+    "fv_share_pct": 3.5
+  },
+  "1737": {
+    "el_mwh": 55359.0,
+    "fv_mwh": 3861.0,
+    "total_mwh": 94846.0,
+    "el_share_pct": 58.4,
+    "fv_share_pct": 4.1
+  },
+  "1760": {
+    "el_mwh": 18260.0,
+    "fv_mwh": 68.0,
+    "total_mwh": 31127.0,
+    "el_share_pct": 58.7,
+    "fv_share_pct": 0.2
+  },
+  "1761": {
+    "el_mwh": 52807.0,
+    "fv_mwh": 19325.0,
+    "total_mwh": 81708.0,
+    "el_share_pct": 64.6,
+    "fv_share_pct": 23.7
+  },
+  "1763": {
+    "el_mwh": 48581.0,
+    "fv_mwh": 1039.0,
+    "total_mwh": 61331.0,
+    "el_share_pct": 79.2,
+    "fv_share_pct": 1.7
+  },
+  "1764": {
+    "el_mwh": 33419.0,
+    "fv_mwh": 5799.0,
+    "total_mwh": 61226.0,
+    "el_share_pct": 54.6,
+    "fv_share_pct": 9.5
+  },
+  "1765": {
+    "el_mwh": 41325.0,
+    "fv_mwh": 1198.0,
+    "total_mwh": 70858.0,
+    "el_share_pct": 58.3,
+    "fv_share_pct": 1.7
+  },
+  "1766": {
+    "el_mwh": 56483.0,
+    "fv_mwh": 3233.0,
+    "total_mwh": 107656.0,
+    "el_share_pct": 52.5,
+    "fv_share_pct": 3.0
+  },
+  "1780": {
+    "el_mwh": 188180.0,
+    "fv_mwh": 75469.0,
+    "total_mwh": 316237.0,
+    "el_share_pct": 59.5,
+    "fv_share_pct": 23.9
+  },
+  "1781": {
+    "el_mwh": 77700.0,
+    "fv_mwh": 4813.0,
+    "total_mwh": 112266.0,
+    "el_share_pct": 69.2,
+    "fv_share_pct": 4.3
+  },
+  "1782": {
+    "el_mwh": 42624.0,
+    "fv_mwh": 748.0,
+    "total_mwh": 69585.0,
+    "el_share_pct": 61.3,
+    "fv_share_pct": 1.1
+  },
+  "1784": {
+    "el_mwh": 95506.0,
+    "fv_mwh": 5000.0,
+    "total_mwh": 153562.0,
+    "el_share_pct": 62.2,
+    "fv_share_pct": 3.3
+  },
+  "1785": {
+    "el_mwh": 49913.0,
+    "fv_mwh": 1291.0,
+    "total_mwh": 84583.0,
+    "el_share_pct": 59.0,
+    "fv_share_pct": 1.5
+  },
+  "1814": {
+    "el_mwh": 32130.0,
+    "fv_mwh": 3523.0,
+    "total_mwh": 56893.0,
+    "el_share_pct": 56.5,
+    "fv_share_pct": 6.2
+  },
+  "1860": {
+    "el_mwh": 23296.0,
+    "fv_mwh": 2081.0,
+    "total_mwh": 34822.0,
+    "el_share_pct": 66.9,
+    "fv_share_pct": 6.0
+  },
+  "1861": {
+    "el_mwh": 0,
+    "fv_mwh": 0,
+    "total_mwh": 97388.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 0.0
+  },
+  "1862": {
+    "el_mwh": 38605.0,
+    "fv_mwh": 5444.0,
+    "total_mwh": 65460.0,
+    "el_share_pct": 59.0,
+    "fv_share_pct": 8.3
+  },
+  "1863": {
+    "el_mwh": 24238.0,
+    "fv_mwh": 3937.0,
+    "total_mwh": 46547.0,
+    "el_share_pct": 52.1,
+    "fv_share_pct": 8.5
+  },
+  "1864": {
+    "el_mwh": 20819.0,
+    "fv_mwh": 477.0,
+    "total_mwh": 36088.0,
+    "el_share_pct": 57.7,
+    "fv_share_pct": 1.3
+  },
+  "1880": {
+    "el_mwh": 284114.0,
+    "fv_mwh": 53036.0,
+    "total_mwh": 426228.0,
+    "el_share_pct": 66.7,
+    "fv_share_pct": 12.4
+  },
+  "1881": {
+    "el_mwh": 68333.0,
+    "fv_mwh": 6521.0,
+    "total_mwh": 100869.0,
+    "el_share_pct": 67.7,
+    "fv_share_pct": 6.5
+  },
+  "1882": {
+    "el_mwh": 41019.0,
+    "fv_mwh": 165.0,
+    "total_mwh": 66505.0,
+    "el_share_pct": 61.7,
+    "fv_share_pct": 0.2
+  },
+  "1883": {
+    "el_mwh": 91071.0,
+    "fv_mwh": 25099.0,
+    "total_mwh": 140220.0,
+    "el_share_pct": 64.9,
+    "fv_share_pct": 17.9
+  },
+  "1884": {
+    "el_mwh": 43194.0,
+    "fv_mwh": 597.0,
+    "total_mwh": 62162.0,
+    "el_share_pct": 69.5,
+    "fv_share_pct": 1.0
+  },
+  "1885": {
+    "el_mwh": 0,
+    "fv_mwh": 0,
+    "total_mwh": 135110.0,
+    "el_share_pct": 0.0,
+    "fv_share_pct": 0.0
+  },
+  "1904": {
+    "el_mwh": 16146.0,
+    "fv_mwh": 18.0,
+    "total_mwh": 29805.0,
+    "el_share_pct": 54.2,
+    "fv_share_pct": 0.1
+  },
+  "1907": {
+    "el_mwh": 33274.0,
+    "fv_mwh": 9464.0,
+    "total_mwh": 52703.0,
+    "el_share_pct": 63.1,
+    "fv_share_pct": 18.0
+  },
+  "1960": {
+    "el_mwh": 29758.0,
+    "fv_mwh": 4722.0,
+    "total_mwh": 42635.0,
+    "el_share_pct": 69.8,
+    "fv_share_pct": 11.1
+  },
+  "1961": {
+    "el_mwh": 46325.0,
+    "fv_mwh": 17825.0,
+    "total_mwh": 76978.0,
+    "el_share_pct": 60.2,
+    "fv_share_pct": 23.2
+  },
+  "1962": {
+    "el_mwh": 18720.0,
+    "fv_mwh": 186.0,
+    "total_mwh": 29280.0,
+    "el_share_pct": 63.9,
+    "fv_share_pct": 0.6
+  },
+  "1980": {
+    "el_mwh": 216441.0,
+    "fv_mwh": 241406.0,
+    "total_mwh": 496392.0,
+    "el_share_pct": 43.6,
+    "fv_share_pct": 48.6
+  },
+  "1981": {
+    "el_mwh": 63975.0,
+    "fv_mwh": 17370.0,
+    "total_mwh": 135412.0,
+    "el_share_pct": 47.2,
+    "fv_share_pct": 12.8
+  },
+  "1982": {
+    "el_mwh": 34994.0,
+    "fv_mwh": 2702.0,
+    "total_mwh": 49252.0,
+    "el_share_pct": 71.1,
+    "fv_share_pct": 5.5
+  },
+  "1983": {
+    "el_mwh": 51722.0,
+    "fv_mwh": 26578.0,
+    "total_mwh": 102151.0,
+    "el_share_pct": 50.6,
+    "fv_share_pct": 26.0
+  },
+  "1984": {
+    "el_mwh": 37389.0,
+    "fv_mwh": 11611.0,
+    "total_mwh": 64402.0,
+    "el_share_pct": 58.1,
+    "fv_share_pct": 18.0
+  },
+  "2021": {
+    "el_mwh": 30344.0,
+    "fv_mwh": 1608.0,
+    "total_mwh": 56796.0,
+    "el_share_pct": 53.4,
+    "fv_share_pct": 2.8
+  },
+  "2023": {
+    "el_mwh": 55604.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 79580.0,
+    "el_share_pct": 69.9,
+    "fv_share_pct": 0.0
+  },
+  "2026": {
+    "el_mwh": 53550.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 87051.0,
+    "el_share_pct": 61.5,
+    "fv_share_pct": 0.0
+  },
+  "2029": {
+    "el_mwh": 72836.0,
+    "fv_mwh": 5415.0,
+    "total_mwh": 117096.0,
+    "el_share_pct": 62.2,
+    "fv_share_pct": 4.6
+  },
+  "2031": {
+    "el_mwh": 46653.0,
+    "fv_mwh": 9519.0,
+    "total_mwh": 88623.0,
+    "el_share_pct": 52.6,
+    "fv_share_pct": 10.7
+  },
+  "2034": {
+    "el_mwh": 36173.0,
+    "fv_mwh": 842.0,
+    "total_mwh": 52544.0,
+    "el_share_pct": 68.8,
+    "fv_share_pct": 1.6
+  },
+  "2039": {
+    "el_mwh": 54538.0,
+    "fv_mwh": 118.0,
+    "total_mwh": 75052.0,
+    "el_share_pct": 72.7,
+    "fv_share_pct": 0.2
+  },
+  "2061": {
+    "el_mwh": 48112.0,
+    "fv_mwh": 3716.0,
+    "total_mwh": 74940.0,
+    "el_share_pct": 64.2,
+    "fv_share_pct": 5.0
+  },
+  "2062": {
+    "el_mwh": 89982.0,
+    "fv_mwh": 9648.0,
+    "total_mwh": 131721.0,
+    "el_share_pct": 68.3,
+    "fv_share_pct": 7.3
+  },
+  "2080": {
+    "el_mwh": 207729.0,
+    "fv_mwh": 51148.0,
+    "total_mwh": 325335.0,
+    "el_share_pct": 63.9,
+    "fv_share_pct": 15.7
+  },
+  "2081": {
+    "el_mwh": 122394.0,
+    "fv_mwh": 106428.0,
+    "total_mwh": 270503.0,
+    "el_share_pct": 45.2,
+    "fv_share_pct": 39.3
+  },
+  "2082": {
+    "el_mwh": 35319.0,
+    "fv_mwh": 6170.0,
+    "total_mwh": 67561.0,
+    "el_share_pct": 52.3,
+    "fv_share_pct": 9.1
+  },
+  "2083": {
+    "el_mwh": 50641.0,
+    "fv_mwh": 11540.0,
+    "total_mwh": 97565.0,
+    "el_share_pct": 51.9,
+    "fv_share_pct": 11.8
+  },
+  "2084": {
+    "el_mwh": 64300.0,
+    "fv_mwh": 20691.0,
+    "total_mwh": 130123.0,
+    "el_share_pct": 49.4,
+    "fv_share_pct": 15.9
+  },
+  "2085": {
+    "el_mwh": 92047.0,
+    "fv_mwh": 2349.0,
+    "total_mwh": 136002.0,
+    "el_share_pct": 67.7,
+    "fv_share_pct": 1.7
+  },
+  "2101": {
+    "el_mwh": 9869.0,
+    "fv_mwh": 3368.0,
+    "total_mwh": 31846.0,
+    "el_share_pct": 31.0,
+    "fv_share_pct": 10.6
+  },
+  "2104": {
+    "el_mwh": 40163.0,
+    "fv_mwh": 4123.0,
+    "total_mwh": 58985.0,
+    "el_share_pct": 68.1,
+    "fv_share_pct": 7.0
+  },
+  "2121": {
+    "el_mwh": 46807.0,
+    "fv_mwh": 6450.0,
+    "total_mwh": 91578.0,
+    "el_share_pct": 51.1,
+    "fv_share_pct": 7.0
+  },
+  "2132": {
+    "el_mwh": 42278.0,
+    "fv_mwh": 340.0,
+    "total_mwh": 83768.0,
+    "el_share_pct": 50.5,
+    "fv_share_pct": 0.4
+  },
+  "2161": {
+    "el_mwh": 89694.0,
+    "fv_mwh": 13888.0,
+    "total_mwh": 149437.0,
+    "el_share_pct": 60.0,
+    "fv_share_pct": 9.3
+  },
+  "2181": {
+    "el_mwh": 117058.0,
+    "fv_mwh": 41900.0,
+    "total_mwh": 205144.0,
+    "el_share_pct": 57.1,
+    "fv_share_pct": 20.4
+  },
+  "2182": {
+    "el_mwh": 108144.0,
+    "fv_mwh": 15596.0,
+    "total_mwh": 171966.0,
+    "el_share_pct": 62.9,
+    "fv_share_pct": 9.1
+  },
+  "2183": {
+    "el_mwh": 102627.0,
+    "fv_mwh": 31430.0,
+    "total_mwh": 200949.0,
+    "el_share_pct": 51.1,
+    "fv_share_pct": 15.6
+  },
+  "2184": {
+    "el_mwh": 145209.0,
+    "fv_mwh": 7844.0,
+    "total_mwh": 246281.0,
+    "el_share_pct": 59.0,
+    "fv_share_pct": 3.2
+  },
+  "2260": {
+    "el_mwh": 50665.0,
+    "fv_mwh": 1702.0,
+    "total_mwh": 83064.0,
+    "el_share_pct": 61.0,
+    "fv_share_pct": 2.0
+  },
+  "2262": {
+    "el_mwh": 64776.0,
+    "fv_mwh": 10684.0,
+    "total_mwh": 104701.0,
+    "el_share_pct": 61.9,
+    "fv_share_pct": 10.2
+  },
+  "2280": {
+    "el_mwh": 76447.0,
+    "fv_mwh": 34350.0,
+    "total_mwh": 139628.0,
+    "el_share_pct": 54.8,
+    "fv_share_pct": 24.6
+  },
+  "2281": {
+    "el_mwh": 286989.0,
+    "fv_mwh": 50148.0,
+    "total_mwh": 409075.0,
+    "el_share_pct": 70.2,
+    "fv_share_pct": 12.3
+  },
+  "2282": {
+    "el_mwh": 89568.0,
+    "fv_mwh": 6069.0,
+    "total_mwh": 150979.0,
+    "el_share_pct": 59.3,
+    "fv_share_pct": 4.0
+  },
+  "2283": {
+    "el_mwh": 92735.0,
+    "fv_mwh": 2102.0,
+    "total_mwh": 143570.0,
+    "el_share_pct": 64.6,
+    "fv_share_pct": 1.5
+  },
+  "2284": {
+    "el_mwh": 211489.0,
+    "fv_mwh": 58223.0,
+    "total_mwh": 356263.0,
+    "el_share_pct": 59.4,
+    "fv_share_pct": 16.3
+  },
+  "2303": {
+    "el_mwh": 36323.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 52830.0,
+    "el_share_pct": 68.8,
+    "fv_share_pct": 0.0
+  },
+  "2305": {
+    "el_mwh": 34613.0,
+    "fv_mwh": 75.0,
+    "total_mwh": 49692.0,
+    "el_share_pct": 69.7,
+    "fv_share_pct": 0.2
+  },
+  "2309": {
+    "el_mwh": 61270.0,
+    "fv_mwh": 5779.0,
+    "total_mwh": 88173.0,
+    "el_share_pct": 69.5,
+    "fv_share_pct": 6.6
+  },
+  "2313": {
+    "el_mwh": 55832.0,
+    "fv_mwh": 6823.0,
+    "total_mwh": 97102.0,
+    "el_share_pct": 57.5,
+    "fv_share_pct": 7.0
+  },
+  "2321": {
+    "el_mwh": 54463.0,
+    "fv_mwh": 4836.0,
+    "total_mwh": 78395.0,
+    "el_share_pct": 69.5,
+    "fv_share_pct": 6.2
+  },
+  "2326": {
+    "el_mwh": 34354.0,
+    "fv_mwh": 855.0,
+    "total_mwh": 54887.0,
+    "el_share_pct": 62.6,
+    "fv_share_pct": 1.6
+  },
+  "2361": {
+    "el_mwh": 59411.0,
+    "fv_mwh": 5614.0,
+    "total_mwh": 85782.0,
+    "el_share_pct": 69.3,
+    "fv_share_pct": 6.5
+  },
+  "2380": {
+    "el_mwh": 122826.0,
+    "fv_mwh": 83597.0,
+    "total_mwh": 236053.0,
+    "el_share_pct": 52.0,
+    "fv_share_pct": 35.4
+  },
+  "2401": {
+    "el_mwh": 32166.0,
+    "fv_mwh": 603.0,
+    "total_mwh": 56887.0,
+    "el_share_pct": 56.5,
+    "fv_share_pct": 1.1
+  },
+  "2403": {
+    "el_mwh": 10125.0,
+    "fv_mwh": 1439.0,
+    "total_mwh": 24009.0,
+    "el_share_pct": 42.2,
+    "fv_share_pct": 6.0
+  },
+  "2404": {
+    "el_mwh": 26137.0,
+    "fv_mwh": 2773.0,
+    "total_mwh": 47419.0,
+    "el_share_pct": 55.1,
+    "fv_share_pct": 5.8
+  },
+  "2409": {
+    "el_mwh": 36135.0,
+    "fv_mwh": 878.0,
+    "total_mwh": 57667.0,
+    "el_share_pct": 62.7,
+    "fv_share_pct": 1.5
+  },
+  "2417": {
+    "el_mwh": 23865.0,
+    "fv_mwh": 1953.0,
+    "total_mwh": 38843.0,
+    "el_share_pct": 61.4,
+    "fv_share_pct": 5.0
+  },
+  "2418": {
+    "el_mwh": 15525.0,
+    "fv_mwh": 4317.0,
+    "total_mwh": 28745.0,
+    "el_share_pct": 54.0,
+    "fv_share_pct": 15.0
+  },
+  "2421": {
+    "el_mwh": 28460.0,
+    "fv_mwh": 7447.0,
+    "total_mwh": 50281.0,
+    "el_share_pct": 56.6,
+    "fv_share_pct": 14.8
+  },
+  "2422": {
+    "el_mwh": 11101.0,
+    "fv_mwh": 5660.0,
+    "total_mwh": 23744.0,
+    "el_share_pct": 46.8,
+    "fv_share_pct": 23.8
+  },
+  "2425": {
+    "el_mwh": 13990.0,
+    "fv_mwh": 720.0,
+    "total_mwh": 21269.0,
+    "el_share_pct": 65.8,
+    "fv_share_pct": 3.4
+  },
+  "2462": {
+    "el_mwh": 26641.0,
+    "fv_mwh": 3960.0,
+    "total_mwh": 46833.0,
+    "el_share_pct": 56.9,
+    "fv_share_pct": 8.5
+  },
+  "2463": {
+    "el_mwh": 14107.0,
+    "fv_mwh": 5382.0,
+    "total_mwh": 27865.0,
+    "el_share_pct": 50.6,
+    "fv_share_pct": 19.3
+  },
+  "2480": {
+    "el_mwh": 290435.0,
+    "fv_mwh": 137010.0,
+    "total_mwh": 501665.0,
+    "el_share_pct": 57.9,
+    "fv_share_pct": 27.3
+  },
+  "2481": {
+    "el_mwh": 43244.0,
+    "fv_mwh": 20952.0,
+    "total_mwh": 81841.0,
+    "el_share_pct": 52.8,
+    "fv_share_pct": 25.6
+  },
+  "2482": {
+    "el_mwh": 289800.0,
+    "fv_mwh": 67884.0,
+    "total_mwh": 494043.0,
+    "el_share_pct": 58.7,
+    "fv_share_pct": 13.7
+  },
+  "2505": {
+    "el_mwh": 29170.0,
+    "fv_mwh": 7661.0,
+    "total_mwh": 50257.0,
+    "el_share_pct": 58.0,
+    "fv_share_pct": 15.2
+  },
+  "2506": {
+    "el_mwh": 17853.0,
+    "fv_mwh": 400.0,
+    "total_mwh": 25797.0,
+    "el_share_pct": 69.2,
+    "fv_share_pct": 1.6
+  },
+  "2510": {
+    "el_mwh": 24775.0,
+    "fv_mwh": 8694.0,
+    "total_mwh": 43754.0,
+    "el_share_pct": 56.6,
+    "fv_share_pct": 19.9
+  },
+  "2513": {
+    "el_mwh": 16733.0,
+    "fv_mwh": 6624.0,
+    "total_mwh": 32383.0,
+    "el_share_pct": 51.7,
+    "fv_share_pct": 20.5
+  },
+  "2514": {
+    "el_mwh": 84266.0,
+    "fv_mwh": 7376.0,
+    "total_mwh": 131335.0,
+    "el_share_pct": 64.2,
+    "fv_share_pct": 5.6
+  },
+  "2518": {
+    "el_mwh": 30448.0,
+    "fv_mwh": 11376.0,
+    "total_mwh": 53879.0,
+    "el_share_pct": 56.5,
+    "fv_share_pct": 21.1
+  },
+  "2521": {
+    "el_mwh": 35350.0,
+    "fv_mwh": 6023.0,
+    "total_mwh": 60022.0,
+    "el_share_pct": 58.9,
+    "fv_share_pct": 10.0
+  },
+  "2523": {
+    "el_mwh": 65821.0,
+    "fv_mwh": 34321.0,
+    "total_mwh": 110783.0,
+    "el_share_pct": 59.4,
+    "fv_share_pct": 31.0
+  },
+  "2560": {
+    "el_mwh": 33382.0,
+    "fv_mwh": 20730.0,
+    "total_mwh": 75350.0,
+    "el_share_pct": 44.3,
+    "fv_share_pct": 27.5
+  },
+  "2580": {
+    "el_mwh": 192881.0,
+    "fv_mwh": 205530.0,
+    "total_mwh": 430818.0,
+    "el_share_pct": 44.8,
+    "fv_share_pct": 47.7
+  },
+  "2581": {
+    "el_mwh": 191482.0,
+    "fv_mwh": 69755.0,
+    "total_mwh": 313096.0,
+    "el_share_pct": 61.2,
+    "fv_share_pct": 22.3
+  },
+  "2582": {
+    "el_mwh": 95811.0,
+    "fv_mwh": 85636.0,
+    "total_mwh": 220972.0,
+    "el_share_pct": 43.4,
+    "fv_share_pct": 38.8
+  },
+  "2583": {
+    "el_mwh": 40606.0,
+    "fv_mwh": 0.0,
+    "total_mwh": 55472.0,
+    "el_share_pct": 73.2,
+    "fv_share_pct": 0.0
+  },
+  "2584": {
+    "el_mwh": 79413.0,
+    "fv_mwh": 33775.0,
+    "total_mwh": 126119.0,
+    "el_share_pct": 63.0,
+    "fv_share_pct": 26.8
+  }
+}

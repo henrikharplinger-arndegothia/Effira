@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Effira OPTi — Advertorial v2 Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e4e0;
+    font-family: 'Source Sans 3', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: #1a1a1a;
+  }
+
+  .meta-info {
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 16px 24px;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .meta-info strong { color: #333; }
+
+  /* Spread container */
+  .spread {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  /* Spine shadow */
+  .spread::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.06), rgba(0,0,0,0.02), rgba(0,0,0,0.06));
+    z-index: 10;
+  }
+
+  /* === SIDA 1 — Left page === */
+  .page-left {
+    padding: 36px 40px 40px 44px;
+    border-right: 1px solid #f0ede9;
+    position: relative;
+  }
+
+  .annons-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .brand-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e8e4e0;
+  }
+
+  .effira-logo {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #e8630a;
+  }
+  .effira-logo span {
+    color: #333;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+  }
+
+  .headline-main {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    max-width: 520px;
+  }
+
+  .headline-sub {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  /* Hero image placeholder */
+  .hero-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #d4c8b8 0%, #bfb3a1 40%, #c9bfaf 100%);
+    border-radius: 4px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, rgba(0,0,0,0.25), transparent);
+  }
+
+  .hero-image .placeholder {
+    color: #8a7e70;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    z-index: 1;
+    background: rgba(255,255,255,0.7);
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+
+  .article-body {
+    column-count: 2;
+    column-gap: 28px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2a2a2a;
+  }
+
+  .article-body p {
+    margin-bottom: 12px;
+  }
+
+  .article-body .quote {
+    font-style: italic;
+    color: #444;
+  }
+
+  .article-body .dash-quote {
+    margin-left: 0;
+    padding-left: 0;
+    color: #333;
+  }
+
+  .article-body .drop-cap::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 52px;
+    float: left;
+    line-height: 0.85;
+    margin-right: 6px;
+    margin-top: 4px;
+    color: #e8630a;
+    font-weight: 700;
+  }
+
+  /* Fact box */
+  .fact-box {
+    margin-top: 24px;
+    background: #faf8f5;
+    border-left: 3px solid #e8630a;
+    padding: 18px 20px;
+    break-inside: avoid;
+    column-span: all;
+  }
+
+  .fact-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #e8630a;
+    margin-bottom: 8px;
+  }
+
+  .fact-box p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 4px;
+  }
+
+  .fact-box .pullquote {
+    font-style: italic;
+    font-size: 14px;
+    color: #333;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e8e4e0;
+  }
+
+  /* === SIDA 2 — Right page === */
+  .page-right {
+    padding: 36px 44px 40px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-right .annons-label {
+    text-align: right;
+  }
+
+  .right-header {
+    margin-bottom: 10px;
+    text-align: right;
+  }
+
+  .right-header .effira-logo {
+    font-size: 15px;
+  }
+
+  .headline-right {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+
+  .intro-right {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #555;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+
+  /* USP blocks */
+  .usp-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+
+  .usp {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .usp-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #fef4eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .usp-icon svg {
+    width: 26px;
+    height: 26px;
+    color: #e8630a;
+  }
+
+  .usp h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+
+  .usp p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  /* Social proof strip */
+  .social-proof {
+    background: #faf8f5;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    line-height: 1.5;
+    border: 1px solid #f0ede9;
+  }
+
+  /* CTA block */
+  .cta-block {
+    background: #1a1a1a;
+    border-radius: 6px;
+    padding: 28px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .cta-text h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .cta-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+
+  .cta-text a {
+    color: #f4a261;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .qr-placeholder {
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .qr-placeholder span {
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* Comparison table below */
+  .comparison {
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 32px 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .comparison h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+
+  .comparison table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .comparison th {
+    text-align: left;
+    padding: 10px 12px;
+    background: #faf8f5;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #e8e4e0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .comparison td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0ede9;
+    color: #333;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .comparison tr:last-child td { border-bottom: none; }
+
+  .comparison .old { color: #b55; }
+  .comparison .new { color: #2a7a3a; }
+
+  .comparison .label-col {
+    font-weight: 600;
+    color: #555;
+    width: 130px;
+  }
+
+  /* Notes section */
+  .notes {
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 24px;
+    padding: 24px 32px;
+    background: #fffbf5;
+    border: 1px solid #f0e6d4;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .notes h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e8630a;
+    margin-bottom: 10px;
+  }
+
+  .notes ul {
+    padding-left: 18px;
+  }
+
+  .notes li {
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 900px) {
+    .spread {
+      grid-template-columns: 1fr;
+    }
+    .spread::after { display: none; }
+    .page-left { border-right: none; border-bottom: 1px solid #e8e4e0; }
+    .article-body { column-count: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="meta-info">
+  <div><strong>Effira OPTi — Advertorial v2</strong> &middot; Villalivet &middot; Uppslag 410&times;265 mm</div>
+  <div>Målgrupp: <strong>B1</strong> (Den Väckta) + <strong>B2</strong> (Den Avvaktande)</div>
+</div>
+
+<!-- ==================== SPREAD ==================== -->
+<div class="spread">
+
+  <!-- SIDA 1 — Berättelsen -->
+  <div class="page-left">
+    <div class="annons-label">Annonssamarbete</div>
+    <div class="brand-bar">
+      <div class="effira-logo">effira <span>| Annonssamarbete</span></div>
+    </div>
+
+    <h1 class="headline-main">"Vi sparade 7&nbsp;000 kronor — utan att göra något"</h1>
+    <p class="headline-sub">Christoffer och Eva-Lotta lät värmepumpen jobba smartare. Så här gick det till.</p>
+
+    <div class="hero-image">
+      <div class="placeholder">Foto: Christoffer &amp; Eva-Lotta i vardagsmiljö — familj, hem, inte teknik</div>
+    </div>
+
+    <div class="article-body">
+      <p class="drop-cap">Christoffer och Eva-Lotta Ramfors bor i en villa på 300 kvadrat&shy;meter på Lidingö. Huset är från tidigt 1900-tal, berg&shy;värme&shy;pumpen från 2007. Allt fungerade — tills elräkningen slutade vara begriplig.</p>
+
+      <p class="dash-quote">— I dag handlar det inte bara om hur mycket el vi drar, utan <em>när</em> vi drar den, säger Christoffer. Vi fick effekt&shy;tariffer och plötsligt blev det dyrt bara för att värme&shy;pumpen startade samtidigt som vi laddade bilen.</p>
+
+      <p>De visste att problemet fanns. Men att manuellt styra en värmepump efter elpriser som ändras 96 gånger per dygn var inte realistiskt.</p>
+
+      <p class="dash-quote">— När det gäller teknik är jag både okunnig och ointresserad, skrattar Christoffer. Vi ville ha något som bara skötte sig.</p>
+
+      <p>De hittade Effira OPTi — en tjänst som kopplas till den befintliga värme&shy;pumpen och automatiskt styr <em>när</em> värme och varm&shy;vatten produceras. Ingen ny värmepump. Ingen ombyggnad. En tekniker installerade allt på ett par timmar.</p>
+
+      <p class="dash-quote">— Skillnaden märktes direkt. Effekt&shy;topparna försvann och uppvärmningen flyttades till billigare timmar. Första året sparade vi närmare 7&nbsp;000&nbsp;kronor.</p>
+
+      <p>Och temperaturen i huset?</p>
+
+      <p class="dash-quote">— Exakt samma. Barnen har inte märkt något. Det pågår bakom kulisserna utan att vi behöver bry oss.</p>
+    </div>
+
+    <div class="fact-box">
+      <h4>Familjen Ramfors</h4>
+      <p><strong>Bostad:</strong> Villa 300 m², Lidingö</p>
+      <p><strong>Värmepump:</strong> Bergvärme, installerad 2007</p>
+      <p><strong>Besparing år 1:</strong> ~7 000 kr</p>
+      <p class="pullquote">"Plötsligt blev vår gamla värmepump smart."</p>
+    </div>
+  </div>
+
+  <!-- SIDA 2 — USPar + CTA -->
+  <div class="page-right">
+    <div class="annons-label">Annonssamarbete</div>
+    <div class="right-header">
+      <div class="effira-logo">effira</div>
+    </div>
+
+    <h2 class="headline-right">Din värmepump kan spara tusenlappar. Automatiskt.</h2>
+    <p class="intro-right">I en miljon svenska villor finns redan det som behövs för att sänka elräkningen rejält: en vattenburen värmepump. Det enda som saknas är smart styrning. Det är vad Effira OPTi gör.</p>
+
+    <div class="usp-list">
+
+      <!-- USP 1: Komfort -->
+      <div class="usp">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a5 5 0 0 1 5 5v1a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2V7a5 5 0 0 1 5-5z"/>
+            <path d="M12 10v4"/>
+            <path d="M8 18a4 4 0 0 0 8 0"/>
+            <circle cx="12" cy="16" r="1"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Komforten är garanterad</h3>
+          <p>OPTi agerar aldrig om det riskerar att påverka temperaturen i ditt hem. Systemet är byggt så att komforten alltid går först — det är inte en inställning, det är så det fungerar.</p>
+        </div>
+      </div>
+
+      <!-- USP 2: Besparing -->
+      <div class="usp">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.5 0-2.5 1-2.5 2.25s1 2.25 2.5 2.25c1.5 0 2.5 1 2.5 2.25S13.5 17 12 17c-1 0-2-.5-2.5-1.5"/>
+            <path d="M12 6v1.5M12 16.5V18"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Spara 6 000–12 000 kr per år</h3>
+          <p>OPTi analyserar elpriset 96 gånger per dygn och flyttar värmepumpen till billigare timmar. Effekttoppar kapas, nätkostnaden sjunker. Återbetalningstid: ofta under ett år.</p>
+        </div>
+      </div>
+
+      <!-- USP 3: Installation -->
+      <div class="usp">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Vi installerar — du behöver inte göra något</h3>
+          <p>En Effira-tekniker kopplar in allt på din befintliga värmepump. Ingen ombyggnad, inga inställningar. Fungerar med 95&nbsp;% av alla vattenburna värmepumpar.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="social-proof">
+      "Hundratals svenska villor använder redan OPTi och sparar pengar<br>— utan att behöva göra något i vardagen."
+    </div>
+
+    <div class="cta-block">
+      <div class="cta-text">
+        <h3>Se vad du kan spara</h3>
+        <p>Testa besparingskalkylen på <a href="#">effiraenergy.com</a></p>
+      </div>
+      <div class="qr-placeholder">
+        <span>QR-kod</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ==================== END SPREAD ==================== -->
+
+
+<!-- Comparison: v1 vs v2 -->
+<div class="comparison">
+  <h2>Jämförelse: v1 → v2</h2>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>v1 (nuvarande)</th>
+        <th>v2 (förslag)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label-col">Budskap</td>
+        <td class="old">8+ budskap som tävlar om uppmärksamhet</td>
+        <td class="new">3 USPar med tydlig hierarki</td>
+      </tr>
+      <tr>
+        <td class="label-col">Struktur</td>
+        <td class="old">Landningssida i tidningsformat</td>
+        <td class="new">Kundberättelse + fokuserade USPar</td>
+      </tr>
+      <tr>
+        <td class="label-col">Hook</td>
+        <td class="old">"En miljon villor har lösningen…" (generiskt)</td>
+        <td class="new">"Vi sparade 7 000 kr — utan att göra något" (specifikt, igenkännbart)</td>
+      </tr>
+      <tr>
+        <td class="label-col">Ton</td>
+        <td class="old">Utbildande, förklarande</td>
+        <td class="new">Berättande, trygg, enkel</td>
+      </tr>
+      <tr>
+        <td class="label-col">B1-relevans</td>
+        <td class="old">Svag — effekttariffer nämns men namnges inte som trigger</td>
+        <td class="new">Stark — effekttariff-chock som berättelsens utgångspunkt</td>
+      </tr>
+      <tr>
+        <td class="label-col">B2-relevans</td>
+        <td class="old">Svag — för teknisk, för mycket att ta in</td>
+        <td class="new">Stark — "utan att göra något", komfortgaranti, familjecase</td>
+      </tr>
+      <tr>
+        <td class="label-col">CTA</td>
+        <td class="old">QR + webbadress + spartips</td>
+        <td class="new">En enda CTA: besparingskalkylen</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Design notes -->
+<div class="notes">
+  <h3>Designprinciper för produktion</h3>
+  <ul>
+    <li><strong>Sida 1</strong> ska se ut som en tidningsartikel — stor rubrik, brödtext i kolumner, stort foto av familjen i vardagsmiljö (inte vid värmepumpen).</li>
+    <li><strong>Sida 2</strong> ska vara luftig — tre tydliga USP-block med ikoner, generöst med whitespace. Inte fullpackad.</li>
+    <li><strong>Effira-loggan</strong> syns men dominerar inte. Det är en berättelse, inte en annons.</li>
+    <li><strong>Färgpalett</strong>: Varm, hemkänsla. Effiras orange som accent, inte dominerande. Undvik tech-blått.</li>
+    <li><strong>Foto</strong>: Familj i vardagsmiljö. Ska kännas som ett Villalivet-reportage, inte ett produktblad.</li>
+    <li><strong>Alternativa rubriker</strong>: "Plötsligt blev vår gamla värmepump smart" / "Samma hus. Samma värmepump. 7 000 kronor billigare." / "Vi ville ha lägre elräkning — utan att behöva tänka på det"</li>
+  </ul>
+</div>
+
+</body>
+</html>
