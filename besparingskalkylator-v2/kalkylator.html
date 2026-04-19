@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effira — Besparingskalkylator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #062121;
+      --bg-mid: #0b3333;
+      --highlight: #2dd4a8;
+      --orange: #FF8C2D;
+      --white: #ffffff;
+      --grey: #6b7280;
+      --light-bg: #f0f4f4;
+      --error: #ef4444;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background: var(--light-bg);
+      color: var(--bg-dark);
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── LEFT: Form panel ── */
+    .form-panel {
+      background: var(--bg-dark);
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--highlight);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .form-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    /* ── Questions ── */
+    .q-block {
+      margin-bottom: 22px;
+    }
+    .q-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .q-step {
+      background: var(--highlight);
+      color: var(--bg-dark);
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1.5px solid transparent;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      background: rgba(255,255,255,0.95);
+      color: var(--bg-dark);
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23062121' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 16px;
+      transition: border-color 0.15s;
+    }
+    select:focus { border-color: var(--highlight); }
+
+    /* ── kWh input ── */
+    .kwh-wrap {
+      position: relative;
+    }
+    .kwh-input {
+      width: 100%;
+      padding: 14px 90px 14px 16px;
+      border-radius: 12px;
+      border: 1.5px solid transparent;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      background: rgba(255,255,255,0.95);
+      color: var(--bg-dark);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .kwh-input:focus { border-color: var(--highlight); }
+    .kwh-unit {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--grey);
+      pointer-events: none;
+    }
+    .kwh-help {
+      margin-top: 6px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
+    .kwh-help a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+    .kwh-help a:hover { text-decoration: underline; }
+
+    /* Fallback: hustyp (shown when kWh unknown) */
+    .kwh-fallback {
+      display: none;
+      margin-top: 10px;
+    }
+    .kwh-fallback.visible { display: block; }
+    .fallback-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 6px;
+    }
+
+    /* ── Toggle buttons (ja/nej) ── */
+    .toggle-row {
+      display: flex;
+      gap: 10px;
+    }
+    .toggle-btn {
+      flex: 1;
+      padding: 13px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.7);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .toggle-btn:hover {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+    .toggle-btn.active {
+      background: var(--highlight);
+      border-color: var(--highlight);
+      color: var(--bg-dark);
+    }
+
+    /* ── Two-column grid for some questions ── */
+    .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* ── RIGHT: Result panel ── */
+    .result-panel {
+      background: var(--light-bg);
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Empty state */
+    .result-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--grey);
+    }
+    .result-empty .icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      opacity: 0.4;
+    }
+    .result-empty p {
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* Result card */
+    .result-card {
+      display: none;
+    }
+    .result-card.visible {
+      display: block;
+    }
+
+    .result-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 12px;
+    }
+
+    .result-amount {
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--bg-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .result-amount span.currency {
+      font-size: 22px;
+      font-weight: 500;
+      vertical-align: super;
+      margin-right: 4px;
+      color: var(--grey);
+    }
+
+    .result-range {
+      font-size: 14px;
+      color: var(--grey);
+      margin-bottom: 28px;
+    }
+    .result-range strong {
+      color: var(--bg-dark);
+    }
+
+    /* Period switcher */
+    .period-switch {
+      display: flex;
+      gap: 6px;
+      background: rgba(6,33,33,0.08);
+      border-radius: 12px;
+      padding: 4px;
+      width: fit-content;
+      margin-bottom: 28px;
+    }
+    .period-btn {
+      padding: 7px 16px;
+      border-radius: 9px;
+      border: none;
+      background: transparent;
+      color: var(--grey);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .period-btn.active {
+      background: var(--bg-dark);
+      color: var(--white);
+    }
+
+    /* Explanation */
+    .result-explanation {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #374151;
+      border-left: 3px solid var(--highlight);
+    }
+
+    /* Assumptions */
+    .result-assumptions {
+      margin-bottom: 28px;
+    }
+    .assumptions-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 10px;
+    }
+    .assumption-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .assumption-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--highlight);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    /* Data quality badge */
+    .quality-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .quality-badge.high { background: #dcfce7; color: #166534; }
+    .quality-badge.medium { background: #fef3c7; color: #92400e; }
+    .quality-badge.low { background: #fee2e2; color: #991b1b; }
+    .quality-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+    /* CTA */
+    .cta-box {
+      background: var(--bg-dark);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+    }
+    .cta-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .cta-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--highlight);
+      color: var(--bg-dark);
+      padding: 13px 28px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .cta-btn:hover { opacity: 0.9; }
+
+    /* Feedback */
+    .feedback-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      justify-content: center;
+    }
+    .feedback-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+    .feedback-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .feedback-btn:hover { background: rgba(255,255,255,0.2); }
+    .feedback-btn.clicked { background: rgba(45,212,168,0.3); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page { grid-template-columns: 1fr; }
+      .result-panel { padding: 32px 24px; }
+      .form-panel { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── LEFT: FORM ── -->
+  <div class="form-panel">
+    <div class="logo">Effira Energy</div>
+
+    <h1 class="form-title">Räkna ut din besparing<br>med OPTi</h1>
+    <p class="form-subtitle">Svara på 5–6 frågor så beräknar vi vad du kan spara per år. Tar under en minut.</p>
+
+    <!-- Q1 + Q2 side by side -->
+    <div class="q-grid">
+      <div class="q-block">
+        <div class="q-label"><span class="q-step">1</span> Uppvärmning</div>
+        <select id="q-system" onchange="recalc()">
+          <option value="">Välj typ...</option>
+          <option value="BV">Bergvärme</option>
+          <option value="LV">Luft/vatten</option>
+          <option value="FL">Frånluft</option>
+        </select>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label"><span class="q-step">2</span> Elområde</div>
+        <select id="q-region" onchange="recalc()">
+          <option value="">Välj område...</option>
+          <option value="SE1">SE1 — Norrland</option>
+          <option value="SE2">SE2 — Mellansverige nord</option>
+          <option value="SE3">SE3 — Mellansverige (Stockholm)</option>
+          <option value="SE4">SE4 — Sydsverige (Malmö)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Q3: kWh -->
+    <div class="q-block">
+      <div class="q-label"><span class="q-step">3</span> Årsförbrukning el</div>
+      <div class="kwh-wrap">
+        <input
+          class="kwh-input"
+          id="q-kwh"
+          type="number"
+          min="1000"
+          max="60000"
+          step="100"
+          placeholder="t.ex. 18 000"
+          oninput="onKwhInput()"
+        />
+        <span class="kwh-unit">kWh/år</span>
+      </div>
+      <div class="kwh-help">
+        Hittar du på din elräkning eller i appen hos ditt elbolag.
+        Vet du inte? <a href="#" onclick="showFallback(event)">Välj hustyp i stället</a>
+      </div>
+      <div class="kwh-fallback" id="kwh-fallback">
+        <div class="fallback-label">Ungefär hur stort är ditt hus?</div>
+        <select id="q-hustyp" onchange="onHustypSelect()">
+          <option value="">Välj hustyp...</option>
+          <option value="hus 1">Litet (~100–130 kvm)</option>
+          <option value="hus 2">Mellanhus (~150–170 kvm)</option>
+          <option value="hus 3">Stort (~200–220 kvm)</option>
+          <option value="hus 4">Mycket stort (~250 kvm+)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Q4 + Q5 side by side -->
+    <div class="q-grid">
+      <div class="q-block">
+        <div class="q-label"><span class="q-step">4</span> Solceller</div>
+        <div class="toggle-row">
+          <button class="toggle-btn" id="sol-nej" onclick="setToggle('sol','nej')">Nej</button>
+          <button class="toggle-btn" id="sol-ja" onclick="setToggle('sol','ja')">Ja</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-label"><span class="q-step">5</span> Elbil</div>
+        <div class="toggle-row">
+          <button class="toggle-btn" id="elbil-nej" onclick="setToggle('elbil','nej')">Nej</button>
+          <button class="toggle-btn" id="elbil-ja" onclick="setToggle('elbil','ja')">Ja</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6: Elavtal -->
+    <div class="q-block">
+      <div class="q-label"><span class="q-step">6</span> Typ av elavtal</div>
+      <select id="q-elavtal" onchange="recalc()">
+        <option value="unknown">Vet inte / annat</option>
+        <option value="spot">Timpris (spotpris)</option>
+        <option value="rorligt">Rörligt</option>
+        <option value="fast">Fast pris</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- ── RIGHT: RESULT ── -->
+  <div class="result-panel">
+
+    <!-- Empty state -->
+    <div class="result-empty" id="result-empty">
+      <div class="icon">⚡</div>
+      <p>Fyll i dina uppgifter så beräknar vi din besparing direkt här.</p>
+    </div>
+
+    <!-- Result card -->
+    <div class="result-card" id="result-card">
+
+      <div class="result-eyebrow">Din uppskattade besparing med OPTi</div>
+
+      <div class="result-amount" id="result-amount">
+        <span class="currency">ca</span><span id="amount-val">—</span>
+      </div>
+      <div class="result-range" id="result-range"></div>
+
+      <!-- Period switcher -->
+      <div class="period-switch">
+        <button class="period-btn active" onclick="setPeriod('year', this)">Per år</button>
+        <button class="period-btn" onclick="setPeriod('month', this)">Per månad</button>
+        <button class="period-btn" onclick="setPeriod('5year', this)">5 år</button>
+      </div>
+
+      <!-- Data quality -->
+      <div class="quality-badge" id="quality-badge">
+        <span class="quality-dot"></span>
+        <span id="quality-label">—</span>
+      </div>
+
+      <!-- Explanation -->
+      <div class="result-explanation" id="result-explanation"></div>
+
+      <!-- Assumptions -->
+      <div class="result-assumptions">
+        <div class="assumptions-title">Antaganden</div>
+        <div id="assumptions-list"></div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <div class="cta-text">Vill du ha en exaktare kalkyl?</div>
+        <div class="cta-sub">En av våra energirådgivare räknar fram ditt faktiska sparande kostnadsfritt.</div>
+        <a href="#" class="cta-btn">Kontakta oss</a>
+        <div class="feedback-row">
+          <span class="feedback-label">Stämmer beräkningen?</span>
+          <button class="feedback-btn" id="fb-yes" onclick="sendFeedback('yes')" title="Ja, rimlig">👍</button>
+          <button class="feedback-btn" id="fb-no" onclick="sendFeedback('no')" title="Nej, inte rimlig">👎</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Savings lookup data ──
+const SAVINGS = {"SE4":{"BV":{"hus 1":{"nej":{"2023":2800,"2024":2310},"sol":{"2023":4770,"2024":4360},"elbil":{"2023":3096,"2024":2483},"sol+elbil":{"2023":5066,"2024":4533}},"hus 2":{"nej":{"2023":3878,"2024":3054},"sol":{"2023":5848,"2024":5104},"elbil":{"2023":4316,"2024":3310},"sol+elbil":{"2023":6286,"2024":5360}},"hus 3":{"nej":{"2023":5169,"2024":4425},"sol":{"2023":7139,"2024":6475},"elbil":{"2023":5681,"2024":4723},"sol+elbil":{"2023":7651,"2024":6773}},"hus 4":{"nej":{"2023":7255,"2024":6421},"sol":{"2023":9225,"2024":8471},"elbil":{"2023":7989,"2024":6850},"sol+elbil":{"2023":9959,"2024":8900}}},"LV":{"hus 1":{"nej":{"2023":3686,"2024":2873},"sol":{"2023":5656,"2024":4923},"elbil":{"2023":4050,"2024":3086},"sol+elbil":{"2023":6020,"2024":5135}},"hus 2":{"nej":{"2023":4724,"2024":3786},"sol":{"2023":6694,"2024":5836},"elbil":{"2023":5218,"2024":4074},"sol+elbil":{"2023":7188,"2024":6124}},"hus 3":{"nej":{"2023":6918,"2024":6235},"sol":{"2023":8888,"2024":8285},"elbil":{"2023":7522,"2024":6587},"sol+elbil":{"2023":9492,"2024":8637}},"hus 4":{"nej":{"2023":8655,"2024":8422},"sol":{"2023":10625,"2024":10472},"elbil":{"2023":9397,"2024":8855},"sol+elbil":{"2023":11367,"2024":10905}}},"FL":{"hus 1":{"nej":{"2023":4610,"2024":3607},"sol":{"2023":6580,"2024":5657},"elbil":{"2023":5004,"2024":3837},"sol+elbil":{"2023":6974,"2024":5887}},"hus 2":{"nej":{"2023":6602,"2024":5658},"sol":{"2023":8572,"2024":7707},"elbil":{"2023":7132,"2024":5967},"sol+elbil":{"2023":9102,"2024":8017}},"hus 3":{"nej":{"2023":9130,"2024":7962},"sol":{"2023":11100,"2024":10012},"elbil":{"2023":9792,"2024":8348},"sol+elbil":{"2023":11762,"2024":10398}},"hus 4":{"nej":{"2023":10243,"2024":9551},"sol":{"2023":12213,"2024":11601},"elbil":{"2023":12994,"2024":11431},"sol+elbil":{"2023":14964,"2024":13481}}}},"SE3":{"BV":{"hus 1":{"nej":{"2023":2176,"2024":2259},"sol":{"2023":3773,"2024":3897},"elbil":{"2023":2383,"2024":2487},"sol+elbil":{"2023":3980,"2024":4126}},"hus 2":{"nej":{"2023":3002,"2024":2801},"sol":{"2023":4599,"2024":4440},"elbil":{"2023":3309,"2024":3082},"sol+elbil":{"2023":4906,"2024":4720}},"hus 3":{"nej":{"2023":4030,"2024":3915},"sol":{"2023":5627,"2024":5553},"elbil":{"2023":4389,"2024":4229},"sol+elbil":{"2023":5986,"2024":5867}},"hus 4":{"nej":{"2023":5651,"2024":5379},"sol":{"2023":7248,"2024":7018},"elbil":{"2023":6165,"2024":5758},"sol+elbil":{"2023":7762,"2024":7397}}},"LV":{"hus 1":{"nej":{"2023":2875,"2024":2613},"sol":{"2023":4472,"2024":4251},"elbil":{"2023":3130,"2024":2848},"sol+elbil":{"2023":4726,"2024":4487}},"hus 2":{"nej":{"2023":3673,"2024":3347},"sol":{"2023":5270,"2024":4986},"elbil":{"2023":4019,"2024":3642},"sol+elbil":{"2023":5616,"2024":5280}},"hus 3":{"nej":{"2023":5426,"2024":5321},"sol":{"2023":7023,"2024":6959},"elbil":{"2023":5849,"2024":5660},"sol+elbil":{"2023":7446,"2024":7299}},"hus 4":{"nej":{"2023":6795,"2024":7076},"sol":{"2023":8392,"2024":8714},"elbil":{"2023":7314,"2024":7472},"sol+elbil":{"2023":8911,"2024":9111}}},"FL":{"hus 1":{"nej":{"2023":3620,"2024":3119},"sol":{"2023":5217,"2024":4758},"elbil":{"2023":3896,"2024":3347},"sol+elbil":{"2023":5493,"2024":4985}},"hus 2":{"nej":{"2023":5197,"2024":4746},"sol":{"2023":6794,"2024":6385},"elbil":{"2023":5568,"2024":5026},"sol+elbil":{"2023":7165,"2024":6665}},"hus 3":{"nej":{"2023":7216,"2024":6546},"sol":{"2023":8813,"2024":8184},"elbil":{"2023":7679,"2024":6868},"sol+elbil":{"2023":9276,"2024":8506}},"hus 4":{"nej":{"2023":8233,"2024":7988},"sol":{"2023":9830,"2024":9627},"elbil":{"2023":10159,"2024":8944},"sol+elbil":{"2023":11756,"2024":10582}}}},"SE2":{"BV":{"hus 1":{"nej":{"2023":1886,"2024":2005},"sol":{"2023":3212,"2024":3356},"elbil":{"2023":2093,"2024":2234},"sol+elbil":{"2023":3419,"2024":3584}},"hus 2":{"nej":{"2023":2616,"2024":2485},"sol":{"2023":3942,"2024":3835},"elbil":{"2023":2923,"2024":2765},"sol+elbil":{"2023":4249,"2024":4116}},"hus 3":{"nej":{"2023":3477,"2024":3408},"sol":{"2023":4803,"2024":4759},"elbil":{"2023":3836,"2024":3722},"sol+elbil":{"2023":5161,"2024":5072}},"hus 4":{"nej":{"2023":4883,"2024":4641},"sol":{"2023":6209,"2024":5991},"elbil":{"2023":5397,"2024":5020},"sol+elbil":{"2023":6723,"2024":6370}}},"LV":{"hus 1":{"nej":{"2023":2480,"2024":2296},"sol":{"2023":3806,"2024":3647},"elbil":{"2023":2734,"2024":2532},"sol+elbil":{"2023":4060,"2024":3882}},"hus 2":{"nej":{"2023":3182,"2024":2936},"sol":{"2023":4507,"2024":4286},"elbil":{"2023":3527,"2024":3230},"sol+elbil":{"2023":4853,"2024":4580}},"hus 3":{"nej":{"2023":4643,"2024":4561},"sol":{"2023":5969,"2024":5911},"elbil":{"2023":5066,"2024":4901},"sol+elbil":{"2023":6392,"2024":6251}},"hus 4":{"nej":{"2023":5807,"2024":6020},"sol":{"2023":7133,"2024":7371},"elbil":{"2023":6327,"2024":6417},"sol+elbil":{"2023":7653,"2024":7768}}},"FL":{"hus 1":{"nej":{"2023":3093,"2024":2697},"sol":{"2023":4419,"2024":4048},"elbil":{"2023":3369,"2024":2925},"sol+elbil":{"2023":4695,"2024":4275}},"hus 2":{"nej":{"2023":4425,"2024":4050},"sol":{"2023":5751,"2024":5400},"elbil":{"2023":4796,"2024":4330},"sol+elbil":{"2023":6122,"2024":5680}},"hus 3":{"nej":{"2023":6110,"2024":5533},"sol":{"2023":7436,"2024":6883},"elbil":{"2023":6573,"2024":5855},"sol+elbil":{"2023":7899,"2024":7205}},"hus 4":{"nej":{"2023":6807,"2024":6616},"sol":{"2023":8133,"2024":7967},"elbil":{"2023":8733,"2024":7572},"sol+elbil":{"2023":10059,"2024":8922}}}},"SE1":{"BV":{"hus 1":{"nej":{"2023":1886,"2024":2005},"sol":{"2023":3134,"2024":3276},"elbil":{"2023":2093,"2024":2234},"sol+elbil":{"2023":3341,"2024":3505}},"hus 2":{"nej":{"2023":2616,"2024":2485},"sol":{"2023":3864,"2024":3755},"elbil":{"2023":2923,"2024":2765},"sol+elbil":{"2023":4170,"2024":4036}},"hus 3":{"nej":{"2023":3477,"2024":3408},"sol":{"2023":4725,"2024":4679},"elbil":{"2023":3835,"2024":3722},"sol+elbil":{"2023":5083,"2024":4993}},"hus 4":{"nej":{"2023":4882,"2024":4640},"sol":{"2023":6130,"2024":5911},"elbil":{"2023":5396,"2024":5019},"sol+elbil":{"2023":6644,"2024":6290}}},"LV":{"hus 1":{"nej":{"2023":2479,"2024":2296},"sol":{"2023":3727,"2024":3567},"elbil":{"2023":2734,"2024":2532},"sol+elbil":{"2023":3982,"2024":3802}},"hus 2":{"nej":{"2023":3181,"2024":2935},"sol":{"2023":4429,"2024":4206},"elbil":{"2023":3527,"2024":3230},"sol+elbil":{"2023":4775,"2024":4501}},"hus 3":{"nej":{"2023":4642,"2024":4561},"sol":{"2023":5890,"2024":5832},"elbil":{"2023":5065,"2024":4900},"sol+elbil":{"2023":6313,"2024":6171}},"hus 4":{"nej":{"2023":5807,"2024":6020},"sol":{"2023":7055,"2024":7291},"elbil":{"2023":6326,"2024":6417},"sol+elbil":{"2023":7574,"2024":7687}}},"FL":{"hus 1":{"nej":{"2023":3093,"2024":2697},"sol":{"2023":4341,"2024":3968},"elbil":{"2023":3369,"2024":2925},"sol+elbil":{"2023":4617,"2024":4195}},"hus 2":{"nej":{"2023":4425,"2024":4050},"sol":{"2023":5672,"2024":5320},"elbil":{"2023":4796,"2024":4330},"sol+elbil":{"2023":6043,"2024":5600}},"hus 3":{"nej":{"2023":6109,"2024":5532},"sol":{"2023":7357,"2024":6803},"elbil":{"2023":6572,"2024":5854},"sol+elbil":{"2023":7820,"2024":7125}},"hus 4":{"nej":{"2023":6806,"2024":6616},"sol":{"2023":8054,"2024":7887},"elbil":{"2023":8732,"2024":7571},"sol+elbil":{"2023":9980,"2024":8842}}}}};
+
+// kWh thresholds per system type for mapping user input → house profile
+const KWH_PROFILES = {
+  BV: [{id:'hus 1',kwh:6600,max:7700},{id:'hus 2',kwh:8800,max:10700},{id:'hus 3',kwh:12600,max:15050},{id:'hus 4',kwh:17500,max:99999}],
+  LV: [{id:'hus 1',kwh:9000,max:10100},{id:'hus 2',kwh:11200,max:14525},{id:'hus 3',kwh:17850,max:20175},{id:'hus 4',kwh:22500,max:99999}],
+  FL: [{id:'hus 1',kwh:12000,max:14800},{id:'hus 2',kwh:17600,max:21400},{id:'hus 3',kwh:25200,max:28850},{id:'hus 4',kwh:32500,max:99999}]
+};
+
+const SYSTEM_LABELS = {BV:'bergvärme', LV:'luft/vatten-värmepump', FL:'frånluftsvärmepump'};
+const REGION_LABELS = {SE1:'SE1 (Norrland)', SE2:'SE2 (Mellansverige)', SE3:'SE3 (Stockholm/Mellansverige)', SE4:'SE4 (Sydsverige)'};
+
+// ── State ──
+const state = {
+  system: '',
+  region: '',
+  kwh: null,
+  hustyp: '',
+  sol: null,   // true/false/null
+  elbil: null,
+  elavtal: 'unknown',
+  period: 'year',
+  baseAmount: 0,
+};
+
+function setToggle(field, val) {
+  state[field] = val === 'ja';
+  document.getElementById(field + '-nej').classList.toggle('active', val === 'nej');
+  document.getElementById(field + '-ja').classList.toggle('active', val === 'ja');
+  recalc();
+}
+
+function onKwhInput() {
+  const v = parseFloat(document.getElementById('q-kwh').value);
+  state.kwh = isNaN(v) ? null : v;
+  state.hustyp = ''; // clear fallback
+  document.getElementById('q-hustyp').value = '';
+  recalc();
+}
+
+function showFallback(e) {
+  e.preventDefault();
+  document.getElementById('kwh-fallback').classList.add('visible');
+}
+
+function onHustypSelect() {
+  state.hustyp = document.getElementById('q-hustyp').value;
+  state.kwh = null;
+  document.getElementById('q-kwh').value = '';
+  recalc();
+}
+
+document.getElementById('q-system').addEventListener('change', e => { state.system = e.target.value; recalc(); });
+document.getElementById('q-region').addEventListener('change', e => { state.region = e.target.value; recalc(); });
+document.getElementById('q-elavtal').addEventListener('change', e => { state.elavtal = e.target.value; recalc(); });
+
+// ── Map kWh to house profile ──
+function kwhToHus(kwh, system) {
+  if (!system || !KWH_PROFILES[system]) return null;
+  const profiles = KWH_PROFILES[system];
+  // Find closest profile
+  let best = profiles[0];
+  let bestDist = Math.abs(kwh - best.kwh);
+  for (const p of profiles) {
+    const d = Math.abs(kwh - p.kwh);
+    if (d < bestDist) { bestDist = d; best = p; }
+  }
+  return best.id;
+}
+
+// ── Round to nearest 500 ──
+function round500(n) { return Math.round(n / 500) * 500; }
+
+// ── Format kr ──
+function fmtKr(n) {
+  return new Intl.NumberFormat('sv-SE').format(n) + ' kr';
+}
+
+// ── Main calculation ──
+function recalc() {
+  const system = state.system || document.getElementById('q-system').value;
+  const region = state.region || document.getElementById('q-region').value;
+  state.elavtal = document.getElementById('q-elavtal').value;
+
+  // Determine house profile
+  let hus = null;
+  if (state.kwh && system) {
+    hus = kwhToHus(state.kwh, system);
+  } else if (state.hustyp) {
+    hus = state.hustyp;
+  }
+
+  // Need minimum: system + region + (kwh or hustyp)
+  if (!system || !region || !hus) {
+    showEmpty();
+    return;
+  }
+
+  // Determine scenario
+  const hasSol = state.sol === true;
+  const hasElbil = state.elbil === true;
+  let scenario = 'nej';
+  if (hasSol && hasElbil) scenario = 'sol+elbil';
+  else if (hasSol) scenario = 'sol';
+  else if (hasElbil) scenario = 'elbil';
+
+  const data = SAVINGS[region]?.[system]?.[hus]?.[scenario];
+  if (!data) { showEmpty(); return; }
+
+  // Average of 2023 and 2024
+  const avg = (data['2023'] + data['2024']) / 2;
+  const base = round500(avg);
+  state.baseAmount = base;
+
+  // Determine uncertainty band based on data quality
+  let quality, bandPct, qualityClass;
+  if (state.kwh && state.sol !== null && state.elbil !== null) {
+    quality = 'Hög datakvalitet'; qualityClass = 'high'; bandPct = 0.10;
+  } else if (hus && (state.sol !== null || state.elbil !== null)) {
+    quality = 'Medelhög datakvalitet'; qualityClass = 'medium'; bandPct = 0.15;
+  } else {
+    quality = 'Lägre datakvalitet'; qualityClass = 'low'; bandPct = 0.25;
+  }
+
+  // Elavtal modifier for presentation
+  let elavtalNote = '';
+  if (state.elavtal === 'spot') {
+    elavtalNote = 'Du har timpris — kalkylen baseras på spotlogik och matchar ditt avtal väl.';
+  } else if (state.elavtal === 'rorligt') {
+    elavtalNote = 'Med rörligt elavtal är kalkylen en bra uppskattning. Timpris ger vanligtvis något högre besparing.';
+  } else if (state.elavtal === 'fast') {
+    elavtalNote = 'Med fast pris är besparingen något lägre i praktiken — du betalar samma oavsett när du förbrukar.';
+  }
+
+  renderResult({ base, bandPct, quality, qualityClass, system, region, hus, scenario, hasSol, hasElbil, elavtalNote });
+}
+
+function renderResult({ base, bandPct, quality, qualityClass, system, region, hus, scenario, hasSol, hasElbil, elavtalNote }) {
+  const low = round500(base * (1 - bandPct));
+  const high = round500(base * (1 + bandPct));
+
+  // Update display by period
+  updateAmount(base, low, high);
+
+  // Quality badge
+  const badge = document.getElementById('quality-badge');
+  badge.className = 'quality-badge ' + qualityClass;
+  document.getElementById('quality-label').textContent = quality;
+
+  // Explanation
+  const husLabel = {
+    'hus 1': 'ett litet hus',
+    'hus 2': 'ett mellanhus',
+    'hus 3': 'ett stort hus',
+    'hus 4': 'ett mycket stort hus'
+  }[hus] || hus;
+
+  let scenarioText = '';
+  if (hasSol && hasElbil) scenarioText = ', med solceller och elbil';
+  else if (hasSol) scenarioText = ', med solceller';
+  else if (hasElbil) scenarioText = ', med elbil';
+
+  let explanation = `Beräkningen baseras på <strong>${SYSTEM_LABELS[system]}</strong> i <strong>${REGION_LABELS[region]}</strong>, ${husLabel}${scenarioText}. `;
+  explanation += `OPTi optimerar din uppvärmning mot spotpriset och minskar din elräkning utan att du behöver göra något.`;
+  if (elavtalNote) explanation += ` <em>${elavtalNote}</em>`;
+
+  document.getElementById('result-explanation').innerHTML = explanation;
+
+  // Assumptions
+  const assumptions = [
+    `Baserat på genomsnitt av 2023 och 2024 års spotpriser`,
+    `Bruttobesparing — före kostnad för OPTi-abonnemang`,
+    `±${Math.round(bandPct * 100)}% osäkerhetsband baserat på tillgänglig data`,
+  ];
+  if (!hasSol && !hasElbil && state.sol === null) {
+    assumptions.push('Solceller och elbil är inte inkluderat — ange om du har det för bättre träffsäkerhet');
+  }
+  const list = document.getElementById('assumptions-list');
+  list.innerHTML = assumptions.map(a => `<div class="assumption-item">${a}</div>`).join('');
+
+  document.getElementById('result-empty').style.display = 'none';
+  document.getElementById('result-card').classList.add('visible');
+}
+
+function updateAmount(base, low, high) {
+  const p = state.period;
+  let val, rangeText;
+  if (p === 'year') {
+    val = base;
+    rangeText = `Troligt spann: <strong>${fmtKr(low)} – ${fmtKr(high)}</strong> per år`;
+  } else if (p === 'month') {
+    val = round500(base / 12);
+    const lm = round500(low / 12), hm = round500(high / 12);
+    rangeText = `Troligt spann: <strong>${fmtKr(lm)} – ${fmtKr(hm)}</strong> per månad`;
+  } else {
+    val = round500(base * 5);
+    const l5 = round500(low * 5), h5 = round500(high * 5);
+    rangeText = `Troligt spann: <strong>${fmtKr(l5)} – ${fmtKr(h5)}</strong> över 5 år`;
+  }
+  document.getElementById('amount-val').textContent = fmtKr(val);
+  document.getElementById('result-range').innerHTML = rangeText;
+}
+
+function setPeriod(p, btn) {
+  state.period = p;
+  document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (state.baseAmount) {
+    const base = state.baseAmount;
+    const bandPct = parseFloat(document.getElementById('quality-badge').classList.contains('high') ? 0.10 : document.getElementById('quality-badge').classList.contains('medium') ? 0.15 : 0.25);
+    const low = round500(base * (1 - bandPct));
+    const high = round500(base * (1 + bandPct));
+    updateAmount(base, low, high);
+  }
+}
+
+function showEmpty() {
+  document.getElementById('result-empty').style.display = '';
+  document.getElementById('result-card').classList.remove('visible');
+}
+
+function sendFeedback(val) {
+  document.getElementById('fb-yes').classList.toggle('clicked', val === 'yes');
+  document.getElementById('fb-no').classList.toggle('clicked', val === 'no');
+  // TODO: log to backend
+  console.log('Feedback:', val, {
+    system: state.system, region: state.region, kwh: state.kwh,
+    sol: state.sol, elbil: state.elbil, amount: state.baseAmount
+  });
+}
+</script>
+
+</body>
+</html>
