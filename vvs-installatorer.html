@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>För installatörer — Effira Energy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-green: #013233;
+      --light-green: #d0e7e2;
+      --orange: #ff8c2d;
+      --white: #ffffff;
+      --brand-black: #062121;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      color: var(--brand-black);
+      background: var(--white);
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--dark-green);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 50;
+      color: var(--white);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      max-width: 118px;
+      height: auto;
+      display: block;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .main-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      border: 1px solid rgba(208,231,226,0.4);
+      transition: border-color 0.2s;
+      white-space: nowrap;
+      display: block;
+    }
+
+    .main-nav a:hover {
+      border-color: var(--orange);
+    }
+
+    .main-nav .active-page a {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .header-cta {
+      background: var(--orange);
+      color: var(--brand-black);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 15px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    body { padding-top: 72px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--dark-green);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+      max-width: 100%;
+    }
+
+    .hero-text {
+      padding: 80px 64px 80px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .hero-text h1 {
+      color: var(--white);
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-text h1 span {
+      color: var(--orange);
+    }
+
+    .hero-text p {
+      color: rgba(255,255,255,0.85);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--brand-black);
+      padding: 14px 28px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-secondary-text {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 72px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-light {
+      background: var(--light-green);
+    }
+
+    .section-light .section {
+      max-width: 100%;
+    }
+
+    .section-light-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 48px;
+    }
+
+    .section-dark {
+      background: var(--dark-green);
+      color: var(--white);
+    }
+
+    .section-dark .section {
+      max-width: 100%;
+    }
+
+    .section-dark-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 48px;
+      color: var(--white);
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--dark-green);
+      margin-bottom: 24px;
+      line-height: 1.25;
+    }
+
+    .section-dark-inner h2,
+    .section-dark-inner h3 {
+      color: var(--white);
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--dark-green);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--brand-black);
+    }
+
+    .section-dark-inner p {
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-steps {
+      display: flex;
+      gap: 16px;
+      margin: 28px 0;
+      flex-wrap: wrap;
+    }
+
+    .problem-step {
+      background: var(--white);
+      border: 1px solid rgba(1,50,51,0.15);
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--dark-green);
+    }
+
+    .problem-step::before {
+      content: '→ ';
+      color: var(--orange);
+    }
+
+    /* ── TWO-COL ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .two-col img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 6px 6px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ── BULLET LIST ── */
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .bullet-list li {
+      font-size: 17px;
+      line-height: 1.5;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .bullet-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .source-note {
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    /* ── STATS TABLE ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin: 32px 0;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .stat-cell {
+      background: var(--dark-green);
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .stat-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    .stat-label {
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ── BENEFITS CARDS ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .benefit-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid rgba(1,50,51,0.1);
+    }
+
+    .benefit-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .benefit-card p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .benefit-highlight {
+      color: var(--dark-green);
+      font-weight: 700;
+    }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      background: var(--light-green);
+    }
+
+    .quote-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 72px 48px;
+      text-align: center;
+    }
+
+    blockquote {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--dark-green);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    blockquote::before {
+      content: '"';
+      font-size: 60px;
+      color: var(--orange);
+      line-height: 0;
+      vertical-align: -20px;
+      margin-right: 4px;
+    }
+
+    .quote-attribution {
+      font-size: 15px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .quote-placeholder {
+      display: inline-block;
+      background: rgba(1,50,51,0.1);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 13px;
+      color: #555;
+      font-style: normal;
+    }
+
+    /* ── RESPONSIBILITY TABLE ── */
+    .resp-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 32px;
+    }
+
+    .resp-table th {
+      background: var(--dark-green);
+      color: var(--white);
+      padding: 18px 28px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .resp-table th:first-child { border-radius: 0; }
+
+    .resp-table td {
+      padding: 16px 28px;
+      font-size: 16px;
+      border-bottom: 1px solid var(--light-green);
+      background: var(--white);
+    }
+
+    .resp-table td:first-child {
+      color: var(--dark-green);
+    }
+
+    .dashboard-callout {
+      background: var(--dark-green);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-top: 28px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .dashboard-callout strong {
+      color: var(--orange);
+    }
+
+    /* ── FAQ ── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 24px 28px;
+      border: 1px solid rgba(1,50,51,0.12);
+    }
+
+    .faq-item h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: var(--dark-green);
+    }
+
+    .faq-item p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: var(--dark-green);
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      text-align: center;
+    }
+
+    .cta-inner h2 {
+      color: var(--white);
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .cta-inner p {
+      color: rgba(255,255,255,0.8);
+      font-size: 18px;
+      margin-bottom: 36px;
+    }
+
+    .cta-placeholder {
+      background: rgba(255,255,255,0.1);
+      border: 2px dashed rgba(255,140,45,0.6);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      color: rgba(255,255,255,0.5);
+      font-size: 15px;
+    }
+
+    .cta-contact {
+      color: rgba(255,255,255,0.6);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .cta-contact a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    .cta-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+
+    .cta-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .cta-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cta-field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cta-field input {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 16px;
+      color: var(--white);
+      outline: none;
+    }
+
+    .cta-field input::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    .cta-field input:focus {
+      border-color: var(--orange);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-green);
+      border-top: 1px solid rgba(208,231,226,0.15);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-link {
+      border: 1px solid rgba(208,231,226,0.4);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .footer-link.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--brand-black);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="https://effiraenergy.com/se/">
+      <img class="logo" src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/effira_logo-1.svg" alt="Effira Energy">
+    </a>
+    <ul class="main-nav">
+      <li><a href="https://effiraenergy.com/se/optimera-varmepumpen/">OPTi</a></li>
+      <li><a href="https://effiraenergy.com/se/rakna-ut-din-besparing/">Räkna ut din besparing</a></li>
+      <li><a href="https://effiraenergy.com/se/ring-upp-mig/">Ring upp mig</a></li>
+      <li><a href="https://effiraenergy.com/se/support/">Support & FAQ</a></li>
+      <li class="active-page"><a href="#">För installatörer</a></li>
+    </ul>
+    <a href="https://effiraenergy.com/se/bestall-opti/" class="header-cta">Beställ OPTi</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Gör din kunds pump <span>redo för dagens elmarknad.</span></h1>
+    <p>OPTi från Effira är en produkt du kan erbjuda nya och befintliga kunder. En anledning att höra av sig. Och ett sätt att hålla kontakten.</p>
+    <div class="hero-buttons">
+      <a href="#cta" class="btn-primary">Anmäl intresse →</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/IMG_7776_web.png" alt="OPTi monterad på värmepump">
+  </div>
+</section>
+
+
+<!-- SEKTION 3: VAD ÄR OPTi -->
+<div class="section-light">
+  <div class="section-light-inner">
+    <div class="two-col">
+      <div>
+        <h2>En service som betalar sig — för kunden och för dig.</h2>
+        <p>OPTi monteras på befintlig pump på 30 minuter. Inget att bygga om, inga nya rör, inga extra verktyg. Passar utmärkt i samband med ett ordinarie servicebesök — du är ändå där.</p>
+        <p style="margin-top: 16px;">Kunden får en pump som jobbar smartare. Du får en mer givande serviceaffär.</p>
+        <ul class="bullet-list" style="margin-top: 24px;">
+          <li>Fungerar med befintliga vattenburna värmepumpar (95%+ kompatibilitet)</li>
+          <li>Kräver ingen ombyggnad</li>
+          <li>Installeras på 30 minuter</li>
+          <li>Styr enligt värmepumpsbranschens riktlinjer</li>
+        </ul>
+        <p class="source-note">Effira Energy — svenskt företag med över 12 år i branschen.</p>
+      </div>
+      <div>
+        <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/HUb-ver.1.png" alt="OPTi styrenheten">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEKTION 4: VÄRDE FÖR KUNDEN -->
+<div style="background: var(--white);">
+  <div class="section">
+    <h2>Din kund betalar mindre. Du är den som gjorde det möjligt.</h2>
+    <p>Uppvärmning och varmvatten står för upp till 75% av hushållets elförbrukning — och det är precis den delen OPTi tar hand om. Pumpen värmer när elen är billig, minskar när den är dyr och hanterar effekttariffer automatiskt så att kunden slipper dyra effekttoppar. Kunden märker ingenting förutom på räkningen.</p>
+    <p style="margin-top: 20px;">Resultatet: 6 000–12 000 kr lägre elkostnad per år, upp till 50% ökad egenanvändning av solel och en återbetalningstid som typiskt ligger inom 12 månader. Pumpen moderniseras och lever längre.</p>
+    <p style="margin-top: 20px; font-weight: 600; color: var(--dark-green);">Och du är den som satte det i gång.</p>
+  </div>
+</div>
+
+<!-- SEKTION 5: VAD FIRMAN FÅR -->
+<div class="section-light">
+  <div class="section-light-inner">
+    <h2>Vad din firma får</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3>En anledning att kontakta din befintliga kundbas</h3>
+        <p>OPTi passar de flesta vattenburna värmepumpar du redan har installerat. Du har kunderna — <span class="benefit-highlight">nu har du något att erbjuda dem.</span></p>
+      </div>
+      <div class="benefit-card">
+        <h3>En produkt kunden faktiskt vill ha</h3>
+        <p>Ingen behöver övertygas om att spara 6–12 000 kr om året. Kort säljcykel, tydlig kundnytta, ingen ombyggnad.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Löpande insyn i pumpens drift</h3>
+        <p>Via Effira-plattformen ser du om något är på väg att gå fel. <span class="benefit-highlight">Du ringer kunden — innan de ringer dig.</span></p>
+      </div>
+      <div class="benefit-card">
+        <h3>Ingen supportbörda</h3>
+        <p>Effira ansvarar för plattform, app, optimering och kundtjänst. Du installerar och sköter kundrelationen. Det är allt.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Överblick över hela kundbasen</h3>
+        <p>Som partner kommer du få tillgång till ett eget dashboard med alla dina kunder, deras pumpar och driftsstatus — i realtid. <span class="benefit-highlight">Du ser problem innan kunden märker dem.</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEKTION 6: CITAT -->
+<div class="quote-section">
+  <div class="quote-inner">
+    <blockquote>Vi hörde av oss till kunder vi inte pratat med på flera år. Ingen visste att det fanns något sånt — och när vi berättade vad det sparar var det ingen som tvekade.</blockquote>
+    <p class="quote-attribution">
+      <span class="quote-placeholder">Förnamn Efternamn</span> &nbsp;·&nbsp;
+      <span class="quote-placeholder">Företagsnamn</span> &nbsp;·&nbsp;
+      <span class="quote-placeholder">Ort</span>
+    </p>
+  </div>
+</div>
+
+
+<!-- SEKTION 8: FAQ -->
+<div class="section-light">
+  <div class="section-light-inner">
+    <h2>Vanliga frågor</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Behöver mina montörer utbildning?</h3>
+        <p>Nej. Installationen tar 30 minuter och kräver ingen extra utbildning. Vi stöttar med material och instruktioner.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Vad händer om kunden har problem med appen?</h3>
+        <p>Det hanterar Effira direkt. Du behöver inte ta de samtalen.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Fungerar det med de pumpar vi installerar?</h3>
+        <p>OPTi är kompatibelt med 95% av vattenburna värmepumpar — Nibe, Bosch, IVT, Thermia, Mitsubishi och många fler.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEKTION 9: CTA -->
+<div class="cta-section" id="cta">
+  <div class="cta-inner">
+    <h2>Vill du se hur det fungerar i praktiken?</h2>
+    <p>På ett 30-minuters webinar går vi igenom hur OPTi fungerar, hur du presenterar det för kunden och hur du kommer igång.</p>
+    <form class="cta-form" onsubmit="return false;">
+      <div class="cta-form-row">
+        <div class="cta-field">
+          <label>Förnamn</label>
+          <input type="text" placeholder="Anna">
+        </div>
+        <div class="cta-field">
+          <label>Efternamn</label>
+          <input type="text" placeholder="Lindqvist">
+        </div>
+      </div>
+      <div class="cta-field">
+        <label>Företag</label>
+        <input type="text" placeholder="Lindqvists VVS AB">
+      </div>
+      <div class="cta-field">
+        <label>Telefon</label>
+        <input type="tel" placeholder="070-000 00 00">
+      </div>
+      <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px; text-align: center; border: none; cursor: pointer; font-size: 17px; padding: 16px;">Vi hör av oss →</button>
+    </form>
+    <div class="cta-contact" style="margin-top: 24px;">
+      Eller kontakta oss direkt<br>
+      <a href="tel:0357101150">035–710 11 50</a> &nbsp;·&nbsp;
+      <a href="mailto:support@effiraenergy.com">support@effiraenergy.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img class="logo" src="assets/logos/Logo/Web (RGB)/SVG/Main/Main_Duo_Dark_BG.svg" alt="Effira Energy">
+  <nav class="footer-links">
+    <a href="#" class="footer-link">Om oss</a>
+    <a href="#" class="footer-link">Artiklar</a>
+    <a href="#" class="footer-link">Integritetspolicy</a>
+    <a href="#" class="footer-link">Allmänna villkor</a>
+    <a href="#" class="footer-link">Press</a>
+    <a href="#" class="footer-link">Nyhetsbrev</a>
+    <a href="#" class="footer-link">Webinar</a>
+    <a href="#" class="footer-link active">För installatörer</a>
+  </nav>
+</footer>
+
+</body>
+</html>
