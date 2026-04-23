@@ -1,0 +1,39 @@
+rank,name,city,se_zone,vd_name,vd_firstname,vd_role,email,phone,employees_int,revenue_msek,score_final,tier,has_water_brand,has_nibe,has_bosch,has_solar,has_ev,brands_list,services_list,pitch_angle,url
+1,VOTAB VVS & Värmeinstallation,Varberg,4,Erik Linus Gustafsson,Erik,Verkställande direktör,info@votab.se,0340-64 68 00,20,53.0,6.4,A,0,0,0,0,0,,energiopt,VVS/värme,https://www.bad-varme.se/ort/varberg-votab/
+2,Elterm,Alingsås,3,Peter Joakim Andrén,Peter,Verkställande direktör,info@elterm.se,0322-123 24,11,26.0,6.3,A,1,1,1,1,1,"bosch,ctc,daikin,ivt,mitsubishi,nibe,panasonic","ev_charging,solar,wp_bergvarme,wp_franluft,wp_luft_vatten","aukt. VP-märke, solceller, elbilsladdning",https://www.bad-varme.se/ort/alingsas/
+3,Hammarstedts VVS,Nybro,3,Enar Bertil Edvardsson,Enar,Ordförande,erik@hammarstedtsvvs.se,0481-76 60 00,14,36.5,5.4,A,1,0,0,0,0,"ivt,thermia",,aukt. VP-märke,https://www.bad-varme.se/ort/nybro/
+4,Bad & Värme Filipstad,Filipstad,3,Birger Hans Christian Liljestrand,Birger,Verkställande direktör,filipstad@bad-varme.se,0590-130 14,34,155.5,5.0,A,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/filipstad/
+5,Martin Palmqvist VVS,Fagersta,3,Per Martin Palmqvist,Per,Ledamot,offert@palmqvistvvs.se,0223-161 10,6,10.7,4.5,B,1,0,0,0,0,ivt,energiopt,aukt. VP-märke,https://www.bad-varme.se/ort/fagersta/
+6,VVS-Service i Knislinge,Hanaskog,3,Carl Oskar Roger Nordström,Carl,Verkställande direktör,oskar@savvs.se,044 – 614 11,14,33.7,4.5,B,1,0,0,0,0,ivt,,aukt. VP-märke,https://www.bad-varme.se/ort/hanaskog/
+7,Hova Rörledningsaffär,Hova,3,Anna Ingeborg Danielsson,Anna,Verkställande direktör,info@hovaror.com,0506-307 95,47,114.5,4.5,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/hova/
+8,Service & Fastighet i Skåne,Hörby,3,Jacob Killian Grubits,Jacob,Verkställande direktör,sofror.og@gmail.com,070-712 87 34,46,102.6,4.5,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/horby/
+9,Bad & Värme i Laholm,Laholm,3,Peter Willhelm Johansson,Peter,Extern verkställande direktör,butik.laholm@bad-varme.se,0430-10 000 (09:00 – 16:00),79,191.0,4.5,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/laholm/
+10,Installationsgruppen,Sälen,3,Anders Erik Valter Karlsson,Anders,Verkställande direktör,badovarme@installationsgruppen.com,0280-207 75,43,103.7,4.5,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/salen/
+11,Installationgruppen Bohuslän,Uddevalla,3,Anders Erik Valter Karlsson,Anders,Verkställande direktör,info@instgruppen.se,010-45 20 840,43,103.7,4.5,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/uddevalla/
+12,Idala Rörtjänst,Veberöd,3,Patrik Sven Åke Andersson,Patrik,Ledamot,info@idalaror.se,046-500 98,9,22.2,4.5,B,1,1,1,0,0,"bosch,mitsubishi,nibe","wp_franluft,wp_luft_vatten",aukt. VP-märke,https://www.bad-varme.se/ort/veberod/
+13,Djupedals Rör Alingsås,Alingsås,3,Emma Johanna Caroline Nyström,Emma,Extern verkställande direktör,info@djupedalsror.se,0322-101 06,21,67.1,4.0,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/alingsas-djupedal/
+14,Gnosjö Rörledningsaffär,Gnosjö,3,Erik Anders Sveningsson,Erik,Ordförande,info@gnosjoror.se,0370-33 22 90,22,60.1,4.0,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/gnosjo/
+15,ManTor,Jönköping,3,Martin Vincent Schildt,Martin,Ordförande,info@mantor.se,010-3300560,18,41.1,4.0,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/jonkoping/
+16,NM Rör AB,Norrtälje,3,Lennart Niklas Ragnarsson,Lennart,Ledamot,info@nmror.se,0176-22 47 00,18,40.6,4.0,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/norrtalje/
+17,Forsmans VVS,Skogås,3,Fredrik King Richard L Forsman,Fredrik,Verkställande direktör,order@forsmansvvs.se,08-770 85 00,31,68.1,4.0,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/vendelso/
+18,Bad & Värme Tingsryd,Tingsryd,3,Ulf Anders Vilhelm Sjöström,Ulf,Ledamot,tingsryd@bad-varme.se,0477-130 50,16,30.2,4.0,B,0,0,0,0,0,,wp_bergvarme,VVS/värme,https://www.bad-varme.se/ort/tingsryd/
+19,Nya Rörbolaget,Västerås,3,Clas-Göran Israelsson,Clas-Göran,Ordförande,vasteras@bad-varme.se,021-38 04 30,20,49.9,4.0,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/vasteras/
+20,Eklunds Mora,Mora,2,Anders Stefan Eklund,Anders,Verkställande direktör,info@eklundsmora.se,0250 – 58 50 00,37,76.4,3.9,B,1,0,0,0,0,thermia,wp_bergvarme,aukt. VP-märke,https://www.bad-varme.se/ort/mora/
+21,Bryngels,Sundsvall,2,Per Mattias Norberg,Per,Extern verkställande direktör,vvs.sundsvall@bryngels.se,060-66 88 55,25,50.4,3.9,B,1,0,0,0,0,thermia,,aukt. VP-märke,https://www.bad-varme.se/ort/sundsvall/
+22,Djupedals Rör Kvänum,Kvänum,3,Johan Niklas Efraimsson,Johan,Verkställande direktör,info@djupedalsror.se,0512-921 00,132,279.1,3.75,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/kvanum-djupedal/
+23,Radiator VVS,Ludvika,3,Andreas Lars Erik Bogren,Andreas,Verkställande direktör,ludvika@bad-varme.se,0240-13565,470,1089.2,3.75,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/ludvika/
+24,RSAB Rörservice,Arvika,3,Stefan Joachim Per-Håkan Nordin,Stefan,Ledamot,info@rs-ab.com,0570-808 03,7,11.8,3.6,B,1,0,0,0,0,ivt,,aukt. VP-märke,https://www.bad-varme.se/ort/arvika/
+25,Ekenäs Rör AB,Ekenässjön,3,Klas Fredrik Liljegren,Klas,Ledamot,info@ekenasror.se,0383-347 80,7,14.3,3.6,B,1,0,0,0,0,ivt,,aukt. VP-märke,https://www.bad-varme.se/ort/vetlanda/
+26,Rörfixarna i Hjo,Hjo,3,Stefan Gunnar Joakim Alexandersson,Stefan,Verkställande direktör,hjo@bad-varme.se,050312222,15,34.8,3.6,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/hjo/
+27,Söders Olja & Rör,Rottne,3,Niklas Magnus Johansson,Niklas,Ordförande,niklas@sodersror.se,0470-925 50,14,35.4,3.6,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/rottne/
+28,Rörfixarna i Hjo AB,Tibro,3,Stefan Gunnar Joakim Alexandersson,Stefan,Verkställande direktör,tibro@bad-varme.se,0504-129 88,15,34.8,3.6,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/tibro/
+29,Janne Carlson Rör,Vålberg/Karlstad,3,Hans Erik Karlsson,Hans,Verkställande direktör,herman.karlsson@nor-schakt.se,054-547180,9,24.9,3.6,B,1,0,0,0,0,thermia,wp_bergvarme,aukt. VP-märke,https://www.bad-varme.se/ort/karlstad-jc/
+30,Bad & Värme Årjäng,Årjäng,3,Henrik Torbjörn Hedefur,Henrik,Ledamot,henrik@kakelbutikenab.se,0573-100 03,14,18.8,3.6,B,1,0,0,0,0,thermia,,aukt. VP-märke,https://www.bad-varme.se/ort/arjang/
+31,Installationsgruppen,Malung,2,Anders Erik Valter Karlsson,Anders,Verkställande direktör,badovarme@installationsgruppen.com,0280-130 75,43,103.7,3.51,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/malung/
+32,VVS Butiken Lindsdals Rör,Kalmar,4,Kennerth Joakim Karlström,Kennerth,Ledamot,kalmar@bad-varme.se,0480-696 00,6,12.4,3.46,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/kalmar/
+33,Förlösa Rör,Kalmar,4,Simon Jakob Hansson,Simon,Ledamot,forlosaror@gmail.com,0708 – 79 19 88,6,21.6,3.46,B,0,0,0,0,0,,wp_bergvarme,VVS/värme,https://www.bad-varme.se/ort/kalmar-forlosa/
+34,Sahlins Rör,Osby,4,Per Olof Sahlin,Per,Ordförande,osby@bad-varme.se,0479-146 04,10,26.5,3.46,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/osby/
+35,Söderbloms Rör,Gävle,2,Johan Patrik Karlsson,Johan,Ledamot,info@soderblomsror.se,026-601010,16,31.0,3.12,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/gavle/
+36,Bryngels,Hudiksvall,2,Per Mattias Norberg,Per,Extern verkställande direktör,vvs.hudiksvall@bryngels.se,0650-10790,25,50.4,3.12,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/hudiksvall/
+37,TermoRör,Botkyrka/Tumba,3,Kent Magnus Johansson,Kent,Ledamot,service@termoror.se,08-51819010,23,28.7,3.0,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/tumba/
+38,Bad & Värme i Norrköping/Kolmården,Norrköping/Kolmården,3,Martin Karl Bernhard Calderon,Martin,Ledamot,order@hertzmansvvs.se,011-696 63,22,24.0,3.0,B,0,0,0,0,0,,,VVS/värme,https://www.bad-varme.se/ort/norrkoping-kolmarden/

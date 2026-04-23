@@ -1,0 +1,1765 @@
+[
+  {
+    "id": "alingsas",
+    "name": "Elterm",
+    "url": "https://www.bad-varme.se/ort/alingsas/",
+    "city": "Alingsås",
+    "phone": "0322-123 24",
+    "email": "info@elterm.se",
+    "address": "Tokebackavägen 16A",
+    "services": [
+      "ev_charging",
+      "solar",
+      "wp_bergvarme",
+      "wp_franluft",
+      "wp_luft_vatten"
+    ],
+    "brands": [
+      "nibe",
+      "bosch",
+      "ivt",
+      "ctc",
+      "mitsubishi",
+      "daikin",
+      "panasonic"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "alingsas-djupedal",
+    "name": "Djupedals Rör Alingsås",
+    "url": "https://www.bad-varme.se/ort/alingsas-djupedal/",
+    "city": "Alingsås",
+    "phone": "0322-101 06",
+    "email": "info@djupedalsror.se",
+    "address": "Mejerigatan 6",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "arboga",
+    "name": "Rörbolaget i Arboga",
+    "url": "https://www.bad-varme.se/ort/arboga/",
+    "city": "Arboga",
+    "phone": "0589-499900",
+    "email": "magnus@keror.se",
+    "address": "Smedjegatan 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "ornskoldsvik",
+    "name": "Domeijs Vatten & Värme",
+    "url": "https://www.bad-varme.se/ort/ornskoldsvik/",
+    "city": "Arnäsvall/Örnsköldsvik",
+    "phone": "076-8480659",
+    "email": "domeijsvattenvarme@gmail.com",
+    "address": "Tävra 114",
+    "services": [
+      "wp_bergvarme",
+      "wp_franluft",
+      "wp_luft_vatten"
+    ],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "arvika",
+    "name": "RSAB Rörservice",
+    "url": "https://www.bad-varme.se/ort/arvika/",
+    "city": "Arvika",
+    "phone": "0570-808 03",
+    "email": "info@rs-ab.com",
+    "address": "Fryksdalsvägen 26",
+    "services": [],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "askersund",
+    "name": "Askersunds Brunnsborrning",
+    "url": "https://www.bad-varme.se/ort/askersund/",
+    "city": "Askersund",
+    "phone": "0583-71 10 77",
+    "email": "askbrunn@telia.com",
+    "address": "Läggesta 111",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 16:00 Tis: 07:00 - 16:00 Ons: 07:00 - 16:00 Tor: 07:00 - 16:00 Fre: 07:00 - 16:00 Lör: - Sön: -"
+  },
+  {
+    "id": "bollnas-hedbergs",
+    "name": "Hedbergs Rör",
+    "url": "https://www.bad-varme.se/ort/bollnas-hedbergs/",
+    "city": "Bollnäs",
+    "phone": "0278-65 34 90",
+    "email": "kontoret@hedbergsror.se",
+    "address": "Norra Kilaforsvägen 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 09:00 - 16:00 Tis: 09:00 - 16:00 Ons: 09:00 - 16:00 Tor: 09:00 - 16:00 Fre: 09:00 - 16:00 Lör: - Sön: -"
+  },
+  {
+    "id": "bollnas",
+    "name": "Bollnäs Rör",
+    "url": "https://www.bad-varme.se/ort/bollnas/",
+    "city": "Bollnäs",
+    "phone": "073-081 67 58",
+    "email": "bollnasror@outlook.com",
+    "address": "Skjutbanevägen 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "borlange-vvsgruvan",
+    "name": "VVSgruvan",
+    "url": "https://www.bad-varme.se/ort/borlange-vvsgruvan/",
+    "city": "Borlänge",
+    "phone": "0243-24 92 60",
+    "email": "borlange@vvsgruvan.se",
+    "address": "Hantverkargatan 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "boras-ror-och-sanitet",
+    "name": "Borås Rör & Sanitet",
+    "url": "https://www.bad-varme.se/ort/boras-ror-och-sanitet/",
+    "city": "Borås",
+    "phone": "033-10 16 90",
+    "email": "info@borasror.se",
+    "address": "Segloravägen 20",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "tumba",
+    "name": "TermoRör",
+    "url": "https://www.bad-varme.se/ort/tumba/",
+    "city": "Botkyrka/Tumba",
+    "phone": "08-51819010",
+    "email": "service@termoror.se",
+    "address": "Kartvägen 9",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "bromma",
+    "name": "JGS Rör & Värme",
+    "url": "https://www.bad-varme.se/ort/bromma/",
+    "city": "Bromma",
+    "phone": "0200-75 19 00",
+    "email": "info@jgsab.se",
+    "address": "Mariehällsvägen 6",
+    "services": [],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "balsta",
+    "name": "Lindboms Rör",
+    "url": "https://www.bad-varme.se/ort/balsta/",
+    "city": "Bålsta",
+    "phone": "0171-511 01",
+    "email": "info@lindbomsror.se",
+    "address": "Dragrännan 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "danderyd",
+    "name": "24 Rör",
+    "url": "https://www.bad-varme.se/ort/danderyd/",
+    "city": "Danderyd",
+    "phone": "08-24 24 20",
+    "email": "info@24ror.se",
+    "address": "Djursholmsvägen 62",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "oland",
+    "name": "Degerhamns VVS",
+    "url": "https://www.bad-varme.se/ort/oland/",
+    "city": "Degerhamn",
+    "phone": "076-1336980",
+    "email": "andreasjohansson@degerhamnsvvs.se",
+    "address": "Skiftergatan 8",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "vetlanda",
+    "name": "Ekenäs Rör AB",
+    "url": "https://www.bad-varme.se/ort/vetlanda/",
+    "city": "Ekenässjön",
+    "phone": "0383-347 80",
+    "email": "info@ekenasror.se",
+    "address": "Brunnsgatan 9",
+    "services": [],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "ekero",
+    "name": "Wikmans VVS",
+    "url": "https://www.bad-varme.se/ort/ekero/",
+    "city": "Ekerö (Stenhamra)",
+    "phone": "08-560 449 00",
+    "email": "vvs@wikmansvvs.se",
+    "address": "Vallviksvägen 116",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 16:00 Tis: 07:00 - 16:00 Ons: 07:00 - 16:00 Tor: 07:00 - 16:00 Fre: 07:00 - 16:00 Lör: - Sön: -"
+  },
+  {
+    "id": "eksjo",
+    "name": "Mantor i Eksjö",
+    "url": "https://www.bad-varme.se/ort/eksjo/",
+    "city": "Eksjö",
+    "phone": "010-3300560",
+    "email": "info@mantor.se",
+    "address": "Telegatan 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "enkoping",
+    "name": "Bad & Värme Enköping",
+    "url": "https://www.bad-varme.se/ort/enkoping/",
+    "city": "Enköping",
+    "phone": "0171-511 01",
+    "email": "info@lindbomsror.se",
+    "address": "Vagnsgatan 1",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 10:00 - 17:00 (Lunchstängt: 12:00 - 13:00) Tis: 10:00 - 17:00 (Lunchstängt: 12:00 - 13:00) Ons: 10:00 - 17:00 (Lunchstängt: 12:00 - 13:00) Tor: 10:00 - 17:00 (Lunchstängt: 12:00 - 13:0"
+  },
+  {
+    "id": "eskilstuna",
+    "name": "Lundbäcks VVS",
+    "url": "https://www.bad-varme.se/ort/eskilstuna/",
+    "city": "Eskilstuna",
+    "phone": "076-113 21 01",
+    "email": "lundbacksvvs@gmail.com",
+    "address": "Kardangatan 3-5",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "fagersta",
+    "name": "Martin Palmqvist VVS",
+    "url": "https://www.bad-varme.se/ort/fagersta/",
+    "city": "Fagersta",
+    "phone": "0223-161 10",
+    "email": "offert@palmqvistvvs.se",
+    "address": "Henningsvägen 10",
+    "services": [
+      "energiopt"
+    ],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "falkenberg",
+    "name": "Calles VVS i Falkenberg",
+    "url": "https://www.bad-varme.se/ort/falkenberg/",
+    "city": "Falkenberg",
+    "phone": "0705-90 01 28",
+    "email": "calle@callesvvs.se",
+    "address": "Stafsinge Krämaregård 202",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "falkoping",
+    "name": "VVS-teknik i Falköping",
+    "url": "https://www.bad-varme.se/ort/falkoping/",
+    "city": "Falköping",
+    "phone": "070-614 72 57",
+    "email": "info@vvsteknikfalkoping.se",
+    "address": "Nordmannagatan 2",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "filipstad",
+    "name": "Bad & Värme Filipstad",
+    "url": "https://www.bad-varme.se/ort/filipstad/",
+    "city": "Filipstad",
+    "phone": "0590-130 14",
+    "email": "filipstad@bad-varme.se",
+    "address": "Bagaregatan 6",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "fjardhundra",
+    "name": "Södervad Rör",
+    "url": "https://www.bad-varme.se/ort/fjardhundra/",
+    "city": "Fjärdhundra",
+    "phone": "076-005 83 50",
+    "email": "info@sodervadror.se",
+    "address": "Simtuna södervad 3",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "flen",
+    "name": "Lundberg & Jonsson Rör",
+    "url": "https://www.bad-varme.se/ort/flen/",
+    "city": "Flen",
+    "phone": "0157-10061",
+    "email": "info@lundbergjonssonror.se",
+    "address": "Åsegatan 8",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 06:45 - 16:00 Tis: 06:45 - 16:00 Ons: 06:45 - 16:00 Tor: 06:45 - 16:00 Fre: 06:45 - 16:00 Lör: - Sön: -"
+  },
+  {
+    "id": "gnosjo",
+    "name": "Gnosjö Rörledningsaffär",
+    "url": "https://www.bad-varme.se/ort/gnosjo/",
+    "city": "Gnosjö",
+    "phone": "0370-33 22 90",
+    "email": "info@gnosjoror.se",
+    "address": "Järnvägsgatan 35",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "gallivare",
+    "name": "Lennarts VVS-Tjänst",
+    "url": "https://www.bad-varme.se/ort/gallivare/",
+    "city": "Gällivare",
+    "phone": "0970-169 05",
+    "email": "info@lennartsvvs.se",
+    "address": "Stallarvägen 2",
+    "services": [
+      "wp_bergvarme",
+      "wp_luft_vatten"
+    ],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "gavle-vvs-installatoren",
+    "name": "VVS Installatören",
+    "url": "https://www.bad-varme.se/ort/gavle-vvs-installatoren/",
+    "city": "Gävle",
+    "phone": "026-12 69 10",
+    "email": "info@vvsinstallatoren.se",
+    "address": "Strömsbrovägen 35",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "gavle",
+    "name": "Söderbloms Rör",
+    "url": "https://www.bad-varme.se/ort/gavle/",
+    "city": "Gävle",
+    "phone": "026-601010",
+    "email": "info@soderblomsror.se",
+    "address": "Strömsbrovägen 22",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "goteborg-filuni",
+    "name": "Filuni",
+    "url": "https://www.bad-varme.se/ort/goteborg-filuni/",
+    "city": "Göteborg",
+    "phone": "073 – 653 86 81",
+    "email": "info@filuni.se",
+    "address": "Galvaniseringsgatan 8",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "lundsbrunn",
+    "name": "Bygdens VVS",
+    "url": "https://www.bad-varme.se/ort/lundsbrunn/",
+    "city": "Götene/Lundsbrunn",
+    "phone": "0511-54177",
+    "email": "henric@bygdensvvs.se",
+    "address": "Ledsjö Kristinebo 6",
+    "services": [],
+    "brands": [
+      "nibe"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "habo",
+    "name": "Habo Rör",
+    "url": "https://www.bad-varme.se/ort/habo/",
+    "city": "Habo",
+    "phone": "036-401 64",
+    "email": "linda@haboror.se",
+    "address": "Kyrkvägen 17",
+    "services": [],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "hagfors",
+    "name": "AsCy Rör & Industri",
+    "url": "https://www.bad-varme.se/ort/hagfors/",
+    "city": "Hagfors",
+    "phone": "073-816 72 21",
+    "email": "info@ascy.se",
+    "address": "Hedvägen 7",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "hanaskog",
+    "name": "VVS-Service i Knislinge",
+    "url": "https://www.bad-varme.se/ort/hanaskog/",
+    "city": "Hanaskog",
+    "phone": "044 – 614 11",
+    "email": "oskar@savvs.se",
+    "address": "Fabriksgatan 5",
+    "services": [],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": "Öppettider Mån: 09:00 - 17:00 Tis: 09:00 - 17:00 Ons: 09:00 - 17:00 Tor: 09:00 - 17:00 Fre: 09:00 - 17:00 Lör: - Sön: -"
+  },
+  {
+    "id": "hillerstorp",
+    "name": "Rörmokeriet",
+    "url": "https://www.bad-varme.se/ort/hillerstorp/",
+    "city": "Hillerstorp",
+    "phone": "0370-26165",
+    "email": "info@rormokeriet.se",
+    "address": "Fabriksgatan 7",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "hjo",
+    "name": "Rörfixarna i Hjo",
+    "url": "https://www.bad-varme.se/ort/hjo/",
+    "city": "Hjo",
+    "phone": "050312222",
+    "email": "hjo@bad-varme.se",
+    "address": "Filvägen 6",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "hova",
+    "name": "Hova Rörledningsaffär",
+    "url": "https://www.bad-varme.se/ort/hova/",
+    "city": "Hova",
+    "phone": "0506-307 95",
+    "email": "info@hovaror.com",
+    "address": "Arne Danielssons väg 1",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "hudiksvall",
+    "name": "Bryngels",
+    "url": "https://www.bad-varme.se/ort/hudiksvall/",
+    "city": "Hudiksvall",
+    "phone": "0650-10790",
+    "email": "vvs.hudiksvall@bryngels.se",
+    "address": "Granebovägen 3",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "hassleholm-tyringe",
+    "name": "VVS-teamet",
+    "url": "https://www.bad-varme.se/ort/hassleholm-tyringe/",
+    "city": "Hässleholm",
+    "phone": "0451-38 18 70",
+    "email": "info@vvs-teamet.se",
+    "address": "Väpnaregatan 7",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: - Tis: - Ons: - Tor: - Fre: - Lör: - Sön: - Vi har stängt butiken p.g.a. Covid-19 men kan nås per telefon eller mail vid behov av hjälp."
+  },
+  {
+    "id": "hollviken",
+    "name": "Kakel Idéa Höllviken",
+    "url": "https://www.bad-varme.se/ort/hollviken/",
+    "city": "Höllviken",
+    "phone": "040-49 60 56",
+    "email": "info@kakelidea.se",
+    "address": "Brädgårdvägen 28",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "horby",
+    "name": "Service & Fastighet i Skåne",
+    "url": "https://www.bad-varme.se/ort/horby/",
+    "city": "Hörby",
+    "phone": "070-712 87 34",
+    "email": "sofror.og@gmail.com",
+    "address": "Korsholm 7072",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "sturko-jamjo",
+    "name": "Sturkö-Jämjö Rör & Värmeinstallationer",
+    "url": "https://www.bad-varme.se/ort/sturko-jamjo/",
+    "city": "Jämjö",
+    "phone": "0455-606190",
+    "email": "info@sjror.se",
+    "address": "Torhamnsvägen 25",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "jarfalla",
+    "name": "Järfälla BadrumsRenovering",
+    "url": "https://www.bad-varme.se/ort/jarfalla/",
+    "city": "Järfälla",
+    "phone": "08-583 550 50",
+    "email": "info@jbrab.com",
+    "address": "Skarprättarvägen 11",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "be-jarfalla",
+    "name": "BE Värme & Sanitet",
+    "url": "https://www.bad-varme.se/ort/be-jarfalla/",
+    "city": "Järfälla",
+    "phone": "070-570 52 45",
+    "email": "info@bevarme.se",
+    "address": "Skarprättarvägen 7 Lokal 28",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "jonkoping",
+    "name": "ManTor",
+    "url": "https://www.bad-varme.se/ort/jonkoping/",
+    "city": "Jönköping",
+    "phone": "010-3300560",
+    "email": "info@mantor.se",
+    "address": "Kämpevägen 17",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "jonkoping-beckmanns",
+    "name": "Beckmanns VVS & Energiteknik",
+    "url": "https://www.bad-varme.se/ort/jonkoping-beckmanns/",
+    "city": "Jönköping​",
+    "phone": "036-860 88 50",
+    "email": "info@beckmanns.nu",
+    "address": "Skruvgatan 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "kalmar",
+    "name": "VVS Butiken Lindsdals Rör",
+    "url": "https://www.bad-varme.se/ort/kalmar/",
+    "city": "Kalmar",
+    "phone": "0480-696 00",
+    "email": "kalmar@bad-varme.se",
+    "address": "Dagövägen 5",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "kalmar-forlosa",
+    "name": "Förlösa Rör",
+    "url": "https://www.bad-varme.se/ort/kalmar-forlosa/",
+    "city": "Kalmar",
+    "phone": "0708 – 79 19 88",
+    "email": "forlosaror@gmail.com",
+    "address": "Flottiljvägen 15",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "karlshamn",
+    "name": "Halix VVS",
+    "url": "https://www.bad-varme.se/ort/karlshamn/",
+    "city": "Karlshamn",
+    "phone": "0454 – 321 559",
+    "email": "halixvvs@gmail.com",
+    "address": "Vekerumsvägen 254",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "karlskrona",
+    "name": "Redmos Rör",
+    "url": "https://www.bad-varme.se/ort/karlskrona/",
+    "city": "Karlskrona",
+    "phone": "0455-168 00",
+    "email": "info@redmos.se",
+    "address": "Silvervägen 20",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "karlstad-vvs",
+    "name": "VVS Design",
+    "url": "https://www.bad-varme.se/ort/karlstad-vvs/",
+    "city": "Karlstad",
+    "phone": "070-750 95 82",
+    "email": "niclas@vvs-designab.se",
+    "address": "Fjärrviksvägen 4",
+    "services": [],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "katrineholm-cv",
+    "name": "CV Rör",
+    "url": "https://www.bad-varme.se/ort/katrineholm-cv/",
+    "city": "Katrineholm",
+    "phone": "070-77 44 381",
+    "email": "ao@cvror.se",
+    "address": "Marieborgsgatan 1C",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "katrineholm",
+    "name": "Kamin & Kakel i Katrineholm",
+    "url": "https://www.bad-varme.se/ort/katrineholm/",
+    "city": "Katrineholm",
+    "phone": "0150-517 40",
+    "email": "info@kaminkakel.se",
+    "address": "Videvägen 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 10:00 - 18:00 Tis: 10:00 - 18:00 Ons: 10:00 - 18:00 Tor: 10:00 - 18:00 Fre: 10:00 - 16:00 Lör: 10:00 - 14:00 Sön: - Helgdagar stängt"
+  },
+  {
+    "id": "kungshamn",
+    "name": "Jonas Rör",
+    "url": "https://www.bad-varme.se/ort/kungshamn/",
+    "city": "Kungshamn",
+    "phone": "0523-376 77",
+    "email": "info@jonasror.se",
+    "address": "Varvsgatan 21B",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "kungalv",
+    "name": "Ytterby Rör AB",
+    "url": "https://www.bad-varme.se/ort/kungalv/",
+    "city": "Kungälv",
+    "phone": "0303-92145",
+    "email": "david@ytterbyror.se",
+    "address": "Truckgatan 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "kvanum-djupedal",
+    "name": "Djupedals Rör Kvänum",
+    "url": "https://www.bad-varme.se/ort/kvanum-djupedal/",
+    "city": "Kvänum",
+    "phone": "0512-921 00",
+    "email": "info@djupedalsror.se",
+    "address": "Storgatan 12",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "karna",
+    "name": "Emil Svensson VVS",
+    "url": "https://www.bad-varme.se/ort/karna/",
+    "city": "Kärna",
+    "phone": "0728 63 47 76",
+    "email": "emil@vvsinst.se",
+    "address": "Hermansby 246",
+    "services": [],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "koping",
+    "name": "Bad & Värme K&E Rör",
+    "url": "https://www.bad-varme.se/ort/koping/",
+    "city": "Köping",
+    "phone": "0221-140 70",
+    "email": "info@keror.se",
+    "address": "Hantverkaregatan 21",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 17:00 (Lunchstängt: 12.00 - 13.00) Tis: 07:00 - 17:00 (Lunchstängt: 12.00 - 13.00) Ons: 07:00 - 17:00 (Lunchstängt: 12.00 - 13.00) Tor: 07:00 - 17:00 (Lunchstängt: 12.00 - 13.0"
+  },
+  {
+    "id": "laholm",
+    "name": "Bad & Värme i Laholm",
+    "url": "https://www.bad-varme.se/ort/laholm/",
+    "city": "Laholm",
+    "phone": "0430-10 000 (09:00 – 16:00)",
+    "email": "butik.laholm@bad-varme.se",
+    "address": "Kullsgårdsvägen 43",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 10:00 - 14:00 Tis: 10:00 - 14:00 Ons: 10:00 - 14:00 Tor: 10:00 - 14:00 Fre: 10:00 - 14:00 Lör: - Sön: - Tidsbokning för övriga tider."
+  },
+  {
+    "id": "lidingo",
+    "name": "Din Lokala Hjälpreda i Lidingö",
+    "url": "https://www.bad-varme.se/ort/lidingo/",
+    "city": "Lidingö",
+    "phone": "08-519 933 00",
+    "email": "jonny@dinhjalpreda.se",
+    "address": "Båtsmansvägen 8",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "lindesberg",
+    "name": "Bergslagens VVS",
+    "url": "https://www.bad-varme.se/ort/lindesberg/",
+    "city": "Lindesberg",
+    "phone": "0581-531 00",
+    "email": "info@bergslagensvvs.se",
+    "address": "Löpargatan 4",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "linkoping-malm",
+    "name": "Rörmontage Harry Malm",
+    "url": "https://www.bad-varme.se/ort/linkoping-malm/",
+    "city": "Linköping",
+    "phone": "013-12 15 09",
+    "email": "rormontage@gmail.com",
+    "address": "Gottorpsgatan 45",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "linkoping",
+    "name": "Bad & Kakel i Linköping",
+    "url": "https://www.bad-varme.se/ort/linkoping/",
+    "city": "Linköping",
+    "phone": "013-310890",
+    "email": "info@badokakel.se",
+    "address": "Industrigatan 11",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "ljusdal",
+    "name": "HP Rör & Värme",
+    "url": "https://www.bad-varme.se/ort/ljusdal/",
+    "city": "Ljusdal",
+    "phone": "0651-138 38",
+    "email": "info@hpljusdal.se",
+    "address": "Södra Järnvägsgatan 50",
+    "services": [],
+    "brands": [
+      "nibe"
+    ],
+    "opening_hours_text": "Öppettider Mån: 10:00 - 16:30 (Lunchstängt: 12:30 - 13:30) Tis: 10:00 - 16:30 (Lunchstängt: 12:30 - 13:30) Ons: 10:00 - 16:30 (Lunchstängt: 12:30 - 13:30) Tor: 10:00 - 16:30 (Lunchstängt: 12:30 - 13:3"
+  },
+  {
+    "id": "ludvika",
+    "name": "Radiator VVS",
+    "url": "https://www.bad-varme.se/ort/ludvika/",
+    "city": "Ludvika",
+    "phone": "0240-13565",
+    "email": "ludvika@bad-varme.se",
+    "address": "Målarvägen 5",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 08:00 - 18:00 Tis: 08:00 - 18:00 Ons: 08:00 - 18:00 Tor: 08:00 - 18:00 Fre: 08:00 - 18:00 Lör: - Sön: -"
+  },
+  {
+    "id": "lulea",
+    "name": "Rörcentrum i Luleå",
+    "url": "https://www.bad-varme.se/ort/lulea/",
+    "city": "Luleå",
+    "phone": "0920-108 80",
+    "email": "lulea@bad-varme.se",
+    "address": "Banvägen 17 B",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: - Tis: 12:00 - 16:00 Ons: 12:00 - 16:00 Tor: 12:00 - 16:00 Fre: - Lör: - Sön: - Övrigt förutom butiken är mån-fredag 07-16. Ring gärna innan ni kommer in till oss :)"
+  },
+  {
+    "id": "brastad",
+    "name": "Bad & Värme, Rönnings Rör",
+    "url": "https://www.bad-varme.se/ort/brastad/",
+    "city": "Lysekil/Brastad",
+    "phone": "0523-47071",
+    "email": "brastad@bad-varme.se",
+    "address": "Hallindenvägen 25",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettiderna så vi i lugn och ro kan gå igenom era önskemål och ge er en offert efter ett förutsättningslöst möte. Kika gärna på våra Installerat-och-klart-priser ."
+  },
+  {
+    "id": "malmo-triangeln",
+    "name": "Kakelidéa Triangeln",
+    "url": "https://www.bad-varme.se/ort/malmo-triangeln/",
+    "city": "Malmö",
+    "phone": "040-49 60 56",
+    "email": "bad-varme@kakelidea.se",
+    "address": "Sankt Johannesgatan 1E",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 10:00 - 20:00 Tis: 10:00 - 20:00 Ons: 10:00 - 20:00 Tor: 10:00 - 20:00 Fre: 10:00 - 20:00 Lör: 10:00 - 18:00 Sön: 10:00 - 18:00"
+  },
+  {
+    "id": "malung",
+    "name": "Installationsgruppen",
+    "url": "https://www.bad-varme.se/ort/malung/",
+    "city": "Malung",
+    "phone": "0280-130 75",
+    "email": "badovarme@installationsgruppen.com",
+    "address": "Källvägen 15",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "mariestad",
+    "name": "Bad & Värme Mariestad",
+    "url": "https://www.bad-varme.se/ort/mariestad/",
+    "city": "Mariestad",
+    "phone": "0501-71660",
+    "email": "mariestad@bad-varme.se",
+    "address": "Förrådsgatan 45",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 08:00 - 17:00 Tis: 08:00 - 17:00 Ons: 08:00 - 17:00 Tor: 08:00 - 17:00 Fre: 08:00 - 16:00 Lör: - Sön: -"
+  },
+  {
+    "id": "mellerud",
+    "name": "DP Rörservice",
+    "url": "https://www.bad-varme.se/ort/mellerud/",
+    "city": "Mellerud",
+    "phone": "0530 – 400 70",
+    "email": "kontakt@dprorservice.se",
+    "address": "Holmsgatan 8",
+    "services": [
+      "wp_bergvarme",
+      "wp_franluft",
+      "wp_luft_vatten"
+    ],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 16:00 Tis: 07:00 - 16:00 Ons: 07:00 - 16:00 Tor: 07:00 - 16:00 Fre: 07:00 - 16:00 Lör: - Sön: -"
+  },
+  {
+    "id": "mora",
+    "name": "Eklunds Mora",
+    "url": "https://www.bad-varme.se/ort/mora/",
+    "city": "Mora",
+    "phone": "0250 – 58 50 00",
+    "email": "info@eklundsmora.se",
+    "address": "Skolvägen 6",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [
+      "thermia"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "motala",
+    "name": "Bad & Värme Butiken",
+    "url": "https://www.bad-varme.se/ort/motala/",
+    "city": "Motala",
+    "phone": "0141-21 00 32",
+    "email": "motala@bad-varme.se",
+    "address": "Medevivägen 71",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 10:00 - 18:00 Tis: 10:00 - 18:00 Ons: 10:00 - 18:00 Tor: 10:00 - 18:00 Fre: 10:00 - 18:00 Lör: 10:00 - 13:00 Sön: -"
+  },
+  {
+    "id": "nora",
+    "name": "AVD Värme & Vatten",
+    "url": "https://www.bad-varme.se/ort/nora/",
+    "city": "Nora",
+    "phone": "0587-140 58",
+    "email": "annica@avdnora.se",
+    "address": "Prästgatan 28",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "norrfors",
+    "name": "Olsson VVS",
+    "url": "https://www.bad-varme.se/ort/norrfors/",
+    "city": "Nordmaling/Bjurholm",
+    "phone": "070 – 319 20 27",
+    "email": "patrik@olssonvvs.se",
+    "address": "Nordsjö 42",
+    "services": [
+      "wp_bergvarme",
+      "wp_franluft",
+      "wp_luft_vatten"
+    ],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "norrkoping-ror",
+    "name": "VVS-Teknik Norrköping",
+    "url": "https://www.bad-varme.se/ort/norrkoping-ror/",
+    "city": "Norrköping",
+    "phone": "073-3168190",
+    "email": "tmvvs1998@gmail.com",
+    "address": "Malmgatan 4",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "norrkoping-kolmarden",
+    "name": "Bad & Värme i Norrköping/Kolmården",
+    "url": "https://www.bad-varme.se/ort/norrkoping-kolmarden/",
+    "city": "Norrköping/Kolmården",
+    "phone": "011-696 63",
+    "email": "order@hertzmansvvs.se",
+    "address": "Kakelugnsvägen 5",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "norrtalje",
+    "name": "NM Rör AB",
+    "url": "https://www.bad-varme.se/ort/norrtalje/",
+    "city": "Norrtälje",
+    "phone": "0176-22 47 00",
+    "email": "info@nmror.se",
+    "address": "Abborrvägen 12",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 08:00 - 17:00 Tis: 08:00 - 17:00 Ons: 08:00 - 17:00 Tor: 08:00 - 17:00 Fre: 08:00 - 17:00 Lör: 09:00 - 13:00 Sön: -"
+  },
+  {
+    "id": "nybro",
+    "name": "Hammarstedts VVS",
+    "url": "https://www.bad-varme.se/ort/nybro/",
+    "city": "Nybro",
+    "phone": "0481-76 60 00",
+    "email": "erik@hammarstedtsvvs.se",
+    "address": "Herkulesgatan 2",
+    "services": [],
+    "brands": [
+      "ivt",
+      "thermia"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "osby",
+    "name": "Sahlins Rör",
+    "url": "https://www.bad-varme.se/ort/osby/",
+    "city": "Osby",
+    "phone": "0479-146 04",
+    "email": "osby@bad-varme.se",
+    "address": "Tegvägen 5",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "pitea",
+    "name": "Rörcentrum",
+    "url": "https://www.bad-varme.se/ort/pitea/",
+    "city": "Piteå",
+    "phone": "0911-927 70",
+    "email": "info@rorcentrum.se",
+    "address": "Batterigatan 6",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 12.00 - 16.00 Tis: 12.00 - 16.00 Ons: 12.00 - 16.00 Tor: 12.00 - 16.00 Fre: 12.00 - 16.00 Lör: - Sön: -"
+  },
+  {
+    "id": "rimbo",
+    "name": "Aqua VVS",
+    "url": "https://www.bad-varme.se/ort/rimbo/",
+    "city": "Rimbo",
+    "phone": "070-835 79 77",
+    "email": "info@aquavvs.se",
+    "address": "Västra Stockholmsvägen 13",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "rottne",
+    "name": "Söders Olja & Rör",
+    "url": "https://www.bad-varme.se/ort/rottne/",
+    "city": "Rottne",
+    "phone": "0470-925 50",
+    "email": "niklas@sodersror.se",
+    "address": "Kopparvägen 6",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 09:00 - 17:00 Tis: 09:00 - 17:00 Ons: 09:00 - 17:00 Tor: 09:00 - 17:00 Fre: 09:00 - 16.00 Lör: - Sön: -"
+  },
+  {
+    "id": "rydsgard",
+    "name": "VVS-Installationer i Rydsgård",
+    "url": "https://www.bad-varme.se/ort/rydsgard/",
+    "city": "Rydsgård",
+    "phone": "070-644 20 35",
+    "email": "vvsinstallationer@icloud.com",
+    "address": "Södergatan 4",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "sala",
+    "name": "Silverstadens Rör",
+    "url": "https://www.bad-varme.se/ort/sala/",
+    "city": "Sala",
+    "phone": "0224-18190, 0224-18191",
+    "email": "silverstadensror@gmail.com",
+    "address": "Gruvvägen 44",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 11:00 - 16:30 Tis: 11:00 - 16:30 Ons: 11:00 - 16:30 Tor: 11:00 - 16:30 Fre: 11:00 - 16:30 Lör: - Sön: -"
+  },
+  {
+    "id": "saltsjo-boo",
+    "name": "Turex Rör",
+    "url": "https://www.bad-varme.se/ort/saltsjo-boo/",
+    "city": "Saltsjö-Boo",
+    "phone": "08-715 56 16",
+    "email": "info@turex.se",
+    "address": "Telegramvägen 46 c",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettiderna avser kontoret."
+  },
+  {
+    "id": "sandviken",
+    "name": "Hedlunds Rör",
+    "url": "https://www.bad-varme.se/ort/sandviken/",
+    "city": "Sandviken",
+    "phone": "026-27 30 75",
+    "email": "info@hedlundsror.se",
+    "address": "Mossvägen 41",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 09:30 - 17:00 (Lunchstängt: 13:00 - 14:00) Tis: 09:30 - 17:00 (Lunchstängt: 13:00 - 14:00) Ons: 09:30 - 17:00 (Lunchstängt: 13:00 - 14:00) Tor: 09:30 - 17:00 (Lunchstängt: 13:00 - 14:0"
+  },
+  {
+    "id": "skara",
+    "name": "Bad & Värme Wallgrens Rör",
+    "url": "https://www.bad-varme.se/ort/skara/",
+    "city": "Skara",
+    "phone": "0511-101 59",
+    "email": "skara@bad-varme.se",
+    "address": "Mejerigatan 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "skelleftea-kage",
+    "name": "Holmboms Värme",
+    "url": "https://www.bad-varme.se/ort/skelleftea-kage/",
+    "city": "Skellefteå/Kåge",
+    "phone": "0910-72 04 05",
+    "email": "kage@bad-varme.se",
+    "address": "Storgatan 46",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 10.00 - 16.30 (Lunchstängt: 12:00 - 13:00) Tis: 10.00 - 16.30 (Lunchstängt: 12:00 - 13:00) Ons: 10.00 - 16.30 (Lunchstängt: 12:00 - 13:00) Tor: 10.00 - 16.30 (Lunchstängt: 12:00 - 13:0"
+  },
+  {
+    "id": "vendelso",
+    "name": "Forsmans VVS",
+    "url": "https://www.bad-varme.se/ort/vendelso/",
+    "city": "Skogås",
+    "phone": "08-770 85 00",
+    "email": "order@forsmansvvs.se",
+    "address": "Betongvägen 7",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "skovde",
+    "name": "A.L VVS-Service",
+    "url": "https://www.bad-varme.se/ort/skovde/",
+    "city": "Skövde",
+    "phone": "0769-496 401",
+    "email": "anders@al-vvsservice.se",
+    "address": "Kåsatorpsvägen 4",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "solleftea",
+    "name": "Rörmokar´n i Sollefteå",
+    "url": "https://www.bad-varme.se/ort/solleftea/",
+    "city": "Sollefteå",
+    "phone": "0620-150 15",
+    "email": "info@rormokarnsolleftea.se",
+    "address": "Bangatan 4",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "sollentuna",
+    "name": "NIRA Rörteknik",
+    "url": "https://www.bad-varme.se/ort/sollentuna/",
+    "city": "Sollentuna",
+    "phone": "08-442 00 00",
+    "email": "order.sthlm@nirarorteknik.se",
+    "address": "Vändvägen 8h",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "bromma-nn",
+    "name": "Nordvall-Nyman",
+    "url": "https://www.bad-varme.se/ort/bromma-nn/",
+    "city": "Solna",
+    "phone": "08-390 692",
+    "email": "tomas@nordvallnyman.se",
+    "address": "Jungfrudansen 94",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "stockholm-city",
+    "name": "Cyklande Rörmokaren",
+    "url": "https://www.bad-varme.se/ort/stockholm-city/",
+    "city": "Stockholm",
+    "phone": "08-500 333 70",
+    "email": "hej@cyklanderormokaren.se",
+    "address": "Pilgatan 5",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "strangnas",
+    "name": "Buneco",
+    "url": "https://www.bad-varme.se/ort/strangnas/",
+    "city": "Strängnäs",
+    "phone": "0152-752424",
+    "email": "info@buneco.se",
+    "address": "Finningevägen 75",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "stromstad",
+    "name": "Bad & Värme Strömstad",
+    "url": "https://www.bad-varme.se/ort/stromstad/",
+    "city": "Strömstad",
+    "phone": "0526-66710",
+    "email": "stromstad@bad-varme.se",
+    "address": "Solrosgatan 3",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "sundsvall-malm",
+    "name": "Malms Rör",
+    "url": "https://www.bad-varme.se/ort/sundsvall-malm/",
+    "city": "Sundsvall",
+    "phone": "070-278 85 88",
+    "email": "stefan@malmsror.se",
+    "address": "Universitetsallén 22",
+    "services": [],
+    "brands": [
+      "ivt"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "sundsvall",
+    "name": "Bryngels",
+    "url": "https://www.bad-varme.se/ort/sundsvall/",
+    "city": "Sundsvall",
+    "phone": "060-66 88 55",
+    "email": "vvs.sundsvall@bryngels.se",
+    "address": "Fredsgatan 20",
+    "services": [],
+    "brands": [
+      "thermia"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "salen",
+    "name": "Installationsgruppen",
+    "url": "https://www.bad-varme.se/ort/salen/",
+    "city": "Sälen",
+    "phone": "0280-207 75",
+    "email": "badovarme@installationsgruppen.com",
+    "address": "Sälenvägen 15",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "soderkoping",
+    "name": "PL VVS",
+    "url": "https://www.bad-varme.se/ort/soderkoping/",
+    "city": "Söderköping",
+    "phone": "0121-101 00",
+    "email": "peter@plvvs.se",
+    "address": "Virkesgatan 6",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "sodertalje",
+    "name": "Tälje VVS",
+    "url": "https://www.bad-varme.se/ort/sodertalje/",
+    "city": "Södertälje",
+    "phone": "08-550 104 64",
+    "email": "info@taljevvs.se",
+    "address": "Brunnsängsvägen 32",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "tibro",
+    "name": "Rörfixarna i Hjo AB",
+    "url": "https://www.bad-varme.se/ort/tibro/",
+    "city": "Tibro",
+    "phone": "0504-129 88",
+    "email": "tibro@bad-varme.se",
+    "address": "Värsåsvägen 14",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 16:00 (Lunchstängt: 12:00 - 12:30) Tis: 07:00 - 16:00 (Lunchstängt: 12:00 - 12:30) Ons: 07:00 - 16:00 (Lunchstängt: 12:00 - 12:30) Tor: 07:00 - 16:00 (Lunchstängt: 12:00 - 12:3"
+  },
+  {
+    "id": "tingsryd",
+    "name": "Bad & Värme Tingsryd",
+    "url": "https://www.bad-varme.se/ort/tingsryd/",
+    "city": "Tingsryd",
+    "phone": "0477-130 50",
+    "email": "tingsryd@bad-varme.se",
+    "address": "Lokgatan 3",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 09:00 - 18:00 Tis: 09:00 - 18:00 Ons: 09:00 - 18:00 Tor: 09:00 - 18:00 Fre: 09:00 - 18:00 Lör: 09:00 - 13:00 Sön: -"
+  },
+  {
+    "id": "tjallmo",
+    "name": "Tjällmo Vatten & Värme",
+    "url": "https://www.bad-varme.se/ort/tjallmo/",
+    "city": "Tjällmo",
+    "phone": "0141-620 90",
+    "email": "tjallmo@bad-varme.se",
+    "address": "Backgårdsvägen 2 E",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "torsas",
+    "name": "LJ Rörteknik",
+    "url": "https://www.bad-varme.se/ort/torsas/",
+    "city": "Torsås",
+    "phone": "073-3414006",
+    "email": "info@rorteknik.org",
+    "address": "Industrigatan 11",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "tranemo",
+    "name": "Tranemo Rör",
+    "url": "https://www.bad-varme.se/ort/tranemo/",
+    "city": "Tranemo",
+    "phone": "0325-70049",
+    "email": "post@tranemoror.se",
+    "address": "Åkerivägen 1",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 16:30 Tis: 07:00 - 16:30 Ons: 07:00 - 16:30 Tor: 07:00 - 16:30 Fre: 07:00 - 16:30 Lör: - Sön: -"
+  },
+  {
+    "id": "trosa",
+    "name": "Total VVS Trosa",
+    "url": "https://www.bad-varme.se/ort/trosa/",
+    "city": "Trosa",
+    "phone": "073-943 65 73",
+    "email": "info@totalvvstrosa.se",
+    "address": "Industrigatan 9A",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "taby",
+    "name": "Täby Bad & Värme",
+    "url": "https://www.bad-varme.se/ort/taby/",
+    "city": "Täby",
+    "phone": "08-630 07 00",
+    "email": "info@badovarme.se",
+    "address": "Måttbandsvägen 6-10",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 10:00 - 18:00 (Lunchstängt: 13:00 - 14:00) Tis: 10:00 - 18:00 (Lunchstängt: 13:00 - 14:00) Ons: 10:00 - 18:00 (Lunchstängt: 13:00 - 14:00) Tor: 10:00 - 18:00 (Lunchstängt: 13:00 - 14:0"
+  },
+  {
+    "id": "uddevalla",
+    "name": "Installationgruppen Bohuslän",
+    "url": "https://www.bad-varme.se/ort/uddevalla/",
+    "city": "Uddevalla",
+    "phone": "010-45 20 840",
+    "email": "info@instgruppen.se",
+    "address": "Kurödsvägen 3B",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "umea",
+    "name": "Umeås Raka Rörinstallationer",
+    "url": "https://www.bad-varme.se/ort/umea/",
+    "city": "Umeå",
+    "phone": "070-6667703",
+    "email": "rakaror.vvs@gmail.com",
+    "address": "Förrådsvägen 21J",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "upplands-vasby",
+    "name": "Fresta VVS",
+    "url": "https://www.bad-varme.se/ort/upplands-vasby/",
+    "city": "Upplands Väsby",
+    "phone": "08-590 303 80",
+    "email": "info@frestavvs.se",
+    "address": "Dagsländevägen 15",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "uppsala",
+    "name": "J-G Rör AB",
+    "url": "https://www.bad-varme.se/ort/uppsala/",
+    "city": "Uppsala",
+    "phone": "018-692848",
+    "email": "marie.m@jgror.se",
+    "address": "Spikgatan 6",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "uppsala-bolanderna",
+    "name": "Bad & Värme Boländerna",
+    "url": "https://www.bad-varme.se/ort/uppsala-bolanderna/",
+    "city": "Uppsala",
+    "phone": "018-4440404",
+    "email": "bolanderna@bad-varme.se",
+    "address": "Bolandsgatan 9",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "valbo",
+    "name": "Nybloms Rör",
+    "url": "https://www.bad-varme.se/ort/valbo/",
+    "city": "Valbo",
+    "phone": "026-455 30 30",
+    "email": "info@nyblomsror.se",
+    "address": "Valbovägen 303",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 13:00 - 16:00 Tis: 13:00 - 16:00 Ons: 13:00 - 16:00 Tor: 13:00 - 16:00 Fre: 13:00 - 16:00 Lör: - Sön: -"
+  },
+  {
+    "id": "varberg",
+    "name": "Happy Homes VVS",
+    "url": "https://www.bad-varme.se/ort/varberg/",
+    "city": "Varberg",
+    "phone": "070-5677666",
+    "email": "info@hhror.se",
+    "address": "Härdgatan 33",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 06:30 - 18:00 Tis: 06:30 - 18:00 Ons: 06:30 - 18:00 Tor: 06:30 - 18:00 Fre: 06:30 - 17:00 Lör: 11:00 - 13:00 Sön: Stängt"
+  },
+  {
+    "id": "varberg-votab",
+    "name": "VOTAB VVS & Värmeinstallation",
+    "url": "https://www.bad-varme.se/ort/varberg-votab/",
+    "city": "Varberg",
+    "phone": "0340-64 68 00",
+    "email": "info@votab.se",
+    "address": "Vagnvägen 12",
+    "services": [
+      "energiopt"
+    ],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "veberod",
+    "name": "Idala Rörtjänst",
+    "url": "https://www.bad-varme.se/ort/veberod/",
+    "city": "Veberöd",
+    "phone": "046-500 98",
+    "email": "info@idalaror.se",
+    "address": "Skogsängavägen 26",
+    "services": [
+      "wp_franluft",
+      "wp_luft_vatten"
+    ],
+    "brands": [
+      "nibe",
+      "bosch",
+      "mitsubishi"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "vedum",
+    "name": "Lundgrens Rör",
+    "url": "https://www.bad-varme.se/ort/vedum/",
+    "city": "Vedum",
+    "phone": "0512-405 36",
+    "email": "vedum@bad-varme.se",
+    "address": "Larvsvägen 40",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 16:00 Tis: 07:00 - 16:00 Ons: 07:00 - 16:00 Tor: 07:00 - 17:30 Fre: 07:00 - 16:00 Lör: - Sön: - Begränsad bemanning v.27-28 & v.31-32. Ring gärna innan för att säkerställa att "
+  },
+  {
+    "id": "vellinge",
+    "name": "Wickmans Rör",
+    "url": "https://www.bad-varme.se/ort/vellinge/",
+    "city": "Vellinge",
+    "phone": "040-422600",
+    "email": "info@wickmansror.se",
+    "address": "Spikgatan 8",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "vemdalen",
+    "name": "RMJ Rör",
+    "url": "https://www.bad-varme.se/ort/vemdalen/",
+    "city": "Vemdalen",
+    "phone": "076-1459475",
+    "email": "rmjror@telia.com",
+    "address": "Österlånggatan 29",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "visby",
+    "name": "Bad & Värme Visby",
+    "url": "https://www.bad-varme.se/ort/visby/",
+    "city": "Visby",
+    "phone": "0498-50076",
+    "email": "info@rorobad.se",
+    "address": "Hyvelgatan 11",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 10:00 - 17:00 Tis: 10:00 - 17:00 Ons: 10:00 - 17:00 Tor: 10:00 - 17:00 Fre: 10:00 - 17:00 Lör: - Sön: - Vi har öppet 1:a lördagen varje månad. 10:00-15:00 Ingång från Willys parkering."
+  },
+  {
+    "id": "karlstad-jc",
+    "name": "Janne Carlson Rör",
+    "url": "https://www.bad-varme.se/ort/karlstad-jc/",
+    "city": "Vålberg/Karlstad",
+    "phone": "054-547180",
+    "email": "herman.karlsson@nor-schakt.se",
+    "address": "Teknikvägen 10",
+    "services": [
+      "wp_bergvarme"
+    ],
+    "brands": [
+      "thermia"
+    ],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "vargarda",
+    "name": "Vårgårda VVS",
+    "url": "https://www.bad-varme.se/ort/vargarda/",
+    "city": "Vårgårda",
+    "phone": "0322-62 00 60",
+    "email": "lennart@vargardavvs.se",
+    "address": "Korsgatan 40",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 17:00 Tis: 07:00 - 17:00 Ons: 07:00 - 17:00 Tor: 07:00 - 17:00 Fre: 07:00 - 16:00 Lör: - Sön: -"
+  },
+  {
+    "id": "vargarda-djupedal",
+    "name": "Djupedals Rör Vårgårda",
+    "url": "https://www.bad-varme.se/ort/vargarda-djupedal/",
+    "city": "Vårgårda",
+    "phone": "0322-62 33 70",
+    "email": "info@djupedalsror.se",
+    "address": "Lindbladsvägen 6 A",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "vanersborg-b-erlandsson",
+    "name": "Rörledningsfirma B. Erlandsson",
+    "url": "https://www.bad-varme.se/ort/vanersborg-b-erlandsson/",
+    "city": "Vänersborg",
+    "phone": "0521-26 06 60",
+    "email": "info@erlandssonror.se",
+    "address": "Tenggrenstorpsvägen 13",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "vasteras",
+    "name": "Nya Rörbolaget",
+    "url": "https://www.bad-varme.se/ort/vasteras/",
+    "city": "Västerås",
+    "phone": "021-38 04 30",
+    "email": "vasteras@bad-varme.se",
+    "address": "Retortgatan 5",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 09:30 - 16.30 (Lunchstängt: 12:00 - 13:00) Tis: 09:30 - 16.30 (Lunchstängt: 12:00 - 13:00) Ons: 09:30 - 16.30 (Lunchstängt: 12:00 - 13:00) Tor: 09:30 - 16.30 (Lunchstängt: 12:00 - 13:0"
+  },
+  {
+    "id": "vasteras-hedin",
+    "name": "Hedins VVS",
+    "url": "https://www.bad-varme.se/ort/vasteras-hedin/",
+    "city": "Västerås",
+    "phone": "021-33 28 00",
+    "email": "info@hedinsvvs.se",
+    "address": "Signalistgatan 14",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "goteborg",
+    "name": "FP Badrumsspecialisten",
+    "url": "https://www.bad-varme.se/ort/goteborg/",
+    "city": "Västra Frölunda",
+    "phone": "073-522 26 64",
+    "email": "info@fpbygg.se",
+    "address": "August Barks gata 30A",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "vaxjo",
+    "name": "Södregårds Rör & Maskin",
+    "url": "https://www.bad-varme.se/ort/vaxjo/",
+    "city": "Växjö",
+    "phone": "0470-776 124",
+    "email": "info@sodregardsror.se",
+    "address": "Södergård 2",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "ystad",
+    "name": "Colorama – Bad & Värme Ystad",
+    "url": "https://www.bad-varme.se/ort/ystad/",
+    "city": "Ystad",
+    "phone": "0411-120 70",
+    "email": "kontor@12070.se",
+    "address": "Titangatan 3",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Våra öppettider är 7-16 men skulle ni inte hinna hit kan ni alltid logga in med Bank-ID ända fram till kl 22. Alltså har vi öppet alla dagar på året."
+  },
+  {
+    "id": "akersberga",
+    "name": "Bad & Värme Åkersberga",
+    "url": "https://www.bad-varme.se/ort/akersberga/",
+    "city": "Åkersberga",
+    "phone": "08-540 229 80",
+    "email": "akersberga@bad-varme.se",
+    "address": "Stationsvägen 24",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 09:00 - 17:00 Tis: 09:00 - 17:00 Ons: 09:00 - 17:00 Tor: 09:00 - 17:00 Fre: 09:00 - 15:00 Lör: - Sön: -"
+  },
+  {
+    "id": "arjang",
+    "name": "Bad & Värme Årjäng",
+    "url": "https://www.bad-varme.se/ort/arjang/",
+    "city": "Årjäng",
+    "phone": "0573-100 03",
+    "email": "henrik@kakelbutikenab.se",
+    "address": "Snickargatan 19",
+    "services": [],
+    "brands": [
+      "thermia"
+    ],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 18:00 Tis: 07:00 - 18:00 Ons: 07:00 - 18:00 Tor: 07:00 - 18:00 Fre: 07:00 - 18:00 Lör: 10:00 - 14:00 Sön: -"
+  },
+  {
+    "id": "stenungsund-odsmal",
+    "name": "Ödsmåls Rörläggeri",
+    "url": "https://www.bad-varme.se/ort/stenungsund-odsmal/",
+    "city": "Ödsmål",
+    "phone": "070-577 34 97",
+    "email": "odsmalsror@telia.com",
+    "address": "Ödsmål Industriväg 3",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "öppettider Datum Beskrivning Öppnar Stänger Lunch från Lunch till 2026-05-01 Första maj Stängt 2026-05-14 Kristi himmelfärdsdag Stängt 2026-05-24 Pingstdagen Stängt 2026-06-06 Sveriges nationaldag Stä"
+  },
+  {
+    "id": "orebro-narkes-ror",
+    "name": "Närkes Rör",
+    "url": "https://www.bad-varme.se/ort/orebro-narkes-ror/",
+    "city": "Örebro",
+    "phone": "019-122602",
+    "email": "info@narkesror.se",
+    "address": "Aspholmsvägen 14",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "orebro",
+    "name": "Bad & Värme Örebro",
+    "url": "https://www.bad-varme.se/ort/orebro/",
+    "city": "Örebro",
+    "phone": "019-106360",
+    "email": "orebro@bad-varme.se",
+    "address": "Elementvägen 13",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: - Tis: - Ons: - Tor: - Fre: - Lör: - Sön: - Maila gärna, så återkommer vi den 7 januari på orebro@bad-varme.se"
+  },
+  {
+    "id": "oregrund",
+    "name": "Öregrunds El & VVS",
+    "url": "https://www.bad-varme.se/ort/oregrund/",
+    "city": "Öregrund",
+    "phone": "0173-308 00",
+    "email": "info@oregrundsvvs.se",
+    "address": "Västergatan 66",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": ""
+  },
+  {
+    "id": "ostersund",
+    "name": "Bad & Värme Östersund",
+    "url": "https://www.bad-varme.se/ort/ostersund/",
+    "city": "Östersund",
+    "phone": "063-14 01 50",
+    "email": "robin@bad-varme.se",
+    "address": "Inspektörsvägen 18",
+    "services": [],
+    "brands": [],
+    "opening_hours_text": "Öppettider Mån: 07:00 - 16:00 Tis: 07:00 - 16:00 Ons: 07:00 - 16:00 Tor: 07:00 - 16:00 Fre: 07:00 - 16:00 Lör: - Sön: - Övriga tider: Ring 063-14 01 50"
+  }
+]
