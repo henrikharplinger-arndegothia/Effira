@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Effira OPTi — Lead Pipeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #013233;
+    --mid: #024f50;
+    --light-green: #d0e7e2;
+    --orange: #ff8c2d;
+    --white: #ffffff;
+    --black: #062121;
+    --muted: rgba(255,255,255,0.6);
+    --border: rgba(1,50,51,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Work Sans', sans-serif;
+    background: #f4f8f7;
+    color: var(--black);
+    min-height: 100vh;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--dark);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .topbar-title {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .topbar-brand {
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .topbar-brand span { color: var(--orange); }
+
+  .topbar-date {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 0 40px 28px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+  }
+
+  .stat {
+    padding: 20px 0;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding-right: 24px;
+    padding-left: 0;
+  }
+
+  .stat:not(:first-child) { padding-left: 24px; }
+  .stat:last-child { border-right: none; }
+
+  .stat-n {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--orange);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+
+  /* ── LAYOUT ── */
+  .shell {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 40px 64px;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tab {
+    padding: 10px 24px;
+    border-radius: 9999px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background: var(--white);
+    color: #555;
+    transition: all 0.15s;
+  }
+
+  .tab.active {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+  }
+
+  .tab:hover:not(.active) {
+    border-color: var(--dark);
+    color: var(--dark);
+  }
+
+  /* ── PANEL ── */
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── PANEL HEADER ── */
+  .panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .panel-meta h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .panel-meta p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .filter-group {
+    display: flex;
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    color: #555;
+    transition: all 0.15s;
+  }
+
+  .filter-btn.active {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+  }
+
+  .filter-btn:hover:not(.active) {
+    border-color: var(--dark);
+  }
+
+  .search-box {
+    padding: 7px 14px;
+    border-radius: 9999px;
+    border: 1.5px solid var(--border);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    outline: none;
+    width: 200px;
+    background: var(--white);
+    color: var(--black);
+  }
+
+  .search-box:focus { border-color: var(--dark); }
+
+  /* ── TABLE ── */
+  .table-wrap {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(1,50,51,0.07);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  thead th {
+    background: var(--dark);
+    color: var(--white);
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  thead th:hover { background: var(--mid); }
+  thead th .sort-icon { opacity: 0.4; margin-left: 4px; }
+  thead th.sorted .sort-icon { opacity: 1; color: var(--orange); }
+
+  tbody tr {
+    border-bottom: 1px solid #f0f4f3;
+    transition: background 0.1s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #f9fbfa; }
+
+  td {
+    padding: 12px 16px;
+    vertical-align: middle;
+    line-height: 1.4;
+  }
+
+  .td-rank {
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 600;
+    width: 36px;
+  }
+
+  .td-name {
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .td-name a {
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .td-name a:hover { color: var(--orange); text-decoration: underline; }
+
+  .td-city { color: #555; }
+
+  .zone-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .zone-4 { background: #fff0e0; color: #b35900; }
+  .zone-3 { background: #e8f4f0; color: #015a40; }
+  .zone-2 { background: #edf2ff; color: #2a3d8f; }
+  .zone-1 { background: #f5f5f5; color: #666; }
+
+  .tier-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .tier-A { background: var(--orange); color: var(--white); }
+  .tier-B { background: var(--light-green); color: var(--dark); }
+
+  .tag-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    background: var(--light-green);
+    color: var(--dark);
+    margin: 1px;
+    font-weight: 500;
+  }
+
+  .contact-cell { font-size: 13px; color: #444; line-height: 1.6; }
+  .contact-cell a { color: var(--dark); text-decoration: none; }
+  .contact-cell a:hover { color: var(--orange); }
+
+  .num { font-variant-numeric: tabular-nums; }
+  .score-val { font-weight: 700; color: var(--dark); }
+
+  .empty-row td {
+    text-align: center;
+    padding: 40px;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ROW ── */
+  .table-footer {
+    padding: 12px 20px;
+    font-size: 13px;
+    color: #888;
+    background: var(--white);
+    border-top: 1px solid #f0f4f3;
+    border-radius: 0 0 16px 16px;
+  }
+
+  /* ── NOTE BOX ── */
+  .note-box {
+    background: var(--light-green);
+    border-left: 4px solid var(--orange);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--dark);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .note-box strong { color: var(--orange); }
+
+  /* ── PHASE STRIP ── */
+  .phase-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .phase-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border-left: 4px solid var(--orange);
+    box-shadow: 0 1px 6px rgba(1,50,51,0.06);
+  }
+
+  .phase-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .phase-card p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .stats-strip { grid-template-columns: repeat(3,1fr); }
+    .shell { padding: 24px 20px 48px; }
+    .topbar { padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-brand">Effira <span>OPTi</span></span>
+  <span class="topbar-title">Lead Pipeline — Installatörskanaler</span>
+  <span class="topbar-date">Genererad 2026-04-24</span>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat">
+    <div class="stat-n">134</div>
+    <div class="stat-label">Prioriterade leads totalt<br>(Tier A+B)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">96</div>
+    <div class="stat-label">Comfort Tier A</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">38</div>
+    <div class="stat-label">Bad & Värme Tier A+B</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">27</div>
+    <div class="stat-label">SE4-leads (högst ROI)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">323</div>
+    <div class="stat-label">Totalt analyserade butiker</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">~12 mån</div>
+    <div class="stat-label">Typisk återbetalningstid<br>för slutkund</div>
+  </div>
+</div>
+
+<!-- SHELL -->
+<div class="shell">
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('comfort')">Comfort (96 leads)</div>
+    <div class="tab" onclick="switchTab('bv')">Bad & Värme (38 leads)</div>
+  </div>
+
+  <!-- COMFORT PANEL -->
+  <div class="panel active" id="panel-comfort">
+    <div class="phase-strip">
+      <div class="phase-card">
+        <h4>Fas 1 — Nu</h4>
+        <p>SE4-butiker (23 st). Starkast kundargument, kortast säljcykel. Mål: 3–5 pilotpartners i Skåne/Blekinge under Q2 2026.</p>
+      </div>
+      <div class="phase-card">
+        <h4>Fas 2 — Nästa</h4>
+        <p>SE3 med solceller (~15 st). Sol+värmepump ger unikt helhetserbjudande och kortare säljcykel.</p>
+      </div>
+      <div class="phase-card">
+        <h4>Fas 3 — Volym</h4>
+        <p>Resten av SE3 (~58 st). Standardpitch när partnermodellen är bevisad.</p>
+      </div>
+    </div>
+
+    <div class="panel-header">
+      <div class="panel-meta">
+        <h2>Comfort-butiker — 96 Tier A</h2>
+        <p>184 butiker analyserade · Allabolag-enriched · VD-namn och kontakt på alla leads</p>
+      </div>
+      <div class="controls">
+        <div class="filter-group" id="comfort-zone-filters">
+          <button class="filter-btn active" onclick="filterComfort('zone','all',this)">Alla zoner</button>
+          <button class="filter-btn" onclick="filterComfort('zone','4',this)">SE4</button>
+          <button class="filter-btn" onclick="filterComfort('zone','3',this)">SE3</button>
+          <button class="filter-btn" onclick="filterComfort('zone','2',this)">SE2</button>
+        </div>
+        <div class="filter-group" id="comfort-tag-filters">
+          <button class="filter-btn" onclick="filterComfort('tag','solar',this)">☀ Solceller</button>
+        </div>
+        <input class="search-box" type="text" placeholder="Sök namn, ort..." oninput="searchTable('comfort',this.value)">
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="comfort-table">
+        <thead>
+          <tr>
+            <th onclick="sortTable('comfort',0)" title="Rank">#<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('comfort',1)">Butik<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('comfort',2)">Ort<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('comfort',3)">Zon<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('comfort',4)">VD<span class="sort-icon">↕</span></th>
+            <th>Kontakt</th>
+            <th onclick="sortTable('comfort',6)" title="Anställda">Anst.<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('comfort',7)">Oms. MSEK<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('comfort',8)">Score<span class="sort-icon">↕</span></th>
+            <th>Profil</th>
+          </tr>
+        </thead>
+        <tbody id="comfort-tbody"></tbody>
+      </table>
+      <div class="table-footer" id="comfort-count"></div>
+    </div>
+  </div>
+
+  <!-- BAD & VÄRME PANEL -->
+  <div class="panel" id="panel-bv">
+    <div class="note-box">
+      <strong>Obs om scoring:</strong> Tier-fördelningen ser smalare ut än Comfort men beror på datatillgänglighet, inte ledkvalitet. Bad & Värme är en renodlad VVS+värme-kedja — <em>alla</em> 139 butiker installerar vattenburna värmepumpar. Tier B-butikerna är i praktiken lika relevanta som Tier A.
+    </div>
+
+    <div class="phase-strip">
+      <div class="phase-card">
+        <h4>Fas 1 — Nu</h4>
+        <p>SE4 (4 butiker). VOTAB Varberg är starkaste leaden — SE4, rätt storlek.</p>
+      </div>
+      <div class="phase-card">
+        <h4>Fas 2 — Nästa</h4>
+        <p>Tier B med auktoriserat VP-märke (11 st). Förstår redan systemtänket, pratar VP dagligen.</p>
+      </div>
+      <div class="phase-card">
+        <h4>Fas 3 — Volym</h4>
+        <p>Resten av Tier B SE3 (~20 st). Standardpitch. Volymfas när partnermodellen är bevisad.</p>
+      </div>
+    </div>
+
+    <div class="panel-header">
+      <div class="panel-meta">
+        <h2>Bad & Värme — 38 Tier A+B</h2>
+        <p>139 butiker analyserade · 20 unresolved i Allabolag (kan underskattas) · Alla 38 leads har email + VD-namn</p>
+      </div>
+      <div class="controls">
+        <div class="filter-group" id="bv-zone-filters">
+          <button class="filter-btn active" onclick="filterBV('zone','all',this)">Alla zoner</button>
+          <button class="filter-btn" onclick="filterBV('zone','4',this)">SE4</button>
+          <button class="filter-btn" onclick="filterBV('zone','3',this)">SE3</button>
+          <button class="filter-btn" onclick="filterBV('zone','2',this)">SE2</button>
+        </div>
+        <div class="filter-group">
+          <button class="filter-btn active" onclick="filterBV('tier','all',this)">A+B</button>
+          <button class="filter-btn" onclick="filterBV('tier','A',this)">Tier A</button>
+          <button class="filter-btn" onclick="filterBV('tier','B',this)">Tier B</button>
+        </div>
+        <div class="filter-group">
+          <button class="filter-btn" onclick="filterBV('tag','brand',this)">Aukt. märke</button>
+        </div>
+        <input class="search-box" type="text" placeholder="Sök namn, ort..." oninput="searchTable('bv',this.value)">
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="bv-table">
+        <thead>
+          <tr>
+            <th onclick="sortTable('bv',0)">#<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('bv',1)">Butik<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('bv',2)">Ort<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('bv',3)">Zon<span class="sort-icon">↕</span></th>
+            <th>Tier</th>
+            <th onclick="sortTable('bv',5)">VD<span class="sort-icon">↕</span></th>
+            <th>Kontakt</th>
+            <th onclick="sortTable('bv',7)" title="Anställda">Anst.<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('bv',8)">Oms. MSEK<span class="sort-icon">↕</span></th>
+            <th onclick="sortTable('bv',9)">Score<span class="sort-icon">↕</span></th>
+            <th>Profil</th>
+          </tr>
+        </thead>
+        <tbody id="bv-tbody"></tbody>
+      </table>
+      <div class="table-footer" id="bv-count"></div>
+    </div>
+  </div>
+
+</div><!-- /shell -->
+
+<script>
+// ── DATA ──
+const comfortData = [
+  [1,"Åseda Värme & Sanitet AB","Åseda",4,"Jan Johansson","info@asedavarme.se","0474-101 52",21,101.2,15.36,false,true,"https://www.comfort.se/butiker/1083"],
+  [2,"Infjärdens Värme AB","Kristianstad",4,"Anders Ekdahl","kristianstad@ivab.com","044-620 00 60",24,206.5,15.36,false,true,"https://www.comfort.se/butiker/1159"],
+  [3,"Rör-Karlsson","Mönsterås",4,"Jörgen Forslund","info@ror-karlsson.se","0499-430 32",20,196.8,15.36,false,true,"https://www.comfort.se/butiker/1111"],
+  [4,"Erikssons VVS AB","Asarum",4,"Jan Andersson","filip@erikssonsvvs.se","0454-507 70",23,66.9,14.08,false,true,"https://www.comfort.se/butiker/1170"],
+  [5,"Carl-Philips VVS AB","Landskrona",4,"Kenth Nilsson","carina.nilsson@carlphilipsvvs.se","0418-44 61 30",27,41.6,14.08,false,true,"https://www.comfort.se/butiker/1186"],
+  [6,"CN Gruppen AB","Malmö",4,"Bo Andersson","info@cn-gruppen.se","040-38 08 70",27,50.8,14.08,false,true,"https://www.comfort.se/butiker/1185"],
+  [7,"Newmans VVS AB","Osby",4,"Bengt-Ored Oredsson","elisabeth.ahlberg@newmansvvs.se","0479-134 41",19,32.5,14.08,false,true,"https://www.comfort.se/butiker/1127"],
+  [8,"Comfort - Vinbergs Rör","Falkenberg",4,"Karl Giertz","susanne@vinbergsror.se","0346-71 71 55",93,710.9,13.82,false,true,"https://www.comfort.se/butiker/1184"],
+  [9,"Aderbys Rör AB","Kungsbacka",4,"Patrik Molander","service@aderbys.se","0300-337 00",62,149.8,13.82,false,true,"https://www.comfort.se/butiker/1194"],
+  [10,"Rör-Karlsson","Oskarshamn",4,"Anna Axelsson","info@ror-karlsson.se","0491-189 91",6,270.1,13.82,false,true,"https://www.comfort.se/butiker/1110"],
+  [11,"Infjärdens Värme AB","Tierp",3,"Per Dahlström","tierp@ivab.com","010-414 40 60",24,114.0,13.0,true,true,"https://www.comfort.se/butiker/1153"],
+  [12,"Söderlunds Rör AB","Tierp",3,"Per Dahlström","order@sratierp.se","010-455 03 40",24,114.0,13.0,true,true,"https://www.comfort.se/butiker/1098"],
+  [13,"Infjärdens Värme AB","Hässleholm",4,"Hans Hagberg","hassleholm@ivab.com","0451-38 13 60",7,44.6,12.67,false,true,"https://www.comfort.se/butiker/1160"],
+  [14,"Comfort i Limhamn","Limhamn",4,"Jan Jakobsson","info@bad-energi.se","040-162 424",9,34.8,12.67,false,true,"https://www.comfort.se/butiker/1181"],
+  [15,"Comfort VVS & EL Öland Löttorp","Löttorp",4,"Simon Andersson","jenny@comfortoland.se","0485-363 83",6,15.4,12.67,true,true,"https://www.comfort.se/butiker/1198"],
+  [16,"Knut Svenssons Rör AB","Huskvarna",3,"Bjarne Svensson","info@svenssonsror.com","036-13 08 51",27,55.3,12.0,true,true,"https://www.comfort.se/butiker/1142"],
+  [17,"Sälles Rör AB","Götene",3,"Carl Liljestam","info@sallesror.se","0511-508 00",56,136.5,11.7,true,true,"https://www.comfort.se/butiker/1099"],
+  [18,"Comfort Kinna AB","Kinna",3,"Rolf Månsson","robin.johnsson@comfortkinna.se","0320-180 00",47,172.1,11.7,true,true,"https://www.comfort.se/butiker/1188"],
+  [19,"Comfort VVS & EL Öland Färjestaden","Färjestaden",4,"Ida Hellström","peter@comfortoland.se","0485-363 83",10,null,11.52,true,true,"https://www.comfort.se/butiker/1199"],
+  [20,"Newmans VVS AB","Helsingborg",4,"Per Persson","elisabeth.ahlberg@newmansvvs.se","0479-134 41",15,23.8,11.52,false,true,"https://www.comfort.se/butiker/1071"],
+  [21,"Newmans VVS i Värnamo","Ljungby",4,"Håkan Larsson","elisabeth.ahlberg@newmansvvs.se","073-0789950",135,586.0,11.52,false,true,"https://www.comfort.se/butiker/1126"],
+  [22,"Ternstedt Invent AB","Västervik",4,"Paul Robertsson","Henrik.johansson@ternstedtinvent.se","0490-697 00",7,8.8,11.52,true,true,"https://www.comfort.se/butiker/1094"],
+  [23,"K-B Rör AB","Alafors",3,"Daniel Karlsson","butik@kbror.se","0303-74 20 20",30,58.2,11.0,false,true,"https://www.comfort.se/butiker/1150"],
+  [24,"Alingsås Rör AB","Alingsås",3,"Emma Nyström","order.alingsas@mellbyror.se","0322-611 980",21,67.1,11.0,false,true,"https://www.comfort.se/butiker/1193"],
+  [25,"Djupedals Rör Alingsås","Alingsås",3,"Emma Nyström","info@djupedalsror.se","0322-101 06",21,67.1,11.0,false,true,"https://www.comfort.se/butiker/1173"],
+  [26,"Hovby Rör AB","Lidköping",3,"Elsa Kristoffersson","order@hovbygruppen.se","051-08 65 00",28,50.6,11.0,false,true,"https://www.comfort.se/butiker/1165"],
+  [27,"Stora Mellby Rör AB","Sollebrunn",3,"Anna Karlsson","order@mellbyror.se","0322-418 80",25,49.8,11.0,false,true,"https://www.comfort.se/butiker/1105"],
+  [28,"Kjellners Rör AB","Vara",3,"Karl Kjellner","weborder@kjellnersror.se","0512-101 98",39,64.5,11.0,false,true,"https://www.comfort.se/butiker/1143"],
+  [29,"Mählqvist Rör AB","Vingåker",3,"Emil Appelqvist","weborder@mahlqvist.se","0151-51 81 50",28,44.9,11.0,false,true,"https://www.comfort.se/butiker/1130"],
+  [30,"Mählqvist Rör AB","Flen",3,"Guy Brännman","weborder@mahlqvist.se","0157-244 60",50,102.9,10.8,false,true,"https://www.comfort.se/butiker/1132"],
+  [31,"Vetlanda Rör","Vetlanda",3,"Magnus Teodorsson","johan@vetlandaror.se","0383-158 49",45,105.3,10.8,false,true,"https://www.comfort.se/butiker/1082"],
+  [32,"Comfort i Halmstad","Halmstad",4,"Per Sjölin","info@halmstad.comfort.se","035-10 62 88",6,9.6,10.37,false,true,"https://www.comfort.se/butiker/1182"],
+  [33,"Infjärdens Värme AB","Köping",3,"Bengt Wahlqvist","koping@ivab.com","010-414 40 90",18,11.7,10.0,false,true,"https://www.comfort.se/butiker/1158"],
+  [34,"Limmareds Rör AB","Limmared",3,"Patrik Carlsson","anna-karin@limmaredsror.se","0325-716 00",17,26.0,10.0,false,true,"https://www.comfort.se/butiker/1137"],
+  [35,"Mälardalens Energi & VVS AB","Eskilstuna",3,"Carl Hedbäck","Carl.hedback@malardalensvvs.se","016-55 12 220",10,31.9,9.9,false,true,"https://www.comfort.se/butiker/1129"],
+  [36,"Br Perssons Rör AB","Gullspång",3,"Erik Hoffman","info@brperssons.se","0551-210 10",11,42.8,9.9,false,true,"https://www.comfort.se/butiker/1189"],
+  [37,"Clavis AB","Jönköping",3,"Ulf Vallin","hej@clavisvvs.se","036-40 200",12,34.1,9.9,false,true,"https://www.comfort.se/butiker/1449"],
+  [38,"Oppunda VVS-Service AB","Katrineholm",3,"Viktoria Hansson","info@oppundavvs.se","0150-555 30",51,98.5,9.9,false,true,"https://www.comfort.se/butiker/1120"],
+  [39,"Landsbro Rör","Landsbro",3,"Carl Lundgren","susanna@rorservice.com","0383-60818",10,38.9,9.9,false,true,"https://www.comfort.se/butiker/1140"],
+  [40,"Lindesbergs VVS/EL AB","Lindesberg",3,"Arna Lindberg","lina@lindesbergsvvs.se","0581-836 40",15,16.7,9.9,true,true,"https://www.comfort.se/butiker/1136"],
+  [41,"Sköldsbergs VVS AB","Stenkullen",3,"Simon Knoks","ehandel@skoldsbergs.se","0302-221 74",10,37.4,9.9,false,true,"https://www.comfort.se/butiker/1106"],
+  [42,"Lurs Rör","Tanumshede",3,"Björn Berntsson","robert.collin@comfort-stromstad.com","0525-291 60",10,70.8,9.9,false,true,"https://www.comfort.se/butiker/1135"],
+  [43,"Comfort Söderlunds Rör AB","Uppsala",3,"Carl Bonthron","order@sratierp.se","010-455 03 40",13,13.7,9.9,true,true,"https://www.comfort.se/butiker/1180"],
+  [44,"Ternstedt Invent AB","Linköping",3,"Klas Gyllenhammar","service@ternstedtinvent.se","013-684 00",130,240.7,9.75,true,true,"https://www.comfort.se/butiker/1096"],
+  [45,"Ternstedt Invent AB","Norrköping",3,"Klas Gyllenhammar","ewa@ternstedtinvent.se","010-682 25 00",130,240.7,9.75,true,true,"https://www.comfort.se/butiker/1459"],
+  [46,"Kjellners Rör AB","Floby",3,"Roy Prim","weborder@kjellnersror.se","0515-407 10",386,2809.7,9.0,false,true,"https://www.comfort.se/butiker/1147"],
+  [47,"Projektrör Väst AB","Göteborg",3,"Lars Edström","info@projektror.se","031-14 39 39",155,1721.5,9.0,false,true,"https://www.comfort.se/butiker/1117"],
+  [48,"Kjellners Rör AB","Herrljunga",3,"Joakim Backlund","weborder@kjellnersror.se","0513-210 65",292,981.1,9.0,false,true,"https://www.comfort.se/butiker/1146"],
+  [49,"Ronnys VVS och Energiservice AB","Jönköping",3,"Karl Löfgren","info@ronnysvvs.se","036-313240",12,28.6,9.0,false,true,"https://www.comfort.se/butiker/1115"],
+  [50,"Ternstedt Invent AB","Kisa",3,"Kent Berg","service-kinda@ternstedtinvent.se","0494-69 91 00",6,5.9,9.0,true,true,"https://www.comfort.se/butiker/1097"],
+  [51,"Kjellners Rör AB","Kvänum",3,"Johan Efraimsson","weborder@kjellnersror.se","0512-926 75",132,279.1,9.0,false,true,"https://www.comfort.se/butiker/1145"],
+  [52,"Lundstedts Rör","Motala",3,"Krister Fogelin","info@lundstedtsror.se","0141-54 560",11,22.3,9.0,false,true,"https://www.comfort.se/butiker/1046"],
+  [53,"Oxelösunds Rör AB","Oxelösund",3,"Kurt Nilsson","info@ox-ror.se","0155-304 25",7,15.3,9.0,false,true,"https://www.comfort.se/butiker/1119"],
+  [54,"Rörab Infra AB","Sollentuna",3,"Ulf Örnberg","eric@rorab.se","08-590 341 30",15,27.7,9.0,false,true,"https://www.comfort.se/butiker/1113"],
+  [55,"Infjärdens Värme AB","Uppsala",3,"Carl Bonthron","uppsala@ivab.com","010-414 40 80",13,13.7,9.0,false,true,"https://www.comfort.se/butiker/1152"],
+  [56,"Bad & Energicenter AB","Hudiksvall",2,"Hans Landström","info@badenergi.se","0650-769 20",22,63.0,8.58,false,true,"https://www.comfort.se/butiker/1191"],
+  [57,"Infjärdens Värme AB","Holmsund",2,"Per Johansson","umea@ivab.com","010-414 41 30",15,163.6,8.42,false,true,"https://www.comfort.se/butiker/1161"],
+  [58,"Närkes Energiteknik AB","Örebro",3,"Carl Bergfalk","info@narkesenergiteknik.se","019-611 78 85",8,21.6,8.1,false,true,"https://www.comfort.se/butiker/1123"],
+  [59,"Värme & Sanitet A Palmér AB","Vimmerby",3,"Peder Eek","mattias@comfortvby.se","0492-150 90",10,23.2,8.1,false,true,"https://www.comfort.se/butiker/1085"],
+  [60,"Rör-Karlsson","Kalmar",4,"Adam Persson","info@ror-karlsson.se","0480-98 93 50",4,8.5,8.06,false,true,"https://www.comfort.se/butiker/1048"],
+  [61,"NG Nilsson Rör AB","Sjöbo",4,"Hans Jacobsson","info@ngnilsson.se","0416-196 15",2,8.5,8.06,false,true,"https://www.comfort.se/butiker/1125"],
+  [62,"Comfort Visby","Visby",4,"Birgitta Amér","kontakt@comfortvisby.se","0498-20 17 70",1,0.7,8.06,false,true,"https://www.comfort.se/butiker/1179"],
+  [63,"Curt Petterssons Värme AB","Arnäsvall",2,"Sven Nilsson","info@petterssonsvarme.se","0660-822 70",14,32.5,7.72,false,true,"https://www.comfort.se/butiker/1175"],
+  [64,"Simonssons Rör AB","Lima",2,"Erik Simonsson","erik@simonssonsror.se","0280-31 231",15,41.0,7.72,false,true,"https://www.comfort.se/butiker/1107"],
+  [65,"Olja & Sanitet AB","Sollefteå",2,"Leif Medin","leif@oljasanitet.nu","0620-147 15",15,32.1,7.72,false,true,"https://www.comfort.se/butiker/1122"],
+  [66,"Wiiks Rör AB","Storvik",2,"Elisabeth Wik","info@wiiksror.se","0290-317 00",14,30.1,7.72,false,true,"https://www.comfort.se/butiker/1087"],
+  [67,"Tärnaby Rör","Tärnaby",2,"Magnus Larsson","joakim@tarnabyror.com","073-818 29 20",9,16.6,7.72,true,true,"https://www.comfort.se/butiker/1472"],
+  [68,"Lars Anders VVS AB","Vindeln",2,"Lars Rudolfsson","info@larsandersvvs.se","090-202 50 00",10,18.5,7.72,true,true,"https://www.comfort.se/butiker/1465"],
+  [69,"Comfort VVS & EL Öland Mörbylånga","Mörbylånga",4,null,"emil@comfortoland.se","0485-363 83",0,null,7.68,true,true,"https://www.comfort.se/butiker/1128"],
+  [70,"Thomas Rör","Ljusdal",2,"Dario Aganovic","kontor@thomasror.se","0651-10368",129,261.5,7.61,true,true,"https://www.comfort.se/butiker/1091"],
+  [71,"Vattenhuset AB","Borlänge",2,"Ellen Michelotti","ehandel@vattenhuset.se","0243-22 60 60",15,25.1,7.02,false,true,"https://www.comfort.se/butiker/1088"],
+  [72,"Erikssons VVS-Shop AB","Härnösand",2,"Nils Lindvall","comfort@harnosand.comfort.se","0611-207 20",14,18.0,7.02,false,true,"https://www.comfort.se/butiker/1169"],
+  [73,"Lars Sundström AB","Linghed",2,"Erik Heed","info@larssundstromab.se","0246-224 00",11,16.4,7.02,false,true,"https://www.comfort.se/butiker/1138"],
+  [74,"Rör-Teknik AB","Östersund",2,"Nils Mårtensson","butik@rorteknik.nu","063-19 91 90",13,20.5,7.02,false,true,"https://www.comfort.se/butiker/1109"],
+  [75,"Gustafssons Rör","Sundsvall",2,"Lars Gustafsson","liselott@gustafssonsror.se","060-606 65 80",15,31.3,7.02,false,true,"https://www.comfort.se/butiker/1052"],
+  [76,"Ternstedt Invent AB","Åtvidaberg",3,"Ann-Sofie Stål","Henrik.johansson@ternstedtinvent.se","0120-295 90",4,3.5,7.0,true,true,"https://www.comfort.se/butiker/1093"],
+  [77,"Söderlunds Rör AB","Öregrund",3,"Daniel Sjulander","order@sra.nu","010-455 03 40",3,4.0,7.0,true,true,"https://www.comfort.se/butiker/1208"],
+  [78,"Ternstedt Invent AB","Rimforsa",3,"Sten Ekerå","service-kinda@ternstedtinvent.se","0494-69 91 00",1,1.8,7.0,true,true,"https://www.comfort.se/butiker/1095"],
+  [79,"Hälsinge Rör AB","Bollnäs",2,"Knut Eriksson","e-handel@halsingeror.se","0278-63 60 00",8,8.8,6.32,false,true,"https://www.comfort.se/butiker/1164"],
+  [80,"Kramfors Värme & Sanitet AB","Kramfors",2,"Hans Bjurström","kramfors.varme@telia.com","0612-132 70",5,5.9,6.32,false,true,"https://www.comfort.se/butiker/1141"],
+  [81,"Högbergs Rör i Borås AB","Borås",3,"Ömer Muameleci","butiken@hogbergs.se","033-430 30 40",3,2.2,6.3,false,true,"https://www.comfort.se/butiker/1163"],
+  [82,"Mählqvist Rör AB","Katrineholm",3,"Lars Håkansson","weborder@mahlqvist.se","0150-66 95 50",2,3.1,6.3,false,true,"https://www.comfort.se/butiker/1131"],
+  [83,"Infjärdens Värme AB","Sala",3,"Linda Bohlin","sala@ivab.com","010-414 41 50",2,2.0,6.3,false,true,"https://www.comfort.se/butiker/1155"],
+  [84,"Strömstads Värme & Sanitet AB","Strömstad",3,"Ingrid Gustafsson","robert.collin@comfort-stromstad.com","0526-130 75",3,2.3,6.3,false,true,"https://www.comfort.se/butiker/1103"],
+  [85,"Simonssons Rör Branäs","Sysslebäck",3,"Pär Jönsson","info@simonssonsror.se","0280-312 31",1,2.9,6.3,false,true,"https://www.comfort.se/butiker/1445"],
+  [86,"Tranås Rörservice AB","Tranås",3,"Thomas Wennerlund","susanna@rorservice.com","0140-65055",2,1.4,6.3,false,true,"https://www.comfort.se/butiker/1089"],
+  [87,"Stora Mellby Rör i Trollhättan AB","Trollhättan",3,"Lena Ljusell","order.trollhattan@mellbyror.se","0520-823 84",3,2.2,6.3,false,true,"https://www.comfort.se/butiker/1104"],
+  [88,"Projektrör Väst AB","Uddevalla",3,"Alastair Ross","info@projektror.se","0522-291 99",1,1.2,6.3,false,true,"https://www.comfort.se/butiker/1205"],
+  [89,"BP VVS och EL AB","Vendelsö",3,"Sara Bylund","info@bpvvs.se","08-776 12 56",1,3.1,6.3,false,true,"https://www.comfort.se/butiker/1112"],
+  [90,"Jäders Värme & Sanitet","Haparanda",1,"Stefan Palmelind","info@jadersvarme.se","0922-108 08",71,93.5,5.94,false,true,"https://www.comfort.se/butiker/1455"],
+  [91,"Falkenbergs Rör AB","Falkenberg",4,"Johan Dahl","order@falkenbergsror.se","0346-71 47 50",47,116.9,5.76,false,false,"https://www.comfort.se/butiker/1167"],
+  [92,"Jäders Värme & Sanitet","Malå",2,"Lars Norlund","info@jadersvarme.se","0953-80 99 10",1,10.0,5.46,false,true,"https://www.comfort.se/butiker/1454"],
+  [93,"Comfort Åre AB","Skellefteå",2,"Per Broman","hej@comfortare.se","0647-76 000",1,null,5.46,true,true,"https://www.comfort.se/butiker/1462"],
+  [94,"Nya Söberg & Söderström Rör AB","Gnesta",3,null,"order@rorhuset.se","0158-13660",0,null,5.4,false,true,"https://www.comfort.se/butiker/1124"],
+  [95,"Infjärdens Värme AB","Piteå",1,"Anna Nilsson","roknas@ivab.com","010-414 40 40",270,379.3,5.4,false,true,"https://www.comfort.se/butiker/1156"],
+  [96,"M J Fjärrvärme & VVS AB","Linköping",3,"Carl Elebring","info@mjvvs.se","013-29 95 42",40,121.1,5.0,false,false,"https://www.comfort.se/butiker/1134"],
+];
+// [rank, name, city, zone, vd, email, phone, employees, revenue, score, hasSolar, hasWP, url]
+
+const bvData = [
+  [1,"VOTAB VVS & Värmeinstallation","Varberg",4,"A","Erik Gustafsson","info@votab.se","0340-64 68 00",20,53.0,6.4,false,false,"VVS/värme","https://www.bad-varme.se/ort/varberg-votab/"],
+  [2,"Elterm","Alingsås",3,"A","Peter Andrén","info@elterm.se","0322-123 24",11,26.0,6.3,true,true,"aukt. VP-märke, solceller, elbil","https://www.bad-varme.se/ort/alingsas/"],
+  [3,"Hammarstedts VVS","Nybro",3,"A","Enar Edvardsson","erik@hammarstedtsvvs.se","0481-76 60 00",14,36.5,5.4,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/nybro/"],
+  [4,"Bad & Värme Filipstad","Filipstad",3,"A","Birger Liljestrand","filipstad@bad-varme.se","0590-130 14",34,155.5,5.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/filipstad/"],
+  [5,"Martin Palmqvist VVS","Fagersta",3,"B","Per Palmqvist","offert@palmqvistvvs.se","0223-161 10",6,10.7,4.5,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/fagersta/"],
+  [6,"VVS-Service i Knislinge","Hanaskog",3,"B","Carl Nordström","oskar@savvs.se","044-614 11",14,33.7,4.5,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/hanaskog/"],
+  [7,"Hova Rörledningsaffär","Hova",3,"B","Anna Danielsson","info@hovaror.com","0506-307 95",47,114.5,4.5,false,false,"VVS/värme","https://www.bad-varme.se/ort/hova/"],
+  [8,"Service & Fastighet i Skåne","Hörby",3,"B","Jacob Grubits","sofror.og@gmail.com","070-712 87 34",46,102.6,4.5,false,false,"VVS/värme","https://www.bad-varme.se/ort/horby/"],
+  [9,"Bad & Värme i Laholm","Laholm",3,"B","Peter Johansson","butik.laholm@bad-varme.se","0430-10 000",79,191.0,4.5,false,false,"VVS/värme","https://www.bad-varme.se/ort/laholm/"],
+  [10,"Installationsgruppen","Sälen",3,"B","Anders Karlsson","badovarme@installationsgruppen.com","0280-207 75",43,103.7,4.5,false,false,"VVS/värme","https://www.bad-varme.se/ort/salen/"],
+  [11,"Installationgruppen Bohuslän","Uddevalla",3,"B","Anders Karlsson","info@instgruppen.se","010-45 20 840",43,103.7,4.5,false,false,"VVS/värme","https://www.bad-varme.se/ort/uddevalla/"],
+  [12,"Idala Rörtjänst","Veberöd",3,"B","Patrik Andersson","info@idalaror.se","046-500 98",9,22.2,4.5,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/veberod/"],
+  [13,"Djupedals Rör Alingsås","Alingsås",3,"B","Emma Nyström","info@djupedalsror.se","0322-101 06",21,67.1,4.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/alingsas-djupedal/"],
+  [14,"Gnosjö Rörledningsaffär","Gnosjö",3,"B","Erik Sveningsson","info@gnosjoror.se","0370-33 22 90",22,60.1,4.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/gnosjo/"],
+  [15,"ManTor","Jönköping",3,"B","Martin Schildt","info@mantor.se","010-3300560",18,41.1,4.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/jonkoping/"],
+  [16,"NM Rör AB","Norrtälje",3,"B","Lennart Ragnarsson","info@nmror.se","0176-22 47 00",18,40.6,4.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/norrtalje/"],
+  [17,"Forsmans VVS","Skogås",3,"B","Fredrik Forsman","order@forsmansvvs.se","08-770 85 00",31,68.1,4.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/vendelso/"],
+  [18,"Bad & Värme Tingsryd","Tingsryd",3,"B","Ulf Sjöström","tingsryd@bad-varme.se","0477-130 50",16,30.2,4.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/tingsryd/"],
+  [19,"Nya Rörbolaget","Västerås",3,"B","Clas-Göran Israelsson","vasteras@bad-varme.se","021-38 04 30",20,49.9,4.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/vasteras/"],
+  [20,"Eklunds Mora","Mora",2,"B","Anders Eklund","info@eklundsmora.se","0250-58 50 00",37,76.4,3.9,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/mora/"],
+  [21,"Bryngels","Sundsvall",2,"B","Per Norberg","vvs.sundsvall@bryngels.se","060-66 88 55",25,50.4,3.9,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/sundsvall/"],
+  [22,"Djupedals Rör Kvänum","Kvänum",3,"B","Johan Efraimsson","info@djupedalsror.se","0512-921 00",132,279.1,3.75,false,false,"VVS/värme","https://www.bad-varme.se/ort/kvanum-djupedal/"],
+  [23,"Radiator VVS","Ludvika",3,"B","Andreas Bogren","ludvika@bad-varme.se","0240-13565",470,1089.2,3.75,false,false,"VVS/värme","https://www.bad-varme.se/ort/ludvika/"],
+  [24,"RSAB Rörservice","Arvika",3,"B","Stefan Nordin","info@rs-ab.com","0570-808 03",7,11.8,3.6,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/arvika/"],
+  [25,"Ekenäs Rör AB","Ekenässjön",3,"B","Klas Liljegren","info@ekenasror.se","0383-347 80",7,14.3,3.6,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/vetlanda/"],
+  [26,"Rörfixarna i Hjo","Hjo",3,"B","Stefan Alexandersson","hjo@bad-varme.se","050312222",15,34.8,3.6,false,false,"VVS/värme","https://www.bad-varme.se/ort/hjo/"],
+  [27,"Söders Olja & Rör","Rottne",3,"B","Niklas Johansson","niklas@sodersror.se","0470-925 50",14,35.4,3.6,false,false,"VVS/värme","https://www.bad-varme.se/ort/rottne/"],
+  [28,"Rörfixarna i Hjo AB","Tibro",3,"B","Stefan Alexandersson","tibro@bad-varme.se","0504-129 88",15,34.8,3.6,false,false,"VVS/värme","https://www.bad-varme.se/ort/tibro/"],
+  [29,"Janne Carlson Rör","Vålberg/Karlstad",3,"B","Hans Karlsson","herman.karlsson@nor-schakt.se","054-547180",9,24.9,3.6,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/karlstad-jc/"],
+  [30,"Bad & Värme Årjäng","Årjäng",3,"B","Henrik Hedefur","henrik@kakelbutikenab.se","0573-100 03",14,18.8,3.6,false,true,"aukt. VP-märke","https://www.bad-varme.se/ort/arjang/"],
+  [31,"Installationsgruppen","Malung",2,"B","Anders Karlsson","badovarme@installationsgruppen.com","0280-130 75",43,103.7,3.51,false,false,"VVS/värme","https://www.bad-varme.se/ort/malung/"],
+  [32,"VVS Butiken Lindsdals Rör","Kalmar",4,"B","Kennerth Karlström","kalmar@bad-varme.se","0480-696 00",6,12.4,3.46,false,false,"VVS/värme","https://www.bad-varme.se/ort/kalmar/"],
+  [33,"Förlösa Rör","Kalmar",4,"B","Simon Hansson","forlosaror@gmail.com","0708-79 19 88",6,21.6,3.46,false,false,"VVS/värme","https://www.bad-varme.se/ort/kalmar-forlosa/"],
+  [34,"Sahlins Rör","Osby",4,"B","Per Sahlin","osby@bad-varme.se","0479-146 04",10,26.5,3.46,false,false,"VVS/värme","https://www.bad-varme.se/ort/osby/"],
+  [35,"Söderbloms Rör","Gävle",2,"B","Johan Karlsson","info@soderblomsror.se","026-601010",16,31.0,3.12,false,false,"VVS/värme","https://www.bad-varme.se/ort/gavle/"],
+  [36,"Bryngels","Hudiksvall",2,"B","Per Norberg","vvs.hudiksvall@bryngels.se","0650-10790",25,50.4,3.12,false,false,"VVS/värme","https://www.bad-varme.se/ort/hudiksvall/"],
+  [37,"TermoRör","Botkyrka/Tumba",3,"B","Kent Johansson","service@termoror.se","08-51819010",23,28.7,3.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/tumba/"],
+  [38,"Bad & Värme i Norrköping","Norrköping/Kolmården",3,"B","Martin Calderon","order@hertzmansvvs.se","011-696 63",22,24.0,3.0,false,false,"VVS/värme","https://www.bad-varme.se/ort/norrkoping-kolmarden/"],
+];
+// [rank, name, city, zone, tier, vd, email, phone, employees, revenue, score, hasSolar, hasBrand, pitch, url]
+
+// ── STATE ──
+const state = {
+  comfort: { zoneFilter: 'all', tagFilter: null, search: '', sortCol: 0, sortAsc: true },
+  bv: { zoneFilter: 'all', tierFilter: 'all', tagFilter: null, search: '', sortCol: 0, sortAsc: true }
+};
+
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', (i===0&&id==='comfort')||(i===1&&id==='bv')));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+}
+
+function filterComfort(type, val, btn) {
+  if (type === 'zone') {
+    state.comfort.zoneFilter = val;
+    document.querySelectorAll('#comfort-zone-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  } else {
+    state.comfort.tagFilter = state.comfort.tagFilter === val ? null : val;
+  }
+  btn.classList.toggle('active', type === 'zone' || state.comfort.tagFilter === val);
+  renderComfort();
+}
+
+function filterBV(type, val, btn) {
+  if (type === 'zone') {
+    state.bv.zoneFilter = val;
+    document.querySelectorAll('#bv-zone-filters .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  } else if (type === 'tier') {
+    state.bv.tierFilter = val;
+    btn.closest('.filter-group').querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  } else {
+    state.bv.tagFilter = state.bv.tagFilter === val ? null : val;
+    btn.classList.toggle('active', state.bv.tagFilter === val);
+  }
+  renderBV();
+}
+
+function searchTable(which, val) {
+  state[which].search = val.toLowerCase();
+  which === 'comfort' ? renderComfort() : renderBV();
+}
+
+function sortTable(which, col) {
+  const s = state[which];
+  if (s.sortCol === col) s.sortAsc = !s.sortAsc;
+  else { s.sortCol = col; s.sortAsc = true; }
+  which === 'comfort' ? renderComfort() : renderBV();
+}
+
+function zoneBadge(z) {
+  return `<span class="zone-badge zone-${z}">SE${z}</span>`;
+}
+
+function renderComfort() {
+  const s = state.comfort;
+  let rows = comfortData.filter(r => {
+    if (s.zoneFilter !== 'all' && r[3] !== parseInt(s.zoneFilter)) return false;
+    if (s.tagFilter === 'solar' && !r[10]) return false;
+    if (s.search && !r[1].toLowerCase().includes(s.search) && !r[2].toLowerCase().includes(s.search)) return false;
+    return true;
+  });
+
+  // sort
+  rows = rows.slice().sort((a, b) => {
+    const col = s.sortCol;
+    let av = a[col], bv = b[col];
+    if (av == null) av = -Infinity;
+    if (bv == null) bv = -Infinity;
+    if (typeof av === 'string') return s.sortAsc ? av.localeCompare(bv,'sv') : bv.localeCompare(av,'sv');
+    return s.sortAsc ? av - bv : bv - av;
+  });
+
+  const tbody = document.getElementById('comfort-tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="10">Inga leads matchar filtret.</td></tr>';
+    document.getElementById('comfort-count').textContent = '0 leads';
+    return;
+  }
+
+  tbody.innerHTML = rows.map(r => {
+    const tags = [];
+    if (r[10]) tags.push('<span class="tag-pill">☀ Sol</span>');
+    const vd = r[4] || '—';
+    const emp = r[7] > 0 ? r[7] : '—';
+    const rev = r[8] != null ? r[8].toFixed(0) : '—';
+    return `<tr>
+      <td class="td-rank">${r[0]}</td>
+      <td class="td-name"><a href="${r[12]}" target="_blank">${r[1]}</a></td>
+      <td class="td-city">${r[2]}</td>
+      <td>${zoneBadge(r[3])}</td>
+      <td>${vd}</td>
+      <td class="contact-cell"><a href="mailto:${r[5]}">${r[5]}</a><br>${r[6]}</td>
+      <td class="num">${emp}</td>
+      <td class="num">${rev}</td>
+      <td class="num score-val">${r[9].toFixed(2)}</td>
+      <td>${tags.join('')}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('comfort-count').textContent = `${rows.length} leads visas`;
+}
+
+function renderBV() {
+  const s = state.bv;
+  let rows = bvData.filter(r => {
+    if (s.zoneFilter !== 'all' && r[3] !== parseInt(s.zoneFilter)) return false;
+    if (s.tierFilter !== 'all' && r[4] !== s.tierFilter) return false;
+    if (s.tagFilter === 'brand' && !r[12]) return false;
+    if (s.search && !r[1].toLowerCase().includes(s.search) && !r[2].toLowerCase().includes(s.search)) return false;
+    return true;
+  });
+
+  rows = rows.slice().sort((a, b) => {
+    const col = s.sortCol;
+    const colMap = [0,1,2,3,4,5,6,7,8,9,10];
+    let av = a[colMap[col]], bv = b[colMap[col]];
+    if (av == null) av = -Infinity;
+    if (bv == null) bv = -Infinity;
+    if (typeof av === 'string') return s.sortAsc ? av.localeCompare(bv,'sv') : bv.localeCompare(av,'sv');
+    return s.sortAsc ? av - bv : bv - av;
+  });
+
+  const tbody = document.getElementById('bv-tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="11">Inga leads matchar filtret.</td></tr>';
+    document.getElementById('bv-count').textContent = '0 leads';
+    return;
+  }
+
+  tbody.innerHTML = rows.map(r => {
+    const tags = [];
+    if (r[11]) tags.push('<span class="tag-pill">☀ Sol</span>');
+    if (r[12]) tags.push('<span class="tag-pill">✓ Aukt. VP</span>');
+    const emp = r[8] > 0 ? r[8] : '—';
+    const rev = r[9] != null ? r[9].toFixed(0) : '—';
+    return `<tr>
+      <td class="td-rank">${r[0]}</td>
+      <td class="td-name"><a href="${r[14]}" target="_blank">${r[1]}</a></td>
+      <td class="td-city">${r[2]}</td>
+      <td>${zoneBadge(r[3])}</td>
+      <td><span class="tier-badge tier-${r[4]}">${r[4]}</span></td>
+      <td>${r[5]}</td>
+      <td class="contact-cell"><a href="mailto:${r[6]}">${r[6]}</a><br>${r[7]}</td>
+      <td class="num">${emp}</td>
+      <td class="num">${rev}</td>
+      <td class="num score-val">${r[10].toFixed(2)}</td>
+      <td>${tags.join('')}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('bv-count').textContent = `${rows.length} leads visas`;
+}
+
+// init
+renderComfort();
+renderBV();
+</script>
+</body>
+</html>
