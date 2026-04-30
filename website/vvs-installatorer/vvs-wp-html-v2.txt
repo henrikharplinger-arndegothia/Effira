@@ -89,7 +89,7 @@
     </div>
     <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid rgba(1,50,51,0.12);margin-bottom:16px;">
       <h3 style="font-size:17px;font-weight:600;color:#013233;margin:0 0 8px;">Vad händer om kunden har problem med appen?</h3>
-      <p style="font-size:16px;color:#444;margin:0;">Det hanterar Effira direkt. Du behöver inte ta de samtalen.</p>
+      <p style="font-size:16px;color:#444;margin:0;">Effira hanterar support. Du behöver inte ta de samtalen.</p>
     </div>
     <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid rgba(1,50,51,0.12);">
       <h3 style="font-size:17px;font-weight:600;color:#013233;margin:0 0 8px;">Fungerar det med de pumpar vi installerar?</h3>
