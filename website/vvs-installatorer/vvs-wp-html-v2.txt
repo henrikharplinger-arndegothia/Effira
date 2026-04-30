@@ -4,7 +4,7 @@
   <tr>
     <td style="width:50%;padding:80px 64px 80px 48px;vertical-align:middle;">
       <h1 style="color:#ffffff;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 24px;">Ny affär — <span style="color:#ff8c2d;">en nöjdare kund.</span></h1>
-      <p style="color:rgba(255,255,255,0.85);font-size:18px;line-height:1.6;margin:0 0 24px;">OPTi från Effira är en produkt du kan erbjuda nya och befintliga kunder. En anledning att höra av sig. Och ett sätt att hålla kontakten.</p>
+      <p style="color:rgba(255,255,255,0.85);font-size:18px;line-height:1.6;margin:0 0 32px;">Du har redan kunderna. OPTi ger dig en enkel anledning att höra av dig igen — och något konkret att erbjuda.</p>
       <a href="#vvs-cta" style="background:#ff8c2d;color:#062121;padding:14px 28px;border-radius:9999px;font-weight:600;font-size:16px;text-decoration:none;display:inline-block;">Anmäl intresse →</a>
     </td>
     <td style="width:50%;padding:0;vertical-align:top;">
@@ -19,13 +19,12 @@
     <tr>
       <td style="width:50%;padding-right:48px;vertical-align:middle;">
         <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">En service som betalar sig — för kunden och för dig.</h2>
-        <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 16px;">OPTi monteras på befintlig pump på 30 minuter. Inget att bygga om, inga nya rör, inga extra verktyg. Passar utmärkt i samband med ett ordinarie servicebesök — du är ändå där.</p>
-        <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 24px;">Kunden får en pump som jobbar smartare. Du får en mer givande serviceaffär.</p>
+        <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 24px;">OPTi monteras på befintlig pump på 30 minuter. Inget att bygga om, inga nya rör, inga extra verktyg. Passar utmärkt i samband med ett ordinarie servicebesök — du är ändå där.</p>
         <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Fungerar med befintliga vattenburna värmepumpar (95%+ kompatibilitet)</p>
         <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Kräver ingen ombyggnad</p>
-        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Installeras på 30 minuter</p>
-        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 20px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Styr enligt värmepumpsbranschens riktlinjer</p>
-        <p style="font-size:14px;color:#666;font-style:italic;margin:0;">Effira Energy — svenskt företag med över 12 år i branschen.</p>
+        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Installeras av er på 30 minuter</p>
+        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 24px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Optimering och styrning enligt värmepumpsbranschens riktlinjer</p>
+        <p style="font-size:14px;color:#666;font-style:italic;margin:0;">Effira Energy — svenskt företag med över 12 år i värmepumpsbranschen.</p>
       </td>
       <td style="width:50%;padding-left:48px;vertical-align:middle;">
         <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/HUb-ver.1.png" alt="OPTi styrenheten" style="width:100%;border-radius:16px;box-shadow:6px 6px 24px rgba(0,0,0,0.12);display:block;">
@@ -34,45 +33,38 @@
   </table>
 </div>
 
-<!-- DIN KUND BETALAR MINDRE -->
+<!-- KUNDVÄRDET -->
 <div style="background:#ffffff;padding:72px 48px;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">Din kund betalar mindre. Du är den som gjorde det möjligt.</h2>
-    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 20px;">Uppvärmning och varmvatten står för upp till 75% av hushållets elförbrukning — och det är precis den delen OPTi tar hand om. Pumpen värmer när elen är billig, minskar när den är dyr och hanterar effekttariffer automatiskt så att kunden slipper dyra effekttoppar. Kunden märker ingenting förutom på räkningen.</p>
-    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 20px;">Resultatet: 6 000–12 000 kr lägre elkostnad per år, upp till 50% ökad egenanvändning av solel och en återbetalningstid som typiskt ligger inom 12 månader. Pumpen moderniseras och lever längre.</p>
-    <p style="font-size:17px;line-height:1.7;color:#013233;font-weight:600;margin:0;">Och du är den som satte det i gång.</p>
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
+    <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">Din kund sänker sina elkostnader. Utan att ändra ett dugg.</h2>
+    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 16px;">Uppvärmning står för den största delen av hushållets elkostnader. OPTi optimerar värmepumpen automatiskt efter elpriset — kunden märker ingenting förutom på räkningen. Typisk besparing: 6 000–12 000 kr per år.</p>
+    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0;">Kunder med solceller får dessutom ut mer av dem — OPTi ökar egenanvändningen automatiskt.</p>
   </div>
 </div>
 
 <!-- VAD FIRMAN FÅR -->
 <div style="background:#d0e7e2;padding:72px 48px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 32px;line-height:1.25;">Vad din firma får</h2>
+    <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 32px;line-height:1.25;">En växande affär på din befintliga bas.</h2>
     <table style="width:100%;border-collapse:separate;border-spacing:24px 24px;margin:-24px;" cellpadding="0" cellspacing="0">
       <tr>
         <td style="background:#ffffff;border-radius:16px;padding:32px;border:1px solid rgba(1,50,51,0.1);vertical-align:top;width:50%;">
-          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">En anledning att kontakta din befintliga kundbas</h3>
-          <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">OPTi passar de flesta vattenburna värmepumpar du redan har installerat. Du har kunderna — <strong style="color:#013233;">nu har du något att erbjuda dem.</strong></p>
+          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">En anledning att höra av sig</h3>
+          <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">OPTi passar de flesta vattenburna värmepumpar — oavsett om du installerade dem eller installerar nya. Du har något konkret att erbjuda varje kund.</p>
         </td>
         <td style="background:#ffffff;border-radius:16px;padding:32px;border:1px solid rgba(1,50,51,0.1);vertical-align:top;width:50%;">
-          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">En produkt kunden faktiskt vill ha</h3>
-          <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Ingen behöver övertygas om att spara 6–12 000 kr om året. Kort säljcykel, tydlig kundnytta, ingen ombyggnad.</p>
+          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Du vet när du ska höra av dig</h3>
+          <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Via Effira-plattformen ser du driftsstatus på alla dina installerade pumpar — inte bara om något gått fel, utan <strong style="color:#013233;">när det är rätt läge att kontakta kunden proaktivt.</strong></p>
         </td>
       </tr>
       <tr>
-        <td style="background:#ffffff;border-radius:16px;padding:32px;border:1px solid rgba(1,50,51,0.1);vertical-align:top;">
-          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Löpande insyn i pumpens drift</h3>
-          <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Via Effira-plattformen ser du om något är på väg att gå fel. <strong style="color:#013233;">Du ringer kunden — innan de ringer dig.</strong></p>
-        </td>
         <td style="background:#ffffff;border-radius:16px;padding:32px;border:1px solid rgba(1,50,51,0.1);vertical-align:top;">
           <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Ingen supportbörda</h3>
           <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Effira ansvarar för plattform, app, optimering och kundtjänst. Du installerar och sköter kundrelationen. Det är allt.</p>
         </td>
-      </tr>
-      <tr>
-        <td colspan="2" style="background:#ffffff;border-radius:16px;padding:32px;border:1px solid rgba(1,50,51,0.1);vertical-align:top;">
-          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Överblick över hela kundbasen</h3>
-          <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Som partner kommer du få tillgång till ett eget dashboard med alla dina kunder, deras pumpar och driftsstatus — i realtid. <strong style="color:#013233;">Du ser problem innan kunden märker dem.</strong></p>
+        <td style="background:#ffffff;border-radius:16px;padding:32px;border:1px solid rgba(1,50,51,0.1);vertical-align:top;">
+          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Full överblick</h3>
+          <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Som partner får du tillgång till ett eget dashboard med alla kunder, pumpar och driftsstatus i realtid. <strong style="color:#013233;">Du ser problem innan kunden märker dem.</strong></p>
         </td>
       </tr>
     </table>
@@ -80,7 +72,7 @@
 </div>
 
 <!-- CITAT -->
-<div style="background:#d0e7e2;padding:72px 48px;text-align:center;">
+<div style="background:#ffffff;padding:72px 48px;text-align:center;">
   <div style="max-width:800px;margin:0 auto;">
     <p style="font-size:22px;font-weight:500;line-height:1.6;color:#013233;font-style:italic;margin:0 0 24px;"><span style="font-size:60px;color:#ff8c2d;line-height:0;vertical-align:-20px;margin-right:4px;">"</span>Vi hörde av oss till kunder vi inte pratat med på flera år. Ingen visste att det fanns något sånt — och när vi berättade vad det sparar var det ingen som tvekade.</p>
     <p style="font-size:15px;color:#555;font-weight:500;margin:0;"><span style="background:rgba(1,50,51,0.1);border-radius:6px;padding:2px 8px;font-size:13px;">Förnamn Efternamn</span> &nbsp;·&nbsp; <span style="background:rgba(1,50,51,0.1);border-radius:6px;padding:2px 8px;font-size:13px;">Företagsnamn</span> &nbsp;·&nbsp; <span style="background:rgba(1,50,51,0.1);border-radius:6px;padding:2px 8px;font-size:13px;">Ort</span></p>
