@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effira Energy — Annonsanalys: Bengt & Agneta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --flow: #062121;
+      --pine: #013233;
+      --glacier: #D0E7E2;
+      --mist: #FAFEFE;
+      --ember: #FF8C2D;
+      --teal-dark: var(--flow);
+      --teal-mid: var(--pine);
+      --teal-light: var(--glacier);
+      --warm-white: var(--mist);
+      --white: #ffffff;
+      --black: var(--flow);
+      --grey: #6b7280;
+      --highlight: var(--ember);
+      --card-radius: 16px;
+      --pill-radius: 9999px;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --red: #ef4444;
+    }
+
+    body {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--warm-white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    body.mode-slides { height: 100vh; overflow: hidden; user-select: none; }
+    body.mode-slides .deck { width: 100vw; height: 100vh; position: relative; }
+    body.mode-slides .slide {
+      position: absolute; inset: 0; opacity: 0; pointer-events: none;
+      transition: opacity 0.5s ease; overflow: hidden;
+    }
+    body.mode-slides .slide.active { opacity: 1; pointer-events: all; }
+    body.mode-slides .slide-inner { height: 100vh; max-height: 100vh; padding: 48px 64px 80px; overflow: hidden; }
+    body.mode-slides h1 { font-size: clamp(28px, 4vw, 52px); margin-bottom: 20px; }
+    body.mode-slides h2 { font-size: clamp(22px, 3vw, 38px); margin-bottom: 14px; }
+    body.mode-slides h3 { font-size: 16px; }
+    body.mode-slides .card { padding: 20px; }
+    body.mode-slides .card-grid { margin-top: 20px; gap: 12px; }
+    body.mode-slides .card h3 { font-size: 14px; margin-bottom: 6px; }
+    body.mode-slides .card p { font-size: 12px; line-height: 1.5; }
+    body.mode-slides .card .card-label { margin-bottom: 8px; }
+    body.mode-slides .subtitle { font-size: 14px; }
+    body.mode-slides .stat-row { margin-top: 28px; gap: 36px; }
+    body.mode-slides .stat .stat-value { font-size: 28px; }
+    body.mode-slides .quote { font-size: 14px; margin-top: 16px; }
+    body.mode-slides .two-col { gap: 48px; }
+    body.mode-slides .slide-label { margin-bottom: 14px; }
+
+    body.mode-scroll .deck { scroll-behavior: smooth; }
+    body.mode-scroll .slide { min-height: 100vh; }
+    body.mode-scroll .dot-nav {
+      position: fixed; right: 28px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 14px; z-index: 200;
+    }
+    body.mode-scroll .dot-nav .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(6,33,33,0.2); cursor: pointer; transition: all 0.3s; position: relative;
+    }
+    body.mode-scroll .dot-nav .dot.active { background: var(--teal-dark); transform: scale(1.4); }
+    body.mode-scroll .dot-nav .dot .dot-label {
+      position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+      white-space: nowrap; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--teal-dark); opacity: 0; transition: opacity 0.2s; pointer-events: none;
+    }
+    body.mode-scroll .dot-nav .dot:hover .dot-label { opacity: 1; }
+
+    body.mode-tabs .tab-bar {
+      position: sticky; top: 0; z-index: 200; background: var(--teal-dark);
+      display: flex; align-items: center; gap: 0; padding: 0 40px; height: 56px; overflow-x: auto;
+    }
+    body.mode-tabs .tab-bar .tab {
+      padding: 16px 24px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); cursor: pointer; white-space: nowrap; transition: color 0.2s;
+      border-bottom: 2px solid transparent; font-weight: 600;
+    }
+    body.mode-tabs .tab-bar .tab:hover { color: rgba(255,255,255,0.8); }
+    body.mode-tabs .tab-bar .tab.active { color: var(--highlight); border-bottom-color: var(--highlight); }
+    body.mode-tabs .slide { min-height: 100vh; }
+
+    .arrow-nav {
+      position: fixed; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 20px; z-index: 100;
+    }
+    .arrow-nav button {
+      background: var(--teal-dark); border: none; color: rgba(255,255,255,0.7);
+      width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 18px;
+      display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+    }
+    .arrow-nav button:hover { background: var(--teal-mid); color: white; }
+    .arrow-nav .counter { font-size: 12px; letter-spacing: 0.15em; color: var(--grey); min-width: 48px; text-align: center; }
+
+    .mode-switcher {
+      position: fixed; top: 20px; right: 28px; z-index: 300;
+      display: flex; gap: 4px; background: rgba(6,33,33,0.08);
+      border-radius: var(--pill-radius); padding: 4px;
+    }
+    .mode-switcher button {
+      background: none; border: none; padding: 6px 14px; font-size: 11px; font-family: inherit;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey); cursor: pointer;
+      border-radius: var(--pill-radius); transition: all 0.2s; font-weight: 600;
+    }
+    .mode-switcher button.active { background: var(--teal-dark); color: white; }
+
+    .slide-inner { padding: 80px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+    .slide-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); font-weight: 400; margin-bottom: 24px; }
+    .slide-inner.dark { background: var(--teal-dark); color: var(--white); }
+    .slide-inner.dark .slide-label { color: var(--highlight); }
+    .slide-inner.light { background: var(--warm-white); color: var(--black); }
+    .slide-inner.accent { background: var(--glacier); color: var(--teal-dark); }
+    .slide-inner.accent .slide-label { color: var(--ember); }
+
+    h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 32px; }
+    h1 em { font-style: normal; color: var(--highlight); }
+    h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+    h2 em { font-style: normal; color: var(--highlight); }
+    .accent h2 em { color: var(--ember); }
+    h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .subtitle { font-size: 16px; color: var(--grey); max-width: 600px; line-height: 1.7; }
+    .dark .subtitle { color: rgba(255,255,255,0.55); }
+
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .card { background: var(--teal-dark); color: var(--white); padding: 32px; border-radius: var(--card-radius); }
+    .dark .card { background: rgba(255,255,255,0.06); }
+    .card .card-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 14px; font-weight: 600; }
+    .card h3 { color: var(--white); font-size: 16px; margin-bottom: 10px; }
+    .card p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.6); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .stat-row { display: flex; gap: 48px; margin-top: 40px; }
+    .stat .stat-value { font-size: 36px; font-weight: 600; letter-spacing: -0.02em; }
+    .stat .stat-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-top: 6px; }
+    .dark .stat .stat-label { color: rgba(255,255,255,0.4); }
+
+    .quote { border-left: 3px solid var(--highlight); padding-left: 24px; font-size: 16px; line-height: 1.7; color: var(--grey); margin-top: 32px; max-width: 620px; }
+    .dark .quote { color: rgba(255,255,255,0.6); }
+
+    .segment-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 32px; }
+    .segment-card {
+      background: rgba(255,255,255,0.06); padding: 28px 24px;
+      border-radius: var(--card-radius); display: flex; flex-direction: column; gap: 10px;
+    }
+    .segment-card .seg-name { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; }
+    .segment-card .seg-label { font-size: 15px; font-weight: 600; margin-top: -4px; }
+    .segment-card .seg-score { font-size: 36px; font-weight: 600; line-height: 1; }
+    .score-bar-wrap { margin-top: 2px; }
+    .score-bar-bg { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+    .score-bar { height: 100%; border-radius: 3px; }
+    .score-high { background: var(--green); }
+    .score-mid { background: var(--yellow); }
+    .score-low { background: var(--red); }
+    .segment-card .seg-verdict { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; margin-top: 4px; }
+    .segment-card.highlight-card { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25); }
+    .segment-card.highlight-b1 { background: rgba(255,140,45,0.12); border: 1px solid rgba(255,140,45,0.35); }
+
+    .seq-table { margin-top: 36px; width: 100%; max-width: 800px; }
+    .seq-row { display: grid; grid-template-columns: 1fr 200px 160px; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .seq-row:last-child { border-bottom: none; }
+    .seq-element { font-size: 15px; font-weight: 600; color: var(--white); }
+    .seq-category { font-size: 13px; color: rgba(255,255,255,0.45); }
+    .seq-check { font-size: 13px; font-weight: 600; color: var(--green); }
+    .seq-warn { font-size: 13px; font-weight: 600; color: var(--yellow); }
+
+    .rec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+    .rec-card { background: rgba(255,255,255,0.06); padding: 28px 24px; border-radius: var(--card-radius); }
+    .rec-card .rec-num { font-size: 11px; letter-spacing: 0.2em; color: var(--highlight); font-weight: 600; margin-bottom: 14px; }
+    .rec-card h3 { color: var(--white); font-size: 16px; margin-bottom: 10px; }
+    .rec-card p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.55); }
+
+    .detail-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .detail-list li { font-size: 14px; padding-left: 20px; position: relative; line-height: 1.5; }
+    .detail-list li::before { content: '\2014'; position: absolute; left: 0; color: var(--highlight); }
+
+    .split-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+    .split-side { background: rgba(255,255,255,0.06); border-radius: var(--card-radius); padding: 28px; }
+    .split-side .split-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); font-weight: 600; margin-bottom: 10px; }
+    .split-side h3 { color: var(--white); font-size: 15px; margin-bottom: 16px; }
+
+    .brand-logo {
+      position: fixed; top: 24px; left: 32px; z-index: 300;
+      display: flex; align-items: center; gap: 8px; text-decoration: none;
+    }
+    .brand-logo .logo-symbol { height: 28px; width: auto; }
+    .brand-logo .logo-text { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: var(--mist); line-height: 1; }
+    body.slide-light .brand-logo .logo-text { color: var(--flow); }
+    body.slide-dark .brand-logo .logo-text { color: var(--mist); }
+
+    .arrow-nav, .dot-nav, .tab-bar { display: none; }
+    body.mode-slides .arrow-nav { display: flex; }
+    body.mode-scroll .dot-nav { display: flex; }
+    body.mode-tabs .tab-bar { display: flex; }
+
+    @media (max-width: 900px) {
+      .slide-inner { padding: 40px 24px; }
+      .two-col, .split-panel { grid-template-columns: 1fr; gap: 40px; }
+      .card-grid, .rec-grid { grid-template-columns: 1fr; }
+      .segment-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-row { flex-direction: column; gap: 24px; }
+      .seq-row { grid-template-columns: 1fr; gap: 4px; }
+      .mode-switcher { top: auto; bottom: 80px; right: 50%; transform: translateX(50%); }
+    }
+  </style>
+  <noscript><style>
+    body { height: auto !important; overflow: auto !important; }
+    .mode-switcher, .arrow-nav { display: none !important; }
+    .slide { position: static !important; opacity: 1 !important; pointer-events: all !important; min-height: 100vh; }
+  </style></noscript>
+</head>
+<body class="mode-slides slide-dark">
+
+<a class="brand-logo" href="#">
+  <svg class="logo-symbol" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.5 46C5.5 32 14 20 30 12c4.5-2.3 9-3.8 13.5-4.5C40 14 36 22 34 28c-2.5 7.5-7.5 13-15 15.5C12 46 6 46 2.5 46z" fill="var(--ember)"/>
+    <path d="M10 44c3-12 10-22 22-28 3-1.6 6.2-2.7 9.5-3.2C39 18.5 36 24.5 34.5 29c-2 6-6 10.5-12 12.5C17 43.5 13 43.8 10 44z" fill="var(--ember)" opacity="0.55"/>
+  </svg>
+  <span class="logo-text">effira</span>
+</a>
+
+<div class="mode-switcher">
+  <button class="active" data-mode="slides">Slides</button>
+  <button data-mode="scroll">Scroll</button>
+  <button data-mode="tabs">Tabs</button>
+</div>
+
+<div class="tab-bar">
+  <div class="tab active" data-slide="0">Analys</div>
+  <div class="tab" data-slide="1">Scorecard</div>
+  <div class="tab" data-slide="2">Sweet spot</div>
+  <div class="tab" data-slide="3">Styrkor</div>
+  <div class="tab" data-slide="4">Sekvens</div>
+  <div class="tab" data-slide="5">Förbättringar</div>
+  <div class="tab" data-slide="6">Slutsats</div>
+</div>
+
+<div class="dot-nav">
+  <div class="dot active" data-slide="0"><span class="dot-label">Analys</span></div>
+  <div class="dot" data-slide="1"><span class="dot-label">Scorecard</span></div>
+  <div class="dot" data-slide="2"><span class="dot-label">Sweet spot</span></div>
+  <div class="dot" data-slide="3"><span class="dot-label">Styrkor</span></div>
+  <div class="dot" data-slide="4"><span class="dot-label">Sekvens</span></div>
+  <div class="dot" data-slide="5"><span class="dot-label">Förbättringar</span></div>
+  <div class="dot" data-slide="6"><span class="dot-label">Slutsats</span></div>
+</div>
+
+<div class="arrow-nav">
+  <button id="prev">&#8592;</button>
+  <span class="counter" id="counter">1 / 7</span>
+  <button id="next">&#8594;</button>
+</div>
+
+<div class="deck">
+
+  <!-- SLIDE 1 — INTRO -->
+  <div class="slide active" data-title="Analys">
+    <div class="slide-inner dark">
+      <span class="slide-label">01 — Annonsanalys</span>
+      <h1>B1 som sweet spot,<br><em>B2 som sekundär träff</em></h1>
+      <p class="subtitle">Annonssamarbete med Bengt & Agneta (Halmstad) analyserat mot Effiras fem kundsegment. Format: editorial case-story med solcellsvinkel + produktsida med "Bästa val 2026".</p>
+      <div class="stat-row" style="margin-top: 48px;">
+        <div class="stat">
+          <div class="stat-value" style="color: var(--highlight);">B1</div>
+          <div class="stat-label">Sweet spot</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">7/10</div>
+          <div class="stat-label">Starkaste segmentträff</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">35–45%</div>
+          <div class="stat-label">Andel av SAM som träffas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — SCORECARD -->
+  <div class="slide" data-title="Scorecard">
+    <div class="slide-inner dark">
+      <span class="slide-label">02 — Scorecard</span>
+      <h2>Segmentträff i översikt</h2>
+      <p class="subtitle">Varje segment bedömt på hur väl annonsens caseperson, trigger, tonfall och budskap matchar segmentets profil.</p>
+
+      <div class="segment-grid">
+        <div class="segment-card">
+          <span class="seg-name">A1</span>
+          <span class="seg-label">Optimeraren</span>
+          <span class="seg-score" style="color: var(--red);">4<span style="font-size:16px;color:rgba(255,255,255,0.3)">/10</span></span>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar score-low" style="width:40%"></div></div></div>
+          <span class="seg-verdict">Söker styrlogik och teknisk insyn. "Vi gör ingenting själva" är inte budskapet för A1.</span>
+        </div>
+        <div class="segment-card">
+          <span class="seg-name">A2</span>
+          <span class="seg-label">70-åringen</span>
+          <span class="seg-score" style="color: var(--yellow);">7<span style="font-size:16px;color:rgba(255,255,255,0.3)">/10</span></span>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar score-mid" style="width:70%"></div></div></div>
+          <span class="seg-verdict">Äldre man, IVT bergvärmepump 2010, Halmstad. Stark identifikation för segmentet.</span>
+        </div>
+        <div class="segment-card highlight-b1">
+          <span class="seg-name">B1</span>
+          <span class="seg-label">Den Väckta</span>
+          <span class="seg-score" style="color: var(--highlight);">7<span style="font-size:16px;color:rgba(255,255,255,0.3)">/10</span></span>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar score-high" style="width:70%"></div></div></div>
+          <span class="seg-verdict">Solcells-ROI-frustrationen är B1:s exakta trigger. "Hur lite vi använde själva" landar direkt.</span>
+        </div>
+        <div class="segment-card">
+          <span class="seg-name">B2</span>
+          <span class="seg-label">Den Avvaktande</span>
+          <span class="seg-score" style="color: var(--yellow);">6<span style="font-size:16px;color:rgba(255,255,255,0.3)">/10</span></span>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar score-mid" style="width:60%"></div></div></div>
+          <span class="seg-verdict">Komfortgaranti och enkelhet är rätt. Besparing visas i kr/år — ramverket kräver kr/månad. Det saknade månadsformatet kostar ett poäng.</span>
+        </div>
+        <div class="segment-card">
+          <span class="seg-name">B3</span>
+          <span class="seg-label">Livsnjutaren</span>
+          <span class="seg-score" style="color: var(--yellow);">6<span style="font-size:16px;color:rgba(255,255,255,0.3)">/10</span></span>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar score-mid" style="width:60%"></div></div></div>
+          <span class="seg-verdict">"Bästa val 2026" och konkreta siffror resonerar. Nås primärt via installatör snarare än tidning.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — SWEET SPOT -->
+  <div class="slide" data-title="Sweet spot">
+    <div class="slide-inner accent">
+      <span class="slide-label">03 — Sweet spot: B1 · Sekundär träff: B2</span>
+      <h2>B1 som primär, <em>B2 som sekundär</em></h2>
+      <div class="split-panel">
+        <div class="split-side">
+          <div class="split-label">B1 — Den Väckta · Vänster sida</div>
+          <h3>Solcellsvinkeln träffar B1:s exakta frustration</h3>
+          <ul class="detail-list" style="margin-top: 0;">
+            <li style="color:rgba(255,255,255,0.75);">"Hur lite vi använde själva" — solcells-ROI-smärtan namnges</li>
+            <li style="color:rgba(255,255,255,0.75);">IVT bergvärmepump 2010 — bevisad kompatibilitet</li>
+            <li style="color:rgba(255,255,255,0.75);">12 kWp solceller — identifierbar installation</li>
+            <li style="color:rgba(255,255,255,0.75);">10 400 kr konkret resultat — trovärdigt och gripbart</li>
+          </ul>
+        </div>
+        <div class="split-side">
+          <div class="split-label">B2 — Den Avvaktande · Höger sida</div>
+          <h3>Produktsidan håller kvar B2-signalerna</h3>
+          <ul class="detail-list" style="margin-top: 0;">
+            <li style="color:rgba(255,255,255,0.75);">"Vi gör ingenting själva. Det bara fungerar."</li>
+            <li style="color:rgba(255,255,255,0.75);">Komfortgaranti i ledande position</li>
+            <li style="color:rgba(255,255,255,0.75);">"Inga inställningar, ingen ombyggnad"</li>
+            <li style="color:rgba(255,255,255,0.75);">"Bästa val 2026" — auktoritetsstämpel för tveksamma</li>
+          </ul>
+        </div>
+      </div>
+      <div class="quote" style="color: var(--teal-dark); opacity: 0.65; border-left-color: var(--ember);">
+        En medveten uppläggning: vänster panel aktiverar den tekniskt triggade, höger panel avslutar köpet för den avvaktande.
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — STYRKOR -->
+  <div class="slide" data-title="Styrkor">
+    <div class="slide-inner light">
+      <span class="slide-label">04 — Vad annonsen gör rätt</span>
+      <h2>Tre starka element</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Case-story</div>
+          <h3>Konkret och trovärdig</h3>
+          <p>Bengt och Agneta är ett riktigt hushåll med verkliga siffror: villa 250 kvm, IVT 2010, 12 kWp solceller, 10 400 kr lägre elräkning. Den specificiteten bygger förtroende på ett sätt som generella påståenden aldrig kan.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Budskapssekvens</div>
+          <h3>Höger sida i rätt ordning</h3>
+          <p>Komfort leder, besparing kommer på andra plats, enkelhet tredje. Det är exakt den sekvens som konverterar tveksamma köpare — trygghet först, sedan rationellt värde, sedan låg tröskel.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Social proof</div>
+          <h3>"Bästa val 2026" är ett starkt tillskott</h3>
+          <p>En redaktionell utmärkelse från en oberoende källa väger tyngre än egenpublicerade påståenden. Det ger B2-segmentets avvaktande läsare den externa bekräftelse de söker innan de agerar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 — SEKVENS -->
+  <div class="slide" data-title="Sekvens">
+    <div class="slide-inner dark">
+      <span class="slide-label">05 — Budskapssekvens</span>
+      <h2>Höger sida följer <em>rätt sekvens</em></h2>
+      <p class="subtitle">Rekommenderad ordning för B-segmenten: Trygghet → Smart → Enkelhet. Höger sida levererar precis så.</p>
+
+      <div class="seq-table">
+        <div class="seq-row">
+          <span class="seq-element">1. "Komforten är garanterad"</span>
+          <span class="seq-category">Trygghet</span>
+          <span class="seq-check">✓ Leder</span>
+        </div>
+        <div class="seq-row">
+          <span class="seq-element">2. "Spara 6–12 000 kr per år"</span>
+          <span class="seq-category">Smart</span>
+          <span class="seq-check">✓ Andra position</span>
+        </div>
+        <div class="seq-row">
+          <span class="seq-element">3. "Passar din befintliga värmepump"</span>
+          <span class="seq-category">Enkelhet</span>
+          <span class="seq-check">✓ Tredje position</span>
+        </div>
+        <div class="seq-row">
+          <span class="seq-element">4. "Bästa val 2026" + QR</span>
+          <span class="seq-category">Social proof / CTA</span>
+          <span class="seq-check">✓ Stänger rätt</span>
+        </div>
+        <div class="seq-row">
+          <span class="seq-element">Vänster: "Hur lite vi använde själva"</span>
+          <span class="seq-category">Trigger — Solar ROI</span>
+          <span class="seq-warn">~ Starkt för B1, kräver brygga till icke-solcellsägare</span>
+        </div>
+      </div>
+
+      <div class="quote">
+        Upplaget har en välgenomtänkt struktur. Den enda sekvenskommentaren gäller vänster panels solcellsfokus — se förbättringsslide.
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 — FÖRBÄTTRINGAR -->
+  <div class="slide" data-title="Förbättringar">
+    <div class="slide-inner dark">
+      <span class="slide-label">06 — Förbättringsförslag</span>
+      <h2>Tre <em>enkla</em> förstärkningar</h2>
+
+      <div class="rec-grid">
+        <div class="rec-card">
+          <div class="rec-num">Förslag 01 — Hög prioritet</div>
+          <h3>Brygga till icke-solcellsägare</h3>
+          <p>Vänsterpanelens case handlar om solar + pump. En halvmening tidigt — "Fungerar lika bra utan solceller" eller "OPTi optimerar mot elpriset oavsett" — förhindrar att ~70% av målgruppen självexkluderar sig innan de når höger sida.</p>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num">Förslag 02 — Medel prioritet</div>
+          <h3>Komplettera med kr/månad</h3>
+          <p>10 400 kr/år är starkt — komplettera med ~870 kr/månad i faktarutan. Hushåll tänker i månadskostnad. Månadsformatet gör besparingen mer omedelbart gripbar och konkurrerar direkt med andra månadsposter i hushållsbudgeten.</p>
+        </div>
+        <div class="rec-card">
+          <div class="rec-num">Förslag 03 — Nästa iteration</div>
+          <h3>Stärk social proof med volym</h3>
+          <p>Om Effira nu har konkret installationsvolym — använd den. "Över 1 200 installerade pumpar" eller "sedan 2013" adderar tyngd utöver "Bästa val 2026". Specifika siffror och år signalerar etablerat track record snarare än nytt koncept.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7 — SLUTSATS -->
+  <div class="slide" data-title="Slutsats">
+    <div class="slide-inner accent">
+      <span class="slide-label">07 — Slutsats</span>
+      <h2>Ett välkonstruerat uppslag<br>med <em>bred räckvidd.</em></h2>
+      <p class="subtitle" style="color: var(--teal-dark); opacity: 0.7; max-width: 680px;">
+        Solcellsvinkeln träffar B1:s exakta trigger med 7/10. B2 landar på 6/10 — komfort och enkelhet är rätt men månadsformatet på besparingen saknas, vilket ramverket kräver. Komfortgarantin leder, "Bästa val 2026" stänger. Casets specificitet (IVT 2010, 10 400 kr) bygger förtroende på ett sätt som generella påståenden aldrig kan.
+      </p>
+      <div class="stat-row" style="margin-top: 48px;">
+        <div class="stat">
+          <div class="stat-value" style="color: var(--ember);">B1</div>
+          <div class="stat-label">Sweet spot</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">35–45%</div>
+          <div class="stat-label">Andel av SAM som träffas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Förbättringsförslag</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const tabs = document.querySelectorAll('.tab');
+  const counter = document.getElementById('counter');
+  let current = 0;
+  let mode = 'slides';
+
+  function goTo(n) {
+    const total = slides.length;
+    const next = (n + total) % total;
+    if (mode === 'slides') {
+      slides[current].classList.remove('active');
+      slides[next].classList.add('active');
+    } else {
+      slides[next].scrollIntoView({ behavior: 'smooth' });
+    }
+    current = next;
+    updateIndicators();
+  }
+
+  function updateIndicators() {
+    counter.textContent = `${current + 1} / ${slides.length}`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    tabs.forEach((t, i) => t.classList.toggle('active', i === current));
+    const inner = slides[current].querySelector('.slide-inner');
+    const isDark = inner && inner.classList.contains('dark');
+    document.body.classList.toggle('slide-dark', isDark);
+    document.body.classList.toggle('slide-light', !isDark);
+  }
+
+  document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goTo(current - 1); }
+  });
+
+  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.slide)));
+  tabs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.slide)));
+
+  const observer = new IntersectionObserver(entries => {
+    if (mode === 'slides') return;
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        current = [...slides].indexOf(entry.target);
+        updateIndicators();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slides.forEach(s => observer.observe(s));
+
+  document.querySelectorAll('.mode-switcher button').forEach(b => {
+    b.addEventListener('click', () => setMode(b.dataset.mode));
+  });
+
+  function setMode(newMode) {
+    mode = newMode;
+    document.body.className = `mode-${newMode}`;
+    document.querySelectorAll('.mode-switcher button').forEach(b => {
+      b.classList.toggle('active', b.textContent.toLowerCase() === newMode);
+    });
+    if (newMode === 'slides') {
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    } else {
+      slides.forEach(s => s.classList.add('active'));
+      setTimeout(() => slides[current].scrollIntoView({ behavior: 'auto' }), 50);
+    }
+  }
+</script>
+
+</body>
+</html>
