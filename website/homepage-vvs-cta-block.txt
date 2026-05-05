@@ -1,0 +1,17 @@
+<!-- wp:html -->
+<!-- VVS PARTNER CTA STRIP -->
+<div style="background:#013233;padding:56px 24px;">
+<table style="width:100%;max-width:900px;margin:0 auto;border-collapse:collapse;" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="vertical-align:middle;padding-right:40px;">
+  <p style="color:#d0e7e2;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 8px;">För VVS-installatörer</p>
+  <h2 style="color:#ffffff;font-size:28px;font-weight:700;line-height:1.2;margin:0 0 12px;">Ny affär på din befintliga kundbas</h2>
+  <p style="color:rgba(255,255,255,0.75) !important;font-size:16px;line-height:1.6;margin:0;">Erbjud OPTi till dina värmepumpskunder och tjäna en återkommande intäkt — utan extra investering.</p>
+</td>
+<td style="vertical-align:middle;white-space:nowrap;padding-left:24px;">
+  <a href="/vvs-installatorer/" style="background:#ff8c2d;color:#062121;padding:14px 28px;border-radius:9999px;font-weight:700;font-size:16px;text-decoration:none;display:inline-block;">Bli OPTi-partner →</a>
+</td>
+</tr></tbody>
+</table>
+</div>
+<!-- /wp:html -->
