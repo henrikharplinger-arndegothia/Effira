@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52">
+  <!-- Circle mark -->
+  <circle cx="26" cy="26" r="24" fill="#1a2744"/>
+  <circle cx="24" cy="24" r="9" fill="none" stroke="#c0392b" stroke-width="4"/>
+  <line x1="30" y1="30" x2="41" y2="41" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+  <!-- Wordmark -->
+  <text x="58" y="34" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#1a2744" letter-spacing="1">QVANTUM</text>
+</svg>
