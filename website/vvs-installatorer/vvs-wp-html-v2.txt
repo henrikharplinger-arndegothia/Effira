@@ -61,8 +61,9 @@
   <div style="max-width:800px;margin:0 auto;text-align:center;">
     <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">Din kund sänker sina elkostnader. Du är den som gjorde det möjligt.</h2>
     <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 20px;">Uppvärmning och varmvatten står för upp till 75% av hushållets elförbrukning — och det är precis den delen OPTi tar hand om. Pumpen värmer när elen är billig, minskar när den är dyr och hanterar effekttariffer automatiskt så att kunden slipper dyra effekttoppar. Kunden märker ingenting förutom på räkningen.</p>
-    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 20px;"><strong>Resultatet:</strong> 6 000–12 000 kr lägre elkostnad per år, upp till 50% ökad egenanvändning av solel och en återbetalningstid som typiskt ligger inom 12 månader.</p>
-    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0;">Pumpen moderniseras, lever längre och blir styrbar på distans.<br>Och du är den som satte i gång det.</p>
+    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 20px;">Resultatet: 6 000–12 000 kr lägre elkostnad per år, upp till 50% ökad egenanvändning av solel och en återbetalningstid som typiskt ligger inom 12 månader.</p>
+    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 8px;">Pumpen moderniseras, lever längre och blir styrbar på distans.</p>
+    <p style="font-size:17px;line-height:1.7;color:#062121;font-weight:600;margin:0;">Och du är den som satte i gång det.</p>
   </div>
 </div>
 
