@@ -1,6 +1,6 @@
 <!-- wp:html -->
 <!-- HERO -->
-<table style="width:100%;background:#013233;border-collapse:collapse;" cellpadding="0" cellspacing="0">
+<table style="width:100%;background:#013233;border-collapse:collapse;border-top:3px solid #ff8c2d;" cellpadding="0" cellspacing="0">
   <tr>
     <td style="width:55%;padding:56px 64px 56px 48px;vertical-align:middle;">
       <h1 style="color:#ffffff;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 20px;">Gör din kunds pump redo för <span style="color:#ff8c2d;">dagens elmarknad.</span></h1>
@@ -39,14 +39,15 @@
   <table style="width:100%;max-width:1200px;margin:0 auto;border-collapse:collapse;" cellpadding="0" cellspacing="0">
     <tr>
       <td style="width:50%;padding-right:48px;vertical-align:middle;">
-        <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">En service som betalar sig – för kunden och för dig.</h2>
-        <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 8px;">OPTi monteras på befintlig pump på 30 minuter. Inget att bygga om, inga nya rör, inga extra verktyg. Passar utmärkt i samband med ett ordinarie servicebesök — du är ändå där.</p>
+        <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">En service som betalar sig – för kunden och för dig</h2>
+        <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 16px;">OPTi monteras på befintlig pump på cirka 30 minuter. Inget att bygga om, inga nya rör, inga extra verktyg. Passar utmärkt i samband med ett ordinarie servicebesök — du är ändå där.</p>
+        <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 16px;">Det ger dig en naturlig anledning att höra av dig igen – och skapa ny affär i din befintliga kundbas.</p>
         <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 24px;">Kunden får en pump som jobbar smartare. Du får en mer givande serviceaffär.</p>
-        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Fungerar med befintliga vattenburna värmepumpar</p>
+        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Passar de flesta vattenburna värmepumpar</p>
         <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Kräver ingen ombyggnad</p>
-        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Installeras av er på 30 minuter</p>
-        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 28px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Optimering och styrning enligt värmepumpbranschens riktlinjer</p>
-        <p style="font-size:14px;color:#666;font-style:italic;margin:0;">Effira Energy — svenskt företag med över 12 år i värmepumpsbranschen.</p>
+        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Installeras på 30 minuter</p>
+        <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 28px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Optimering och styrning enligt värmepumpsbranschens riktlinjer</p>
+        <p style="font-size:14px;color:#666;font-style:italic;margin:0;">Effira Energy — svenskt företag med 25 års erfarenhet i värmepumpsbranschen.</p>
       </td>
       <td style="width:50%;padding-left:48px;vertical-align:middle;">
         <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/HUb-ver.1.png" alt="OPTi styrenheten" style="width:100%;height:auto;display:block;">
