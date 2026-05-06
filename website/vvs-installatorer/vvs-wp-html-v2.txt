@@ -132,8 +132,8 @@
 <!-- CTA / FORMULÄR -->
 <div style="background:#013233;padding:80px 48px;" id="vvs-cta">
   <div style="max-width:700px;margin:0 auto;text-align:center;">
-    <h2 style="color:#ffffff;font-size:34px;font-weight:700;margin:0 0 16px;line-height:1.25;">Vill du se hur det fungerar i praktiken?</h2>
-    <p style="color:rgba(255,255,255,0.8) !important;font-size:18px;line-height:1.6;margin:0 0 36px;">På ett 30-minuters digitalt möte går vi igenom hur OPTi fungerar, hur du presenterar det för kunden och hur du kommer igång.</p>
+    <h2 style="color:#ffffff;font-size:34px;font-weight:700;margin:0 0 16px;line-height:1.25;">Anmäl intresse som OPTi-partner</h2>
+    <p style="color:rgba(255,255,255,0.8) !important;font-size:18px;line-height:1.6;margin:0 0 36px;">Fyll i dina uppgifter så hör vi av oss och berättar mer om hur det fungerar att bli partner.</p>
     <div style="text-align:left;">
       <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
       <script>
