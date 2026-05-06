@@ -1,0 +1,18 @@
+<!-- wp:html -->
+<div style="background:#013233;padding:72px 48px 40px;" id="vvs-cta">
+  <div style="max-width:700px;margin:0 auto;text-align:center;">
+    <h2 style="color:#ffffff;font-size:34px;font-weight:700;margin:0 0 16px;line-height:1.25;">Anmäl intresse som OPTi-partner</h2>
+    <p style="color:#cccccc;font-size:18px;line-height:1.6;margin:0;">Fyll i dina uppgifter så hör vi av oss och berättar mer om hur det fungerar att bli partner.</p>
+  </div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:acf/hubspot-form {"name":"acf/hubspot-form","data":{"hubspot_form_id":"a1713e79-eadb-4ded-bc4c-69124ae0ba5d","_hubspot_form_id":"field_7a3326e3hubspot_form_id"},"mode":"edit"} /-->
+
+<!-- wp:html -->
+<div style="background:#013233;padding:32px 48px 72px;">
+  <div style="max-width:700px;margin:0 auto;text-align:center;">
+    <p style="color:#999999;font-size:15px;line-height:1.8;margin:0;">Eller kontakta oss direkt<br><a href="tel:0357101150" style="color:#ff8c2d;text-decoration:none;">035–710 11 50</a> &nbsp;·&nbsp; <a href="mailto:support@effiraenergy.com" style="color:#ff8c2d;text-decoration:none;">support@effiraenergy.com</a></p>
+  </div>
+</div>
+<!-- /wp:html -->
