@@ -2,7 +2,7 @@
 <!-- HERO -->
 <table style="width:100%;background:#013233;border-collapse:collapse;" cellpadding="0" cellspacing="0">
   <tr>
-    <td style="width:55%;padding:56px 64px 56px 48px;vertical-align:top;">
+    <td style="width:55%;padding:56px 64px 56px 48px;vertical-align:middle;">
       <h1 style="color:#ffffff;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 20px;">Ny affär <span style="color:#ff8c2d;">på din kundbas</span></h1>
       <p style="color:#d9d9d9;font-size:18px;line-height:1.6;margin:0 0 20px;">Du har redan kunderna. OPTi ger dig en enkel anledning att höra av dig igen – och erbjuda något som gör verklig skillnad.</p>
       <p style="color:#bfbfbf;font-size:16px;line-height:1.6;margin:0 0 20px;">Uppvärmning står för den största delen av kundens elkostnader. OPTi optimerar värmepumpen automatiskt efter elpriset – utan att kunden märker något i vardagen.</p>
@@ -14,7 +14,10 @@
       <a href="#vvs-cta" style="background:#ff8c2d;color:#062121;padding:14px 28px;border-radius:9999px;font-weight:700;font-size:16px;text-decoration:none;display:inline-block;">ANMÄL INTRESSE – så berättar vi mer</a>
     </td>
     <td style="width:45%;padding:0;vertical-align:top;">
-      <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/IMG_7776_web.png" alt="OPTi monterad på värmepump" style="width:100%;height:auto;display:block;">
+      <!-- HERO-BILD: byt src-URL nedan för att ändra bild -->
+      <div style="height:540px;overflow:hidden;">
+        <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/IMG_7776_web.png" alt="OPTi monterad på värmepump" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;">
+      </div>
     </td>
   </tr>
 </table>
