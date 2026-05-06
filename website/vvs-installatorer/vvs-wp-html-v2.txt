@@ -129,6 +129,22 @@
 </div>
 
 
+<!-- SÅ SKAPAR OPTi VÄRDE -->
+<div style="background:#ffffff;padding:72px 48px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 20px;line-height:1.25;">Så skapar OPTi värde</h2>
+    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 24px;">Elpriset varierar kraftigt över dygnet. De flesta värmepumpar använder el "blint". OPTi styr värmepumpen automatiskt.</p>
+    <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Värmer när elen är billig</p>
+    <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Minskar elförbrukningen när den är dyr</p>
+    <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Optimerar utan att kunden märker något</p>
+    <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Ökar avkastningen på kundens solceller</p>
+    <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 28px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Bibehåller komforten</p>
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/Skarmavbild-2025-11-14-kl.-13.44.31.png" alt="OPTi optimering över dygnet" style="width:100%;height:auto;display:block;border-radius:12px;margin-bottom:24px;">
+    <p style="font-size:15px;color:#666;font-style:italic;margin:0;">OPTi kommer med många ytterligare funktioner och inställningar – för den som vill.</p>
+  </div>
+</div>
+
+
 <!-- CTA / FORMULÄR -->
 <div style="background:#013233;padding:80px 48px;" id="vvs-cta">
   <div style="max-width:700px;margin:0 auto;text-align:center;">
