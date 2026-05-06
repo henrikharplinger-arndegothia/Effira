@@ -87,7 +87,7 @@
           <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Se när något är på väg att gå fel innan kunden märker det. Du kontaktar kunden först – och skapar fler serviceuppdrag och starkare relationer.</p>
         </td>
         <td style="background:#ffffff;border-radius:16px;padding:32px;border:1px solid rgba(1,50,51,0.1);vertical-align:top;">
-          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Ny affär – utan extra supportbörda</h3>
+          <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Ny affär - utan extra supportbörda</h3>
           <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Effira sköter plattform, app, optimering och kundsupport. Du installerar, behåller kundrelationen. En enkel affär som inte belastar organisationen – men bygger lönsamhet.</p>
         </td>
       </tr>
