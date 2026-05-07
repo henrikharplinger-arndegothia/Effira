@@ -27,7 +27,7 @@
     <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/mitsubishi-electric.svg" alt="Mitsubishi Electric" style="height:26px;width:auto;filter:grayscale(1) opacity(0.55);">
     <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/daikin.svg" alt="Daikin" style="height:22px;width:auto;filter:grayscale(1) opacity(0.55);">
     <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/QvantumLogo-Colour_RGB.png" alt="Qvantum" style="height:24px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/panasonic-logo.svg" alt="Panasonic" style="height:20px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/panasonic-logo.svg" alt="Panasonic" style="height:28px;width:auto;filter:grayscale(1) opacity(0.55);">
   </div>
 </div>
 
