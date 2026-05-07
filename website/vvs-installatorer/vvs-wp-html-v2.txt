@@ -1,15 +1,37 @@
 <!-- wp:html -->
+<style>
+@media (max-width:680px){
+  .vvs-pad{padding:40px 20px !important;}
+  .vvs-hero-table{display:block !important;}
+  .vvs-hero-table tr{display:block !important;}
+  .vvs-hero-text{display:block !important;width:100% !important;padding:36px 20px !important;}
+  .vvs-hero-img-cell{display:none !important;}
+  .vvs-h1{font-size:26px !important;}
+  .vvs-logo-strip{padding:16px 16px 20px !important;}
+  .vvs-logo-table{display:block !important;width:100% !important;}
+  .vvs-logo-table tbody{display:block !important;}
+  .vvs-logo-table tr{display:block !important;}
+  .vvs-logo-td{display:inline-block !important;width:24% !important;padding:6px 4px !important;box-sizing:border-box !important;}
+  .vvs-two-col{display:block !important;}
+  .vvs-two-col tr{display:block !important;}
+  .vvs-two-col td{display:block !important;width:100% !important;padding:0 0 24px 0 !important;}
+  .vvs-cards-table{display:block !important;border-spacing:0 !important;margin:0 !important;}
+  .vvs-cards-table tbody{display:block !important;}
+  .vvs-cards-table tr{display:block !important;}
+  .vvs-cards-table td{display:block !important;width:100% !important;margin-bottom:16px !important;}
+}
+</style>
+
 <!-- HERO -->
-<table style="width:100%;background:#013233;border-collapse:collapse;border-top:3px solid #ff8c2d;" cellpadding="0" cellspacing="0">
+<table class="vvs-hero-table" style="width:100%;background:#013233;border-collapse:collapse;border-top:3px solid #ff8c2d;" cellpadding="0" cellspacing="0">
   <tr>
-    <td style="width:55%;padding:56px 64px 56px 48px;vertical-align:middle;">
-      <h1 style="color:#ffffff;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 20px;">Gör din kunds pump redo för <span style="color:#ff8c2d;">dagens elmarknad.</span></h1>
+    <td class="vvs-hero-text" style="width:55%;padding:56px 64px 56px 48px;vertical-align:middle;">
+      <h1 class="vvs-h1" style="color:#ffffff;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 20px;">Gör din kunds pump redo för <span style="color:#ff8c2d;">dagens elmarknad.</span></h1>
       <p style="color:#d9d9d9;font-size:18px;line-height:1.6;margin:0 0 20px;">OPTi från Effira Energy är en produkt du kan erbjuda nya och befintliga kunder. En anledning att höra av sig. Och ett sätt att hålla kontakten.</p>
       <p style="color:#ffffff;font-size:17px;font-weight:600;line-height:1.5;margin:0 0 28px;">En enkel ny affär – i varje installation och servicebesök</p>
       <a href="#vvs-cta" style="background:#ff8c2d;color:#062121;padding:14px 28px;border-radius:9999px;font-weight:700;font-size:16px;text-decoration:none;display:inline-block;">ANMÄL INTRESSE – så berättar vi mer</a>
     </td>
-    <td style="width:45%;padding:0;vertical-align:top;">
-      <!-- HERO-BILD: byt src-URL nedan för att ändra bild -->
+    <td class="vvs-hero-img-cell" style="width:45%;padding:0;vertical-align:top;">
       <div style="height:540px;overflow:hidden;">
         <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/IMG_7776_web.png" alt="OPTi monterad på värmepump" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;">
       </div>
@@ -18,25 +40,25 @@
 </table>
 
 <!-- LOGO STRIP -->
-<div style="background:#ffffff;border-bottom:1px solid #e8f0ee;padding:16px 48px 20px;">
+<div class="vvs-logo-strip" style="background:#ffffff;border-bottom:1px solid #e8f0ee;padding:16px 48px 20px;">
 <p style="text-align:center;font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 16px;">Kompatibel med</p>
-<table style="width:100%;max-width:960px;margin:0 auto;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr>
-<td style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/nibe.svg" alt="NIBE" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
-<td style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/bosch.svg" alt="Bosch" style="height:32px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
-<td style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ctc.svg" alt="CTC" style="height:32px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
-<td style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ivt.svg" alt="IVT" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
-<td style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/thermia.svg" alt="Thermia" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
-<td style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/mitsubishi-electric.svg" alt="Mitsubishi Electric" style="height:32px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
-<td style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/daikin.svg" alt="Daikin" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
-<td style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/qvantum.svg" alt="Qvantum" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
+<table class="vvs-logo-table" style="width:100%;max-width:960px;margin:0 auto;border-collapse:collapse;" cellpadding="0" cellspacing="0"><tbody><tr>
+<td class="vvs-logo-td" style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/nibe.svg" alt="NIBE" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
+<td class="vvs-logo-td" style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/bosch.svg" alt="Bosch" style="height:32px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
+<td class="vvs-logo-td" style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ctc.svg" alt="CTC" style="height:32px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
+<td class="vvs-logo-td" style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ivt.svg" alt="IVT" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
+<td class="vvs-logo-td" style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/thermia.svg" alt="Thermia" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
+<td class="vvs-logo-td" style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/mitsubishi-electric.svg" alt="Mitsubishi Electric" style="height:32px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
+<td class="vvs-logo-td" style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/daikin.svg" alt="Daikin" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
+<td class="vvs-logo-td" style="text-align:center;vertical-align:middle;padding:8px 12px;"><img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/qvantum.svg" alt="Qvantum" style="height:26px;width:auto;display:inline-block;filter:grayscale(1) opacity(0.55);"></td>
 </tr></tbody></table>
 </div>
 
 
 
 <!-- EN SERVICE SOM BETALAR SIG -->
-<div style="background:#d0e7e2;padding:72px 48px;">
-  <table style="width:100%;max-width:1200px;margin:0 auto;border-collapse:collapse;" cellpadding="0" cellspacing="0">
+<div class="vvs-pad" style="background:#d0e7e2;padding:72px 48px;">
+  <table class="vvs-two-col" style="width:100%;max-width:1200px;margin:0 auto;border-collapse:collapse;" cellpadding="0" cellspacing="0">
     <tr>
       <td style="width:50%;padding-right:48px;vertical-align:middle;">
         <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">En service som betalar sig – för kunden och för dig</h2>
@@ -57,7 +79,7 @@
 </div>
 
 <!-- KUNDVÄRDET -->
-<div style="background:#ffffff;padding:72px 48px;">
+<div class="vvs-pad" style="background:#ffffff;padding:72px 48px;">
   <div style="max-width:800px;margin:0 auto;text-align:center;">
     <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">Din kund sänker sina elkostnader. Du är den som gjorde det möjligt.</h2>
     <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 20px;">Uppvärmning och varmvatten står för upp till 75% av hushållets elförbrukning — och det är precis den delen OPTi tar hand om. Pumpen värmer när elen är billig, minskar när den är dyr och hanterar effekttariffer automatiskt så att kunden slipper dyra effekttoppar. Kunden märker ingenting förutom på räkningen.</p>
@@ -68,9 +90,9 @@
 </div>
 
 <!-- VAD FIRMAN FÅR -->
-<div style="background:#d0e7e2;padding:72px 48px;">
+<div class="vvs-pad" style="background:#d0e7e2;padding:72px 48px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <table style="width:100%;border-collapse:separate;border-spacing:24px 24px;margin:-24px;" cellpadding="0" cellspacing="0">
+    <table class="vvs-cards-table" style="width:100%;border-collapse:separate;border-spacing:24px 24px;margin:-24px;" cellpadding="0" cellspacing="0">
       <tr>
         <td style="background:#ffffff;border-radius:16px;padding:32px;border:1px solid rgba(1,50,51,0.1);vertical-align:top;width:50%;">
           <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Gör din befintliga kundbas till en ny affär</h3>
@@ -102,7 +124,7 @@
 </div>
 
 <!-- CITAT -->
-<div style="background:#ffffff;padding:72px 48px;text-align:center;">
+<div class="vvs-pad" style="background:#ffffff;padding:72px 48px;text-align:center;">
   <div style="max-width:800px;margin:0 auto;">
     <p style="font-size:22px;font-weight:500;line-height:1.6;color:#013233;font-style:italic;margin:0 0 24px;"><span style="font-size:60px;color:#ff8c2d;line-height:0;vertical-align:-20px;margin-right:4px;">"</span>Det bästa är att vi kan höra av oss innan kunden själv vet att något är på gång. Vi installerar OPTi — och sedan vet vi när det är läge att ringa. Kunden slipper katastrofen, vi slipper brandkårsutryckningen.</p>
   </div>
@@ -110,7 +132,7 @@
 
 
 <!-- FAQ -->
-<div style="background:#d0e7e2;padding:72px 48px;">
+<div class="vvs-pad" style="background:#d0e7e2;padding:72px 48px;">
   <div style="max-width:1200px;margin:0 auto;">
     <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 32px;line-height:1.25;">Vanliga frågor</h2>
     <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid rgba(1,50,51,0.12);margin-bottom:16px;">
@@ -130,9 +152,9 @@
 
 
 <!-- SÅ SKAPAR OPTi VÄRDE -->
-<div style="background:#ffffff;padding:72px 48px;">
+<div class="vvs-pad" style="background:#ffffff;padding:72px 48px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <table style="width:100%;border-collapse:collapse;">
+    <table class="vvs-two-col" style="width:100%;border-collapse:collapse;">
       <tr>
         <td style="width:35%;vertical-align:middle;padding-right:48px;">
           <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2025/11/Skarmavbild-2025-11-14-kl.-13.44.31.png" alt="Effira-appen" style="width:100%;height:auto;display:block;border-radius:16px;">
