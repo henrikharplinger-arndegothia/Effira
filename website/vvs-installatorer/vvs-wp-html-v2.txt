@@ -1,27 +1,4 @@
 <!-- wp:html -->
-<style>
-@media (max-width:680px){
-  .vvs-pad{padding:40px 20px !important;}
-  .vvs-hero-table{display:block !important;}
-  .vvs-hero-table tr{display:block !important;}
-  .vvs-hero-text{display:block !important;width:100% !important;padding:36px 20px !important;}
-  .vvs-hero-img-cell{display:none !important;}
-  .vvs-h1{font-size:26px !important;}
-  .vvs-logo-strip{padding:16px 16px 20px !important;}
-  .vvs-logo-table{display:block !important;width:100% !important;}
-  .vvs-logo-table tbody{display:block !important;}
-  .vvs-logo-table tr{display:block !important;}
-  .vvs-logo-td{display:inline-block !important;width:24% !important;padding:6px 4px !important;box-sizing:border-box !important;}
-  .vvs-two-col{display:block !important;}
-  .vvs-two-col tr{display:block !important;}
-  .vvs-two-col td{display:block !important;width:100% !important;padding:0 0 24px 0 !important;}
-  .vvs-cards-table{display:block !important;border-spacing:0 !important;margin:0 !important;}
-  .vvs-cards-table tbody{display:block !important;}
-  .vvs-cards-table tr{display:block !important;}
-  .vvs-cards-table td{display:block !important;width:100% !important;margin-bottom:16px !important;}
-}
-</style>
-
 <!-- HERO -->
 <table class="vvs-hero-table" style="width:100%;background:#013233;border-collapse:collapse;border-top:3px solid #ff8c2d;" cellpadding="0" cellspacing="0">
   <tr>
