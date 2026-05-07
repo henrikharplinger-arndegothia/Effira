@@ -19,15 +19,15 @@
 <div style="background:#ffffff;border-bottom:1px solid #e8f0ee;padding:16px 5% 20px;">
   <p style="text-align:center;font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 16px;">Kompatibel med</p>
   <div class="flex flex-wrap justify-center items-center gap-6">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/nibe.svg" alt="NIBE" style="height:26px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/bosch.svg" alt="Bosch" style="height:32px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ctc.svg" alt="CTC" style="height:32px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ivt.svg" alt="IVT" style="height:26px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/thermia-logo-se_sidhuvud_hemsida.svg" alt="Thermia" style="height:28px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/mitsubishi-electric.svg" alt="Mitsubishi Electric" style="height:32px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/daikin.svg" alt="Daikin" style="height:26px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/QvantumLogo-Colour_RGB.png" alt="Qvantum" style="height:28px;width:auto;filter:grayscale(1) opacity(0.55);">
-    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/panasonic-logo.svg" alt="Panasonic" style="height:22px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/nibe.svg" alt="NIBE" style="height:20px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/bosch.svg" alt="Bosch" style="height:28px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ctc.svg" alt="CTC" style="height:24px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ivt.svg" alt="IVT" style="height:22px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/thermia-logo-se_sidhuvud_hemsida.svg" alt="Thermia" style="height:18px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/mitsubishi-electric.svg" alt="Mitsubishi Electric" style="height:26px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/daikin.svg" alt="Daikin" style="height:22px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/QvantumLogo-Colour_RGB.png" alt="Qvantum" style="height:24px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/panasonic-logo.svg" alt="Panasonic" style="height:20px;width:auto;filter:grayscale(1) opacity(0.55);">
   </div>
 </div>
 
