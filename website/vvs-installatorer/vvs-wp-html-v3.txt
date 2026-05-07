@@ -7,7 +7,7 @@
       <h1 style="color:#ffffff;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 20px;">Gör din kunds pump redo för <span style="color:#ff8c2d;">dagens elmarknad.</span></h1>
       <p style="color:#d9d9d9;font-size:18px;line-height:1.6;margin:0 0 20px;">OPTi från Effira Energy är en produkt du kan erbjuda nya och befintliga kunder. En anledning att höra av sig. Och ett sätt att hålla kontakten.</p>
       <p style="color:#ffffff;font-size:17px;font-weight:600;line-height:1.5;margin:0 0 28px;">En enkel ny affär – i varje installation och servicebesök</p>
-      <a href="#vvs-cta" style="background:#ff8c2d;color:#062121;padding:14px 28px;border-radius:9999px;font-weight:700;font-size:16px;text-decoration:none;display:inline-block;">ANMÄL INTRESSE – så berättar vi mer</a>
+      <a href="#vvs-cta" style="background:#ff8c2d;color:#062121;padding:14px 28px;border-radius:9999px;font-weight:700;font-size:16px;text-decoration:none;display:inline-block;">ANMÄL INTRESSE</a>
     </div>
     <div class="hidden lg:block lg:w-5/12" style="overflow:hidden;max-height:540px;">
       <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/IMG_7776_web.png" alt="OPTi monterad på värmepump" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;">
