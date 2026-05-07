@@ -134,4 +134,14 @@
   </div>
 </div>
 
+<!-- ANMÄL INTRESSE / CTA -->
+<div id="vvs-cta" style="background:#013233;padding:64px 5%;">
+  <div style="max-width:700px;margin:0 auto;text-align:center;">
+    <h2 style="color:#ffffff;font-size:34px;font-weight:700;margin:0 0 16px;line-height:1.25;">Anmäl intresse som OPTi-partner</h2>
+    <p style="color:#cccccc;font-size:18px;line-height:1.6;margin:0 0 36px;">Fyll i dina uppgifter så hör vi av oss och berättar mer om hur det fungerar att bli partner.</p>
+    <!-- FORMULÄR: Johan lägger till acf/hubspot-form blocket direkt efter detta HTML-block i WP -->
+    <p style="color:#999999;font-size:15px;line-height:1.8;margin:0;">Eller kontakta oss direkt<br><a href="tel:0357101150" style="color:#ff8c2d;text-decoration:none;">035–710 11 50</a> &nbsp;·&nbsp; <a href="mailto:support@effiraenergy.com" style="color:#ff8c2d;text-decoration:none;">support@effiraenergy.com</a></p>
+  </div>
+</div>
+
 <!-- /wp:html -->
