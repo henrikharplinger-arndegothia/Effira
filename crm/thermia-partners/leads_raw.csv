@@ -1,247 +1,249 @@
-Bolagsnamn,Ort,Region,Elzon,Partnernivå,Kontaktperson,Epost,Telefon,Webb,Poäng,Tier
-SA VVS Service i Knislinge AB,Hanaskog,Nordöstra Skåne och Västra Blekinge,SE4,Värmepumpcenter,Anders Olofsson/Mats Nordström,info@savvs.se,044-614 11,,6,A
-Sandbäckens Rör i Ronneby AB,Ronneby,,SE4,Värmepumpcenter,Sonny Johansson,info.ronneby@sandbackens.se,0457-63 55 40,,6,A
-Roland Johanssons Rörservice AB,Södra Sandby,från Kävlinge och Lund till Tomelilla och Sjöbo,SE4,Värmepumpcenter,Mattias Johansson,rorservice@telia.com,0706-34 06 76,,6,A
-Kyl- & värmepumpservice Ängelholm AB,Ängelholm,Ängelholm och Helsingborgsregionen,SE4,Värmepumpcenter,Rune Starnert,rune@kylvarmeservice.se,0431-290 70,,6,A
-Ambjörby Rör AB,Ambjörby,"Norra Värmland, Torsby",SE3,Värmepumpcenter,Per Svensson,0702115928@telia.com,070-2115928,http://www.ambjorbyror.se,5,B
-Bohlins Rör AB,Bergby,,SE3,Värmepumpcenter,"Jörgen Eriksson, Mattias Eriksson",mattias@bohlinsror.se,070-65 93 637 eller 070-35 70 166,http://www.bohlinsror.se,5,B
-Loevaas Rör & Smide AB,Charlottenberg,"Eda, Arvika, Årjäng,2243338 Norska sidan",SE3,Värmepumpcenter,Robin Pettersson,robin@loevaas.se,0702 - 51 94 09,http://www.loevaas.se,5,B
-Forserums Rör AB,Forserum,"Nässjö, Eksjö och Aneby",SE3,Värmepumpcenter,Johan Öggesjö,johan@forserumsror.se,0380-210 00,,5,B
-Kalmar VVS & Elmontage AB,Färjestaden,"Kalmar, Öland",SE3,Värmepumpcenter,Peter Abrahamsson,info@kalmarvvs.se,0485-316 70,https://www.kalmarvvs.se/,5,B
-Br Perssons Rör AB,Gullspång,Gullspång/Kristinehamn/Mariestad,SE3,Värmepumpcenter,Stefan Gustafsson,stefang@brperssons.se,0706-66 83 13,http://www.brperssons.se,5,B
-Rörfixarna i Hjo,Hjo,,SE3,Värmepumpcenter,Stefan Alexandersson,hjo@bad-varme.se,0503-122 22,http://www.rorfixarna.com,5,B
-Åkerholms Rör AB,Hörby,"Hörby, Höör och Eslöv",SE3,Värmepumpcenter,Simon Olsson / Torbjörn Månsson,info@akerholmsror.se,0415-140 45,http://www.akerholmsror.se,5,B
-Ulvsby Rör AB,Karlstad,,SE3,Värmepumpcenter,Tony Jonsson,tony@ulvsbyror.se,073-50 66 114,https://ulvsbyror.se/,5,B
-Lindesbergs VVS AB,Lindesberg,,SE3,Värmepumpcenter,Ria Nydén,ria@lindesbergsvvs.se,0581-836 40,http://lindesbergsvvs.se,5,B
-Edekyl och Värme AB Linköping,Linköping,,SE3,Värmepumpcenter,"Växel: 013-31 05 80
-Jour: 010-498 48 88",,,http://www.edekyl.se,5,B
-Installationsgruppen i Malung AB,Malung,,SE3,Värmepumpcenter,Tomas Wiksten,tomas.wiksten@installationsgruppen.com.,0280-130 75,,5,B
-Bomanson & Co AB,Mariehamn  Åland,,SE3,Värmepumpcenter,Niklas Mattsson,niklas@bomansons.ax,040-705 9360,,5,B
-Söders Olja & Rör AB,Rottne,Växjö och Alvesta,SE3,Värmepumpcenter,Niklas Johansson,niklas@sodersror.se,0470-925 50,http://www.sodersolja.se,5,B
-Johansson & Gunverth VVS & EL AB,Rävlanda,,SE3,Värmepumpcenter,Christian Ekvall,christian.ekvall@johanssongunverth.se,070-975 27 90,http://www.johanssongunverth.se,5,B
-Stora Mellby Rör AB,Sollebrunn,"Sollebrunn, Trollhättan, Alingsås",SE3,Värmepumpcenter,Tomas Andersson,info@mellbyror.se,0322-418 80,http://www.mellbyror.se,5,B
-Wiiks Rör AB,Storvik,,SE3,Värmepumpcenter,Christer Eklund,info@wiiksror.se,0290-317 00,http://www.wiiksror.se,5,B
-Carlssons Rör i Sunne AB,Sunne,Sunne/ Torsby,SE3,Värmepumpcenter,Andreas Lennartsson,andreas@carlssonsror.se,0565-31119,,5,B
-GreenPeak Energi AB,Sävedalen,,SE3,Värmepumpcenter,Hasse Wernberg,hasse@greenpeak.se,031-340 90 50,http://www.greenpeak.se,5,B
-Nybloms Rör AB,Valbo,,SE3,Värmepumpcenter,Daniel Stefansson,info@nyblomsror.se,026-455 30 30,,5,B
-Kjellners Rör AB,Vara,,SE3,Värmepumpcenter,Tobias Karlsson,tobias.karlsson@kjellnersror.se,0512-10198,http://www.kjellnersror.se,5,B
-Janne Carlson Rör AB,Vålberg,"Vålberg, Karlstad, Grums, Edsvalla, Kil",SE3,Värmepumpcenter,Hans Karlsson,hasse.karlsson@nor-schakt.se,054-54 71 80,,5,B
-Samuel & Kåge Montage AB,Alunda,Uppsala län,SE4,Standard,Karl-Gustav Johansson,info@skmontage.se,070-543 23 00,,5,B
-Degeberga Rör AB,Degeberga,från Kristianstad till Simrishamn,SE4,Standard,Niklas Lööv,degebergaror@gmail.com,0708-352386,,5,B
-AB Strömberg och Andersson,Helsingborg,,SE4,Standard,Richard Strömberg,info@stromberg-andersson.se,042-155806,,5,B
-Francks Kylindustri,Hässleholm,,SE4,Standard,Ola Olsson,ola.olsson@francksref.se,0451-38 11 50,https://francksref.com/applikationer/varmepumpar/kopa/,5,B
-Hässleholms & Tyringes VVS-Team AB,Hässleholm,Hässleholm och Vinslöv,SE4,Standard,Percy Nilsson,percy@vvs-teamet.se,0451-467 00,,5,B
-Peterssons VVS AB,Johannishus,Ronneby och Karlshamn,SE4,Standard,Mikael Petersson,peterssonvvs@gmail.com,0730-81 26 67,,5,B
+Bolagsnamn,Ort,Region,Elzon,Partnernivå,Kontaktperson,Epost,Telefon,Webb,org_nr,anstallda,omsattning_tkr,VD,Poäng,Tier
+Sandbäckens Rör i Ronneby AB,Ronneby,,SE4,Värmepumpcenter,Sonny Johansson,info.ronneby@sandbackens.se,0457-63 55 40,,5590181300,36,93784,Sonny Ingemar Lennart Johansson,11,A
+Kyl- & värmepumpservice Ängelholm AB,Ängelholm,Ängelholm och Helsingborgsregionen,SE4,Värmepumpcenter,Rune Starnert,rune@kylvarmeservice.se,0431-290 70,,5567918825,10,30175,Sven Rune Lennart Starnert,10,A
+Francks Kylindustri,Hässleholm,,SE4,Standard,Ola Olsson,ola.olsson@francksref.se,0451-38 11 50,https://francksref.com/applikationer/varmepumpar/kopa/,5566571369,36,177022,Sture Mikael Eriksson,10,A
+Thörnquist Rör AB,Karlskrona,,SE4,Standard,Henrik Hjalmarsson,henrik@thror.se,0455-206 82,,5562763374,16,50078,Henrik Birger Hjalmarsson,10,A
+Roland Johanssons Rörservice AB,Södra Sandby,från Kävlinge och Lund till Tomelilla och Sjöbo,SE4,Värmepumpcenter,Mattias Johansson,rorservice@telia.com,0706-34 06 76,,5564585437,8,10767,Daniel Petrus Mattias Johansson,9,A
+Hässleholms & Tyringes VVS-Team AB,Hässleholm,Hässleholm och Vinslöv,SE4,Standard,Percy Nilsson,percy@vvs-teamet.se,0451-467 00,,5565254462,15,35394,Hans Patrik Johansson,9,A
 AB Redmos Rör,Karlskrona,Karlskrona och Ronneby,SE4,Standard,"Kent Redmo
 eller 
-Karl-Erik Olsson",info@redmos.se,0455-168 00,http://www.redmos.se/,5,B
-Thörnquist Rör AB,Karlskrona,,SE4,Standard,Henrik Hjalmarsson,henrik@thror.se,0455-206 82,,5,B
-Johannishus Värmeinstallation AB,Listerby,"Ronneby, Karlskrona och Karlshamn",SE4,Standard,Kjell Olsson,sok.olsson@telia.com,0457-305 60,,5,B
-VVS-Installationer Rydsgård AB,Rydsgård,"Skurup, Ystad och Svedala",SE4,Standard,Wictor Bergkvist,vvsinstallationer@icloud.com,0411-44 330,,5,B
-AB Lennart Bengtssons Smide & VVS,Smedstorp,"Simrishamn, Tomelilla och Ystad",SE4,Standard,Lars-Erik Bengtsson,info@bengtssonsvvs.com,0414-51234,,5,B
-JJ VVS i Sölvesborg AB,Sölvesborg,,SE4,Standard,Johan Jönsson,johan@jjvvs.se,+46 735 46 37 97,,5,B
-Värmepumpcenter Rotek AB,Vellinge,Sydvästa Skåne,SE4,Standard,Gunnar Tjernberg,rotek@rotek.se,040-424130,http://www.rotek.se,5,B
-AB Sture Anderssons Rörinstallationer ,Ystad,,SE4,Standard,Richard Bagger,kontor@sa-rorinst.se,+46 411 199 80,,5,B
-E Thenanders Rör AB,Borlänge,Borlänge,SE2,Värmepumpcenter,Hans Lindvall,info@thenandersror.se,0243-22 56 90,http://www.thenandersror.se,4,B
-MH Rörteknik AB,Hedemora/Säter,,SE2,Värmepumpcenter,Markus Hällbo,markus@markushallbo.se,070-6620517,http://www.mhrörteknikab.se,4,B
-Hedlunds Rör AB,Sandviken,,SE2,Värmepumpcenter,Anders Hedlund,anders@hedlundsror.se,026-27 30 75,http://www.hedlundsror.se,4,B
-Bryngels AB,Sundsvall,"i Sundsvall, Timrå, Ånge och Nordanstigs kommuner",SE2,Värmepumpcenter,Mattias Norberg,info@bryngels.se,060-668844,http://www.bryngels.se,4,B
-K-B Rör AB,Alafors,,SE3,Servicepartner,Kalle Karlsson,kalle@kbror.se,0303-331661,http://www.kbror.se,4,B
-Djupedals Rör AB,Alingsås,,SE3,Standard,Jesper Myreborn,jesper.myreborn@djupedalsror.se,073-843 43 31,http://www.djupedalsror.se,4,B
-Stora Mellby Rör AB,Alingsås,,SE3,Standard,Bengt Andersson,info@mellbyror.se,0322-61 19 80,,4,B
-Lundgrens VVS,Anderstorp,,SE3,Standard,Wilhelm Lundgren,info@lundgrensvvs.se,070-888 66 92,https://lundgrensvvs.se/,4,B
-Lindahls Rörservice i Arjeplog AB,Arjeplog,"Arvidsjaur, Arjeplog",SE3,Standard,Simon Lindahl,lindahlsrorservice@outlook.com,070-29 34 811,,4,B
-Björklunds Rör,Arvika,,SE3,Standard,Lars Björklund,bjorklunds.ror.lars@telia.com,0570-71 16 45,,4,B
-"Bröderna Karlsson, Rörl. fa ",Arvika,,SE3,Standard,Ingemar Andersson / Mikael Johansson,br-karlsson@telia.com,0570-140 60,http://www.br-karlsson.se,4,B
-Energi & Teknik i Arvika AB,Arvika,,SE3,Servicepartner,Patrik Helander,info@energioteknik.se,0570 727090,http://energioteknik.se/,4,B
-Thermia Värmepumpar,Arvika,,SE3,Standard,TKG admin,tkg@thermia.se,0570-81300,,4,B
-Bankeryds Rör AB,Bankeryd,,SE3,Standard,Jonatan Grankvist,jonatan.grankvist@assemblin.se,0709-37 00 03,,4,B
-Wettersol AB,Bankeryd,Region 4,SE3,Standard,"036-336 68 16
-Kristofer.svensson@wettersol.se",Daniel.mattsin@wettersol.se,036-333 62 80,https://www.wettersol.se,4,B
-Fristad Rör AB,Borås,Västra Götalands län,SE3,Standard,Simon Linderos,simon.linderos@fristadror.se,070-571 88 77,,4,B
-RV-gruppen AB,Bro,Stockholm,SE3,Standard,Björn Odelstrand,bjorn@rvgruppen.se,073-311 77 06,https://www.rvgruppen.se,4,B
-Söderholms El & VVS AB,Bromma,,SE3,Standard,Mikael Iverborg,mikael@iverborg.se,08-25 30 33,http://soderholms.se,4,B
-Radiator VVS,Brämhult,Västra Götalands län,SE3,Standard,Johan Rydebo,johan.rydebo@radiatorvvs.se,070-6214066,https://www.radiatorvvs.se/,4,B
-Killeröds VVS AB,Båstad,,SE3,Standard,Torbjörn Karlsson,killerodsvvs@icloud.com,+46 760 143 704,,4,B
-Nilsson & Stenman Rör AB,Degerfors,Degerfors med omnejd,SE3,Standard,Isak Nilsson,stenman.nsror@gmail.com,070-744 41 13,,4,B
-Sundåsens Rör AB,Domsjö,i Örnsköldsviks kommun,SE3,Standard,Jan Norberg,info@sundasensror.se,0660-51313,http://www.sundasensror.se,4,B
-Dorotea Värme & Sanitet AB,Dorotea,,SE3,Standard,Conny Jakobsson,Conny@doroteavarme.se,0942-515 95,,4,B
-Brunskogs El-Edane Rör,Edane,,SE3,Standard,Ulf Johansson,brunskogsel@gmail.com,0570-50187,,4,B
-Edmarks rör AB,Edsbyn,,SE3,Standard,Frederic Thalén,frederic@edmarks.se,0271-21000,http://www.edmarksror.se/,4,B
-Mälardalens Energi & VVS AB,Eskilstuna,,SE3,Standard,Ted Enbuske,info@malardalensvvs.se,079-585 67 27,https://www.malardalensvvs.se,4,B
-"Mälardalens Rör & Montage AB, MRM",Eskilstuna,Eskilstuna,SE3,Standard,Patrik Westerlund,kontakt@mrmab.se,0706-877 328,http://www.mrmab.se,4,B
-Vidja Rörteknik AB,FARSTA,,SE3,Standard,Fredrik Heckscher,fredrik@vidjarorteknik.se,070-455 15 51,http://www.vidjarorteknik.se,4,B
-Vinbergs Rör,Falkenberg,,SE3,Standard,Martin Haglund,martin@vinbergsror.se,0346-71 71 55,,4,B
-Ulvsby Rör AB & Climacare,Filipstad,Värmland,SE3,Standard,Tony Jonsson och Minjamin Olsson,"tony@ulvsbyror.se, minjamin.olsson@climacare.se","073-50 66 114, 070-822 38 07",https://ulvsbyror.se/,4,B
-Larssons VVS i Lekeberg AB,Fjugesta,,SE3,Standard,Magnus Larsson,magnus@larssons-vvs.se,0738-330816,,4,B
-Södervads Rör AB,Fjärdhundra,,SE3,Standard,Andreas Emet,sodervadror@hotmail.com,076-005 83 50,http://sodervadror.se,4,B
-Mählqvist Rör AB,Flen,,SE3,Standard,Martin Nilsson,martin@mahlqvist.se,0157-244 61,http://www.mahlqvist-ror.se,4,B
-Kjellners Rör,Floby,,SE3,Standard,David Kjellner,tobias.karlsson@kjellnersror.se,0515-40710,http://www.kjellnersror.se,4,B
-Forshaga Rör Br. Frödin AB,Forshaga,,SE3,Standard,Johan Frödin,brfrodin@telia.com,+46 70 690 87 50,,4,B
-Elverstigs Bygg AB,Färila,,SE3,Standard,Mats Elverstig,elverstigsbygg@yahoo.se,070-3436629,,4,B
-Gamleby Mekaniska Verkstad VVS AB,Gamleby,Västervik och Valdemarsviks kommuner,SE3,Standard,Erik Hellström,info@gamlebymek.se,0493-123 70,https://www.gamlebymek.se/,4,B
-AG Rörteknik AB,Gislaved,,SE3,Standard,Antero Peltohaka,antero@agrorteknik.se,+4637180550,https://agrorteknik.se/,4,B
-Bobos VVS AB,Gnosjö,,SE3,Standard,Bobo Sveningsson,bobo@bobosvvs.se,0722-10 41 28,,4,B
-Litslena Rör AB,Grillby,,SE3,Standard,Jonas Bärlund,info@litslenaror.se,0171-658860,http://www.litslenaror.se,4,B
-G Andersson Rör AB,Grängesberg/Nyhammar,,SE3,Standard,Gert Andersson,gert@garor.se,070-3356165,,4,B
-Gränna Rör ,Gränna,,SE3,Standard,Claes Andersson,claes.andersson.mbox@telia.com,0705-313389,http://grannaror.se,4,B
-Berglunds Rör ,Gällstad,,SE3,Servicepartner,Jakob Eriksson,jakob@berglundsror.se,0321-720 31,http://berglundsror.se,4,B
-B & O Rör och Värmeservice AB,Göteborg,,SE3,Standard,Benny Blickhammar,benny@bororservice.se,0300-37672,,4,B
-Energiteamet i Umeå AB,HEMAVAN,,SE3,Standard,Magnus Häggström,magnus@energiteamet.com,070-588 19 73,https://www.energiteamet.com/,4,B
-Tåsjö Rör & Bygg AB,HOTING,,SE3,Standard,Anders Eriksson,anders@tasjorb.se,076-1478690,,4,B
-Empe Rör AB,Hagfors,,SE3,Standard,Olle Ohlsson,martin.carmesten@emperor.se,070-392 50 10,,4,B
-Kyl & Värmepumpservice i Halmstad AB,Halmstad,Halmstad & Ljungby,SE3,Standard,Emil Gutebrand,emil.gutebrand@kylservice.se,035-17 39 10,http://www.kylservice.se,4,B
-Radiator VVS,Halmstad,,SE3,Standard,Michael Bengtsson,michael.bengtsson@radiatorvvs.se,010-1786770,https://www.radiatorvvs.se/,4,B
-Värme & Sanitet i Halmstad AB,Halmstad,,SE3,Standard,Charlie Nilsson,info@varmesanitetab.se,+46729916500,,4,B
-Jerry Anderssons rör AB,Hammenhög,,SE3,Standard,Jerry Andersson,jerryanderssonvvs@gmail.com,0414-440507,,4,B
-Nordisk Byggentrepenad,Haninge,,SE3,Standard,Lars Nirmark,info@nbsverige.se,08-512 200 72,https://www.nordiskbyggentreprenad.se,4,B
-Kalles VVS Service i Karungi AB,Haparanda,,SE3,Standard,Karl Pesula,karlpesula@hotmail.se,070-324 07 96,,4,B
-Hassela Värme & Vatten AB,Hassela,,SE3,Standard,Lars Höglund,lars@hvv.se,0706-76 77 02,http://www.hvv.se,4,B
-Kjellners Rör i Herrljunga AB,Herrljunga,,SE3,Standard,Tobias Karlsson,tobias.karlsson@kjellnersror.se,0512-10198,http://www.kjellnersror.se,4,B
-Bjuvensjö VVS AB,Hillerstorp,,SE3,Standard,Emanuel Bjuvensjö,emanuel@bjuvensjovvs.se,0730-22 53 55,http://www.bjuvensjo.se,4,B
-Piteå Rörservice AB,Hortlax,,SE3,Standard,Alexander Forsberg och Anders Berggren,info@pitearorservice.se,070-57 69 838 / 070-57 69 848,,4,B
-Hova Rörledningsaffär AB,Hova,,SE3,Servicepartner,,info@hovaror.com,Växel 0506-307 95,http://www.hovaror.se,4,B
-AFFES VÄRMEPUMPSSERVICE AB,Huddinge,,SE3,Standard,Alf Lundstedt,info@affesvarmepumpservice.se,08-7111990,https://affesvarmepumpservice.se/,4,B
-Gustafssons VVS AB,Hyltebruk,"Hyltebruk, Halmstad, Falkenberg",SE3,Standard,Joachim Gustafsson,gvvs@telia.com,0768-171416,,4,B
-Assemblin VS AB Hägersten,Hägersten,,SE3,Standard,Christoffer Callerius,christoffer.callerius@assemblin.se,0708 84 07 63,https://www.assemblin.com/sv/kontakt/varme-sanitet/,4,B
-Åkerholms Rör AB,Höör,,SE3,Standard,Per Tengberg,info@akerholmsror.se,0413-230 25,http://www.akerholmsror.se,4,B
-Junsele Rör AB,Junsele,,SE3,Standard,Stefan Kallin,junseleror@gmail.com,070-3702699,,4,B
-GF Rör AB,Järfälla,,SE3,Standard,Gustav Fahlström,gustav@gfror.se,073-522 22 22,,4,B
-R.A.s Rör AB,Jönköping,"jönköping, habo, mullsjö",SE3,Servicepartner,Roland och Agneta Artursson,info@rasror.se,036-71 51 90,http://www.rasror.se,4,B
-Sandbäckens Rör,Jönköping,,SE3,Standard,Klas Meijer,klas.meijer@sandbackens.se,070-410 43 08,http://www.sandbackens.se,4,B
-Tenhults Rör,Jönköping/Tenhult,Jönköping,SE3,Standard,Daniel Larsson,daniel@tenhultsror.se,036-91700,https://www.tenhultsror.se/,4,B
-Nilsson & Stenman Rör AB,Karlskoga,Karlskoga med omnejd,SE3,Standard,Isak Nilsson,stenman.nsror@gmail.com,0707 44 41 13,,4,B
-ASSEMBLIN VS AB,Karlstad,,SE3,Standard,David Larnemark,david.larnemark@assemblin.se,+46 10 475 22 73,http://www.assemblin.com,4,B
-"Caverion Sverige AB, Karlstad",Karlstad,,SE3,Standard,Ann-Charlott Boström,ann-charlott.bostrom@caverion.com,,http://www.caverion.se,4,B
-Sjöstad Service & Energi AB,Karlstad,,SE3,Standard,Sune Jonsson,sjostadservice@gmail.com,+46 70 3116735,,4,B
-Mählqvist Rör AB,Katrineholm,,SE3,Standard,Mikael Lindgren,mikael.l@mahlqvist.se,070-944 43 42,http://www.mahlqvist-ror.se,4,B
-Oppunda VVS-Service AB,Katrineholm,,SE3,Standard,Stefan Glimring,stefan@oppundavvs.se,070-96 50 036,,4,B
-Ternstedt Invent AB Kisa,Kisa,,SE3,Standard,Daniel Eskilsson,daniel.eskilsson@ternstedtinvent.se,0494-699108,,4,B
-Hertzmans VVS AB,Kolmården,,SE3,Standard,Jesper Dahlström,jesper.dahlstrom@hertzmansvvs.se,0733-923173,http://www.hertzmansvvs.se/,4,B
-Ulvsby Rör AB,Kristinehamn,Värmland,SE3,Standard,Tony Olsson,tony@ulvsbyror.se,"073-506 61 14, 054-86 67 09",https://ulvsbyror.se,4,B
-Engstedts Rör AB,Krylbo/Avesta,"Krylbo, Avesta, Fors, Horndal",SE3,Standard,Roger Engstedt,roger@engstedtsror.se,0226-61600,,4,B
-Tholfs Rör,Kumla,,SE3,Standard,Kenneth Tholf,kenneth@tholfsror.se,019-57 40 66,,4,B
-Aderbys Rör AB,Kungsbacka,,SE3,Standard,,,0300 – 337 00,http://www.comfort.se/aderbys-ror/tjanster/varmepumpar/,4,B
-K-E Borgs Rör & Svets AB,Kungsängen,Stockholmsregionen,SE3,Standard,Bosse Borg,info@borgsror.se,070-7420566,,4,B
-Djupedals Rör AB,Kvänum,,SE3,Standard,Daniel Lund,daniel.lund@djupedalsror.se,0512-921 00,http://www.djupedalsror.se,4,B
-Kjellners Rör i Kvänum AB,Kvänum,,SE3,Standard,Tobias Karlsson,tobias.karlsson@kjellnersror.se,0512-10198,http://www.kjellnersror.se,4,B
-Holmboms Värme AB,Kåge,,SE3,Standard,Lena Holmbom,kage@bad-varme.se,0910-72 04 05,,4,B
-Assemblin Leksand,Leksand/Rättvik,,SE3,Standard,Katarina Johnsson,katarina.johnsson@assemblin.se,010-472 60 00,https://www.assemblin.se,4,B
-Assemblin VS-teknik AB,Lidköping,,SE3,Standard,Andreas Löfberg,andreas.lofberg@assemblin.se,010-475 25 61,,4,B
-Emils Energi AB,Lidköping,,SE3,Standard,Kristian Lund,Kristian@emilsenergi.se,070-4595859,https://www.emilsenergi.se/,4,B
-NÅ Widell Rör & Konsult AB,Lidköping,,SE3,Standard,Kjell Gustafsson,kjell@widellsror.se,0510-23110,http://www.widellsror.se/,4,B
-Limmareds Rör AB,Limmared,"Borås, Ulricehamn, Tranemo & Mark",SE3,Servicepartner,Patrik Carlsson,patrik@limmaredsror.se,0325-716 00,http://www.limmaredsror.se,4,B
-"Sundström, Lars AB",Linghed,,SE3,Standard,Hans Heed,info@larssundstromab.se,0246-224 00,,4,B
-Sandbäckens rör i Linköping AB,Linköping,,SE3,Standard,Urban Lagerstrand,urban.lagerstrand@sandbackens.se,073-029 91 47,,4,B
-Ternstedt Invent AB Linköping,Linköping,,SE3,Standard,Daniel Eskilsson,daniel.eskilsson@ternstedtinvent.se,013-101 777,https://comfort.se/medlem/ternstedt-invent-ab,4,B
-Radiator VVS AB,Ludvika,,SE3,Standard,Roger Danielsson,roger.danielsson@radiatorvvs.se,010-4586653,,4,B
-Västkustens Entreprenad & VVS AB,Långås,,SE3,Standard,Christopher Fällgren,christopher@vastkustens.com,079-201 96 52,https://vastkustens.com/,4,B
-HP Kyla & Värme Ab,Mariehamn,Åland,SE3,Standard,Johan Lundström,johan.lundstrom@hp.ax,018-52 67 47,http://www.hp.ax/,4,B
-Mallings VVS-Installationer AB,Marieholm,,SE3,Standard,Daniel Malling,mallingsvvs@gmail.com,+46738133373,https://mallingsvvs.se/,4,B
-Rörtjänst i Mellerud AB,Mellerud,,SE3,Standard,,inforortjanst@gmail.com,0530-109 93,,4,B
-Fröbergs Rör AB,Motala,,SE3,Servicepartner,Peter Fröberg,peter@frobergsror.se,+4614180160,,4,B
-Jämtlands Rörtjänst AB,Munkflohögen,Föllinge,SE3,Standard,Daniel Johansson,info@jamtlandsrortjanst.se,070-548 32 19,http://www.jamtlandsrortjanst.se,4,B
-Månsson Rör & Värmepumpar AB i Norrköping,Norrköping,,SE3,Standard,Martin Tornmalm,martin@manssonror.se,072-987 48 15,,4,B
-Sandbäckens Rör i Norrköping AB,Norrköping,,SE3,Standard,Hampus Karlsson Ström,hampus.k.strom@sandbackens.se,0707-15 26 80,https://sandbackens.se/,4,B
-AB Knuttes Rör,Norrtälje,"Norrtälje, Stockholms län",SE3,Standard,Jonatan Luna,info@knuttesror.se,0176-666202,https://knuttesror.se/,4,B
-Generation Fyra VVS AB,Norrtälje,,SE3,Standard,Christian Hammargren,christian@generationfyravvs.se,070-554 58 53,,4,B
-Northstruct AB,Norsborg,,SE3,Standard,Adam Ceven,a.ceven@northstruct.com,08-721 79 00,https://www.northstruct.com,4,B
-LA:s Rör AB,Norsjö,,SE3,Standard,Lage Andersson,info@lasror.se,0918-106 06,,4,B
-Hammarstedts VVS Eftr AB,Nybro,Nybro och Kalmar,SE3,Standard,Erik Cornbert / Björn Brosgård,erik@hammarstedtsvvs.se,0481-76 60 00,http://www.hammarstedtsvvs.se,4,B
-Masens Rörmokeri AB,Nyköping,Södermanlands län,SE3,Standard,Tommy Jansson,thermia@masens.se,0155-459500,https://www.masens.se/,4,B
-Sandbäckens rör i Nyköping,Nyköping,,SE3,Standard,Örjan Johansson,orjan.johansson@sandbackens.se,+46706717208,,4,B
-Berghults Rör AB,Offerdal,,SE3,Standard,Hans-Erik Eriksson,hans@berghultsror.se,070-350 80 58,http://www.berghultsror.se,4,B
-Oxelösunds Rör,Oxelösund,,SE3,Standard,Mikael Nilsson,info@ox-ror.se,0155-304 25,,4,B
-Ylipääs Bygg i Pajala Aktiebolag,PAJALA,,SE3,Standard,Samuel Ylipää,samuel@ylipaasab.se,070-3903901,,4,B
-Kervestigs VVS,Ransäter,,SE3,Standard,Nicklas Kervestig,kervestigsvvs@hotmail.se,076-771 29 99,,4,B
-Ternstedt Invent AB Rimforsa,Rimforsa,,SE3,Standard,Daniel Eskilsson,daniel.eskilsson@ternstedtinvent.se,0494-699108,,4,B
-Rockneby VVS Service AB,Rockneby,"Kalmar, Mönsterås",SE3,Standard,Per Karlsson,per@rocknebyvvs.se,0707-410760,,4,B
-Husum Rör AB,Rundvik,,SE3,Standard,Ronny Sjölund,ronny.sjolund@hotmail.com,0930-308 75,http://www.husumror.se/,4,B
-Peter Blomqvist VVS AB,Rydaholm,,SE3,Standard,,blomqvistvvs@rydaholm.se,070-509 38 77,,4,B
-GK Rör AB,SOLNA,,SE3,Standard,Rikard Karlsson,gkror.sthlm.service@gk.se,08-120 448 00,https://www.gk.se/,4,B
-Nordsvensk värme,Sjulsmark,i Sjulsmark och Älvsbyn,SE3,Servicepartner,Mattias Nilsson,nsv@datapost.se,070-6439410,,4,B
-Edekyl & Värme AB Skarpnäck,Skarpnäck,"Södra Stockholm, Lidingö, Södertälje",SE3,Servicepartner,"Växel: 08-647 84 20
-
-Jour: 010-498 48 88",,,http://www.edekyl.se,4,B
-Rågård Rör & Teknik AB,Skattkärr,,SE3,Servicepartner,Anders Rågård,info@ragard.se,054-4442150,http://www.ragard.se,4,B
-Rörbolaget i Smålandsstenar AB,Smålandsstenar,,SE3,Standard,Martin Karlsson,martin@rorbolaget.com,0371-308 15,http://www.rorbolaget.com,4,B
-RÖRAB Infra AB,Sollentuna,Stockholmsregionen,SE3,Standard,Eric Örnberg,eric@rorab.se,08-590 341 30,http://www.rorab.se,4,B
-Röraktiebolaget Helmer Blomkvist,Stallarholmen,,SE3,Standard,Christoffer Spetz,info@blomkvistror.se,070-288 73 49,,4,B
-Strömstad Värme & Sanitet,Strömstad,,SE3,Standard,Conny Andersson,conny@comfort-stromstad.com,0526-130 75,http://www.comfort-stromstad.se/,4,B
-Värmebolaget AB,Sundbyberg,Stockholmsregionen,SE3,Standard,Tomas Dehnisch,varmebolaget@telia.com,070-578 53 10,http://www.varmebolaget.se,4,B
-Rörtjänst i Sveg AB,Sveg,i Härjedalen,SE3,Standard,Per Johansson,info@rortjanstisveg.se,0680-10527,http://www.rortjanstisveg.se,4,B
-EAAB VVS,Svängsta,,SE3,Standard,Adam Kantsjö,eaabvvs@hotmail.com,+46709747647,,4,B
-VVS Kompaniet,Säffle,,SE3,Standard,Cornelia Erlingsson,vvskompaniet@gmail.com,076-81 41 033,,4,B
-Installationsgruppen i Malung AB,Sälen,,SE3,Standard,Tomas Wiksten,tomas.wiksten@installationsgruppen.com.,0280-13075,,4,B
-Sävsjö Rörtjänst AB,Sävsjö,Sävsjö Kommun,SE3,Standard,Johnny Eriksson,info@savsjorortjanst.se,0382-61531,https://www.savsjorortjanst.se/,4,B
-PLVVS & Fastigheter AB,Söderköping,,SE3,Standard,Peter Larsson,peter@plvvs.se,0708126107,https://plvvs.se/,4,B
-Bravida VS Södertälje,Södertälje,,SE3,Standard,Mattias Eriksson,vssodertalje@bravida.se,08-550 312 73,https://www.bravida.se/kontakt/kontor/sverige/sodertalje-vs/,4,B
-I. JONSSONS RÖR/ RADIATOR VVS AB,Tibro,,SE3,Standard,Kenneth Gradh,kenneth.gradh@jonssonsror.se,010-458 66 68,http://www.jonssonsror.se,4,B
-Söderlunds Rör AB,Tierp,,SE3,Servicepartner,Magnus Högberg,magnus@sratierp.se,0293-22730,http://www.sratierp.se,4,B
-Sjöstad Service & Energi AB,Torsby,,SE3,Standard,Sune Jonsson,sjostadservice@gmail.com,+46 70 3116735,,4,B
-VVS-Arbeten i Torsby AB,Torsby,,SE3,Standard,Tomas Johansson,vvs-arbeten@telia.com,070 65 82 651,,4,B
-Stora Mellby Rör AB,Trollhättan,,SE3,Standard,Bengt Andersson,info@mellbyror.se,0520-823 84,,4,B
-V L Värmepumpservice AB,Tumba,,SE3,Standard,Vincent Lövgren,vincent@vl-vps.se,0730-55 25 00,http://www.vl-vps.se,4,B
-Tonys VVS i Töcksfors AB,Töcksfors,,SE3,Standard,Tony Andersson,tony@tonysvvs.se,070-516 11 29,http://www.tonysvvs.se,4,B
-Berghogens Rör AB,Uddevalla,,SE3,Servicepartner,Magnus Bergquist,info@berghogensror.se,0522-64 12 82,http://www.berghogensror.se,4,B
-Hansson & Hansson Rör AB,Upplands Väsby,,SE3,Standard,Stephanie Primér,info@hanssonror.se,08-600 35 05,https://www.hanssonohansson.se/,4,B
-Anderssons Rör & Värme AB,Uppsala,,SE3,Standard,Per Andersson,anderssons.ror.varme@gmail.com,070-611 28 55,,4,B
-Sandbergs Rör i Urshult AB,Urshult,,SE3,Standard,Karin Carlsson,info@sandbergs-ror.se,0477-20240,http://www.sandbergs-ror.se,4,B
-KG Karlssons Rörledningsfirma AB,Vallentuna,Stockholmsregionen,SE3,Servicepartner,Tommy Frisk,tommy@kgkarlsson.se,08-755 16 05,http://www.kgkarlsson.se,4,B
-HJ Rör AB,Veddige,,SE3,Standard,Tolle Henrysson,tolle@hjror.com,0340-64 97 64,http://www.hjror.com,4,B
-Vetlanda Rör AB,Vetlanda,Vetlanda och Eksjö,SE3,Standard,Johan Pettersson,johan@vetlandaror.se,0383-158 49,,4,B
-Ingemars Rör & Svets,Vilhelmina,,SE3,Standard,Ingemar Svensson,ingemarsrorosvets@gmail.com,070-606 44 99,,4,B
-Patrik Erikssons Rör AB,Vindeln,,SE3,Standard,Patrik Eriksson,info@erikssonsror.com,070-3506753,https://erikssonsror.com/om-oss/,4,B
-Mählqvist Rör AB,Vingåker,,SE3,Standard,Gabriel Holst,gabriel@mahlqvist.se,0151-51 81 51,http://www.mahlqvist-ror.se,4,B
-Jerkebys VVS AB,Visby,,SE3,Standard,Roger Odestadh,info@jerkebysvvs.se,0498-29 89 89,https://jerkebysvvs.se/,4,B
-Sandbäckens Rör i Visby AB,Visby,,SE3,Standard,"Peter Jakobsson (Försäljning)
-Magnus Gomander (Service)",peter.jakobsson@sandbackens.se,0707-456174 / 0707-456173,,4,B
-Vislanda Rörtjänst AB,Vislanda,"Vislanda, Älmhult, Alvesta, Växjö och Ljungby med omnejd.",SE3,Standard,Lars Svensson,info@vislandarortjanst.se,0472-342 77,http://www.vislandarortjanst.se/,4,B
-I C E Solutions Sweden AB,Vittsjö,,SE3,Standard,Per Hirani,per@icesolutions.se,+46722301900,https://www.icesolutions.se/,4,B
-Rörledningsfirma B.Erlandssons AB,Vänersborg,Västergötland,SE3,Standard,Jesper Myreborn,,+46738434331,,4,B
-Bravida Värnamo,Värnamo,,SE3,Standard,Fredrik Berggren,fredrik.h.berggren@bravida.se,0370 - 69 27 00,https://www.bravidavarnamo.se,4,B
-Kyl-Bergman Lennart AB,Västervik,,SE3,Standard,Adam Larsson Lockner,adam@kyl-bergman.nu,070-585 15 51,https://www.nordicclimategroup.se/kyl-bergman,4,B
-Ternstedt Invent AB Västervik,Västervik,,SE3,Standard,Per Aulin,per.aulin@thernstedtinvetn.se,0490-679 01,,4,B
-Edekyl & Värme AB Västerås,Västerås,Västmanland,SE3,Servicepartner,"Växel: 021-14 04 00
-Jour: 010-498 48 88",,,http://www.edekyl.se,4,B
-Djupedals Rör AB,Vårgårda,,SE3,Standard,Jesper Myreborn,jesper.myreborn@djupedalsror.se,073-843 43 31,,4,B
-Vislanda Rörtjänst AB,Älmhult,"Vislanda, Älmhult,Vislanda,  Alvesta, Växjö och Ljungby med omnejd.",SE3,Standard,Lars Svensson,info@vislandarortjanst.se,0472-342 77,,4,B
-App VVS AB,Älvsjö,Stockholmsregionen,SE3,Standard,Apostol Bali,info@appvvs.se,076-340 76 53,https://appvvs.se/,4,B
-Skärgårdens VVS & Plattsättning AB,Åkersberga,,SE3,Standard,Kalle Witt,kalle@skargardensvvs.com,08-680 70 70,https://skargardensvvs.com/,4,B
-Anders Anderssons Rör AB,Åmotfors,Västra Värmland,SE3,Standard,Anders Andersson,info@aaror.se,0571-341 81,,4,B
-JG Vvs & Värmepumpar AB,Åmål,,SE3,Standard,Joel Gonzalez,vvsochvarmepumpar@gmail.com,0730-75 27 51,,4,B
-Bromma Energi AB,Årsta,,SE3,Servicepartner,Peter Carlén,info@brommaenergi.se,08-28 25 20,http://www.brommaenergi.se,4,B
-Åseda Värme o Sanitet AB,Åseda,Växjö och Uppvidinge,SE3,Servicepartner,Jan Johansson,jan@asedavarme.se,0706563661,http://www.asedavarme.se/,4,B
-Rörmokeriet Bauer AB,Åsele Kommun,,SE3,Standard,Peter Bauer,rormokerietbauer@gmail.com,070-5500017,,4,B
-Ternstedt Invent/Åtvidabergs Rör,Åtvidaberg,,SE3,Servicepartner,Daniel Eskilsson,daniel.eskilsson@ternstedtinvent.se,0120-29590,http://comfortatvidaberg.se,4,B
-Öckerö Rörläggeri,Öckerö,,SE3,Standard,Christian Johansson,info@oror.se,031-96 58 05,http://www.oror.se,4,B
+Karl-Erik Olsson",info@redmos.se,0455-168 00,http://www.redmos.se/,5566742408,3,8345,Kenth Roland Redmo,8,B
+Degeberga Rör AB,Degeberga,från Kristianstad till Simrishamn,SE4,Standard,Niklas Lööv,degebergaror@gmail.com,0708-352386,,5567415905,1,5806,Benkt Niklas Lööv,8,B
+VVS-Installationer Rydsgård AB,Rydsgård,"Skurup, Ystad och Svedala",SE4,Standard,Wictor Bergkvist,vvsinstallationer@icloud.com,0411-44 330,,5569413130,4,6782,Wictor Eric Bergkvist,8,B
+Värmepumpcenter Rotek AB,Vellinge,Sydvästa Skåne,SE4,Standard,Gunnar Tjernberg,rotek@rotek.se,040-424130,http://www.rotek.se,5566695408,2,18712,Hans Gunnar Tjernberg,8,B
+JJ VVS i Sölvesborg AB,Sölvesborg,,SE4,Standard,Johan Jönsson,johan@jjvvs.se,+46 735 46 37 97,,5592022957,1,4040,Carl Johan Greger Jönsson,7,B
+Johannishus Värmeinstallation AB,Listerby,"Ronneby, Karlskrona och Karlshamn",SE4,Standard,Kjell Olsson,sok.olsson@telia.com,0457-305 60,,5568336118,1,3522,Andreas Kjell Morgan Olsson,7,B
+Peterssons VVS AB,Johannishus,Ronneby och Karlshamn,SE4,Standard,Mikael Petersson,peterssonvvs@gmail.com,0730-81 26 67,,5592286537,1,3211,Mikael Lars Lennart Petersson,7,B
+SA VVS Service i Knislinge AB,Hanaskog,Nordöstra Skåne och Västra Blekinge,SE4,Värmepumpcenter,Anders Olofsson/Mats Nordström,info@savvs.se,044-614 11,,,,,,6,B
+Ambjörby Rör AB,Ambjörby,"Norra Värmland, Torsby",SE3,Värmepumpcenter,Per Svensson,0702115928@telia.com,070-2115928,http://www.ambjorbyror.se,,,,,5,C
+Bohlins Rör AB,Bergby,,SE3,Värmepumpcenter,"Jörgen Eriksson, Mattias Eriksson",mattias@bohlinsror.se,070-65 93 637 eller 070-35 70 166,http://www.bohlinsror.se,,,,,5,C
+Bomanson & Co AB,Mariehamn  Åland,,SE3,Värmepumpcenter,Niklas Mattsson,niklas@bomansons.ax,040-705 9360,,,,,,5,C
+Br Perssons Rör AB,Gullspång,Gullspång/Kristinehamn/Mariestad,SE3,Värmepumpcenter,Stefan Gustafsson,stefang@brperssons.se,0706-66 83 13,http://www.brperssons.se,,,,,5,C
+Carlssons Rör i Sunne AB,Sunne,Sunne/ Torsby,SE3,Värmepumpcenter,Andreas Lennartsson,andreas@carlssonsror.se,0565-31119,,,,,,5,C
+Edekyl och Värme AB Linköping,Linköping,,SE3,Värmepumpcenter,"Växel: 013-31 05 80
+Jour: 010-498 48 88",,,http://www.edekyl.se,,,,,5,C
+Forserums Rör AB,Forserum,"Nässjö, Eksjö och Aneby",SE3,Värmepumpcenter,Johan Öggesjö,johan@forserumsror.se,0380-210 00,,,,,,5,C
+GreenPeak Energi AB,Sävedalen,,SE3,Värmepumpcenter,Hasse Wernberg,hasse@greenpeak.se,031-340 90 50,http://www.greenpeak.se,,,,,5,C
+Installationsgruppen i Malung AB,Malung,,SE3,Värmepumpcenter,Tomas Wiksten,tomas.wiksten@installationsgruppen.com.,0280-130 75,,,,,,5,C
+Janne Carlson Rör AB,Vålberg,"Vålberg, Karlstad, Grums, Edsvalla, Kil",SE3,Värmepumpcenter,Hans Karlsson,hasse.karlsson@nor-schakt.se,054-54 71 80,,,,,,5,C
+Johansson & Gunverth VVS & EL AB,Rävlanda,,SE3,Värmepumpcenter,Christian Ekvall,christian.ekvall@johanssongunverth.se,070-975 27 90,http://www.johanssongunverth.se,,,,,5,C
+Kalmar VVS & Elmontage AB,Färjestaden,"Kalmar, Öland",SE3,Värmepumpcenter,Peter Abrahamsson,info@kalmarvvs.se,0485-316 70,https://www.kalmarvvs.se/,,,,,5,C
+Kjellners Rör AB,Vara,,SE3,Värmepumpcenter,Tobias Karlsson,tobias.karlsson@kjellnersror.se,0512-10198,http://www.kjellnersror.se,,,,,5,C
+Lindesbergs VVS AB,Lindesberg,,SE3,Värmepumpcenter,Ria Nydén,ria@lindesbergsvvs.se,0581-836 40,http://lindesbergsvvs.se,,,,,5,C
+Loevaas Rör & Smide AB,Charlottenberg,"Eda, Arvika, Årjäng,2243338 Norska sidan",SE3,Värmepumpcenter,Robin Pettersson,robin@loevaas.se,0702 - 51 94 09,http://www.loevaas.se,,,,,5,C
+MH Rörteknik AB,Hedemora/Säter,,SE3,Värmepumpcenter,Markus Hällbo,markus@markushallbo.se,070-6620517,http://www.mhrörteknikab.se,,,,,5,C
+Nybloms Rör AB,Valbo,,SE3,Värmepumpcenter,Daniel Stefansson,info@nyblomsror.se,026-455 30 30,,,,,,5,C
+Rörfixarna i Hjo,Hjo,,SE3,Värmepumpcenter,Stefan Alexandersson,hjo@bad-varme.se,0503-122 22,http://www.rorfixarna.com,,,,,5,C
+Stora Mellby Rör AB,Sollebrunn,"Sollebrunn, Trollhättan, Alingsås",SE3,Värmepumpcenter,Tomas Andersson,info@mellbyror.se,0322-418 80,http://www.mellbyror.se,,,,,5,C
+Söders Olja & Rör AB,Rottne,Växjö och Alvesta,SE3,Värmepumpcenter,Niklas Johansson,niklas@sodersror.se,0470-925 50,http://www.sodersolja.se,,,,,5,C
+Ulvsby Rör AB,Karlstad,,SE3,Värmepumpcenter,Tony Jonsson,tony@ulvsbyror.se,073-50 66 114,https://ulvsbyror.se/,,,,,5,C
+Wiiks Rör AB,Storvik,,SE3,Värmepumpcenter,Christer Eklund,info@wiiksror.se,0290-317 00,http://www.wiiksror.se,,,,,5,C
+Åkerholms Rör AB,Hörby,"Hörby, Höör och Eslöv",SE3,Värmepumpcenter,Simon Olsson / Torbjörn Månsson,info@akerholmsror.se,0415-140 45,http://www.akerholmsror.se,,,,,5,C
+AB Lennart Bengtssons Smide & VVS,Smedstorp,"Simrishamn, Tomelilla och Ystad",SE4,Standard,Lars-Erik Bengtsson,info@bengtssonsvvs.com,0414-51234,,,,,,5,C
+AB Strömberg och Andersson,Helsingborg,,SE4,Standard,Richard Strömberg,info@stromberg-andersson.se,042-155806,,5595451096,5-9,,Tord Johan Sigvard Dahlström,5,C
+AB Sture Anderssons Rörinstallationer ,Ystad,,SE4,Standard,Richard Bagger,kontor@sa-rorinst.se,+46 411 199 80,,,,,,5,C
+Bryngels AB,Sundsvall,"i Sundsvall, Timrå, Ånge och Nordanstigs kommuner",SE2,Värmepumpcenter,Mattias Norberg,info@bryngels.se,060-668844,http://www.bryngels.se,,,,,4,C
+E Thenanders Rör AB,Borlänge,Borlänge,SE2,Värmepumpcenter,Hans Lindvall,info@thenandersror.se,0243-22 56 90,http://www.thenandersror.se,,,,,4,C
+Hedlunds Rör AB,Sandviken,,SE2,Värmepumpcenter,Anders Hedlund,anders@hedlundsror.se,026-27 30 75,http://www.hedlundsror.se,,,,,4,C
+AB Knuttes Rör,Norrtälje,"Norrtälje, Stockholms län",SE3,Standard,Jonatan Luna,info@knuttesror.se,0176-666202,https://knuttesror.se/,,,,,4,C
+AFFES VÄRMEPUMPSSERVICE AB,Huddinge,,SE3,Standard,Alf Lundstedt,info@affesvarmepumpservice.se,08-7111990,https://affesvarmepumpservice.se/,,,,,4,C
+AG Rörteknik AB,Gislaved,,SE3,Standard,Antero Peltohaka,antero@agrorteknik.se,+4637180550,https://agrorteknik.se/,,,,,4,C
+ASSEMBLIN VS AB,Karlstad,,SE3,Standard,David Larnemark,david.larnemark@assemblin.se,+46 10 475 22 73,http://www.assemblin.com,,,,,4,C
+Aderbys Rör AB,Kungsbacka,,SE3,Standard,,,0300 – 337 00,http://www.comfort.se/aderbys-ror/tjanster/varmepumpar/,,,,,4,C
+Anders Anderssons Rör AB,Åmotfors,Västra Värmland,SE3,Standard,Anders Andersson,info@aaror.se,0571-341 81,,,,,,4,C
+Anderssons Rör & Värme AB,Uppsala,,SE3,Standard,Per Andersson,anderssons.ror.varme@gmail.com,070-611 28 55,,,,,,4,C
+App VVS AB,Älvsjö,Stockholmsregionen,SE3,Standard,Apostol Bali,info@appvvs.se,076-340 76 53,https://appvvs.se/,,,,,4,C
+Arvids Rör AB,Bjursås/Falun,"Bjursås, Falun, Grycksbo",SE3,Standard,Olof Arvids,arvids.ror@telia.com,070-398 69 97,http://www.arvidsror.se,,,,,4,C
+Assemblin Leksand,Leksand/Rättvik,,SE3,Standard,Katarina Johnsson,katarina.johnsson@assemblin.se,010-472 60 00,https://www.assemblin.se,,,,,4,C
+Assemblin VS AB Hägersten,Hägersten,,SE3,Standard,Christoffer Callerius,christoffer.callerius@assemblin.se,0708 84 07 63,https://www.assemblin.com/sv/kontakt/varme-sanitet/,,,,,4,C
+Assemblin VS-teknik AB,Lidköping,,SE3,Standard,Andreas Löfberg,andreas.lofberg@assemblin.se,010-475 25 61,,,,,,4,C
+B & O Rör och Värmeservice AB,Göteborg,,SE3,Standard,Benny Blickhammar,benny@bororservice.se,0300-37672,,,,,,4,C
+Bankeryds Rör AB,Bankeryd,,SE3,Standard,Jonatan Grankvist,jonatan.grankvist@assemblin.se,0709-37 00 03,,,,,,4,C
+Berghogens Rör AB,Uddevalla,,SE3,Servicepartner,Magnus Bergquist,info@berghogensror.se,0522-64 12 82,http://www.berghogensror.se,,,,,4,C
+Berghults Rör AB,Offerdal,,SE3,Standard,Hans-Erik Eriksson,hans@berghultsror.se,070-350 80 58,http://www.berghultsror.se,,,,,4,C
+Berglunds Rör ,Gällstad,,SE3,Servicepartner,Jakob Eriksson,jakob@berglundsror.se,0321-720 31,http://berglundsror.se,,,,,4,C
+Bertilsson & Bertilsson Rör AB,Brålanda,"Brålanda, Västra Götaland",SE3,Standard,Tobias Bertilsson,bbror@telia.com,0521-31 460,,,,,,4,C
+Bjuvensjö VVS AB,Hillerstorp,,SE3,Standard,Emanuel Bjuvensjö,emanuel@bjuvensjovvs.se,0730-22 53 55,http://www.bjuvensjo.se,,,,,4,C
+Björklunds Rör,Arvika,,SE3,Standard,Lars Björklund,bjorklunds.ror.lars@telia.com,0570-71 16 45,,,,,,4,C
+Bobos VVS AB,Gnosjö,,SE3,Standard,Bobo Sveningsson,bobo@bobosvvs.se,0722-10 41 28,,,,,,4,C
+Bravida VS Södertälje,Södertälje,,SE3,Standard,Mattias Eriksson,vssodertalje@bravida.se,08-550 312 73,https://www.bravida.se/kontakt/kontor/sverige/sodertalje-vs/,,,,,4,C
+Bravida Värnamo,Värnamo,,SE3,Standard,Fredrik Berggren,fredrik.h.berggren@bravida.se,0370 - 69 27 00,https://www.bravidavarnamo.se,,,,,4,C
+Bromma Energi AB,Årsta,,SE3,Servicepartner,Peter Carlén,info@brommaenergi.se,08-28 25 20,http://www.brommaenergi.se,,,,,4,C
+Brunskogs El-Edane Rör,Edane,,SE3,Standard,Ulf Johansson,brunskogsel@gmail.com,0570-50187,,,,,,4,C
+"Bröderna Karlsson, Rörl. fa ",Arvika,,SE3,Standard,Ingemar Andersson / Mikael Johansson,br-karlsson@telia.com,0570-140 60,http://www.br-karlsson.se,,,,,4,C
+Bäcklunds Värme & Sanitet AB,Sorsele,"i Sorsele, Storuman och Lycksele kommuner",SE3,Standard,Jim Carlsson,jim@backlundsvarme.com,070-395 84 98,http://,,,,,4,C
+"Caverion Sverige AB, Karlstad",Karlstad,,SE3,Standard,Ann-Charlott Boström,ann-charlott.bostrom@caverion.com,,http://www.caverion.se,,,,,4,C
+Djupedals Rör AB,Vårgårda,,SE3,Standard,Jesper Myreborn,jesper.myreborn@djupedalsror.se,073-843 43 31,,,,,,4,C
+Djupedals Rör AB,Alingsås,,SE3,Standard,Jesper Myreborn,jesper.myreborn@djupedalsror.se,073-843 43 31,http://www.djupedalsror.se,,,,,4,C
+Djupedals Rör AB,Kvänum,,SE3,Standard,Daniel Lund,daniel.lund@djupedalsror.se,0512-921 00,http://www.djupedalsror.se,,,,,4,C
+Dorotea Värme & Sanitet AB,Dorotea,,SE3,Standard,Conny Jakobsson,Conny@doroteavarme.se,0942-515 95,,,,,,4,C
+EAAB VVS,Svängsta,,SE3,Standard,Adam Kantsjö,eaabvvs@hotmail.com,+46709747647,,,,,,4,C
 Edekyl & Värme AB,Örebro,Örebro Län,SE3,Servicepartner,"Växel: 019 - 24 00 30
 
-Jour: 010 - 498 48 88",,,http://www.edekyl.se,4,B
-Radiator VVS AB,Örebro,Region 3,SE3,Standard,Thed Nilsson,thed.nilsson@radiatorvvs.se,+4619273000,https://www.radiatorvvs.se/var-vi-finns/orebro-huvudkontor/,4,B
-KF Larssons Rörfirma AB,Östervåla,Uppland/Västmanland,SE3,Standard,Andreas Larsson,info@kflarssonsrorfirma.se,0292 301 62,http://www.kflarssonsrorfirma.se,4,B
-Soukolo Rör AB,Övertorneå,,SE3,Standard,Fredrik Niemi,fredrikniemi@hotmail.com,070-2434807,,4,B
-Teknikföretaget Johan Mattsson AB,Överturingen,,SE3,Standard,Johan Mattsson,mail@johanmattsson.se,070-3608428,,4,B
-Arvids Rör AB,Bjursås/Falun,"Bjursås, Falun, Grycksbo",SE2,Standard,Olof Arvids,arvids.ror@telia.com,070-398 69 97,http://www.arvidsror.se,3,C
-Blomquist Rör AB,Bollnäs,,SE2,Standard,Staffan Blomquist,staffan@blomquistror.se,070-5377114,https://blomquistror.se/,3,C
-GM VVS & Energi i Gästrikland AB,Gävle,Gästrikland,SE2,Standard,Marcus Boström,marcus@gmvvs.se,070-​517 25 10,https://gmvvs.se/,3,C
-VVS Montörerna i Gästrikland AB,Gävle,,SE2,Standard,Henrik Olsson,henrik@vvsmontorerna.se,026 -14 58 81,http://www.vvsmontorerna.se/,3,C
-Bryngels AB,Hudiksvall,"i Hudiksvall, Söderhamn, Nordanstig och Bollnäs kommuner",SE2,Standard,Erik Lindé,info@bryngels.se,0650-560012,http://www.bryngels.se,3,C
-Radiator VVS AB,Härnösand,,SE2,Standard,Daniel Wiklund,daniel.wiklund@radiatorvvs.se,+46104586691,https://www.radiatorvvs.se/kontakta-oss/harnosand,3,C
-Järvsö Värme och Sanitet AB,JÄRVSÖ,Gävleborgs län,SE2,Standard,Lars Näsman,lars.n@jvsab.se,0651-41140,http://www.jvsab.se/,3,C
-Radiator VVS AB i Kramfors,Kramfors,,SE2,Standard,Patrik Berglund,patrik.berglund@radiatorvvs.se,010-4586695,,3,C
-Eklunds Mora AB,Mora,Mora/ Orsa/ Särna/ Älvdalen/ Rättvik/ Idre,SE2,Servicepartner,Thomas Eriksson,thomas.eriksson@eklundsmora.se,0250-585000,http://www.eklundsmora.se,3,C
-Engströms Rör AB,Näsåker/Sollefteå,i Sollefteå kommun,SE2,Standard,Hans-Olof Engström,engstroms.ror@gmail.com,070-3704510,,3,C
-Olja & Sanitet i Sollefteå AB,Sollefteå,,SE2,Standard,Ulf Westin,ulf@oljasanitet.nu,070-6644935,,3,C
-Bravida Sverige AB (fd Rex Rör),Sundsvall,,SE2,Standard,Tobias Karlsson,Tobias.x.Karlsson@bravida.se,060-663920,http://www.bravida.se,3,C
-Blomquist Rör AB,SÖDERHAMN,,SE2,Standard,Staffan Persson,staffan@blomquistror.se,070-5377114,,3,C
-SebSalo Energi AB,ÖSTERSUND,,SE2,Standard,Jens Lund,jens.lund@sebsalo.se,073-0299714,,3,C
-Bravida Sverige AB,Östersund,,SE2,Standard,Simon Johansson,simon.m.johansson@bravida.se,076-832 54 49,http://www.bravida.se,3,C
-T Wennströms Rör & Energiteknik,Gällivare,,SE1,Standard,Tomas Wennström,wennstromsror@gmail.com,070-528 5094,,2,C
-KI EL & Värme,Kalix,Norrbotten,SE1,Standard,Peter Isaksson,Ki.el.varme@gmail.com,070-572 28 46,https://www.ki-ab.se,2,C
-Energiteknik Lennart Kruuka,Kiruna,,SE1,Standard,Lennart Kruuka,lkenergiteknik@gmail.com,070-291 57 41,,2,C
-VVS & Energi i Kåge AB,Kåge,i Skellefteå kommun,SE1,Standard,Per Holmbom/Anders Holmbom,mail@vvsochenergi.se,070-6853782/070-6853781,http://www.vvsochenergi.se,2,C
-Rörcentrum i Luleå AB,Luleå,,SE1,Standard,Robin Karlsson,robin.karlsson@bad-varme.se,070 - 233 14 62,,2,C
-Linders VVS i Lycksele AB,Lycksele,Västerbotten,SE1,Standard,Henrik Linder,henrik.linder@hotmail.se,070-360 72 46,,2,C
-Bäcklunds Värme & Sanitet AB,Sorsele,"i Sorsele, Storuman och Lycksele kommuner",SE1,Standard,Jim Carlsson,jim@backlundsvarme.com,070-395 84 98,http://,2,C
-Energiteamet i Umeå AB,UMEÅ,,SE1,Standard,Magnus Häggström,magnus@energiteamet.com,070-588 19 73,https://www.energiteamet.com/,2,C
+Jour: 010 - 498 48 88",,,http://www.edekyl.se,,,,,4,C
+Edekyl & Värme AB Skarpnäck,Skarpnäck,"Södra Stockholm, Lidingö, Södertälje",SE3,Servicepartner,"Växel: 08-647 84 20
+
+Jour: 010-498 48 88",,,http://www.edekyl.se,,,,,4,C
+Edekyl & Värme AB Västerås,Västerås,Västmanland,SE3,Servicepartner,"Växel: 021-14 04 00
+Jour: 010-498 48 88",,,http://www.edekyl.se,,,,,4,C
+Edmarks rör AB,Edsbyn,,SE3,Standard,Frederic Thalén,frederic@edmarks.se,0271-21000,http://www.edmarksror.se/,,,,,4,C
+Elverstigs Bygg AB,Färila,,SE3,Standard,Mats Elverstig,elverstigsbygg@yahoo.se,070-3436629,,,,,,4,C
+Emils Energi AB,Lidköping,,SE3,Standard,Kristian Lund,Kristian@emilsenergi.se,070-4595859,https://www.emilsenergi.se/,,,,,4,C
+Empe Rör AB,Hagfors,,SE3,Standard,Olle Ohlsson,martin.carmesten@emperor.se,070-392 50 10,,,,,,4,C
+Energi & Teknik i Arvika AB,Arvika,,SE3,Servicepartner,Patrik Helander,info@energioteknik.se,0570 727090,http://energioteknik.se/,,,,,4,C
+Energiteamet i Umeå AB,HEMAVAN,,SE3,Standard,Magnus Häggström,magnus@energiteamet.com,070-588 19 73,https://www.energiteamet.com/,,,,,4,C
+Engstedts Rör AB,Krylbo/Avesta,"Krylbo, Avesta, Fors, Horndal",SE3,Standard,Roger Engstedt,roger@engstedtsror.se,0226-61600,,,,,,4,C
+Engströms Rör AB,Näsåker/Sollefteå,i Sollefteå kommun,SE3,Standard,Hans-Olof Engström,engstroms.ror@gmail.com,070-3704510,,,,,,4,C
+Forshaga Rör Br. Frödin AB,Forshaga,,SE3,Standard,Johan Frödin,brfrodin@telia.com,+46 70 690 87 50,,,,,,4,C
+Fristad Rör AB,Borås,Västra Götalands län,SE3,Standard,Simon Linderos,simon.linderos@fristadror.se,070-571 88 77,,,,,,4,C
+Fröbergs Rör AB,Motala,,SE3,Servicepartner,Peter Fröberg,peter@frobergsror.se,+4614180160,,,,,,4,C
+G Andersson Rör AB,Grängesberg/Nyhammar,,SE3,Standard,Gert Andersson,gert@garor.se,070-3356165,,,,,,4,C
+GF Rör AB,Järfälla,,SE3,Standard,Gustav Fahlström,gustav@gfror.se,073-522 22 22,,,,,,4,C
+GK Rör AB,SOLNA,,SE3,Standard,Rikard Karlsson,gkror.sthlm.service@gk.se,08-120 448 00,https://www.gk.se/,,,,,4,C
+Gamleby Mekaniska Verkstad VVS AB,Gamleby,Västervik och Valdemarsviks kommuner,SE3,Standard,Erik Hellström,info@gamlebymek.se,0493-123 70,https://www.gamlebymek.se/,,,,,4,C
+Generation Fyra VVS AB,Norrtälje,,SE3,Standard,Christian Hammargren,christian@generationfyravvs.se,070-554 58 53,,,,,,4,C
+Gränna Rör ,Gränna,,SE3,Standard,Claes Andersson,claes.andersson.mbox@telia.com,0705-313389,http://grannaror.se,,,,,4,C
+Gustafssons VVS AB,Hyltebruk,"Hyltebruk, Halmstad, Falkenberg",SE3,Standard,Joachim Gustafsson,gvvs@telia.com,0768-171416,,,,,,4,C
+HJ Rör AB,Veddige,,SE3,Standard,Tolle Henrysson,tolle@hjror.com,0340-64 97 64,http://www.hjror.com,,,,,4,C
+HP Kyla & Värme Ab,Mariehamn,Åland,SE3,Standard,Johan Lundström,johan.lundstrom@hp.ax,018-52 67 47,http://www.hp.ax/,,,,,4,C
+Hammarstedts VVS Eftr AB,Nybro,Nybro och Kalmar,SE3,Standard,Erik Cornbert / Björn Brosgård,erik@hammarstedtsvvs.se,0481-76 60 00,http://www.hammarstedtsvvs.se,,,,,4,C
+Hansson & Hansson Rör AB,Upplands Väsby,,SE3,Standard,Stephanie Primér,info@hanssonror.se,08-600 35 05,https://www.hanssonohansson.se/,,,,,4,C
+Hassela Värme & Vatten AB,Hassela,,SE3,Standard,Lars Höglund,lars@hvv.se,0706-76 77 02,http://www.hvv.se,,,,,4,C
+Hertzmans VVS AB,Kolmården,,SE3,Standard,Jesper Dahlström,jesper.dahlstrom@hertzmansvvs.se,0733-923173,http://www.hertzmansvvs.se/,,,,,4,C
+Holmboms Värme AB,Kåge,,SE3,Standard,Lena Holmbom,kage@bad-varme.se,0910-72 04 05,,,,,,4,C
+Hova Rörledningsaffär AB,Hova,,SE3,Servicepartner,,info@hovaror.com,Växel 0506-307 95,http://www.hovaror.se,,,,,4,C
+Husum Rör AB,Rundvik,,SE3,Standard,Ronny Sjölund,ronny.sjolund@hotmail.com,0930-308 75,http://www.husumror.se/,,,,,4,C
+I C E Solutions Sweden AB,Vittsjö,,SE3,Standard,Per Hirani,per@icesolutions.se,+46722301900,https://www.icesolutions.se/,,,,,4,C
+I. JONSSONS RÖR/ RADIATOR VVS AB,Tibro,,SE3,Standard,Kenneth Gradh,kenneth.gradh@jonssonsror.se,010-458 66 68,http://www.jonssonsror.se,,,,,4,C
+Ingemars Rör & Svets,Vilhelmina,,SE3,Standard,Ingemar Svensson,ingemarsrorosvets@gmail.com,070-606 44 99,,,,,,4,C
+Installationsgruppen i Malung AB,Sälen,,SE3,Standard,Tomas Wiksten,tomas.wiksten@installationsgruppen.com.,0280-13075,,,,,,4,C
+JG Vvs & Värmepumpar AB,Åmål,,SE3,Standard,Joel Gonzalez,vvsochvarmepumpar@gmail.com,0730-75 27 51,,,,,,4,C
+Jerkebys VVS AB,Visby,,SE3,Standard,Roger Odestadh,info@jerkebysvvs.se,0498-29 89 89,https://jerkebysvvs.se/,,,,,4,C
+Jerry Anderssons rör AB,Hammenhög,,SE3,Standard,Jerry Andersson,jerryanderssonvvs@gmail.com,0414-440507,,,,,,4,C
+Junsele Rör AB,Junsele,,SE3,Standard,Stefan Kallin,junseleror@gmail.com,070-3702699,,,,,,4,C
+Jämtlands Rörtjänst AB,Munkflohögen,Föllinge,SE3,Standard,Daniel Johansson,info@jamtlandsrortjanst.se,070-548 32 19,http://www.jamtlandsrortjanst.se,,,,,4,C
+K-B Rör AB,Alafors,,SE3,Servicepartner,Kalle Karlsson,kalle@kbror.se,0303-331661,http://www.kbror.se,,,,,4,C
+K-E Borgs Rör & Svets AB,Kungsängen,Stockholmsregionen,SE3,Standard,Bosse Borg,info@borgsror.se,070-7420566,,,,,,4,C
+KF Larssons Rörfirma AB,Östervåla,Uppland/Västmanland,SE3,Standard,Andreas Larsson,info@kflarssonsrorfirma.se,0292 301 62,http://www.kflarssonsrorfirma.se,,,,,4,C
+KG Karlssons Rörledningsfirma AB,Vallentuna,Stockholmsregionen,SE3,Servicepartner,Tommy Frisk,tommy@kgkarlsson.se,08-755 16 05,http://www.kgkarlsson.se,,,,,4,C
+Kalles VVS Service i Karungi AB,Haparanda,,SE3,Standard,Karl Pesula,karlpesula@hotmail.se,070-324 07 96,,,,,,4,C
+Kervestigs VVS,Ransäter,,SE3,Standard,Nicklas Kervestig,kervestigsvvs@hotmail.se,076-771 29 99,,,,,,4,C
+Killeröds VVS AB,Båstad,,SE3,Standard,Torbjörn Karlsson,killerodsvvs@icloud.com,+46 760 143 704,,,,,,4,C
+Kjellners Rör,Floby,,SE3,Standard,David Kjellner,tobias.karlsson@kjellnersror.se,0515-40710,http://www.kjellnersror.se,,,,,4,C
+Kjellners Rör i Herrljunga AB,Herrljunga,,SE3,Standard,Tobias Karlsson,tobias.karlsson@kjellnersror.se,0512-10198,http://www.kjellnersror.se,,,,,4,C
+Kjellners Rör i Kvänum AB,Kvänum,,SE3,Standard,Tobias Karlsson,tobias.karlsson@kjellnersror.se,0512-10198,http://www.kjellnersror.se,,,,,4,C
+Kyl & Värmepumpservice i Halmstad AB,Halmstad,Halmstad & Ljungby,SE3,Standard,Emil Gutebrand,emil.gutebrand@kylservice.se,035-17 39 10,http://www.kylservice.se,,,,,4,C
+Kyl-Bergman Lennart AB,Västervik,,SE3,Standard,Adam Larsson Lockner,adam@kyl-bergman.nu,070-585 15 51,https://www.nordicclimategroup.se/kyl-bergman,,,,,4,C
+LA:s Rör AB,Norsjö,,SE3,Standard,Lage Andersson,info@lasror.se,0918-106 06,,,,,,4,C
+Larssons VVS i Lekeberg AB,Fjugesta,,SE3,Standard,Magnus Larsson,magnus@larssons-vvs.se,0738-330816,,,,,,4,C
+Limmareds Rör AB,Limmared,"Borås, Ulricehamn, Tranemo & Mark",SE3,Servicepartner,Patrik Carlsson,patrik@limmaredsror.se,0325-716 00,http://www.limmaredsror.se,,,,,4,C
+Lindahls Rörservice i Arjeplog AB,Arjeplog,"Arvidsjaur, Arjeplog",SE3,Standard,Simon Lindahl,lindahlsrorservice@outlook.com,070-29 34 811,,,,,,4,C
+Litslena Rör AB,Grillby,,SE3,Standard,Jonas Bärlund,info@litslenaror.se,0171-658860,http://www.litslenaror.se,,,,,4,C
+Lundgrens VVS,Anderstorp,,SE3,Standard,Wilhelm Lundgren,info@lundgrensvvs.se,070-888 66 92,https://lundgrensvvs.se/,,,,,4,C
+Mallings VVS-Installationer AB,Marieholm,,SE3,Standard,Daniel Malling,mallingsvvs@gmail.com,+46738133373,https://mallingsvvs.se/,,,,,4,C
+Masens Rörmokeri AB,Nyköping,Södermanlands län,SE3,Standard,Tommy Jansson,thermia@masens.se,0155-459500,https://www.masens.se/,,,,,4,C
+Mählqvist Rör AB,Vingåker,,SE3,Standard,Gabriel Holst,gabriel@mahlqvist.se,0151-51 81 51,http://www.mahlqvist-ror.se,,,,,4,C
+Mählqvist Rör AB,Flen,,SE3,Standard,Martin Nilsson,martin@mahlqvist.se,0157-244 61,http://www.mahlqvist-ror.se,,,,,4,C
+Mählqvist Rör AB,Katrineholm,,SE3,Standard,Mikael Lindgren,mikael.l@mahlqvist.se,070-944 43 42,http://www.mahlqvist-ror.se,,,,,4,C
+Mälardalens Energi & VVS AB,Eskilstuna,,SE3,Standard,Ted Enbuske,info@malardalensvvs.se,079-585 67 27,https://www.malardalensvvs.se,,,,,4,C
+"Mälardalens Rör & Montage AB, MRM",Eskilstuna,Eskilstuna,SE3,Standard,Patrik Westerlund,kontakt@mrmab.se,0706-877 328,http://www.mrmab.se,,,,,4,C
+Månsson Rör & Värmepumpar AB i Norrköping,Norrköping,,SE3,Standard,Martin Tornmalm,martin@manssonror.se,072-987 48 15,,,,,,4,C
+Nilsson & Stenman Rör AB,Degerfors,Degerfors med omnejd,SE3,Standard,Isak Nilsson,stenman.nsror@gmail.com,070-744 41 13,,,,,,4,C
+Nilsson & Stenman Rör AB,Karlskoga,Karlskoga med omnejd,SE3,Standard,Isak Nilsson,stenman.nsror@gmail.com,0707 44 41 13,,,,,,4,C
+Nordisk Byggentrepenad,Haninge,,SE3,Standard,Lars Nirmark,info@nbsverige.se,08-512 200 72,https://www.nordiskbyggentreprenad.se,,,,,4,C
+Nordsvensk värme,Sjulsmark,i Sjulsmark och Älvsbyn,SE3,Servicepartner,Mattias Nilsson,nsv@datapost.se,070-6439410,,,,,,4,C
+Northstruct AB,Norsborg,,SE3,Standard,Adam Ceven,a.ceven@northstruct.com,08-721 79 00,https://www.northstruct.com,,,,,4,C
+NÅ Widell Rör & Konsult AB,Lidköping,,SE3,Standard,Kjell Gustafsson,kjell@widellsror.se,0510-23110,http://www.widellsror.se/,,,,,4,C
+Oppunda VVS-Service AB,Katrineholm,,SE3,Standard,Stefan Glimring,stefan@oppundavvs.se,070-96 50 036,,,,,,4,C
+Oxelösunds Rör,Oxelösund,,SE3,Standard,Mikael Nilsson,info@ox-ror.se,0155-304 25,,,,,,4,C
+PLVVS & Fastigheter AB,Söderköping,,SE3,Standard,Peter Larsson,peter@plvvs.se,0708126107,https://plvvs.se/,,,,,4,C
+Patrik Erikssons Rör AB,Vindeln,,SE3,Standard,Patrik Eriksson,info@erikssonsror.com,070-3506753,https://erikssonsror.com/om-oss/,,,,,4,C
+Peter Blomqvist VVS AB,Rydaholm,,SE3,Standard,,blomqvistvvs@rydaholm.se,070-509 38 77,,,,,,4,C
+Piteå Rörservice AB,Hortlax,,SE3,Standard,Alexander Forsberg och Anders Berggren,info@pitearorservice.se,070-57 69 838 / 070-57 69 848,,,,,,4,C
+R.A.s Rör AB,Jönköping,"jönköping, habo, mullsjö",SE3,Servicepartner,Roland och Agneta Artursson,info@rasror.se,036-71 51 90,http://www.rasror.se,,,,,4,C
+RV-gruppen AB,Bro,Stockholm,SE3,Standard,Björn Odelstrand,bjorn@rvgruppen.se,073-311 77 06,https://www.rvgruppen.se,,,,,4,C
+Radiator VVS,Brämhult,Västra Götalands län,SE3,Standard,Johan Rydebo,johan.rydebo@radiatorvvs.se,070-6214066,https://www.radiatorvvs.se/,,,,,4,C
+Radiator VVS,Halmstad,,SE3,Standard,Michael Bengtsson,michael.bengtsson@radiatorvvs.se,010-1786770,https://www.radiatorvvs.se/,,,,,4,C
+Radiator VVS AB,Ludvika,,SE3,Standard,Roger Danielsson,roger.danielsson@radiatorvvs.se,010-4586653,,,,,,4,C
+Radiator VVS AB,Örebro,Region 3,SE3,Standard,Thed Nilsson,thed.nilsson@radiatorvvs.se,+4619273000,https://www.radiatorvvs.se/var-vi-finns/orebro-huvudkontor/,,,,,4,C
+Rockneby VVS Service AB,Rockneby,"Kalmar, Mönsterås",SE3,Standard,Per Karlsson,per@rocknebyvvs.se,0707-410760,,,,,,4,C
+Rollsbo Rörläggeri AB,Kungälv,"Kungälv, Västra Götaland",SE3,Standard,Martin Bergqvist,martin.bergqvist@rollsboror.se,030-351 100,http://www.rollsboror.se,,,,,4,C
+RÖRAB Infra AB,Sollentuna,Stockholmsregionen,SE3,Standard,Eric Örnberg,eric@rorab.se,08-590 341 30,http://www.rorab.se,,,,,4,C
+Rågård Rör & Teknik AB,Skattkärr,,SE3,Servicepartner,Anders Rågård,info@ragard.se,054-4442150,http://www.ragard.se,,,,,4,C
+Röraktiebolaget Helmer Blomkvist,Stallarholmen,,SE3,Standard,Christoffer Spetz,info@blomkvistror.se,070-288 73 49,,,,,,4,C
+Rörbolaget i Smålandsstenar AB,Smålandsstenar,,SE3,Standard,Martin Karlsson,martin@rorbolaget.com,0371-308 15,http://www.rorbolaget.com,,,,,4,C
+Rörledningsfirma B.Erlandssons AB,Vänersborg,Västergötland,SE3,Standard,Jesper Myreborn,,+46738434331,,,,,,4,C
+Rörmokeriet Bauer AB,Åsele Kommun,,SE3,Standard,Peter Bauer,rormokerietbauer@gmail.com,070-5500017,,,,,,4,C
+Rörtjänst i Mellerud AB,Mellerud,,SE3,Standard,,inforortjanst@gmail.com,0530-109 93,,,,,,4,C
+Rörtjänst i Sveg AB,Sveg,i Härjedalen,SE3,Standard,Per Johansson,info@rortjanstisveg.se,0680-10527,http://www.rortjanstisveg.se,,,,,4,C
+Samuel & Kåge Montage AB,Alunda,Uppsala län,SE3,Standard,Karl-Gustav Johansson,info@skmontage.se,070-543 23 00,,,,,,4,C
+Sandbergs Rör i Urshult AB,Urshult,,SE3,Standard,Karin Carlsson,info@sandbergs-ror.se,0477-20240,http://www.sandbergs-ror.se,,,,,4,C
+Sandbäckens Rör,Jönköping,,SE3,Standard,Klas Meijer,klas.meijer@sandbackens.se,070-410 43 08,http://www.sandbackens.se,,,,,4,C
+Sandbäckens Rör i Norrköping AB,Norrköping,,SE3,Standard,Hampus Karlsson Ström,hampus.k.strom@sandbackens.se,0707-15 26 80,https://sandbackens.se/,,,,,4,C
+Sandbäckens Rör i Visby AB,Visby,,SE3,Standard,"Peter Jakobsson (Försäljning)
+Magnus Gomander (Service)",peter.jakobsson@sandbackens.se,0707-456174 / 0707-456173,,,,,,4,C
+Sandbäckens rör i Linköping AB,Linköping,,SE3,Standard,Urban Lagerstrand,urban.lagerstrand@sandbackens.se,073-029 91 47,,,,,,4,C
+Sandbäckens rör i Nyköping,Nyköping,,SE3,Standard,Örjan Johansson,orjan.johansson@sandbackens.se,+46706717208,,,,,,4,C
+Sjöstad Service & Energi AB,Karlstad,,SE3,Standard,Sune Jonsson,sjostadservice@gmail.com,+46 70 3116735,,,,,,4,C
+Sjöstad Service & Energi AB,Torsby,,SE3,Standard,Sune Jonsson,sjostadservice@gmail.com,+46 70 3116735,,,,,,4,C
+Skärgårdens VVS & Plattsättning AB,Åkersberga,,SE3,Standard,Kalle Witt,kalle@skargardensvvs.com,08-680 70 70,https://skargardensvvs.com/,,,,,4,C
+Soukolo Rör AB,Övertorneå,,SE3,Standard,Fredrik Niemi,fredrikniemi@hotmail.com,070-2434807,,,,,,4,C
+Stora Mellby Rör AB,Trollhättan,,SE3,Standard,Bengt Andersson,info@mellbyror.se,0520-823 84,,,,,,4,C
+Stora Mellby Rör AB,Alingsås,,SE3,Standard,Bengt Andersson,info@mellbyror.se,0322-61 19 80,,,,,,4,C
+Strömstad Värme & Sanitet,Strömstad,,SE3,Standard,Conny Andersson,conny@comfort-stromstad.com,0526-130 75,http://www.comfort-stromstad.se/,,,,,4,C
+"Sundström, Lars AB",Linghed,,SE3,Standard,Hans Heed,info@larssundstromab.se,0246-224 00,,,,,,4,C
+Sundåsens Rör AB,Domsjö,i Örnsköldsviks kommun,SE3,Standard,Jan Norberg,info@sundasensror.se,0660-51313,http://www.sundasensror.se,,,,,4,C
+Sävsjö Rörtjänst AB,Sävsjö,Sävsjö Kommun,SE3,Standard,Johnny Eriksson,info@savsjorortjanst.se,0382-61531,https://www.savsjorortjanst.se/,,,,,4,C
+Söderholms El & VVS AB,Bromma,,SE3,Standard,Mikael Iverborg,mikael@iverborg.se,08-25 30 33,http://soderholms.se,,,,,4,C
+Söderlunds Rör AB,Tierp,,SE3,Servicepartner,Magnus Högberg,magnus@sratierp.se,0293-22730,http://www.sratierp.se,,,,,4,C
+Södervads Rör AB,Fjärdhundra,,SE3,Standard,Andreas Emet,sodervadror@hotmail.com,076-005 83 50,http://sodervadror.se,,,,,4,C
+Teknikföretaget Johan Mattsson AB,Överturingen,,SE3,Standard,Johan Mattsson,mail@johanmattsson.se,070-3608428,,,,,,4,C
+Tenhults Rör,Jönköping/Tenhult,Jönköping,SE3,Standard,Daniel Larsson,daniel@tenhultsror.se,036-91700,https://www.tenhultsror.se/,,,,,4,C
+Ternstedt Invent AB Kisa,Kisa,,SE3,Standard,Daniel Eskilsson,daniel.eskilsson@ternstedtinvent.se,0494-699108,,,,,,4,C
+Ternstedt Invent AB Linköping,Linköping,,SE3,Standard,Daniel Eskilsson,daniel.eskilsson@ternstedtinvent.se,013-101 777,https://comfort.se/medlem/ternstedt-invent-ab,,,,,4,C
+Ternstedt Invent AB Rimforsa,Rimforsa,,SE3,Standard,Daniel Eskilsson,daniel.eskilsson@ternstedtinvent.se,0494-699108,,,,,,4,C
+Ternstedt Invent AB Västervik,Västervik,,SE3,Standard,Per Aulin,per.aulin@thernstedtinvetn.se,0490-679 01,,,,,,4,C
+Ternstedt Invent/Åtvidabergs Rör,Åtvidaberg,,SE3,Servicepartner,Daniel Eskilsson,daniel.eskilsson@ternstedtinvent.se,0120-29590,http://comfortatvidaberg.se,,,,,4,C
+Thermia Värmepumpar,Arvika,,SE3,Standard,TKG admin,tkg@thermia.se,0570-81300,,,,,,4,C
+Tholfs Rör,Kumla,,SE3,Standard,Kenneth Tholf,kenneth@tholfsror.se,019-57 40 66,,,,,,4,C
+Tonys VVS i Töcksfors AB,Töcksfors,,SE3,Standard,Tony Andersson,tony@tonysvvs.se,070-516 11 29,http://www.tonysvvs.se,,,,,4,C
+Tåsjö Rör & Bygg AB,HOTING,,SE3,Standard,Anders Eriksson,anders@tasjorb.se,076-1478690,,,,,,4,C
+Ulvsby Rör AB,Kristinehamn,Värmland,SE3,Standard,Tony Olsson,tony@ulvsbyror.se,"073-506 61 14, 054-86 67 09",https://ulvsbyror.se,,,,,4,C
+Ulvsby Rör AB & Climacare,Filipstad,Värmland,SE3,Standard,Tony Jonsson och Minjamin Olsson,"tony@ulvsbyror.se, minjamin.olsson@climacare.se","073-50 66 114, 070-822 38 07",https://ulvsbyror.se/,,,,,4,C
+V L Värmepumpservice AB,Tumba,,SE3,Standard,Vincent Lövgren,vincent@vl-vps.se,0730-55 25 00,http://www.vl-vps.se,,,,,4,C
+VVS & Energi i Kåge AB,Kåge,i Skellefteå kommun,SE3,Standard,Per Holmbom/Anders Holmbom,mail@vvsochenergi.se,070-6853782/070-6853781,http://www.vvsochenergi.se,,,,,4,C
+VVS Kompaniet,Säffle,,SE3,Standard,Cornelia Erlingsson,vvskompaniet@gmail.com,076-81 41 033,,,,,,4,C
+VVS-Arbeten i Torsby AB,Torsby,,SE3,Standard,Tomas Johansson,vvs-arbeten@telia.com,070 65 82 651,,,,,,4,C
+Vetlanda Rör AB,Vetlanda,Vetlanda och Eksjö,SE3,Standard,Johan Pettersson,johan@vetlandaror.se,0383-158 49,,,,,,4,C
+Vidja Rörteknik AB,FARSTA,,SE3,Standard,Fredrik Heckscher,fredrik@vidjarorteknik.se,070-455 15 51,http://www.vidjarorteknik.se,,,,,4,C
+Vinbergs Rör,Falkenberg,,SE3,Standard,Martin Haglund,martin@vinbergsror.se,0346-71 71 55,,,,,,4,C
+Vislanda Rörtjänst AB,Älmhult,"Vislanda, Älmhult,Vislanda,  Alvesta, Växjö och Ljungby med omnejd.",SE3,Standard,Lars Svensson,info@vislandarortjanst.se,0472-342 77,,,,,,4,C
+Vislanda Rörtjänst AB,Vislanda,"Vislanda, Älmhult, Alvesta, Växjö och Ljungby med omnejd.",SE3,Standard,Lars Svensson,info@vislandarortjanst.se,0472-342 77,http://www.vislandarortjanst.se/,,,,,4,C
+Värme & Sanitet i Halmstad AB,Halmstad,,SE3,Standard,Charlie Nilsson,info@varmesanitetab.se,+46729916500,,,,,,4,C
+Värmebolaget AB,Sundbyberg,Stockholmsregionen,SE3,Standard,Tomas Dehnisch,varmebolaget@telia.com,070-578 53 10,http://www.varmebolaget.se,,,,,4,C
+Västkustens Entreprenad & VVS AB,Långås,,SE3,Standard,Christopher Fällgren,christopher@vastkustens.com,079-201 96 52,https://vastkustens.com/,,,,,4,C
+Wettersol AB,Bankeryd,Region 4,SE3,Standard,"036-336 68 16
+Kristofer.svensson@wettersol.se",Daniel.mattsin@wettersol.se,036-333 62 80,https://www.wettersol.se,,,,,4,C
+Ylipääs Bygg i Pajala Aktiebolag,PAJALA,,SE3,Standard,Samuel Ylipää,samuel@ylipaasab.se,070-3903901,,,,,,4,C
+Åkerholms Rör AB,Höör,,SE3,Standard,Per Tengberg,info@akerholmsror.se,0413-230 25,http://www.akerholmsror.se,,,,,4,C
+Åseda Värme o Sanitet AB,Åseda,Växjö och Uppvidinge,SE3,Servicepartner,Jan Johansson,jan@asedavarme.se,0706563661,http://www.asedavarme.se/,,,,,4,C
+Öckerö Rörläggeri,Öckerö,,SE3,Standard,Christian Johansson,info@oror.se,031-96 58 05,http://www.oror.se,,,,,4,C
+Blomquist Rör AB,SÖDERHAMN,,SE2,Standard,Staffan Persson,staffan@blomquistror.se,070-5377114,,,,,,3,C
+Blomquist Rör AB,Bollnäs,,SE2,Standard,Staffan Blomquist,staffan@blomquistror.se,070-5377114,https://blomquistror.se/,,,,,3,C
+Bravida Sverige AB,Östersund,,SE2,Standard,Simon Johansson,simon.m.johansson@bravida.se,076-832 54 49,http://www.bravida.se,,,,,3,C
+Bravida Sverige AB (fd Rex Rör),Sundsvall,,SE2,Standard,Tobias Karlsson,Tobias.x.Karlsson@bravida.se,060-663920,http://www.bravida.se,,,,,3,C
+Bryngels AB,Hudiksvall,"i Hudiksvall, Söderhamn, Nordanstig och Bollnäs kommuner",SE2,Standard,Erik Lindé,info@bryngels.se,0650-560012,http://www.bryngels.se,,,,,3,C
+Eklunds Mora AB,Mora,Mora/ Orsa/ Särna/ Älvdalen/ Rättvik/ Idre,SE2,Servicepartner,Thomas Eriksson,thomas.eriksson@eklundsmora.se,0250-585000,http://www.eklundsmora.se,,,,,3,C
+GM VVS & Energi i Gästrikland AB,Gävle,Gästrikland,SE2,Standard,Marcus Boström,marcus@gmvvs.se,070-​517 25 10,https://gmvvs.se/,,,,,3,C
+Järvsö Värme och Sanitet AB,JÄRVSÖ,Gävleborgs län,SE2,Standard,Lars Näsman,lars.n@jvsab.se,0651-41140,http://www.jvsab.se/,,,,,3,C
+Olja & Sanitet i Sollefteå AB,Sollefteå,,SE2,Standard,Ulf Westin,ulf@oljasanitet.nu,070-6644935,,,,,,3,C
+Radiator VVS AB,Härnösand,,SE2,Standard,Daniel Wiklund,daniel.wiklund@radiatorvvs.se,+46104586691,https://www.radiatorvvs.se/kontakta-oss/harnosand,,,,,3,C
+Radiator VVS AB i Kramfors,Kramfors,,SE2,Standard,Patrik Berglund,patrik.berglund@radiatorvvs.se,010-4586695,,,,,,3,C
+SebSalo Energi AB,ÖSTERSUND,,SE2,Standard,Jens Lund,jens.lund@sebsalo.se,073-0299714,,,,,,3,C
+VVS Montörerna i Gästrikland AB,Gävle,,SE2,Standard,Henrik Olsson,henrik@vvsmontorerna.se,026 -14 58 81,http://www.vvsmontorerna.se/,,,,,3,C
+Energiteamet i Umeå AB,UMEÅ,,SE1,Standard,Magnus Häggström,magnus@energiteamet.com,070-588 19 73,https://www.energiteamet.com/,,,,,2,C
+Energiteknik Lennart Kruuka,Kiruna,,SE1,Standard,Lennart Kruuka,lkenergiteknik@gmail.com,070-291 57 41,,,,,,2,C
+KI EL & Värme,Kalix,Norrbotten,SE1,Standard,Peter Isaksson,Ki.el.varme@gmail.com,070-572 28 46,https://www.ki-ab.se,,,,,2,C
+Linders VVS i Lycksele AB,Lycksele,Västerbotten,SE1,Standard,Henrik Linder,henrik.linder@hotmail.se,070-360 72 46,,,,,,2,C
+Rörcentrum i Luleå AB,Luleå,,SE1,Standard,Robin Karlsson,robin.karlsson@bad-varme.se,070 - 233 14 62,,,,,,2,C
+T Wennströms Rör & Energiteknik,Gällivare,,SE1,Standard,Tomas Wennström,wennstromsror@gmail.com,070-528 5094,,,,,,2,C
