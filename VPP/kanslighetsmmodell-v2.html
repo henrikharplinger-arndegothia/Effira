@@ -300,7 +300,7 @@
 
       <div class="scenarios" style="margin-bottom:20px">
         <button class="scenario-btn" onclick="setScenario('conservative',this)">Konservativt</button>
-        <button class="scenario-btn active" onclick="setScenario('base',this)">Bas</button>
+        <button class="scenario-btn active" onclick="setScenario('balanced',this)">Balanserat</button>
         <button class="scenario-btn" onclick="setScenario('optimistic',this)">Optimistiskt</button>
         <button class="scenario-btn" onclick="setScenario('peak',this)">Toppnivå (Apr 2025)</button>
       </div>
@@ -450,7 +450,7 @@
             <span class="param-value" id="val-fixed">1,35 Mkr/mån</span>
           </div>
         </div>
-        <input type="range" id="sl-fixed" min="500000" max="3000000" step="50000" value="1350000" oninput="calc()">
+        <input type="range" id="sl-fixed" min="500000" max="3000000" step="10000" value="1350000" oninput="calc()">
         <div class="param-markers" id="markers-sl-fixed"></div>
       </div>
 
@@ -474,7 +474,7 @@
             <span class="param-value" id="val-varcost">69 kr/mån</span>
           </div>
         </div>
-        <input type="range" id="sl-varcost" min="30" max="150" step="5" value="69" oninput="calc()">
+        <input type="range" id="sl-varcost" min="30" max="150" step="1" value="69" oninput="calc()">
         <div class="param-hint">4G, support, drift etc. Nuvarande: 69 kr/mån</div>
       </div>
 
@@ -973,10 +973,9 @@ function calc() {
 
 // ── SCENARIOS ────────────────────────────────────────────────
 const scenarios = {
-  // Bas och konservativt: FCR-D 7 EUR/MW/h → VPP ≈ 56 kr/pump/mån → stämmer med styrelseplanen
-  // Skillnaden mellan dem är enbart burn (1 350 vs 1 670 kkr/mån)
   conservative: { pumps:100000, kw:4,   duty:65, season:50, fcrdP:7,  afrrCapP:4,  afrrActP:40,  afrrActH:100, split:50, fx:11.5, fixed:1670000, subPrice:129, varCost:69 },
-  base:         { pumps:100000, kw:4,   duty:65, season:50, fcrdP:7,  afrrCapP:4,  afrrActP:40,  afrrActH:100, split:50, fx:11.5, fixed:1350000, subPrice:129, varCost:69 },
+  // Balanserat: används i styrelseplanens affärscase → VPP ≈ 125 kr/pump/mån (exakt 1 500 kr/år). Alla parametrar steg-justerade mot respektive slider (kw/duty/season/split/afrrActP/afrrActH) för att undvika att webbläsaren avrundar värdet vid inläsning.
+  balanced:     { pumps:100000, kw:4,   duty:65, season:50, fcrdP:16, afrrCapP:8,  afrrActP:50,  afrrActH:200, split:50, fx:11.5, fixed:1350000, subPrice:129, varCost:69 },
   optimistic:   { pumps:100000, kw:4.5, duty:70, season:55, fcrdP:20, afrrCapP:10, afrrActP:70,  afrrActH:150, split:55, fx:11.5, fixed:1350000, subPrice:129, varCost:69 },
   peak:         { pumps:100000, kw:4.5, duty:75, season:55, fcrdP:35, afrrCapP:18, afrrActP:100, afrrActH:280, split:55, fx:11.5, fixed:1350000, subPrice:129, varCost:69 },
 };
@@ -1003,7 +1002,7 @@ function setScenario(name, btn) {
 
 // ── INIT ─────────────────────────────────────────────────────
 initMarkers();
-calc();
+setScenario('balanced', document.querySelector('.scenario-btn.active'));
 </script>
 </body>
 </html>

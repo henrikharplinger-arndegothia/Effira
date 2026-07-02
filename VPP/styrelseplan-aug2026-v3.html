@@ -60,6 +60,42 @@ body {
 }
 .header-sub { font-size: 14px; color: var(--muted); }
 
+/* ── CAPITAL JOURNEY HERO ── */
+.cj-hero {
+  background: linear-gradient(135deg, #131722, #0d1220);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 30px 22px;
+  margin-bottom: 18px;
+}
+.cj-track { display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
+.cj-step { flex: 1; min-width: 150px; text-align: center; padding: 0 8px; }
+.cj-arrow { color: var(--muted2); font-size: 20px; padding: 0 4px 26px; flex: 0 0 auto; }
+.cj-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+.cj-val { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.cj-date { font-size: 12px; color: var(--muted); }
+.cj-step.in .cj-tag  { color: var(--blue); }
+.cj-step.in .cj-val  { color: #93c5fd; }
+.cj-step.be .cj-tag  { color: var(--green); }
+.cj-step.be .cj-val  { color: #4ade80; font-size: 20px; }
+.cj-step.out .cj-tag { color: var(--amber); }
+.cj-step.out .cj-val { color: #fbbf24; }
+.cj-note { margin-top: 16px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--bord2); padding-top: 12px; line-height: 1.5; }
+
+.cj-vision {
+  margin-top: 14px;
+  background: #0d1220;
+  border: 1px solid #1e2a50;
+  border-radius: 12px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cj-vision-num { font-size: 24px; font-weight: 700; color: #818cf8; white-space: nowrap; }
+.cj-vision-text { font-size: 13px; color: var(--muted); line-height: 1.5; flex: 1; min-width: 260px; }
+
 /* ── ASK HERO ── */
 .ask-hero {
   background: linear-gradient(135deg, #0d1f35 0%, #1a0f2e 100%);
@@ -336,6 +372,25 @@ td.bold { font-weight: 700; color: var(--text); }
 .bep-step.be .bep-label { color: var(--green); font-weight: 700; }
 .bep-note { margin-top: 20px; font-size: 12px; color: var(--muted); line-height: 1.5; border-top: 1px solid var(--bord2); padding-top: 12px; }
 
+/* ── GROWTH TRAJECTORY (static bar chart) ── */
+.growth-chart { margin-top: 16px; }
+.gc-bars { display: flex; align-items: flex-end; gap: 28px; height: 190px; padding: 0 4px 4px; }
+.gc-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+.gc-val { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.gc-bar { width: 100%; max-width: 84px; border-radius: 6px 6px 0 0; }
+.gc-col.confirmed .gc-bar { background: linear-gradient(180deg, #4ade80, #16a34a); }
+.gc-col.confirmed .gc-val { color: #4ade80; }
+.gc-col.projected .gc-bar { background: repeating-linear-gradient(135deg, #38bdf855, #38bdf855 6px, #38bdf822 6px, #38bdf822 12px); border: 1.5px dashed #38bdf8aa; border-bottom: none; }
+.gc-col.projected .gc-val { color: #38bdf8; }
+.gc-col.vision .gc-bar { background: repeating-linear-gradient(135deg, #818cf855, #818cf855 6px, #818cf822 6px, #818cf822 12px); border: 1.5px dashed #818cf8aa; border-bottom: none; }
+.gc-col.vision .gc-val { color: #818cf8; }
+.gc-label { margin-top: 10px; text-align: center; }
+.gc-year { font-size: 12px; font-weight: 600; color: var(--text); }
+.gc-units { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+.gc-caption { font-size: 11.5px; color: var(--muted); margin-top: 14px; line-height: 1.5; border-top: 1px solid var(--bord2); padding-top: 10px; }
+.gc-legend { display: flex; gap: 18px; margin-top: 10px; font-size: 11px; color: var(--muted); }
+.gc-legend-dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+
 blockquote {
   border-left: 3px solid var(--blue);
   padding: 16px 20px;
@@ -357,6 +412,64 @@ blockquote {
   <div class="header-eyebrow">Styrelseunderlag · Augusti 2026 · Konfidentiellt</div>
   <h1>Effira — Kapitalplan &amp; 12-månadersplan</h1>
   <div class="header-sub">Fas 1 av 3 &nbsp;·&nbsp; 10 Mkr &nbsp;·&nbsp; Bevisa modellen</div>
+</div>
+
+<!-- ═══════════════════════ KAPITALRESAN (HERO) ═══════════════════════ -->
+<div class="cj-hero">
+  <div class="cj-track">
+    <div class="cj-step in">
+      <div class="cj-tag">In</div>
+      <div class="cj-val">10 Mkr</div>
+      <div class="cj-date">Aug 2026</div>
+    </div>
+    <div class="cj-arrow">→</div>
+    <div class="cj-step in">
+      <div class="cj-tag">In</div>
+      <div class="cj-val">25 Mkr</div>
+      <div class="cj-date">Sommar 2027</div>
+    </div>
+    <div class="cj-arrow">→</div>
+    <div class="cj-step be">
+      <div class="cj-tag">Break-even</div>
+      <div class="cj-val">~9 000–11 000</div>
+      <div class="cj-date">enheter · ~2028</div>
+    </div>
+    <div class="cj-arrow">→</div>
+    <div class="cj-step out">
+      <div class="cj-tag">Ut</div>
+      <div class="cj-val">~33 Mkr/år</div>
+      <div class="cj-date">2029 · 15 000 enh.</div>
+    </div>
+  </div>
+  <div class="cj-note">Räknat på <strong>Balanserat</strong>-scenariot (se känslighetsanalys nedan). 35 Mkr totalt kapital tar bolaget till break-even och därefter självfinansierad tillväxt — varje enhet därefter är nettopositiv.</div>
+
+  <div class="growth-chart">
+    <div class="gc-bars">
+      <div class="gc-col confirmed" style="height:100%">
+        <div class="gc-val">33 Mkr/år</div>
+        <div class="gc-bar" style="height:60px"></div>
+      </div>
+      <div class="gc-col projected" style="height:100%">
+        <div class="gc-val">~111 Mkr/år</div>
+        <div class="gc-bar" style="height:120px"></div>
+      </div>
+      <div class="gc-col vision" style="height:100%">
+        <div class="gc-val">~222 Mkr/år</div>
+        <div class="gc-bar" style="height:190px"></div>
+      </div>
+    </div>
+    <div class="gc-bars" style="height:auto;padding-top:0">
+      <div class="gc-col" style="height:auto"><div class="gc-label"><div class="gc-year">2029</div><div class="gc-units">15 000 enh.</div></div></div>
+      <div class="gc-col" style="height:auto"><div class="gc-label"><div class="gc-year">~2031</div><div class="gc-units">50 000 enh.</div></div></div>
+      <div class="gc-col" style="height:auto"><div class="gc-label"><div class="gc-year">2033+</div><div class="gc-units">100 000 enh.</div></div></div>
+    </div>
+    <div class="gc-legend">
+      <div><span class="gc-legend-dot" style="background:#22c55e"></span>Bekräftad plan (Fas 2)</div>
+      <div><span class="gc-legend-dot" style="background:#38bdf8"></span>Projicerad (samma modell, ej finansierad ännu)</div>
+      <div><span class="gc-legend-dot" style="background:#818cf8"></span>Vision (marknadspotential, ej tidsatt)</div>
+    </div>
+    <div class="gc-caption">33 Mkr/år vid break-even 2029 är stationen, inte slutmålet. Från break-even är varje ny enhet nettopositiv och tillväxten självfinansierad — samma affärsmodell fortsätter skala mot en marknad på 500 000–600 000 svenska villor (och 3–4× det med Norden). Årtalen efter 2029 är illustrativa, inte kapitalbundna åtaganden.</div>
+  </div>
 </div>
 
 
@@ -669,6 +782,20 @@ blockquote {
     </table>
   </div>
   <p style="margin-top:12px; font-size:12px; color:var(--muted)">Burnen i Fas 2 är något högre (~1 800 kkr/mån vid full organisation). Break-even nås redan i samband med att VPP-intäkterna aktiveras (höst 2028), vid ~9 000–11 000 enheter.</p>
+
+  <div class="section-label" style="margin-top:28px;margin-bottom:10px">Känslighet: Konservativt ↔ Optimistiskt</div>
+  <p style="font-size:13px;color:var(--muted);max-width:720px;margin-bottom:14px">Konservativt och Optimistiskt delar samma flotta-antaganden (effekt, drifttid, säsong, Effiras andel) — skillnaden ligger enbart i vilka marknadspriser vi räknar på för FCR-D och aFRR. Balanserat lägger sig ungefär i mitten av det marknadsprisspannet och är den nivå vi står bakom i detta underlag.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Scenario</th><th class="num">VPP/enhet/år</th><th class="num">Totalt bidrag/enhet/år</th><th class="num">Break-even (1 350 kkr/mån)</th></tr></thead>
+      <tbody>
+        <tr><td>Konservativt</td><td class="num">671 kr</td><td class="num">1 391 kr</td><td class="num" style="color:#fbbf24">~11 500–12 000 enheter</td></tr>
+        <tr class="highlight"><td>Balanserat <span style="color:var(--muted);font-weight:400">— använt i detta case</span></td><td class="num pos">1 500 kr</td><td class="num pos">2 220 kr</td><td class="num pos">~7 000–7 500 enheter</td></tr>
+        <tr><td>Optimistiskt</td><td class="num">2 675 kr</td><td class="num">3 395 kr</td><td class="num" style="color:#4ade80">~4 700–5 000 enheter</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:12px; font-size:12px; color:var(--muted)">Vi räknar konsekvent på Balanserat i hela detta underlag — inte Optimistiskt. Det ger en break-even-siffra vi kan stå bakom även om marknadspriserna på flexibilitet utvecklas svagare än vi hoppas.</p>
 </div>
 
 <hr class="divider">

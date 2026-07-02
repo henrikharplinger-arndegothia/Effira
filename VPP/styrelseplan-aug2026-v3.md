@@ -3,6 +3,28 @@
 
 ---
 
+## Kapitalresan i korthet
+
+| | | | |
+|---|---|---|---|
+| **In** — 10 Mkr | **In** — 25 Mkr | **Break-even** — ~9 000–11 000 enh. | **Ut** — ~33 Mkr/år |
+| Aug 2026 | Sommar 2027 | ~2028 | 2029 · 15 000 enh. |
+
+Räknat på **Balanserat**-scenariot (se känslighetsanalys under Enhetsekonomi). 35 Mkr totalt kapital tar bolaget till break-even och därefter självfinansierad tillväxt — varje enhet därefter är nettopositiv.
+
+### Tillväxtkurvan fortsätter efter break-even
+
+33 Mkr/år vid break-even (2029) är en station, inte slutmålet. Från break-even är varje ny enhet nettopositiv och tillväxten självfinansierad:
+
+| | 2029 | ~2031 | 2033+ |
+|---|---|---|---|
+| **Enheter** | 15 000 | 50 000 | 100 000 |
+| **Intäkter** | **33 Mkr/år** (bekräftad plan, Fas 2) | ~111 Mkr/år (projicerad, samma modell) | ~222 Mkr/år (vision, marknadspotential) |
+
+Samma affärsmodell fortsätter skala mot en marknad på 500 000–600 000 svenska villor (och 3–4× det med Nordic-expansion). Årtalen efter 2029 är illustrativa, inte kapitalbundna åtaganden.
+
+---
+
 ## Situation
 
 Effira har en produkt som fungerar — den sänker kundens energikostnader, det är bevisat. Men vi har ännu inte en fungerande affär.
@@ -132,6 +154,18 @@ VPP-intäkterna börjar aktiveras höst 2028. Break-even vid ~9 000–11 000 enh
 |---|---|---|
 | 1 350 tkr | ~7 000–7 500 enheter | ~22 500 enheter |
 | 1 800 tkr | ~9 500–10 000 enheter | ~30 000 enheter |
+
+### Känslighet: Konservativt ↔ Optimistiskt
+
+Konservativt och Optimistiskt delar samma flotta-antaganden (effekt, drifttid, säsong, Effiras andel) — skillnaden ligger enbart i vilka marknadspriser vi räknar på för FCR-D och aFRR. Balanserat lägger sig ungefär i mitten av det marknadsprisspannet och är den nivå vi står bakom i detta underlag.
+
+| Scenario | VPP/enhet/år | Totalt bidrag/enhet/år | Break-even (1 350 kkr/mån) |
+|---|---|---|---|
+| Konservativt | 671 kr | 1 391 kr | ~11 500–12 000 enheter |
+| **Balanserat — använt i detta case** | **1 500 kr** | **2 220 kr** | **~7 000–7 500 enheter** |
+| Optimistiskt | 2 675 kr | 3 395 kr | ~4 700–5 000 enheter |
+
+Vi räknar konsekvent på Balanserat i hela detta underlag — inte Optimistiskt. Det ger en break-even-siffra vi kan stå bakom även om marknadspriserna på flexibilitet utvecklas svagare än vi hoppas.
 
 ---
 
