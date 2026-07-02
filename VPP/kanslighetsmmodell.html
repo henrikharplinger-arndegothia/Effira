@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Effira VPP — Känslighetsmodell</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0f1117;
+    color: #e8eaf0;
+    min-height: 100vh;
+    padding: 32px 24px;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 32px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 24px;
+    max-width: 1200px;
+  }
+
+  /* ── PANELS ── */
+  .panel {
+    background: #181c25;
+    border: 1px solid #252933;
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .panel-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #6b7280;
+    margin-bottom: 16px;
+  }
+
+  /* ── ZONE LEGEND ── */
+  .zone-legend {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 10px 12px;
+    background: #0f1117;
+    border-radius: 8px;
+    border: 1px solid #1e2230;
+  }
+
+  .zl-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #9ca3af;
+  }
+
+  .zl-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── SLIDERS ── */
+  .param-group {
+    margin-bottom: 18px;
+  }
+
+  .param-group:last-child { margin-bottom: 0; }
+
+  .param-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4b5563;
+    margin: 22px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #1e2230;
+  }
+
+  .param-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+  }
+
+  .param-name {
+    font-size: 13px;
+    color: #c9cdd8;
+  }
+
+  .param-value-group {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .zone-pill {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+  }
+
+  .param-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    min-width: 88px;
+    text-align: right;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    /* background set by JS */
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: 2px solid #1a1e28;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    transition: transform 0.1s;
+  }
+
+  input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+  }
+
+  /* Reference markers row */
+  .param-markers {
+    position: relative;
+    height: 18px;
+    margin-top: 3px;
+  }
+
+  .param-marker {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #4b5563;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .param-marker::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 4px;
+    background: #374151;
+    margin: 0 auto 2px;
+  }
+
+  .param-hint {
+    font-size: 11px;
+    color: #4b5563;
+    margin-top: 3px;
+  }
+
+  /* ── RIGHT COLUMN ── */
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* ── HERO NUMBERS ── */
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .hero-card {
+    background: #181c25;
+    border: 1px solid #252933;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .hero-card.accent {
+    border-color: #1e3a5f;
+    background: #0d1f35;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #6b7280;
+    margin-bottom: 8px;
+  }
+
+  .hero-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-card.accent .hero-number { color: #60a5fa; }
+
+  .hero-sub {
+    font-size: 12px;
+    color: #4b5563;
+    margin-top: 4px;
+  }
+
+  /* ── MARKET TABLE ── */
+  .market-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .market-table th {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #4b5563;
+    text-align: right;
+    padding: 0 12px 10px;
+    border-bottom: 1px solid #1e2230;
+  }
+
+  .market-table th:first-child { text-align: left; padding-left: 0; }
+
+  .market-table td {
+    padding: 10px 12px;
+    text-align: right;
+    border-bottom: 1px solid #1a1e28;
+    color: #c9cdd8;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .market-table td:first-child { text-align: left; padding-left: 0; }
+
+  .market-table tr:last-child td {
+    border-bottom: none;
+    font-weight: 700;
+    color: #fff;
+    padding-top: 14px;
+  }
+
+  .market-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .market-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-fcrn     { background: #8b5cf6; }
+  .dot-fcrd     { background: #3b82f6; }
+  .dot-afrr-cap { background: #10b981; }
+  .dot-afrr-act { background: #f59e0b; }
+  .dot-total    { background: #fff; }
+
+  .effira-share { color: #60a5fa !important; font-weight: 600 !important; }
+
+  /* ── SCALE TABLE ── */
+  .scale-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .scale-table th {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #4b5563;
+    text-align: right;
+    padding: 0 8px 10px;
+    border-bottom: 1px solid #1e2230;
+  }
+
+  .scale-table th:first-child { text-align: left; padding-left: 0; }
+
+  .scale-table td {
+    padding: 9px 8px;
+    text-align: right;
+    border-bottom: 1px solid #1a1e28;
+    color: #c9cdd8;
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+  }
+
+  .scale-table td:first-child { text-align: left; padding-left: 0; }
+  .scale-table tr:last-child td { border-bottom: none; }
+
+  .highlight-row td { color: #60a5fa !important; font-weight: 600; }
+
+  /* ── BAR CHART ── */
+  .bar-section { margin-top: 4px; }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .bar-label { font-size: 12px; color: #9ca3af; width: 90px; flex-shrink: 0; }
+
+  .bar-track {
+    flex: 1;
+    height: 8px;
+    background: #1e2230;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+
+  .bar-amount {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    width: 70px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  /* ── SCENARIO BUTTONS ── */
+  .scenarios { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .scenario-btn {
+    background: #1e2230;
+    border: 1px solid #252933;
+    border-radius: 8px;
+    color: #c9cdd8;
+    font-size: 12px;
+    padding: 7px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+
+  .scenario-btn:hover { background: #252933; border-color: #3b82f6; color: #fff; }
+  .scenario-btn.active { background: #1e3a5f; border-color: #3b82f6; color: #60a5fa; }
+
+  /* ── UNIT CARDS ── */
+  .unit-row { display: flex; gap: 12px; }
+
+  .unit-card {
+    flex: 1;
+    background: #0d1117;
+    border: 1px solid #1e2230;
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .unit-num { font-size: 22px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+  .unit-lbl { font-size: 11px; color: #6b7280; margin-top: 3px; }
+</style>
+</head>
+<body>
+
+<h1>Effira VPP — Känslighetsmodell</h1>
+<p class="subtitle">Justera parametrarna och se intäkterna uppdateras i realtid. Slider-färgen visar om antagandet är rimligt.</p>
+
+<div class="layout">
+
+  <!-- LEFT: CONTROLS -->
+  <div>
+    <div class="panel">
+      <div class="panel-title">Parametrar</div>
+
+      <!-- Zone legend -->
+      <div class="zone-legend">
+        <span class="zl-item"><span class="zl-dot" style="background:#ef4444"></span>Extremt/osannolikt</span>
+        <span class="zl-item"><span class="zl-dot" style="background:#f59e0b"></span>Konservativt</span>
+        <span class="zl-item"><span class="zl-dot" style="background:#22c55e"></span>Rimligt</span>
+        <span class="zl-item"><span class="zl-dot" style="background:#38bdf8"></span>Optimistiskt</span>
+        <span class="zl-item"><span class="zl-dot" style="background:#a855f7"></span>Extremt högt</span>
+      </div>
+
+      <!-- Scenarios -->
+      <div class="scenarios" style="margin-bottom:20px">
+        <button class="scenario-btn" onclick="setScenario('conservative',this)">Konservativt</button>
+        <button class="scenario-btn active" onclick="setScenario('base',this)">Bas</button>
+        <button class="scenario-btn" onclick="setScenario('optimistic',this)">Optimistiskt</button>
+        <button class="scenario-btn" onclick="setScenario('peak',this)">Toppnivå (Apr 2025)</button>
+      </div>
+
+      <div class="param-section-label">Flotta</div>
+
+      <!-- Antal pumpar -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">Antal pumpar</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-pumps"></span>
+            <span class="param-value" id="val-pumps">100 000</span>
+          </div>
+        </div>
+        <input type="range" id="sl-pumps" min="1000" max="200000" step="1000" value="100000" oninput="calc()">
+        <div class="param-markers" id="markers-sl-pumps"></div>
+      </div>
+
+      <!-- Effektuttag -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">Effektuttag per pump</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-kw"></span>
+            <span class="param-value" id="val-kw">4 kW</span>
+          </div>
+        </div>
+        <input type="range" id="sl-kw" min="2" max="8" step="0.5" value="4" oninput="calc()">
+        <div class="param-markers" id="markers-sl-kw"></div>
+      </div>
+
+      <!-- Driftcykel -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">Driftcykel</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-duty"></span>
+            <span class="param-value" id="val-duty">65%</span>
+          </div>
+        </div>
+        <input type="range" id="sl-duty" min="30" max="90" step="5" value="65" oninput="calc()">
+        <div class="param-hint">Hur stor del av säsongen pumpen faktiskt kör</div>
+      </div>
+
+      <!-- Säsongsandel -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">Säsongsandel</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-season"></span>
+            <span class="param-value" id="val-season">50%</span>
+          </div>
+        </div>
+        <input type="range" id="sl-season" min="30" max="70" step="5" value="50" oninput="calc()">
+        <div class="param-hint">Uppvärmningssäsong av årets timmar (okt–apr ≈ 50%)</div>
+      </div>
+
+      <div class="param-section-label">Marknader</div>
+
+      <!-- FCR-N pris -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">FCR-N pris</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-fcrn-price"></span>
+            <span class="param-value" id="val-fcrn-price">15 EUR/MW/h</span>
+          </div>
+        </div>
+        <input type="range" id="sl-fcrn-price" min="2" max="60" step="1" value="15" oninput="calc()">
+        <div class="param-markers" id="markers-sl-fcrn-price"></div>
+      </div>
+
+      <!-- FCR-D pris -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">FCR-D pris</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-fcrd-price"></span>
+            <span class="param-value" id="val-fcrd-price">15 EUR/MW/h</span>
+          </div>
+        </div>
+        <input type="range" id="sl-fcrd-price" min="2" max="60" step="1" value="15" oninput="calc()">
+        <div class="param-markers" id="markers-sl-fcrd-price"></div>
+      </div>
+
+      <!-- aFRR kapacitetspris -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">aFRR kapacitetspris</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-afrr-cap-price"></span>
+            <span class="param-value" id="val-afrr-cap-price">8 EUR/MW/h</span>
+          </div>
+        </div>
+        <input type="range" id="sl-afrr-cap-price" min="2" max="30" step="1" value="8" oninput="calc()">
+        <div class="param-hint">Typiskt 5–15 EUR/MW/h</div>
+      </div>
+
+      <!-- aFRR aktiveringspris -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">aFRR aktiveringspris</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-afrr-act-price"></span>
+            <span class="param-value" id="val-afrr-act-price">50 EUR/MWh</span>
+          </div>
+        </div>
+        <input type="range" id="sl-afrr-act-price" min="10" max="200" step="5" value="50" oninput="calc()">
+        <div class="param-hint">Typiskt 35–90 EUR/MWh — varierar kraftigt</div>
+      </div>
+
+      <!-- aFRR aktiveringstimmar -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">aFRR aktiveringstimmar/år</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-afrr-act-h"></span>
+            <span class="param-value" id="val-afrr-act-h">100 h</span>
+          </div>
+        </div>
+        <input type="range" id="sl-afrr-act-h" min="10" max="500" step="10" value="100" oninput="calc()">
+        <div class="param-hint">Typiskt 80–200 h — hur ofta Svenska Kraftnät aktiverar</div>
+      </div>
+
+      <div class="param-section-label">Affär</div>
+
+      <!-- Split -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">Effiras andel</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-split"></span>
+            <span class="param-value" id="val-split">50%</span>
+          </div>
+        </div>
+        <input type="range" id="sl-split" min="30" max="70" step="5" value="50" oninput="calc()">
+        <div class="param-hint">Resterande andel går till Tibber (BSP)</div>
+      </div>
+
+      <!-- FX -->
+      <div class="param-group">
+        <div class="param-label">
+          <span class="param-name">SEK/EUR</span>
+          <div class="param-value-group">
+            <span class="zone-pill" id="zone-sl-fx"></span>
+            <span class="param-value" id="val-fx">11,5</span>
+          </div>
+        </div>
+        <input type="range" id="sl-fx" min="9" max="14" step="0.5" value="11.5" oninput="calc()">
+        <div class="param-markers" id="markers-sl-fx"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT: RESULTS -->
+  <div class="right-col">
+
+    <div class="hero">
+      <div class="hero-card">
+        <div class="hero-label">Total kapacitet</div>
+        <div class="hero-number" id="h-mw">—</div>
+        <div class="hero-sub">MW tillgänglig</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-label">Bruttointäkt/år</div>
+        <div class="hero-number" id="h-gross">—</div>
+        <div class="hero-sub" id="h-gross-eur">—</div>
+      </div>
+      <div class="hero-card accent">
+        <div class="hero-label">Effiras andel/år</div>
+        <div class="hero-number" id="h-effira">—</div>
+        <div class="hero-sub" id="h-effira-eur">—</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Per enhet</div>
+      <div class="unit-row">
+        <div class="unit-card">
+          <div class="unit-num" id="u-year">—</div>
+          <div class="unit-lbl">kr / enhet / år</div>
+        </div>
+        <div class="unit-card">
+          <div class="unit-num" id="u-month">—</div>
+          <div class="unit-lbl">kr / enhet / mån</div>
+        </div>
+        <div class="unit-card">
+          <div class="unit-num" id="u-hours">—</div>
+          <div class="unit-lbl">tillgängliga timmar / år</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Intäkter per marknad</div>
+      <div class="bar-section" id="bar-section"></div>
+      <table class="market-table" style="margin-top:20px">
+        <thead>
+          <tr>
+            <th>Marknad</th>
+            <th>MW</th>
+            <th>Timmar</th>
+            <th>Brutto/år</th>
+            <th>Effira/år</th>
+          </tr>
+        </thead>
+        <tbody id="market-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Skalningsvy</div>
+      <table class="scale-table">
+        <thead>
+          <tr>
+            <th>Enheter</th>
+            <th>Kapacitet</th>
+            <th>Brutto/år</th>
+            <th>Effira/år</th>
+            <th>Per enhet/år</th>
+          </tr>
+        </thead>
+        <tbody id="scale-tbody"></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── ZONE DEFINITIONS ──────────────────────────────────────────
+// Each slider has zones from min→max with color + label.
+// "Rimligt" = the green zone that represents realistic assumptions.
+const ZONE_DEFS = {
+  'sl-pumps': {
+    zones: [
+      { to: 5000,   color: '#ef4444', label: 'Extremt lågt' },
+      { to: 20000,  color: '#f59e0b', label: 'Konservativt' },
+      { to: 100000, color: '#22c55e', label: 'Rimligt' },
+      { to: 150000, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 200000, color: '#a855f7', label: 'Extremt högt' },
+    ],
+    markers: [{ v: 2000, l: 'Steg 1' }, { v: 10000, l: 'Steg 2' }, { v: 100000, l: 'Steg 3' }]
+  },
+  'sl-kw': {
+    zones: [
+      { to: 2.5, color: '#ef4444', label: 'Extremt lågt' },
+      { to: 3.5, color: '#f59e0b', label: 'Konservativt' },
+      { to: 5.5, color: '#22c55e', label: 'Rimligt' },
+      { to: 6.5, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 8,   color: '#a855f7', label: 'Extremt högt' },
+    ],
+    markers: [{ v: 3, l: 'Liten' }, { v: 4, l: 'Medel' }, { v: 6, l: 'Stor' }]
+  },
+  'sl-duty': {
+    zones: [
+      { to: 42, color: '#ef4444', label: 'Extremt lågt' },
+      { to: 55, color: '#f59e0b', label: 'Konservativt' },
+      { to: 75, color: '#22c55e', label: 'Rimligt' },
+      { to: 83, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 90, color: '#a855f7', label: 'Extremt högt' },
+    ]
+  },
+  'sl-season': {
+    zones: [
+      { to: 38, color: '#ef4444', label: 'Extremt lågt' },
+      { to: 45, color: '#f59e0b', label: 'Konservativt' },
+      { to: 60, color: '#22c55e', label: 'Rimligt' },
+      { to: 65, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 70, color: '#a855f7', label: 'Extremt högt' },
+    ]
+  },
+  'sl-fcrn-price': {
+    zones: [
+      { to: 6,  color: '#ef4444', label: 'Under historiskt min' },
+      { to: 12, color: '#f59e0b', label: 'Konservativt' },
+      { to: 25, color: '#22c55e', label: 'Rimligt' },
+      { to: 42, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 60, color: '#a855f7', label: 'Extremt högt' },
+    ],
+    markers: [{ v: 5, l: 'Min ~5' }, { v: 37, l: "Apr '25: 37" }]
+  },
+  'sl-fcrd-price': {
+    zones: [
+      { to: 6,  color: '#ef4444', label: 'Under historiskt min' },
+      { to: 12, color: '#f59e0b', label: 'Konservativt' },
+      { to: 25, color: '#22c55e', label: 'Rimligt' },
+      { to: 42, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 60, color: '#a855f7', label: 'Extremt högt' },
+    ],
+    markers: [{ v: 5, l: 'Min ~5' }, { v: 37, l: "Apr '25: 37" }]
+  },
+  'sl-afrr-cap-price': {
+    zones: [
+      { to: 4,  color: '#ef4444', label: 'Extremt lågt' },
+      { to: 6,  color: '#f59e0b', label: 'Konservativt' },
+      { to: 15, color: '#22c55e', label: 'Rimligt' },
+      { to: 22, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 30, color: '#a855f7', label: 'Extremt högt' },
+    ]
+  },
+  'sl-afrr-act-price': {
+    zones: [
+      { to: 25,  color: '#ef4444', label: 'Extremt lågt' },
+      { to: 40,  color: '#f59e0b', label: 'Konservativt' },
+      { to: 90,  color: '#22c55e', label: 'Rimligt' },
+      { to: 130, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 200, color: '#a855f7', label: 'Extremt högt' },
+    ]
+  },
+  'sl-afrr-act-h': {
+    zones: [
+      { to: 40,  color: '#ef4444', label: 'Extremt lågt' },
+      { to: 80,  color: '#f59e0b', label: 'Konservativt' },
+      { to: 200, color: '#22c55e', label: 'Rimligt' },
+      { to: 350, color: '#38bdf8', label: 'Optimistiskt' },
+      { to: 500, color: '#a855f7', label: 'Extremt högt' },
+    ]
+  },
+  'sl-split': {
+    zones: [
+      { to: 38, color: '#ef4444', label: 'Dåligt för Effira' },
+      { to: 45, color: '#f59e0b', label: 'Konservativt' },
+      { to: 55, color: '#22c55e', label: 'Rimligt' },
+      { to: 63, color: '#38bdf8', label: 'Bra för Effira' },
+      { to: 70, color: '#a855f7', label: 'Osannolikt högt' },
+    ]
+  },
+  'sl-fx': {
+    zones: [
+      { to: 10,   color: '#ef4444', label: 'Stark SEK' },
+      { to: 10.5, color: '#f59e0b', label: 'Konservativt' },
+      { to: 12.5, color: '#22c55e', label: 'Rimligt' },
+      { to: 13.5, color: '#38bdf8', label: 'Svag SEK' },
+      { to: 14,   color: '#a855f7', label: 'Extremt' },
+    ],
+    markers: [{ v: 11.5, l: 'Idag ~11.5' }]
+  },
+};
+
+// ── ZONE HELPERS ──────────────────────────────────────────────
+function getZone(id, val) {
+  const def = ZONE_DEFS[id];
+  if (!def) return null;
+  for (const z of def.zones) {
+    if (val <= z.to) return z;
+  }
+  return def.zones[def.zones.length - 1];
+}
+
+function setSliderGradient(id) {
+  const sl  = document.getElementById(id);
+  const def = ZONE_DEFS[id];
+  if (!sl || !def) return;
+  const min = parseFloat(sl.min);
+  const max = parseFloat(sl.max);
+  const stops = [];
+  let prev = min;
+  for (const z of def.zones) {
+    const s = ((prev - min) / (max - min) * 100).toFixed(1);
+    const e = ((z.to  - min) / (max - min) * 100).toFixed(1);
+    // Slightly muted (hex opacity B0 = ~70%) so thumb stays readable
+    stops.push(`${z.color}b0 ${s}%, ${z.color}b0 ${e}%`);
+    prev = z.to;
+  }
+  sl.style.background = `linear-gradient(to right, ${stops.join(', ')})`;
+}
+
+function updateZonePill(id) {
+  const sl   = document.getElementById(id);
+  const pill = document.getElementById('zone-' + id);
+  if (!sl || !pill) return;
+  const zone = getZone(id, parseFloat(sl.value));
+  if (!zone) return;
+  pill.textContent    = zone.label;
+  pill.style.color    = zone.color;
+  pill.style.background    = zone.color + '1a';
+  pill.style.borderColor   = zone.color + '55';
+}
+
+function initMarkers() {
+  for (const [id, def] of Object.entries(ZONE_DEFS)) {
+    if (!def.markers) continue;
+    const wrap = document.getElementById('markers-' + id);
+    if (!wrap) continue;
+    const sl  = document.getElementById(id);
+    const min = parseFloat(sl.min);
+    const max = parseFloat(sl.max);
+    wrap.innerHTML = def.markers.map(m => {
+      const pct = ((m.v - min) / (max - min) * 100).toFixed(1);
+      return `<div class="param-marker" style="left:${pct}%">${m.l}</div>`;
+    }).join('');
+  }
+}
+
+function updateAllZones() {
+  for (const id of Object.keys(ZONE_DEFS)) {
+    setSliderGradient(id);
+    updateZonePill(id);
+  }
+}
+
+// ── CALC ─────────────────────────────────────────────────────
+function v(id) { return parseFloat(document.getElementById(id).value); }
+function fmt(n) { return n.toLocaleString('sv-SE', { maximumFractionDigits: 0 }); }
+function fmtM(mkr) {
+  if (Math.abs(mkr) >= 1) return fmt(Math.round(mkr * 10) / 10) + ' Mkr';
+  return fmt(Math.round(mkr * 1000)) + ' tkr';
+}
+
+function calc() {
+  const pumps    = v('sl-pumps');
+  const kw       = v('sl-kw');
+  const duty     = v('sl-duty') / 100;
+  const season   = v('sl-season') / 100;
+  const fcrnP    = v('sl-fcrn-price');
+  const fcrdP    = v('sl-fcrd-price');
+  const afrrCapP = v('sl-afrr-cap-price');
+  const afrrActP = v('sl-afrr-act-price');
+  const afrrActH = v('sl-afrr-act-h');
+  const split    = v('sl-split') / 100;
+  const fx       = v('sl-fx');
+
+  // Display values
+  document.getElementById('val-pumps').textContent         = fmt(pumps);
+  document.getElementById('val-kw').textContent            = kw + ' kW';
+  document.getElementById('val-duty').textContent          = Math.round(duty * 100) + '%';
+  document.getElementById('val-season').textContent        = Math.round(season * 100) + '%';
+  document.getElementById('val-fcrn-price').textContent    = fcrnP + ' EUR/MW/h';
+  document.getElementById('val-fcrd-price').textContent    = fcrdP + ' EUR/MW/h';
+  document.getElementById('val-afrr-cap-price').textContent = afrrCapP + ' EUR/MW/h';
+  document.getElementById('val-afrr-act-price').textContent = afrrActP + ' EUR/MWh';
+  document.getElementById('val-afrr-act-h').textContent    = afrrActH + ' h';
+  document.getElementById('val-split').textContent         = Math.round(split * 100) + '%';
+  document.getElementById('val-fx').textContent            = fx.toLocaleString('sv-SE');
+
+  // Update zone indicators
+  updateAllZones();
+
+  // Capacity
+  const totalMW    = pumps * (kw / 1000) * duty * season;
+  const hoursPerYear = 8760 * season * duty;
+  const fcrnMW     = totalMW * 0.20;
+  const fcrdMW     = totalMW * 0.80;
+  const afrrCapMW  = totalMW * 0.60;
+
+  // EUR revenues
+  const fcrnEUR    = fcrnMW    * fcrnP    * hoursPerYear;
+  const fcrdEUR    = fcrdMW    * fcrdP    * hoursPerYear;
+  const afrrCapEUR = afrrCapMW * afrrCapP * hoursPerYear;
+  const afrrActEUR = afrrCapMW * afrrActP * afrrActH;
+  const totalEUR   = fcrnEUR + fcrdEUR + afrrCapEUR + afrrActEUR;
+
+  const toMkr = eur => eur * fx / 1_000_000;
+  const fcrnMkr    = toMkr(fcrnEUR);
+  const fcrdMkr    = toMkr(fcrdEUR);
+  const afrrCapMkr = toMkr(afrrCapEUR);
+  const afrrActMkr = toMkr(afrrActEUR);
+  const totalMkr   = toMkr(totalEUR);
+  const effiraMkr  = totalMkr * split;
+
+  // Hero
+  document.getElementById('h-mw').textContent      = fmt(Math.round(totalMW * 10) / 10) + ' MW';
+  document.getElementById('h-gross').textContent   = fmtM(totalMkr);
+  document.getElementById('h-gross-eur').textContent = fmt(Math.round(totalEUR / 1000)) + ' tkr EUR';
+  document.getElementById('h-effira').textContent  = fmtM(effiraMkr);
+  document.getElementById('h-effira-eur').textContent = fmt(Math.round(totalEUR * split / 1000)) + ' tkr EUR';
+
+  // Per unit
+  const perUnitYear  = (effiraMkr * 1_000_000) / pumps;
+  document.getElementById('u-year').textContent  = fmt(Math.round(perUnitYear)) + ' kr';
+  document.getElementById('u-month').textContent = fmt(Math.round(perUnitYear / 12)) + ' kr';
+  document.getElementById('u-hours').textContent = fmt(Math.round(hoursPerYear));
+
+  // Bar chart
+  const markets = [
+    { label: 'FCR-N',    mkr: fcrnMkr,    color: '#8b5cf6' },
+    { label: 'FCR-D',    mkr: fcrdMkr,    color: '#3b82f6' },
+    { label: 'aFRR kap', mkr: afrrCapMkr, color: '#10b981' },
+    { label: 'aFRR akt', mkr: afrrActMkr, color: '#f59e0b' },
+  ];
+  const maxMkr = Math.max(...markets.map(m => m.mkr));
+  document.getElementById('bar-section').innerHTML = markets.map(m => `
+    <div class="bar-row">
+      <div class="bar-label">${m.label}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${maxMkr > 0 ? (m.mkr / maxMkr * 100) : 0}%;background:${m.color}"></div>
+      </div>
+      <div class="bar-amount">${fmtM(m.mkr)}</div>
+    </div>
+  `).join('');
+
+  // Market table
+  const rows = [
+    { name:'FCR-N',           dot:'dot-fcrn',     mw:fcrnMW,    h:hoursPerYear, brutto:fcrnMkr,    effira:fcrnMkr    * split },
+    { name:'FCR-D up',        dot:'dot-fcrd',     mw:fcrdMW,    h:hoursPerYear, brutto:fcrdMkr,    effira:fcrdMkr    * split },
+    { name:'aFRR kapacitet',  dot:'dot-afrr-cap', mw:afrrCapMW, h:hoursPerYear, brutto:afrrCapMkr, effira:afrrCapMkr * split },
+    { name:'aFRR aktivering', dot:'dot-afrr-act', mw:afrrCapMW, h:afrrActH,    brutto:afrrActMkr, effira:afrrActMkr * split },
+  ];
+  document.getElementById('market-tbody').innerHTML = rows.map(r => `
+    <tr>
+      <td><div class="market-name"><div class="market-dot ${r.dot}"></div>${r.name}</div></td>
+      <td>${fmt(Math.round(r.mw * 10) / 10)}</td>
+      <td>${fmt(Math.round(r.h))}</td>
+      <td>${fmtM(r.brutto)}</td>
+      <td class="effira-share">${fmtM(r.effira)}</td>
+    </tr>
+  `).join('') + `
+    <tr>
+      <td><div class="market-name"><div class="market-dot dot-total"></div><strong>Totalt</strong></div></td>
+      <td></td><td></td>
+      <td>${fmtM(totalMkr)}</td>
+      <td class="effira-share">${fmtM(effiraMkr)}</td>
+    </tr>
+  `;
+
+  // Scale table
+  const mwPerPump     = (kw / 1000) * duty * season;
+  const bruttoPerPump = (totalMkr * 1_000_000) / pumps;
+  const effiraPerPump = bruttoPerPump * split;
+  document.getElementById('scale-tbody').innerHTML = [1000,2000,5000,10000,25000,50000,100000,200000].map(p => {
+    const pmw        = p * mwPerPump;
+    const pBruttoMkr = (totalMkr / pumps) * p;
+    const pEffiraMkr = pBruttoMkr * split;
+    const isActive   = Math.abs(p - pumps) < 500;
+    return `
+      <tr class="${isActive ? 'highlight-row' : ''}">
+        <td>${fmt(p)}</td>
+        <td>${fmt(Math.round(pmw * 10) / 10)} MW</td>
+        <td>${fmtM(pBruttoMkr)}</td>
+        <td>${fmtM(pEffiraMkr)}</td>
+        <td>${fmt(Math.round(effiraPerPump))} kr</td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// ── SCENARIOS ────────────────────────────────────────────────
+const scenarios = {
+  conservative: { pumps:100000, kw:3.5, duty:55, season:45, fcrnP:8,  fcrdP:8,  afrrCapP:5,  afrrActP:30,  afrrActH:60,  split:45, fx:11.5 },
+  base:         { pumps:100000, kw:4,   duty:65, season:50, fcrnP:15, fcrdP:15, afrrCapP:8,  afrrActP:50,  afrrActH:100, split:50, fx:11.5 },
+  optimistic:   { pumps:100000, kw:4.5, duty:70, season:55, fcrnP:25, fcrdP:25, afrrCapP:12, afrrActP:80,  afrrActH:200, split:55, fx:11.5 },
+  peak:         { pumps:100000, kw:4.5, duty:75, season:55, fcrnP:37, fcrdP:37, afrrCapP:20, afrrActP:120, afrrActH:300, split:55, fx:11.5 },
+};
+
+function setScenario(name, btn) {
+  const s = scenarios[name];
+  document.getElementById('sl-pumps').value            = s.pumps;
+  document.getElementById('sl-kw').value               = s.kw;
+  document.getElementById('sl-duty').value             = s.duty;
+  document.getElementById('sl-season').value           = s.season;
+  document.getElementById('sl-fcrn-price').value       = s.fcrnP;
+  document.getElementById('sl-fcrd-price').value       = s.fcrdP;
+  document.getElementById('sl-afrr-cap-price').value   = s.afrrCapP;
+  document.getElementById('sl-afrr-act-price').value   = s.afrrActP;
+  document.getElementById('sl-afrr-act-h').value       = s.afrrActH;
+  document.getElementById('sl-split').value            = s.split;
+  document.getElementById('sl-fx').value               = s.fx;
+  document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  calc();
+}
+
+// ── INIT ─────────────────────────────────────────────────────
+initMarkers();
+calc();
+</script>
+</body>
+</html>

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Effira — Kapitalplan & 12-månadersplan · Styrelsen aug 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #0f1117;
+  --surf:    #181c25;
+  --border:  #252933;
+  --bord2:   #1e2230;
+  --text:    #e8eaf0;
+  --muted:   #6b7280;
+  --muted2:  #4b5563;
+  --green:   #22c55e;
+  --cyan:    #0891b2;
+  --blue:    #3b82f6;
+  --red:     #ef4444;
+  --amber:   #f59e0b;
+  --purple:  #a78bfa;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+
+/* ── HEADER ── */
+.header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+  margin-bottom: 40px;
+}
+.header-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.4px;
+  margin-bottom: 6px;
+}
+.header-sub { font-size: 14px; color: var(--muted); }
+
+/* ── ASK HERO ── */
+.ask-hero {
+  background: linear-gradient(135deg, #0d1f35 0%, #1a0f2e 100%);
+  border: 1px solid #1e3a5f;
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.ask-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+}
+.ask-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #60a5fa;
+  margin-bottom: 12px;
+}
+.ask-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 680px;
+  margin-bottom: 20px;
+}
+.ask-text em { color: #93c5fd; font-style: normal; font-weight: 700; }
+
+/* ── PHASE ROADMAP ── */
+.roadmap {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr 28px 1fr;
+  align-items: start;
+  gap: 0;
+}
+.roadmap-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 28px;
+  color: var(--muted2);
+  font-size: 18px;
+}
+.rm-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.rm-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.rm1 .rm-badge { background:#22c55e18;color:var(--green);border:1px solid #22c55e30; }
+.rm2 .rm-badge { background:#3b82f618;color:#60a5fa;   border:1px solid #3b82f630; }
+.rm3 .rm-badge { background:#a78bfa18;color:var(--purple);border:1px solid #a78bfa30; }
+.rm-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.rm-date  { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+.rm-goal  { font-size: 12px; color: #c9cdd8; line-height: 1.5; }
+.rm-capital {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+.rm1 .rm-capital { background:#22c55e15;color:var(--green);border:1px solid #22c55e30; }
+.rm2 .rm-capital { background:#3b82f615;color:#60a5fa;    border:1px solid #3b82f630; }
+.rm3 .rm-capital { background:#a78bfa15;color:var(--purple);border:1px solid #a78bfa30; }
+
+.ask-commitment {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 13px;
+  color: #93c5fd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ask-commitment::before {
+  content: '→';
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ── SECTION ── */
+.section { margin-bottom: 48px; }
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--muted2);
+  margin-bottom: 14px;
+}
+.section h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+p {
+  color: #c9cdd8;
+  margin-bottom: 12px;
+  max-width: 720px;
+}
+p:last-child { margin-bottom: 0; }
+strong { color: var(--text); font-weight: 600; }
+em     { color: var(--muted); font-style: italic; }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+/* ── CALLOUT ── */
+.callout {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  color: #c9cdd8;
+  max-width: 720px;
+}
+.callout.green  { border-left-color: var(--green); }
+.callout.amber  { border-left-color: var(--amber); }
+.callout.purple { border-left-color: var(--purple); }
+
+/* ── LOGIC CHAIN ── */
+.logic-chain {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0;
+}
+.logic-item {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 11px;
+  font-size: 12.5px;
+  color: var(--text);
+}
+.logic-arrow { color: var(--muted2); font-size: 14px; }
+
+/* ── STAT GRID ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.stat-card {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.stat-label { font-size: 11px; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
+.stat-value { font-size: 20px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; line-height: 1; }
+.stat-unit  { font-size: 11px; color: var(--muted); font-weight: 400; margin-left: 3px; }
+
+/* ── TABLES ── */
+.tbl-wrap { overflow-x: auto; margin: 12px 0; }
+table     { border-collapse: collapse; width: 100%; font-size: 13px; }
+th {
+  text-align: left;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--bord2);
+  color: #c9cdd8;
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr.highlight td  { background: #1e2230; color: var(--text); font-weight: 600; }
+td.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+th.num { text-align: right; }
+td.neg { color: #f87171; }
+td.pos { color: #4ade80; }
+td.bold { font-weight: 700; color: var(--text); }
+.risk-low    { color: #4ade80; font-size: 11px; font-weight: 600; }
+.risk-medium { color: #fbbf24; font-size: 11px; font-weight: 600; }
+
+/* ── FUNDING FLOW ── */
+.funding-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+.ff-card {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.ff-phase  { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+.ff-title  { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+.ff-row    { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 5px; }
+.ff-key    { color: var(--muted); }
+.ff-val    { font-weight: 600; font-variant-numeric: tabular-nums; }
+.ff-note   { font-size: 11px; color: var(--muted); margin-top: 10px; line-height: 1.4; border-top: 1px solid var(--bord2); padding-top: 8px; }
+
+/* ── PROOF GRID ── */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+.proof-card {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.proof-metric { font-size: 13px; font-weight: 600; color: var(--green); margin-bottom: 4px; }
+.proof-desc   { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+/* ── CHART ── */
+.chart-section {
+  background: var(--surf);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 14px;
+}
+.chart-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+canvas { display: block; width: 100%; }
+.legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; }
+.legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #9ca3af; }
+.legend-dot  { width: 12px; height: 4px; border-radius: 2px; }
+.legend-area { width: 12px; height: 10px; border-radius: 2px; }
+
+.milestones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+.ms-card { background: var(--bg); border: 1px solid var(--bord2); border-radius: 8px; padding: 10px 12px; }
+.ms-date  { font-size: 10px; color: var(--muted); margin-bottom: 3px; }
+.ms-label { font-size: 12px; color: var(--text); font-weight: 500; }
+
+#tooltip {
+  position: fixed;
+  background: #1e2230;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  pointer-events: none;
+  display: none;
+  z-index: 100;
+  min-width: 200px;
+}
+.tt-date { font-weight: 600; color: #fff; margin-bottom: 6px; }
+.tt-row  { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 2px; }
+.tt-label { color: var(--muted); }
+.tt-val   { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+blockquote {
+  border-left: 3px solid var(--blue);
+  padding: 16px 20px;
+  background: var(--surf);
+  border-radius: 0 8px 8px 0;
+  margin: 16px 0;
+  color: #c9cdd8;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 720px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════════════════ HEADER ═══════════════════════════ -->
+<div class="header">
+  <div class="header-eyebrow">Styrelseunderlag · Augusti 2026 · Konfidentiellt</div>
+  <h1>Effira — Kapitalplan &amp; 12-månadersplan</h1>
+  <div class="header-sub">Fas 1 av 3 &nbsp;·&nbsp; 10 Mkr &nbsp;·&nbsp; Bevisa modellen</div>
+</div>
+
+
+<!-- ═══════════════════════ VISION ═══════════════════════════ -->
+<div style="margin-bottom:40px">
+  <p style="font-size:19px;line-height:1.6;color:#fff;font-weight:500;max-width:760px;margin-bottom:24px">
+    Effira har en position som nästan inga andra bolag har: vi skapar värde för <em style="color:#4ade80;font-style:normal;font-weight:700">två kunder samtidigt</em> — slutkunden som får kontroll och en förstärkt förmåga att ställa krav, och elnätet som behöver flexibel kapacitet. Båda betalar oss. Ingen av dem slutar betala när den andra börjar.
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:28px;align-items:stretch">
+    <div style="background:#0a1f12;border:1px solid #14532d;border-radius:10px;padding:18px 20px">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#4ade80;margin-bottom:8px">Kundvärde</div>
+      <div style="font-size:15px;font-weight:600;color:#fff;margin-bottom:6px">Slutkunden</div>
+      <div style="font-size:12.5px;color:#9ca3af;line-height:1.5">Kontroll över sin värmepump och smart energihantering. Besparingen kommer med det — men värdet är förmågan att förstå och styra sin egen energi.</div>
+    </div>
+
+    <div style="background:#0d1f35;border:1px solid #1e3a5f;border-radius:10px;padding:18px 20px">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#60a5fa;margin-bottom:8px">Gridvärde</div>
+      <div style="font-size:15px;font-weight:600;color:#fff;margin-bottom:6px">Sekundärmarknaden</div>
+      <div style="font-size:12.5px;color:#9ca3af;line-height:1.5">Flottan säljer flexibilitet till elnätet via Tibber BSP. FCR-D och aFRR. Intäkten tillkommer ovanpå abonnemanget.</div>
+    </div>
+
+    <div style="background:#1a1200;border:1px solid #78350f60;border-radius:10px;padding:18px 20px">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fbbf24;margin-bottom:8px">Kombinerat</div>
+      <div style="font-size:15px;font-weight:600;color:#fff;margin-bottom:6px">~116 kr/enhet/mån</div>
+      <div style="font-size:12.5px;color:#9ca3af;line-height:1.5">60 kr abonnemang + 56 kr VPP. Två oberoende intäktsströmmar från samma installation.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px">
+    <div style="background:var(--surf);border:1px solid var(--border);border-radius:10px;padding:18px 20px">
+      <div style="font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:500">Vid 15 000 enheter</div>
+      <div style="font-size:22px;font-weight:700;color:#fff;margin-bottom:4px">~21 Mkr<span style="font-size:13px;font-weight:400;color:var(--muted)">/år</span></div>
+      <div style="font-size:12px;color:var(--muted)">Intäktsbidrag. Break-even nått.</div>
+    </div>
+    <div style="background:#0a1f12;border:1px solid #14532d;border-radius:10px;padding:18px 20px">
+      <div style="font-size:11px;color:#4ade80;margin-bottom:6px;font-weight:500">Vid 50 000 enheter</div>
+      <div style="font-size:22px;font-weight:700;color:#4ade80;margin-bottom:4px">~70 Mkr<span style="font-size:13px;font-weight:400;color:#4ade8088">/år</span></div>
+      <div style="font-size:12px;color:#4b5563">Abonnemang 36 Mkr + VPP 34 Mkr. Konservativt räknat god affär.</div>
+    </div>
+    <div style="background:#0d1220;border:1px solid #1e2a50;border-radius:10px;padding:18px 20px">
+      <div style="font-size:11px;color:#818cf8;margin-bottom:6px;font-weight:500">Vid 100 000 enheter</div>
+      <div style="font-size:22px;font-weight:700;color:#818cf8;margin-bottom:4px">~139 Mkr<span style="font-size:13px;font-weight:400;color:#818cf888">/år</span></div>
+      <div style="font-size:12px;color:#4b5563">~15–20% av den svenska marknaden. Inget strukturellt tak hindrar oss.</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);max-width:720px">Sverige har uppskattningsvis 500 000–600 000 villor med värmepump. 100 000 enheter är 15–20% penetration. Med Nordic-expansion (Finland, Norge, Danmark) är adresserbar marknad 3–4× större. Det finns inget som sätter ett strukturellt stopp för var vi kan nå — det enda som begränsar är exekveringstakt och kapital.</p>
+</div>
+
+<!-- ═══════════════════════ ROADMAP ═══════════════════════════ -->
+<div class="ask-hero">
+  <div class="roadmap">
+    <div class="rm-card rm1">
+      <div class="rm-badge">Fas 1</div>
+      <div class="rm-title">Bevisa modellen</div>
+      <div class="rm-date">Aug 2026 – sommar 2027</div>
+      <div class="rm-goal">150 → 1 000 enheter. Säljmotor byggd. VPP-avtal tecknat med Tibber.</div>
+      <div class="rm-capital">10 Mkr idag</div>
+    </div>
+
+    <div class="roadmap-arrow">→</div>
+
+    <div class="rm-card rm2">
+      <div class="rm-badge">Fas 2</div>
+      <div class="rm-title">Skala till break-even</div>
+      <div class="rm-date">Höst 2027 – 2029</div>
+      <div class="rm-goal">1 000 → 15 000 enheter. VPP aktiveras höst 2028. Break-even nås ~2029. Egna intäkter tar över mer och mer av financieringen längs vägen.</div>
+      <div class="rm-capital">25 Mkr feb 2027</div>
+    </div>
+
+    <div class="roadmap-arrow">→</div>
+
+    <div class="rm-card rm3">
+      <div class="rm-badge">Fas 3</div>
+      <div class="rm-title">Lönsam tillväxt</div>
+      <div class="rm-date">2029+</div>
+      <div class="rm-goal">Break-even nått. Varje ny enhet är nettopositiv.<br><br>
+        <span style="color:#4ade80;font-weight:600">Alt A:</span> Bibehållen takt — självfinansierat i Sverige.<br>
+        <span style="color:#60a5fa;font-weight:600">Alt B:</span> Nytt kapital — gasa och expandera till Finland, Norge &amp; Danmark.
+      </div>
+      <div class="rm-capital">Självfinansierat · eller ny runda</div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════ SITUATION ═══════════════════════════ -->
+<div class="section">
+  <div class="section-label">Situation</div>
+  <p>Effira har en produkt som fungerar — den sänker kundens energikostnader, det är bevisat. Men vi har ännu inte en fungerande affär.</p>
+  <p>Priset är fel. Fokus är fel. Vi har 150 installerade enheter men ingen säljmotor som skapar volym, och en affärsmodell som är optimerad för hårdvarumarginal snarare än för den verkliga möjligheten: att bygga en flotta och tjäna pengar på sekundärmarknaden för el.</p>
+  <div class="callout">Det här kapitalet ska ta oss till en plats där vi kan bevisa en affärsmodell.</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ STRATEGISK OMSTÄLLNING ═════════════════════════ -->
+<div class="section">
+  <div class="section-label">Strategisk omställning</div>
+  <p>Effira är idag uppbyggt som ett hårdvarubolag med vissa abonnemangsintäkter. Det är inte fel utgångspunkt — men det är fel balans.</p>
+  <p>Målet är ett bolag med <strong>två jämbördiga intäktspelare</strong>: abonnemang och VPP. De förstärker varandra:</p>
+
+  <div class="logic-chain">
+    <div class="logic-item">Fler kunder</div>
+    <div class="logic-arrow">→</div>
+    <div class="logic-item">Större flotta</div>
+    <div class="logic-arrow">→</div>
+    <div class="logic-item">Mer VPP-kapacitet</div>
+    <div class="logic-arrow">→</div>
+    <div class="logic-item">VPP-intäkt finansierar tillväxt</div>
+  </div>
+
+  <p style="margin-top:14px">För att nå den balansen behöver vi göra många saker. <strong>Det första steget är att sänka priset.</strong></p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th></th><th>Idag</th><th>Förslag</th></tr></thead>
+      <tbody>
+        <tr><td>Pris per enhet</td><td>6 995 kr</td><td class="bold" style="color:#4ade80">4 000 kr (inkl. moms)</td></tr>
+        <tr><td>Abonnemang</td><td>129 kr/mån</td><td>129 kr/mån</td></tr>
+        <tr><td>Intäktsbalans</td><td>Hårdvara dominerar</td><td class="bold">Abonnemang + VPP i balans</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout green">
+    <strong>Logiken:</strong> Vid dagens pris är tröskeln för hög — flottan förblir för liten för att VPP ska ge något. Lägre pris → snabbare adoption → VPP-intäkterna aktiveras. Abonnemang och VPP bär sedan varandra på lång sikt.
+  </div>
+</div>
+
+<hr class="divider">
+
+<hr class="divider">
+
+<!-- ═══════════════════════ FAS 1 ════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Fas 1 — Bevisa modellen (aug 2026 – sommar 2027)</div>
+  <p style="margin-bottom:14px"><strong>Mål: 1 000 installerade enheter och ett VPP-löfte.</strong></p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Period</th><th>Händelse</th><th class="num">Kumulativa enheter</th></tr></thead>
+      <tbody>
+        <tr><td>Aug 2026</td><td>Kapital in. Pris sänkt till 4 000 kr.</td><td class="num">150</td></tr>
+        <tr><td>Sep 2026</td><td>Förberedelser, säljapparat byggs.</td><td class="num">150</td></tr>
+        <tr class="highlight"><td>Okt 2026</td><td>Henrik börjar. Försäljning: 100 enheter/mån.</td><td class="num">250</td></tr>
+        <tr><td>Dec 2026</td><td>Q4-slut.</td><td class="num">450</td></tr>
+        <tr class="highlight"><td>Feb 2027</td><td>650 enheter. 6 månaders bevis. <strong>Nästa runda in — 25 Mkr.</strong></td><td class="num">650</td></tr>
+        <tr><td>Mar 2027</td><td>Halvtid.</td><td class="num">750</td></tr>
+        <tr class="highlight"><td>Sommar 2027</td><td>1 000+ enheter. Fas 2 startar.</td><td class="num">1 050</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout" style="margin-top:14px">
+    Nästa runda planeras till februari 2027 — efter 6 månaders säljbevis — inte när kassan är tömd. Vid sommaren 2027 har vi inga VPP-intäkter, men vi ska ha ett <strong>löfte</strong>: ett LOI med Tibber om att VPP-intäkterna aktiveras när tekniska och regulatoriska krav är uppfyllda. Det löftet + 1 000 aktiva kunder är underlaget som motiverar de 25 Mkr vi redan tagit in.
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ FAS 2 ════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Fas 2 — Skala till break-even (höst 2027 – 2029)</div>
+  <p style="margin-bottom:14px"><strong>Mål: 1 000 → ~15 000 enheter. Break-even nås ~2029.</strong></p>
+  <p>Fas 2 finansieras med 25 Mkr från nästa runda. Men bolaget bidrar alltmer till sin egen finansiering längs vägen — egna intäkter täcker en växande andel av burnen varje månad.</p>
+
+  <div class="funding-flow">
+    <div class="ff-card">
+      <div class="ff-phase" style="color:var(--blue)">Fas 2 · Start (1 000 enh)</div>
+      <div class="ff-title">Kapital täcker nästan allt</div>
+      <div class="ff-row"><span class="ff-key">Egna intäkter/mån</span><span class="ff-val" style="color:#4ade80">~63 kkr</span></div>
+      <div class="ff-row"><span class="ff-key">Burn/mån</span><span class="ff-val" style="color:#f87171">~1 400 kkr</span></div>
+      <div class="ff-row"><span class="ff-key">Täckningsgrad</span><span class="ff-val">~5%</span></div>
+      <div class="ff-note">Kapital från rundan bär 95% av kostnaden.</div>
+    </div>
+    <div class="ff-card">
+      <div class="ff-phase" style="color:var(--blue)">Fas 2 · Halvtid (5 000 enh + VPP)</div>
+      <div class="ff-title">Egna intäkter ökar snabbt</div>
+      <div class="ff-row"><span class="ff-key">Abonnemang netto</span><span class="ff-val" style="color:#4ade80">~300 kkr</span></div>
+      <div class="ff-row"><span class="ff-key">VPP (från okt 2028)</span><span class="ff-val" style="color:#38bdf8">~280 kkr</span></div>
+      <div class="ff-row"><span class="ff-key">Burn/mån</span><span class="ff-val" style="color:#f87171">~2 000 kkr</span></div>
+      <div class="ff-row"><span class="ff-key">Täckningsgrad</span><span class="ff-val">~29%</span></div>
+      <div class="ff-note">Kassadraget från kapitalet halveras relativt mot start.</div>
+    </div>
+    <div class="ff-card">
+      <div class="ff-phase" style="color:var(--green)">Fas 2 · Break-even (~15 000 enh)</div>
+      <div class="ff-title">Egna intäkter = burn</div>
+      <div class="ff-row"><span class="ff-key">Abonnemang netto</span><span class="ff-val" style="color:#4ade80">~900 kkr</span></div>
+      <div class="ff-row"><span class="ff-key">VPP</span><span class="ff-val" style="color:#38bdf8">~840 kkr</span></div>
+      <div class="ff-row"><span class="ff-key">Burn/mån</span><span class="ff-val" style="color:#4ade80">~1 740 kkr</span></div>
+      <div class="ff-row"><span class="ff-key">Täckningsgrad</span><span class="ff-val" style="color:#4ade80">100%</span></div>
+      <div class="ff-note">Break-even. Inget externt kapital behövs längre.</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:24px">Kapitalbehov nästa runda: 20–30 Mkr · Utgångspunkt 25 Mkr</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Scenario</th><th>Kapital</th><th>Vad som driver det</th></tr></thead>
+      <tbody>
+        <tr><td class="bold" style="color:#4ade80">Lägre end</td><td>~20 Mkr</td><td>VPP aktiveras i tid (höst 2028), burn hålls nära 1,4 Mkr/mån, säljtakten kräver inte ett stort lag omedelbart</td></tr>
+        <tr><td class="bold" style="color:#fbbf24">Högre end</td><td>~30 Mkr</td><td>VPP försenas, organisationen behöver byggas snabbare, oförutsedda kostnader i skalning</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout amber" style="margin-top:14px">
+    Att behöva gå tillbaka till marknaden mitt i Fas 2 från en svag position är det sämsta möjliga utfallet. <strong>25 Mkr</strong> är vår utgångspunkt — vi tar in tillräckligt för att komma igenom hela Fas 2 utan att behöva kapitalisera under sämre förutsättningar.
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ FAS 3 ════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Fas 3 — Lönsam tillväxt (2029+)</div>
+  <p>Break-even innebär att intäkterna täcker <em>den org vi har vid det tillfället</em>. Det är inte samma sak som att tillväxt är gratis — varje steg uppåt i volym kräver mer org, och mer org kostar mer innan de nya enheternas intäkter hinner ikapp.</p>
+  <p>Det gäller i alla faser: vi kan hålla kostnaderna stabila upp till ~100 enheter/mån med befintlig kapacitet. Från 1 000 till 15 000 enheter krävde en större organisation — det är därför Fas 2 behöver 25 Mkr. Och om vi ska upp ytterligare, till nya länder och högre volymer, krävs ännu ett steg i org och kostnader.</p>
+  <p>Från break-even finns två vägar:</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0">
+
+    <div style="background:var(--surf);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:8px;padding:18px 20px">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--green);margin-bottom:8px">Alt A — Bibehållen takt</div>
+      <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:10px">Självfinansierad tillväxt</div>
+      <p style="font-size:12.5px;margin-bottom:0">Inget nytt kapital. Vi håller takten (~600 enheter/mån i Sverige) och org-kostnaden konstant. Surplusen från enheter ovanför break-even-nivån växer månad för månad och finansierar tillväxten. Lönsamt — men takten är begränsad av vad kassaflödet bär utan att org-kostnaden behöver kliva upp.</p>
+    </div>
+
+    <div style="background:var(--surf);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:8px;padding:18px 20px">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#60a5fa;margin-bottom:8px">Alt B — Gasa med nytt kapital</div>
+      <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:10px">Nordic-expansion</div>
+      <p style="font-size:12.5px;margin-bottom:8px">Nytt kapital finansierar nästa org-steg: ökad takt i Sverige och utrullning i <strong style="color:#fff">Finland, Norge och Danmark</strong>. Kostnaderna ökar innan intäkterna från de nya länderna och den högre volymen hunnit ikapp — precis som i övergången Fas 1 → Fas 2.</p>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:0">Samma affärsmodell, ny geografi. Varje nytt land adderar till VPP-flottan och stärker förhandlingspositionen mot BSP.</p>
+    </div>
+
+  </div>
+
+  <div class="callout" style="margin-top:4px">
+    Mönstret är detsamma i alla faser: kapital finansierar org-steget, org-steget driver volym, volymen bygger intäkter som bär nästa nivå. Alt A bryter det mönstret och optimerar för lönsamhet. Alt B fortsätter det och optimerar för skala.
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ GRAF ════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Ekonomisk prognos 2026–2029</div>
+
+  <div class="chart-section">
+    <div class="chart-title">Månadsresultat — Intäkter vs burn (kkr/mån)</div>
+    <canvas id="c1" height="300"></canvas>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-area" style="background:#22c55e55;border:1px solid #22c55e"></div>Abonnemang netto</div>
+      <div class="legend-item"><div class="legend-area" style="background:#0891b255;border:1px solid #0891b2"></div>VPP (aktiveras okt 2028)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Burn</div>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-title">Kassaposition (kkr kumulativt) — inkl. kapitalinjektioner</div>
+    <canvas id="c2" height="240"></canvas>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-area" style="background:#3b82f655;border:1px solid #3b82f6"></div>Kassa</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#60a5fa;width:3px;height:12px;border-radius:1px"></div>Kapitalinjektion</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:18px;margin-bottom:10px">Milstolpar</div>
+  <div class="milestones" id="milestones"></div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ KASSAFLÖDE FAS 1 ═══════════════════════════ -->
+<div class="section">
+  <div class="section-label">Kassaflöde Fas 1 — den ärliga bilden</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Tidpunkt</th><th class="num">Enheter</th><th class="num">Sub netto/mån</th><th class="num">Burn/mån</th><th class="num">Netto/mån</th></tr></thead>
+      <tbody>
+        <tr><td>Aug 2026</td><td class="num">150</td><td class="num">9 kkr</td><td class="num">1 350 kkr</td><td class="num neg">−1 341 kkr</td></tr>
+        <tr><td>Okt 2026</td><td class="num">250</td><td class="num">15 kkr</td><td class="num">1 350 kkr</td><td class="num neg">−1 335 kkr</td></tr>
+        <tr><td>Dec 2026</td><td class="num">450</td><td class="num">27 kkr</td><td class="num">1 350 kkr</td><td class="num neg">−1 323 kkr</td></tr>
+        <tr><td>Mar 2027</td><td class="num">750</td><td class="num">45 kkr</td><td class="num">1 350 kkr</td><td class="num neg">−1 305 kkr</td></tr>
+        <tr><td>Jun 2027</td><td class="num">1 050</td><td class="num">63 kkr</td><td class="num">1 350 kkr</td><td class="num neg">−1 287 kkr</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:14px">Nästa runda planeras till <strong>februari 2027</strong> — inte när kassan är tömd, utan när vi har 6 månaders bevis i hand.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ ENHETSEKONOMI ═══════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Enhetsekonomi</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Källa</th><th class="num">Per enhet/mån</th><th class="num">Per enhet/år</th></tr></thead>
+      <tbody>
+        <tr><td>Abonnemang (brutto)</td><td class="num">129 kr</td><td class="num">1 548 kr</td></tr>
+        <tr><td>Rörlig kostnad</td><td class="num neg">−69 kr</td><td class="num neg">−828 kr</td></tr>
+        <tr class="highlight"><td>Abonnemang netto</td><td class="num pos">60 kr</td><td class="num pos">720 kr</td></tr>
+        <tr><td>VPP (aktiveras höst 2028)</td><td class="num" style="color:#38bdf8">~56 kr</td><td class="num" style="color:#38bdf8">~670 kr</td></tr>
+        <tr class="highlight"><td>Totalt bidrag (med VPP)</td><td class="num pos">~116 kr</td><td class="num pos">~1 390 kr</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-label" style="margin-top:24px;margin-bottom:10px">Break-even (vid Fas 1-burnivå)</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Burn/mån</th><th class="num">Break-even med VPP</th><th class="num">Break-even utan VPP</th></tr></thead>
+      <tbody>
+        <tr><td>1 350 kkr (Fas 1)</td><td class="num pos">~11 700 enheter</td><td class="num" style="color:#fbbf24">~22 500 enheter</td></tr>
+        <tr><td>1 670 kkr</td><td class="num pos">~14 500 enheter</td><td class="num" style="color:#fbbf24">~27 800 enheter</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:12px; font-size:12px; color:var(--muted)">Burnen i Fas 2 är något högre (~1 800 kkr/mån vid full organisation). Break-even nås ~2029 tack vare VPP-intäkterna som aktiveras höst 2028.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ NÄSTA RUNDA ═════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Vad vi tar med till nästa runda — februari 2027</div>
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="proof-metric">1 000 aktiva enheter</div>
+      <div class="proof-desc">Skalbar försäljning och installation</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-metric">100 enheter/mån konstant</div>
+      <div class="proof-desc">Repeterbar säljprocess</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-metric">Abonnemangschurn &lt; 5 %</div>
+      <div class="proof-desc">Produkten levererar värde</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-metric">LOI/avtal med Tibber</div>
+      <div class="proof-desc">Sekundärmarknaden är real och kontrakterad</div>
+    </div>
+    <div class="proof-card">
+      <div class="proof-metric">Lägre pris → högre volym</div>
+      <div class="proof-desc">Prissättningsstrategin validerad</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ RISKER ═══════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Risker</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Risk</th><th>Sannolikhet</th><th>Motåtgärd</th></tr></thead>
+      <tbody>
+        <tr><td>Försäljning under 100/mån</td><td><span class="risk-medium">Medel</span></td><td>Kanalstrategi via VVS-installatörer. Lägre pris ökar konvertering.</td></tr>
+        <tr><td>Kassan tar slut innan nästa runda</td><td><span class="risk-medium">Medel</span></td><td>Planera bryggrunda vid månad 6 — inte vid månad 10.</td></tr>
+        <tr><td>Tibber-avtal dröjer</td><td><span class="risk-medium">Medel</span></td><td>Påverkar inte 12-månadsplanen. VPP är upside i Fas 1, inte förutsättning.</td></tr>
+        <tr><td>FCR-priser faller</td><td><span class="risk-low">Låg</span></td><td>Abonnemanget bär enhetsekonomierna ensamt vid rimlig skala.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ SAMMANFATTNING ═══════════════════════════ -->
+<div class="section">
+  <div class="section-label">Sammanfattning</div>
+  <blockquote>
+    Effira tar in 10 Mkr i augusti 2026 och sänker priset per enhet till 4 000 kr. Det är en medveten rörelse mot en affärsmodell driven av abonnemang och VPP. Med Henrik på plats i oktober säljer vi 100 enheter per månad. Kassan räcker till mars 2027 vid full burn — vi planerar nästa runda sommaren 2027 när vi har 1 000 enheter och en validerad säljmaskin. Den rundan finansierar resan till break-even (~15 000 enheter, ~2029). Egna intäkter tar successivt över finansieringen längs vägen. Fas 3 är lönsam tillväxt — helt självfinansierad. Det vi bevisar med dessa 10 Mkr är att modellen fungerar.
+  </blockquote>
+</div>
+
+</div><!-- /page -->
+
+<div id="tooltip"></div>
+
+<!-- ═══════════════════════ CHART JS ═══════════════════════════════════ -->
+<script>
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
+
+function generateData() {
+  const rows = [];
+  let units = 150, cumCash = 0;
+  for (let i = 0; i <= 40; i++) {
+    const absMonth = 7 + i;
+    const month = absMonth % 12;
+    const year  = 2026 + Math.floor(absMonth / 12);
+    const label = MONTH_NAMES[month] + ' ' + year;
+    const capital = i === 0 ? 10000 : (i === 6 ? 25000 : 0);
+    let newUnits = 0;
+    if (i >= 2 && i <= 10) newUnits = 100;
+    if (i >= 12)           newUnits = 600;
+    units += newUnits;
+    let burn;
+    if      (i <= 10) burn = 1350;
+    else if (i <= 28) burn = 1400 + (400 / 17) * (i - 11);
+    else              burn = 1800;
+    burn = Math.round(burn);
+    const sub     = Math.round(units * 0.060);
+    const vpp     = i >= 26 ? Math.round(units * 0.056) : 0;
+    const revenue = sub + vpp;
+    const net     = revenue - burn;
+    cumCash += capital + net;
+    rows.push({ i, label, month, year, units, capital, burn, sub, vpp, revenue, net, cumCash: Math.round(cumCash) });
+  }
+  return rows;
+}
+
+const DATA = generateData();
+const beMonth = DATA.find(d => d.revenue >= d.burn);
+
+const MILESTONES = [
+  { i: 0,  label: '10 Mkr in',        date: 'Aug 2026', color: '#60a5fa' },
+  { i: 2,  label: 'Henrik börjar',    date: 'Okt 2026', color: '#a78bfa' },
+  { i: 10, label: '1 000 enheter',    date: 'Jun 2027', color: '#34d399' },
+  { i: 6,  label: '25 Mkr in (plan)', date: 'Feb 2027', color: '#60a5fa' },
+  { i: 26, label: 'VPP aktiveras',    date: 'Okt 2028', color: '#0891b2' },
+  beMonth ? { i: beMonth.i, label: 'Break-even', date: beMonth.label, color: '#4ade80' } : null,
+].filter(Boolean);
+
+document.getElementById('milestones').innerHTML = MILESTONES.map(m => `
+  <div class="ms-card">
+    <div class="ms-date" style="color:${m.color}">${m.date}</div>
+    <div class="ms-label">${m.label}</div>
+  </div>`).join('');
+
+function dpr() { return window.devicePixelRatio || 1; }
+function setupCanvas(el) {
+  const rect = el.getBoundingClientRect();
+  const r = dpr();
+  el.width  = rect.width * r;
+  el.height = parseInt(el.getAttribute('height')) * r;
+  const ctx = el.getContext('2d');
+  ctx.scale(r, r);
+  return { ctx, W: rect.width, H: parseInt(el.getAttribute('height')) };
+}
+function drawGrid(ctx, pad, CW, CH, yMin, yMax, yStep, W) {
+  ctx.strokeStyle = '#1e2230'; ctx.lineWidth = 1;
+  ctx.textAlign = 'right'; ctx.font = '11px -apple-system, sans-serif'; ctx.fillStyle = '#4b5563';
+  for (let v = yMin; v <= yMax; v += yStep) {
+    const y = pad.top + CH - ((v - yMin) / (yMax - yMin)) * CH;
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(W - pad.right, y); ctx.stroke();
+    const lbl = Math.abs(v) >= 1000 ? (v/1000).toFixed(0) + ' Mkr' : v + ' k';
+    ctx.fillText(lbl, pad.left - 6, y + 4);
+  }
+}
+function drawXAxis(ctx, pad, CW, CH) {
+  ctx.fillStyle = '#4b5563'; ctx.font = '11px -apple-system, sans-serif'; ctx.textAlign = 'center';
+  DATA.forEach((d, i) => {
+    if (d.month === 0 || i === 0) {
+      const x = pad.left + (i / (DATA.length - 1)) * CW;
+      ctx.fillStyle = d.month === 0 ? '#9ca3af' : '#4b5563';
+      ctx.fillText(d.month === 0 ? String(d.year) : MONTH_NAMES[d.month], x, pad.top + CH + 18);
+    }
+  });
+}
+function drawMilesLines(ctx, pad, CH, W) {
+  MILESTONES.forEach(m => {
+    const CW = W - pad.left - pad.right;
+    const x = pad.left + (m.i / (DATA.length - 1)) * CW;
+    ctx.save();
+    ctx.strokeStyle = m.color + '50'; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+    ctx.beginPath(); ctx.moveTo(x, pad.top); ctx.lineTo(x, pad.top + CH);
+    ctx.stroke(); ctx.setLineDash([]); ctx.restore();
+  });
+}
+
+function drawChart1() {
+  const el = document.getElementById('c1');
+  const { ctx, W, H } = setupCanvas(el);
+  const pad = { top: 24, right: 24, bottom: 40, left: 60 };
+  const CW = W - pad.left - pad.right;
+  const CH = H - pad.top - pad.bottom;
+  const yMin = 0, yMax = 3000, yStep = 500;
+  const toX = i => pad.left + (i / (DATA.length - 1)) * CW;
+  const toY = v => pad.top + CH - ((Math.min(Math.max(v, yMin), yMax) - yMin) / (yMax - yMin)) * CH;
+
+  ctx.fillStyle = '#181c25'; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = '#ffffff04'; ctx.fillRect(pad.left, pad.top, toX(10) - pad.left, CH);
+  ctx.fillStyle = '#3b82f604'; ctx.fillRect(toX(11), pad.top, CW - (toX(11) - pad.left), CH);
+  ctx.font = '10px -apple-system'; ctx.fillStyle = '#374151'; ctx.textAlign = 'center';
+  ctx.fillText('Fas 1', (pad.left + toX(10)) / 2, pad.top + 14);
+  ctx.fillText('Fas 2', (toX(11) + W - pad.right) / 2, pad.top + 14);
+
+  drawGrid(ctx, pad, CW, CH, yMin, yMax, yStep, W);
+  drawMilesLines(ctx, pad, CH, W);
+  drawXAxis(ctx, pad, CW, CH);
+
+  // Loss shading
+  ctx.beginPath();
+  DATA.forEach((d, i) => i === 0 ? ctx.moveTo(toX(i), toY(d.burn)) : ctx.lineTo(toX(i), toY(d.burn)));
+  for (let i = DATA.length-1; i >= 0; i--) ctx.lineTo(toX(i), toY(DATA[i].revenue));
+  ctx.closePath(); ctx.fillStyle = '#ef444412'; ctx.fill();
+
+  // Sub area
+  ctx.beginPath(); ctx.moveTo(toX(0), toY(0));
+  DATA.forEach((d, i) => ctx.lineTo(toX(i), toY(d.sub)));
+  ctx.lineTo(toX(DATA.length-1), toY(0)); ctx.closePath();
+  ctx.fillStyle = '#22c55e28'; ctx.fill();
+
+  // VPP area
+  ctx.beginPath(); ctx.moveTo(toX(0), toY(DATA[0].sub));
+  DATA.forEach((d, i) => ctx.lineTo(toX(i), toY(d.revenue)));
+  for (let i = DATA.length-1; i >= 0; i--) ctx.lineTo(toX(i), toY(DATA[i].sub));
+  ctx.closePath(); ctx.fillStyle = '#0891b228'; ctx.fill();
+
+  // Revenue line
+  ctx.beginPath();
+  DATA.forEach((d, i) => i === 0 ? ctx.moveTo(toX(i), toY(d.revenue)) : ctx.lineTo(toX(i), toY(d.revenue)));
+  ctx.strokeStyle = '#22c55e'; ctx.lineWidth = 2; ctx.stroke();
+
+  // Burn line
+  ctx.beginPath();
+  DATA.forEach((d, i) => i === 0 ? ctx.moveTo(toX(i), toY(d.burn)) : ctx.lineTo(toX(i), toY(d.burn)));
+  ctx.strokeStyle = '#ef4444'; ctx.lineWidth = 2; ctx.stroke();
+
+  if (beMonth) {
+    ctx.beginPath(); ctx.arc(toX(beMonth.i), toY(beMonth.revenue), 6, 0, Math.PI*2);
+    ctx.fillStyle = '#4ade80'; ctx.fill();
+    ctx.strokeStyle = '#181c25'; ctx.lineWidth = 2; ctx.stroke();
+  }
+  MILESTONES.filter(m => m.label.includes('Mkr in')).forEach(m => {
+    ctx.fillStyle = '#60a5fa'; ctx.font = 'bold 10px -apple-system'; ctx.textAlign = 'center';
+    ctx.fillText('↑ ' + (m.i === 0 ? '10 Mkr' : '25 Mkr'), toX(m.i), pad.top + 28);
+  });
+}
+
+function drawChart2() {
+  const el = document.getElementById('c2');
+  const { ctx, W, H } = setupCanvas(el);
+  const pad = { top: 24, right: 24, bottom: 40, left: 60 };
+  const CW = W - pad.left - pad.right;
+  const CH = H - pad.top - pad.bottom;
+  const allCash = DATA.map(d => d.cumCash);
+  const yMax = Math.ceil(Math.max(...allCash) / 5000) * 5000;
+  const yMin = Math.min(0, Math.floor(Math.min(...allCash) / 2000) * 2000);
+  const yStep = (yMax - yMin) > 30000 ? 10000 : 5000;
+  const toX = i => pad.left + (i / (DATA.length - 1)) * CW;
+  const toY = v => pad.top + CH - ((Math.min(Math.max(v, yMin), yMax) - yMin) / (yMax - yMin)) * CH;
+
+  ctx.fillStyle = '#181c25'; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = '#ffffff04'; ctx.fillRect(pad.left, pad.top, toX(10) - pad.left, CH);
+  ctx.fillStyle = '#3b82f604'; ctx.fillRect(toX(11), pad.top, CW - (toX(11) - pad.left), CH);
+
+  drawGrid(ctx, pad, CW, CH, yMin, yMax, yStep, W);
+  drawMilesLines(ctx, pad, CH, W);
+  drawXAxis(ctx, pad, CW, CH);
+
+  if (yMin < 0) {
+    const y0 = toY(0);
+    ctx.strokeStyle = '#374151'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(pad.left, y0); ctx.lineTo(W - pad.right, y0); ctx.stroke();
+  }
+
+  ctx.beginPath(); ctx.moveTo(toX(0), toY(0));
+  DATA.forEach((d, i) => ctx.lineTo(toX(i), toY(d.cumCash)));
+  ctx.lineTo(toX(DATA.length-1), toY(yMin <= 0 ? 0 : yMin)); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + CH);
+  grad.addColorStop(0, '#3b82f650'); grad.addColorStop(1, '#3b82f610');
+  ctx.fillStyle = grad; ctx.fill();
+
+  ctx.beginPath();
+  DATA.forEach((d, i) => i === 0 ? ctx.moveTo(toX(i), toY(d.cumCash)) : ctx.lineTo(toX(i), toY(d.cumCash)));
+  ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = 2; ctx.stroke();
+
+  MILESTONES.filter(m => m.label.includes('Mkr in')).forEach(m => {
+    const x = toX(m.i), y = toY(DATA[m.i].cumCash);
+    ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI*2);
+    ctx.fillStyle = '#60a5fa'; ctx.fill();
+    ctx.font = 'bold 10px -apple-system'; ctx.fillStyle = '#60a5fa'; ctx.textAlign = 'center';
+    ctx.fillText(m.i === 0 ? '+ 10 Mkr' : '+ 25 Mkr', x, y - 12);
+  });
+}
+
+function fmtK(v) {
+  if (Math.abs(v) >= 1000) return (v/1000).toFixed(1) + ' Mkr';
+  return v + ' kkr';
+}
+function setupTooltip(canvasId, valuesFn) {
+  const el = document.getElementById(canvasId);
+  const tip = document.getElementById('tooltip');
+  el.addEventListener('mousemove', e => {
+    const rect = el.getBoundingClientRect();
+    const pct = (e.clientX - rect.left - 60) / (rect.width - 84);
+    const idx = Math.round(Math.max(0, Math.min(1, pct)) * (DATA.length - 1));
+    const d = DATA[idx];
+    const rows = valuesFn(d);
+    tip.innerHTML = `<div class="tt-date">${d.label} — ${d.units.toLocaleString('sv-SE')} enheter</div>` +
+      rows.map(r => `<div class="tt-row"><span class="tt-label">${r.label}</span><span class="tt-val" style="color:${r.color}">${r.val}</span></div>`).join('');
+    tip.style.display = 'block';
+    tip.style.left = (e.clientX + 14) + 'px';
+    tip.style.top  = (e.clientY - 10) + 'px';
+  });
+  el.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+}
+
+drawChart1(); drawChart2();
+
+setupTooltip('c1', d => [
+  { label: 'Burn',           color: '#ef4444', val: fmtK(d.burn) },
+  { label: 'Abonnemang',     color: '#22c55e', val: fmtK(d.sub) },
+  { label: 'VPP',            color: '#38bdf8', val: d.vpp > 0 ? fmtK(d.vpp) : '—' },
+  { label: 'Månadsresultat', color: d.net >= 0 ? '#4ade80' : '#f87171', val: (d.net >= 0 ? '+' : '') + fmtK(d.net) },
+]);
+setupTooltip('c2', d => [
+  { label: 'Kassaposition',    color: d.cumCash >= 0 ? '#60a5fa' : '#f87171', val: fmtK(d.cumCash) },
+  { label: 'Kapitalinjektion', color: '#60a5fa', val: d.capital > 0 ? '+' + fmtK(d.capital) : '—' },
+]);
+
+window.addEventListener('resize', () => { drawChart1(); drawChart2(); });
+</script>
+</body>
+</html>
