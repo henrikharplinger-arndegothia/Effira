@@ -1,0 +1,159 @@
+<!-- wp:html -->
+
+<!-- HERO -->
+<div style="background:#013233;border-top:3px solid #ff8c2d;">
+  <div class="flex flex-col lg:flex-row">
+    <div class="lg:w-7/12" style="padding:96px 5% 48px;">
+      <h1 style="color:#ffffff;font-size:38px;font-weight:700;line-height:1.2;margin:0 0 20px;">Gör din kunds pump redo för <span style="color:#ff8c2d;">dagens elmarknad.</span></h1>
+      <p style="color:#d9d9d9;font-size:18px;line-height:1.6;margin:0 0 20px;">OPTi från Effira Energy är en produkt du kan erbjuda nya och befintliga kunder. En anledning att höra av sig. Och ett sätt att hålla kontakten.</p>
+      <p style="color:#ffffff;font-size:17px;font-weight:600;line-height:1.5;margin:0 0 28px;">En enkel ny affär – i varje installation och servicebesök</p>
+      <a href="#vvs-cta" style="background:#ff8c2d;color:#062121;padding:14px 28px;border-radius:9999px;font-weight:700;font-size:16px;text-decoration:none;display:inline-block;">ANMÄL INTRESSE</a>
+    </div>
+    <div class="hidden lg:block lg:w-5/12" style="overflow:hidden;max-height:540px;">
+      <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/IMG_7776_web.png" alt="OPTi monterad på värmepump" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;">
+    </div>
+  </div>
+</div>
+
+<!-- LOGO STRIP -->
+<div style="background:#ffffff;border-bottom:1px solid #e8f0ee;padding:16px 5% 20px;">
+  <p style="text-align:center;font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 16px;">Kompatibel med</p>
+  <div class="flex flex-wrap justify-center items-center gap-6">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/nibe.svg" alt="NIBE" style="height:20px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/bosch.svg" alt="Bosch" style="height:28px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ctc.svg" alt="CTC" style="height:24px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/ivt.svg" alt="IVT" style="height:22px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/thermia-logo-se_sidhuvud_hemsida.svg" alt="Thermia" style="height:18px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/mitsubishi-electric.svg" alt="Mitsubishi Electric" style="height:26px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/daikin.svg" alt="Daikin" style="height:22px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/QvantumLogo-Colour_RGB.png" alt="Qvantum" style="height:24px;width:auto;filter:grayscale(1) opacity(0.55);">
+    <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/05/panasonic-logo.svg" alt="Panasonic" style="height:28px;width:auto;filter:grayscale(1) opacity(0.55);">
+  </div>
+</div>
+
+<!-- EN SERVICE SOM BETALAR SIG -->
+<div style="background:#d0e7e2;padding:64px 5%;">
+  <div class="flex flex-col lg:flex-row items-center gap-12" style="max-width:1200px;margin:0 auto;">
+    <div class="w-full lg:w-1/2">
+      <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">En service som betalar sig – för kunden och för dig</h2>
+      <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 16px;">OPTi monteras på befintlig pump på cirka 30 minuter. Inget att bygga om, inga nya rör, inga extra verktyg. Passar utmärkt i samband med ett ordinarie servicebesök — du är ändå där.</p>
+      <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 16px;">Det ger dig en naturlig anledning att höra av dig igen – och skapa ny affär i din befintliga kundbas.</p>
+      <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 24px;">Kunden får en pump som jobbar smartare. Du får en mer givande serviceaffär.</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Passar de flesta vattenburna värmepumpar</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Kräver ingen ombyggnad</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Installeras på 30 minuter</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 28px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Optimering och styrning enligt värmepumpsbranschens riktlinjer</p>
+      <p style="font-size:14px;color:#666;font-style:italic;margin:0;">Effira Energy — svenskt företag med 25 års erfarenhet i värmepumpsbranschen.</p>
+    </div>
+    <div class="w-full lg:w-1/2">
+      <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/HUb-ver.1.png" alt="OPTi styrenheten" style="width:100%;height:auto;display:block;">
+    </div>
+  </div>
+</div>
+
+<!-- KUNDVÄRDET -->
+<div style="background:#ffffff;padding:64px 5%;">
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
+    <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 24px;line-height:1.25;">Din kund sänker sina elkostnader. Du är den som gjorde det möjligt.</h2>
+    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 20px;">Uppvärmning och varmvatten står för upp till 75% av hushållets elförbrukning — och det är precis den delen OPTi tar hand om. Pumpen värmer när elen är billig, minskar när den är dyr och hanterar effekttariffer automatiskt så att kunden slipper dyra effekttoppar. Kunden märker ingenting förutom på räkningen.</p>
+    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 20px;">Resultatet: 6 000–12 000 kr lägre elkostnad per år, upp till 50% ökad egenanvändning av solel och en återbetalningstid som typiskt ligger inom 12 månader.</p>
+    <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 8px;">Pumpen moderniseras, lever längre och blir styrbar på distans.</p>
+    <p style="font-size:17px;line-height:1.7;color:#062121;font-weight:600;margin:0;">Och du är den som satte i gång det.</p>
+  </div>
+</div>
+
+<!-- VAD FIRMAN FÅR -->
+<div style="background:#d0e7e2;padding:64px 5%;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div style="background:#ffffff;border-radius:16px;padding:32px;">
+        <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Gör din befintliga kundbas till en ny affär</h3>
+        <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Du har redan kunderna. OPTi passar de flesta värmepumpar du installerat – vilket ger dig en enkel anledning att höra av dig igen. Istället för att jaga nya kunder, tjänar du mer på de du redan har.</p>
+      </div>
+      <div style="background:#ffffff;border-radius:16px;padding:32px;">
+        <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">En produkt kunden direkt förstår värdet av</h3>
+        <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Kunden sparar 6 000–12 000 kr per år – utan att ändra sitt beteende. Kort säljcykel, tydlig nytta och inga krångliga beslut.</p>
+      </div>
+      <div style="background:#ffffff;border-radius:16px;padding:32px;">
+        <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Skapa mer affär genom bättre service</h3>
+        <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Se när något är på väg att gå fel innan kunden märker det. Du kontaktar kunden först – och skapar fler serviceuppdrag och starkare relationer.</p>
+      </div>
+      <div style="background:#ffffff;border-radius:16px;padding:32px;">
+        <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Ny affär - utan extra supportbörda</h3>
+        <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Effira sköter plattform, app, optimering och kundsupport. Du installerar, behåller kundrelationen. En enkel affär som inte belastar organisationen – men bygger lönsamhet.</p>
+      </div>
+      <div class="lg:col-span-2" style="background:#ffffff;border-radius:16px;padding:32px;">
+        <h3 style="font-size:18px;font-weight:600;color:#013233;margin:0 0 12px;">Få kontroll på alla dina installerade pumpar</h3>
+        <p style="font-size:16px;line-height:1.6;color:#062121;margin:0;">Ett dashboard med alla kunder, status och drift i realtid. Du ser problem innan kunden gör det – och vet exakt vem du ska kontakta.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CITAT -->
+<div style="background:#ffffff;padding:64px 5%;text-align:center;">
+  <div style="max-width:800px;margin:0 auto;">
+    <p style="font-size:22px;font-weight:500;line-height:1.6;color:#013233;font-style:italic;margin:0 0 24px;"><span style="font-size:60px;color:#ff8c2d;line-height:0;vertical-align:-20px;margin-right:4px;">"</span>Det bästa är att vi kan höra av oss innan kunden själv vet att något är på gång. Vi installerar OPTi — och sedan vet vi när det är läge att ringa. Kunden slipper katastrofen, vi slipper brandkårsutryckningen.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div style="background:#d0e7e2;padding:64px 5%;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 32px;line-height:1.25;">Vanliga frågor</h2>
+    <div style="background:#ffffff;border-radius:12px;padding:24px 28px;margin-bottom:16px;">
+      <h3 style="font-size:17px;font-weight:600;color:#013233;margin:0 0 8px;">Behöver mina montörer utbildning?</h3>
+      <p style="font-size:16px;color:#444;margin:0;">Utbildningen är inte mer avancerad än att den kan köras på en timme online. Vi stöttar med material och instruktioner.</p>
+    </div>
+    <div style="background:#ffffff;border-radius:12px;padding:24px 28px;margin-bottom:16px;">
+      <h3 style="font-size:17px;font-weight:600;color:#013233;margin:0 0 8px;">Vad händer om kunden har problem med appen?</h3>
+      <p style="font-size:16px;color:#444;margin:0;">Effira hanterar support. Du behöver inte ta de samtalen.</p>
+    </div>
+    <div style="background:#ffffff;border-radius:12px;padding:24px 28px;">
+      <h3 style="font-size:17px;font-weight:600;color:#013233;margin:0 0 8px;">Fungerar det med de pumpar vi installerar?</h3>
+      <p style="font-size:16px;color:#444;margin:0;">OPTi är kompatibelt med 95% av vattenburna värmepumpar — Nibe, Bosch, IVT, Thermia, Mitsubishi och många fler.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SÅ SKAPAR OPTi VÄRDE -->
+<div style="background:#ffffff;padding:64px 5%;">
+  <div class="flex flex-col lg:flex-row items-center gap-12" style="max-width:1200px;margin:0 auto;">
+    <div class="w-full lg:w-1/4">
+      <img src="https://effiraenergy.com/wp-content/uploads/sites/3/2026/04/Firefly.png" alt="Effira-appen" style="width:100%;height:auto;display:block;border-radius:16px;max-width:220px;margin:0 auto;">
+    </div>
+    <div class="w-full lg:w-2/3">
+      <h2 style="font-size:32px;font-weight:700;color:#013233;margin:0 0 20px;line-height:1.25;">Så skapar OPTi värde</h2>
+      <p style="font-size:17px;line-height:1.7;color:#062121;margin:0 0 24px;">Elpriset varierar kraftigt över dygnet. De flesta värmepumpar använder el "blint". OPTi styr värmepumpen automatiskt.</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Värmer när elen är billig</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Minskar elförbrukningen när den är dyr</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Optimerar utan att kunden märker något</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 12px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Ökar avkastningen på kundens solceller</p>
+      <p style="font-size:17px;line-height:1.5;padding-left:28px;position:relative;margin:0 0 28px;"><span style="position:absolute;left:0;color:#ff8c2d;font-weight:700;">✓</span>Bibehåller komforten</p>
+      <p style="font-size:15px;color:#666;font-style:italic;margin:0;">OPTi kommer med många ytterligare funktioner och inställningar – för den som vill.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA TOPP — rubrik + beskrivning -->
+<div id="vvs-cta" style="background:#013233;padding:72px 5% 48px;">
+  <div style="max-width:660px;margin:0 auto;text-align:center;">
+    <h2 style="color:#ffffff;font-size:34px;font-weight:700;margin:0 0 16px;line-height:1.25;">Anmäl intresse som OPTi-partner</h2>
+    <p style="color:#cccccc;font-size:18px;line-height:1.6;margin:0;">Fyll i dina uppgifter så hör vi av oss och berättar mer om hur det fungerar att bli partner.</p>
+  </div>
+</div>
+
+<!-- /wp:html -->
+
+<!-- wp:acf/hubspot-form {"name":"acf/hubspot-form","data":{"hubspot_form_id":"","_hubspot_form_id":"field_7a3326e3hubspot_form_id"},"mode":"edit"} /-->
+
+<!-- wp:html -->
+
+<!-- CTA BOTTEN — kontaktinfo -->
+<div style="background:#013233;padding:48px 5% 72px;">
+  <div style="max-width:660px;margin:0 auto;text-align:center;">
+    <p style="color:#999999;font-size:15px;line-height:1.8;margin:0;">Eller kontakta oss direkt<br><a href="tel:0357101150" style="color:#ff8c2d;text-decoration:none;">035–710 11 50</a> &nbsp;·&nbsp; <a href="mailto:support@effiraenergy.com" style="color:#ff8c2d;text-decoration:none;">support@effiraenergy.com</a></p>
+  </div>
+</div>
+
+<!-- /wp:html -->
