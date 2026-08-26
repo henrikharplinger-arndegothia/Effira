@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!-- Default language: Swedish -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styrelsemöte — Ny prissättning OPTi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --flow: #062121;
+      --pine: #013233;
+      --glacier: #D0E7E2;
+      --mist: #FAFEFE;
+      --ember: #FF8C2D;
+      --teal-dark: var(--flow);
+      --teal-mid: var(--pine);
+      --teal-light: var(--glacier);
+      --warm-white: var(--mist);
+      --white: #ffffff;
+      --black: var(--flow);
+      --grey: #6b7280;
+      --accent: var(--pine);
+      --highlight: var(--ember);
+      --card-radius: 16px;
+      --pill-radius: 9999px;
+      --nav-mode: 'slides';
+    }
+
+    body {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--warm-white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       MODE: SLIDES
+       ═══════════════════════════════════════ */
+    body.mode-slides {
+      height: 100vh;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    body.mode-slides .deck {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    body.mode-slides .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      overflow: hidden;
+    }
+
+    body.mode-slides .slide.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    body.mode-slides .slide-inner {
+      height: 100vh;
+      max-height: 100vh;
+      padding: 48px 64px 80px;
+      overflow-y: auto;
+    }
+
+    body.mode-slides h1 { font-size: clamp(32px, 4vw, 56px); margin-bottom: 24px; }
+    body.mode-slides h2 { font-size: clamp(24px, 3vw, 36px); margin-bottom: 16px; }
+    body.mode-slides h3 { font-size: clamp(18px, 2.5vw, 28px); margin-bottom: 12px; }
+    body.mode-slides p { font-size: clamp(14px, 1.8vw, 20px); line-height: 1.5; }
+    body.mode-slides .text-content { font-size: clamp(14px, 1.8vw, 20px); }
+    body.mode-slides table { font-size: clamp(13px, 1.6vw, 18px); }
+    body.mode-slides .clean-list li { font-size: clamp(13px, 1.6vw, 18px); line-height: 1.6; }
+    body.mode-slides .card { padding: 24px; }
+    body.mode-slides .card-grid { margin-top: 24px; gap: 12px; }
+    body.mode-slides .card h3 { font-size: 14px; margin-bottom: 6px; }
+    body.mode-slides .card p { font-size: 12px; line-height: 1.5; }
+    body.mode-slides .card .card-label { margin-bottom: 8px; }
+    body.mode-slides .subtitle { font-size: 15px; }
+    body.mode-slides .stat-row { margin-top: 32px; gap: 36px; }
+    body.mode-slides .stat .stat-value { font-size: 28px; }
+    body.mode-slides .quote { font-size: 15px; margin-top: 20px; }
+    body.mode-slides .two-col { gap: 48px; }
+    body.mode-slides .clean-list { gap: 8px; }
+    body.mode-slides .clean-list li { font-size: 13px; }
+    body.mode-slides .slide-label { margin-bottom: 16px; }
+
+    /* ═══════════════════════════════════════
+       MODE: SCROLL + DOTS
+       ═══════════════════════════════════════ */
+    body.mode-scroll .deck {
+      scroll-behavior: smooth;
+    }
+
+    body.mode-scroll .slide {
+      min-height: 100vh;
+    }
+
+    body.mode-scroll .dot-nav {
+      position: fixed;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 200;
+    }
+
+    body.mode-scroll .dot-nav .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(6,33,33,0.2);
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    body.mode-scroll .dot-nav .dot.active {
+      background: var(--teal-dark);
+      transform: scale(1.4);
+    }
+
+    body.mode-scroll .dot-nav .dot .dot-label {
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    body.mode-scroll .dot-nav .dot:hover .dot-label {
+      opacity: 1;
+    }
+
+    /* ═══════════════════════════════════════
+       MODE: TABS
+       ═══════════════════════════════════════ */
+    body.mode-tabs .tab-bar {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--teal-dark);
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 40px;
+      height: 56px;
+      overflow-x: auto;
+    }
+
+    body.mode-tabs .tab-bar .tab {
+      padding: 16px 24px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+      font-weight: 600;
+    }
+
+    body.mode-tabs .tab-bar .tab:hover {
+      color: rgba(255,255,255,0.8);
+    }
+
+    body.mode-tabs .tab-bar .tab.active {
+      color: var(--highlight);
+      border-bottom-color: var(--highlight);
+    }
+
+    body.mode-tabs .slide {
+      min-height: 100vh;
+    }
+
+    /* ═══════════════════════════════════════
+       ARROW NAV (slides mode)
+       ═══════════════════════════════════════ */
+    .arrow-nav {
+      position: fixed;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 100;
+    }
+
+    .arrow-nav button {
+      background: var(--teal-dark);
+      border: none;
+      color: rgba(255,255,255,0.7);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .arrow-nav button:hover {
+      background: var(--teal-mid);
+      color: white;
+    }
+
+    .arrow-nav .counter {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--grey);
+      min-width: 48px;
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════
+       MODE SWITCHER
+       ═══════════════════════════════════════ */
+    .mode-switcher {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      z-index: 300;
+      display: flex;
+      gap: 4px;
+      background: rgba(6,33,33,0.08);
+      border-radius: var(--pill-radius);
+      padding: 4px;
+    }
+
+    .mode-switcher button {
+      background: none;
+      border: none;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-family: inherit;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grey);
+      cursor: pointer;
+      border-radius: var(--pill-radius);
+      transition: all 0.2s;
+      font-weight: 600;
+    }
+
+    .mode-switcher button.active {
+      background: var(--teal-dark);
+      color: white;
+    }
+
+    /* ═══════════════════════════════════════
+       CONTENT STYLES
+       ═══════════════════════════════════════ */
+    .slide-inner {
+      padding: 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--highlight);
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .slide-inner.dark {
+      background: var(--teal-dark);
+      color: var(--white);
+    }
+
+    .slide-inner.dark .slide-label {
+      color: var(--highlight);
+    }
+
+    .slide-inner.light {
+      background: var(--warm-white);
+      color: var(--black);
+    }
+
+    .slide-inner.accent {
+      background: var(--glacier);
+      color: var(--teal-dark);
+    }
+
+    .slide-inner.accent .slide-label {
+      color: var(--ember);
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--highlight);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--grey);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .dark .subtitle {
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--teal-dark);
+      color: var(--white);
+      padding: 32px;
+      border-radius: var(--card-radius);
+    }
+
+    .dark .card {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .card .card-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--highlight);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .card h3 {
+      color: var(--white);
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      font-size: 14px;
+    }
+
+    th {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 2px solid #000000;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .light td {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .dark td {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    td:last-child {
+      text-align: right;
+    }
+
+    /* Pill buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: var(--pill-radius);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--teal-dark);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-mid);
+    }
+
+    .btn-outline {
+      background: none;
+      border: 1px solid rgba(6,33,33,0.2);
+      color: var(--teal-dark);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--teal-dark);
+    }
+
+    .dark .btn-outline {
+      border-color: rgba(255,255,255,0.2);
+      color: var(--white);
+    }
+
+    /* Two-column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    /* Stat highlight */
+    .stat-row {
+      display: flex;
+      gap: 48px;
+      margin-top: 40px;
+    }
+
+    .stat .stat-value {
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .stat .stat-label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-top: 6px;
+    }
+
+    .dark .stat .stat-label {
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* Quote */
+    .quote {
+      border-left: 3px solid var(--highlight);
+      padding-left: 24px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--grey);
+      margin-top: 32px;
+      max-width: 560px;
+    }
+
+    .dark .quote {
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* List */
+    .clean-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .clean-list li {
+      font-size: 14px;
+      padding-left: 16px;
+      position: relative;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .light .clean-list li {
+      color: var(--pine);
+    }
+
+    .clean-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--highlight);
+    }
+
+    /* Logo */
+    .brand-logo {
+      display: none;
+    }
+
+    /* Hide elements based on mode */
+    .arrow-nav, .dot-nav, .tab-bar { display: none; }
+    body.mode-slides .arrow-nav { display: flex; }
+    body.mode-scroll .dot-nav { display: flex; }
+    body.mode-tabs .tab-bar { display: flex; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .slide-inner { padding: 40px 24px; }
+      .two-col { grid-template-columns: 1fr; gap: 40px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .stat-row { flex-direction: column; gap: 24px; }
+      .mode-switcher { top: auto; bottom: 80px; right: 50%; transform: translateX(50%); }
+    }
+
+    /* ═══════════════════════════════════════
+       PER-SLIDE FEEDBACK (Review Mode)
+       ═══════════════════════════════════════ */
+    .fb-toggle {
+      position: fixed; bottom: 24px; right: 24px; z-index: 500;
+      background: var(--ember); color: var(--white); border: none;
+      padding: 12px 20px; border-radius: var(--pill-radius); font-family: inherit;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: all 0.2s;
+      display: flex; align-items: center; gap: 8px; letter-spacing: 0.04em;
+    }
+    .fb-toggle:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+    .fb-toggle .fb-count { background: rgba(255,255,255,0.25); padding: 2px 8px; border-radius: 10px; font-size: 11px; }
+
+    .fb-panel {
+      position: fixed; top: 0; right: -440px; width: 420px; height: 100vh;
+      background: var(--mist); z-index: 600; transition: right 0.35s ease;
+      box-shadow: -4px 0 24px rgba(0,0,0,0.12); display: flex; flex-direction: column;
+    }
+    .fb-panel.open { right: 0; }
+
+    .fb-panel .fb-header {
+      padding: 20px 24px; background: var(--flow); color: var(--white);
+      display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+    }
+    .fb-panel .fb-header h3 { font-size: 15px; font-weight: 600; color: var(--white); margin: 0; }
+    .fb-panel .fb-header .fb-slide-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    .fb-panel .fb-close { background: none; border: none; color: rgba(255,255,255,0.6); font-size: 22px; cursor: pointer; padding: 0; line-height: 1; }
+    .fb-panel .fb-close:hover { color: var(--white); }
+
+    .fb-thread { flex: 1; overflow-y: auto; padding: 20px 24px; }
+    .fb-thread .fb-empty { text-align: center; color: var(--grey); font-size: 13px; padding: 40px 0; }
+    .fb-comment { padding: 16px 0; border-bottom: 1px solid var(--glacier); }
+    .fb-comment:last-child { border-bottom: none; }
+    .fb-comment .fb-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .fb-comment .fb-author { font-size: 13px; font-weight: 600; color: var(--flow); }
+    .fb-comment .fb-time { font-size: 11px; color: var(--grey); }
+    .fb-comment .fb-text { font-size: 14px; color: var(--pine); line-height: 1.6; }
+
+    .fb-compose { border-top: 1px solid var(--glacier); padding: 20px 24px; flex-shrink: 0; }
+    .fb-compose input, .fb-compose textarea {
+      width: 100%; padding: 10px 12px; border: 1px solid var(--glacier); border-radius: 8px;
+      font-family: inherit; font-size: 13px; background: var(--white);
+      color: var(--flow); transition: border-color 0.2s; margin-bottom: 10px;
+    }
+    .fb-compose input:focus, .fb-compose textarea:focus { outline: none; border-color: var(--pine); }
+    .fb-compose textarea { min-height: 70px; resize: vertical; }
+    .fb-compose button {
+      width: 100%; padding: 10px; background: var(--ember); color: var(--white);
+      border: none; border-radius: 8px; font-family: inherit; font-size: 13px;
+      font-weight: 600; cursor: pointer; transition: background 0.2s;
+    }
+    .fb-compose button:hover { background: #e67a1f; }
+    .fb-compose button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .fb-overlay { position: fixed; inset: 0; background: rgba(6,33,33,0.4); z-index: 550; opacity: 0; pointer-events: none; transition: opacity 0.35s; }
+    .fb-overlay.open { opacity: 1; pointer-events: all; }
+    .fb-loading { text-align: center; padding: 20px; color: var(--grey); font-size: 13px; }
+
+    @media (max-width: 768px) {
+      .fb-panel { width: 100%; right: -100%; }
+      .fb-toggle { bottom: 16px; right: 16px; }
+    }
+
+    .text-content {
+      max-width: 900px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .text-content p {
+      margin-bottom: 16px;
+    }
+
+    .text-content strong {
+      font-weight: 600;
+      color: var(--highlight);
+    }
+  </style>
+  <noscript><style>
+    body { height: auto !important; overflow: auto !important; user-select: auto !important; }
+    .mode-switcher, .arrow-nav { display: none !important; }
+    .slide { position: static !important; opacity: 1 !important; pointer-events: all !important; min-height: 100vh; }
+    .dot-nav { position: fixed; right: 28px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 14px; z-index: 200; }
+    .dot-nav .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(6,33,33,0.2); }
+  </style></noscript>
+</head>
+<body class="mode-slides slide-dark">
+
+<!-- BRAND LOGO -->
+<a class="brand-logo" href="#">
+  <svg class="logo-symbol" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.5 46C5.5 32 14 20 30 12c4.5-2.3 9-3.8 13.5-4.5C40 14 36 22 34 28c-2.5 7.5-7.5 13-15 15.5C12 46 6 46 2.5 46z" fill="var(--ember)"/>
+    <path d="M10 44c3-12 10-22 22-28 3-1.6 6.2-2.7 9.5-3.2C39 18.5 36 24.5 34.5 29c-2 6-6 10.5-12 12.5C17 43.5 13 43.8 10 44z" fill="var(--ember)" opacity="0.55"/>
+  </svg>
+  <span class="logo-text">effira</span>
+</a>
+
+<!-- MODE SWITCHER -->
+<div class="mode-switcher">
+  <button class="active" data-mode="slides">Slides</button>
+  <button data-mode="scroll">Scroll</button>
+  <button data-mode="tabs">Tabs</button>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <div class="tab active" data-slide="0">Hårdvara & Besparingsgaranti</div>
+  <div class="tab" data-slide="1">Konsumentabonnemang</div>
+  <div class="tab" data-slide="2">Tre kanaler</div>
+  <div class="tab" data-slide="3">Ekonomi & Beslut</div>
+</div>
+
+<!-- DOT NAV -->
+<div class="dot-nav">
+  <div class="dot active" data-slide="0"><span class="dot-label">Hårdvara & Besparingsgaranti</span></div>
+  <div class="dot" data-slide="1"><span class="dot-label">Konsumentabonnemang</span></div>
+  <div class="dot" data-slide="2"><span class="dot-label">Tre kanaler</span></div>
+  <div class="dot" data-slide="3"><span class="dot-label">Ekonomi & Beslut</span></div>
+</div>
+
+<!-- ARROW NAV -->
+<div class="arrow-nav">
+  <button id="prev">&#8592;</button>
+  <span class="counter" id="counter">1 / 4</span>
+  <button id="next">&#8594;</button>
+</div>
+
+<div class="deck">
+
+  <!-- SLIDE 1 — Punkt 1 & 2 -->
+  <div class="slide active" data-title="Hårdvara & Besparingsgaranti">
+    <div class="slide-inner" style="background: #ffffff; color: #000000; padding: 40px 60px;">
+      <h1 style="font-size: 42px; margin-bottom: 16px;">Styrelsemöte 27 augusti 2026 — Ny prissättning OPTi</h1>
+      
+      <p style="font-size: 18px; margin-bottom: 32px;"><strong>Förslag i korthet:</strong> Effira ska inte tjäna pengar på hårdvaran. Intäkterna ska komma från konsumentabonnemang, långsiktiga kundrelationer genom återförsäljare, och balanstjänster/VPP genom energibolag.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px;">
+        
+        <!-- Vänster kolumn -->
+        <div>
+          <h2 style="font-size: 28px; margin-bottom: 16px;">1. Hårdvara</h2>
+          <p style="font-size: 16px; margin-bottom: 12px;"><strong>Olika pris beroende på vem som installerar:</strong></p>
+          <ul style="list-style: none; padding: 0; margin: 0 0 24px 0; font-size: 15px; line-height: 1.8;">
+            <li>• Direkt till konsument: <strong>3 500 kr</strong> inkl. moms</li>
+            <li>• Direktförsäljning, kampanj: <strong>2 750 kr</strong> inkl. moms</li>
+            <li>• Återförsäljare: <strong>2 000 kr</strong> exkl. moms</li>
+            <li>• Energibolag: <strong>2 000 kr</strong> exkl. moms</li>
+          </ul>
+          <p style="font-size: 14px; line-height: 1.6;">Kostnaden är cirka <strong>1 900 kr för hårdvara</strong> och <strong>1 000 kr för installation</strong>. Vid direktförsäljning ansvarar Effira för installationen. Vid försäljning till återförsäljare eller energibolag ansvarar de för installationen. 2 000 kr exkl. moms täcker i princip hårdvaran — Effira ska vara kostnadsneutral på hårdvaran.</p>
+        </div>
+
+        <!-- Höger kolumn -->
+        <div>
+          <h2 style="font-size: 28px; margin-bottom: 16px;">2. Besparingsgarantin</h2>
+          <p style="font-size: 16px; margin-bottom: 12px;"><strong>Avveckla den nuvarande besparingsgarantin helt.</strong></p>
+          <p style="font-size: 14px; line-height: 1.6; margin-bottom: 8px;">Den ersätts av tydlig funktionalitet och löpande visning av optimeringen. Skälen:</p>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.6;">
+            <li>1. Garantins minimibelopp på 3 600 kr riskerar att uppfattas som ett tak.</li>
+            <li>2. Baselineberäkningen är svår för kunden att verifiera.</li>
+            <li>3. Villkoren är för många och för svåra att förklara i försäljningen.</li>
+            <li>4. Kravet på konstant besparingsläge motverkar komfort- och kontrollfunktioner.</li>
+            <li>5. Ersättningen är abonnemangskrediter, inte pengar, och förfaller vid uppsägning.</li>
+            <li>6. Tvister och manuell administration blir svåra att skala.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — Punkt 3 med besparingsdata -->
+  <div class="slide" data-title="Konsumentabonnemang">
+    <div class="slide-inner" style="background: #000000; color: #ffffff; padding: 40px 60px;">
+      <h2 style="font-size: 36px; margin-bottom: 20px;">3. Konsumentabonnemang</h2>
+      <p style="font-size: 18px; margin-bottom: 8px;"><strong>Två fasta abonnemangsnivåer:</strong></p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 16px;">
+        <div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 16px; line-height: 1.9;">
+            <li>• <strong>Bas (69–99 kr/mån inkl. moms):</strong> trygghet, kontroll, komfort, överblick, styrning och smart integration</li>
+            <li style="margin-top: 12px;">• <strong>Premium (99–129 kr/mån inkl. moms):</strong> Bas + smart prisstyrning: spotprisoptimering och effekttariffer</li>
+          </ul>
+          
+          <p style="font-size: 14px; line-height: 1.6; margin-bottom: 12px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 6px;">Bas ligger genomgående <strong>30 kr under Premium</strong>. Uppgraderingen på 30 kr/mån är det som köper besparingsfunktionen — besparing ingår endast i Premium.</p>
+          
+          <p style="font-size: 14px; line-height: 1.6; margin-bottom: 12px;">Bakgrunden till två abonnemang är att månadsbesparingen varierar kraftigt över året. Analysen visar att kunden kan ha positiv helårsbesparing men ändå några månader där den fasta avgiften är högre än besparingen.</p>
+          
+          <p style="font-size: 14px; line-height: 1.6; margin-bottom: 12px;">Det gör att vi inte ska sälja "besparing" som nummer 1 — då hamnar vi i samma problem som med besparingsgarantin.</p>
+          
+          <p style="font-size: 13px; line-height: 1.6;"><strong>Övriga principer:</strong> Fast abonnemangspris — ingen rörlig avgift. Årsbetalning: kunden betalar för 10 månader och får 12 månader.</p>
+        </div>
+        
+        <!-- Besparingsdiagram -->
+        <div>
+          <h3 style="font-size: 18px; margin-bottom: 10px;">Månatlig besparing Premium (191 anläggningar, feb–juli 2026)</h3>
+          
+          <svg viewBox="0 0 800 400" style="width: 100%; height: auto; background: rgba(255,255,255,0.02); border-radius: 8px; padding: 20px;">
+            <!-- Y-axel grid linjer -->
+            <line x1="60" y1="40" x2="60" y2="340" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            <line x1="60" y1="340" x2="760" y2="340" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            
+            <!-- Y-axel labels -->
+            <text x="50" y="45" fill="rgba(255,255,255,0.6)" font-size="11" text-anchor="end">900</text>
+            <text x="50" y="115" fill="rgba(255,255,255,0.6)" font-size="11" text-anchor="end">700</text>
+            <text x="50" y="185" fill="rgba(255,255,255,0.6)" font-size="11" text-anchor="end">500</text>
+            <text x="50" y="255" fill="rgba(255,255,255,0.6)" font-size="11" text-anchor="end">300</text>
+            <text x="50" y="325" fill="rgba(255,255,255,0.6)" font-size="11" text-anchor="end">100</text>
+            <text x="50" y="345" fill="rgba(255,255,255,0.6)" font-size="11" text-anchor="end">0</text>
+            
+            <!-- Horisontella referenslinjer för 129 kr och 99 kr -->
+            <line x1="60" y1="297" x2="760" y2="297" stroke="#FF8C2D" stroke-width="2" stroke-dasharray="4,4"/>
+            <text x="765" y="300" fill="#FF8C2D" font-size="11" font-weight="600">129 kr</text>
+            
+            <line x1="60" y1="307" x2="760" y2="307" stroke="#D0E7E2" stroke-width="2" stroke-dasharray="4,4"/>
+            <text x="765" y="310" fill="#D0E7E2" font-size="11" font-weight="600">99 kr</text>
+            
+            <!-- Staplar för varje månad: Jan (447, 638, 829) -->
+            <rect x="70" y="191" width="12" height="149" fill="rgba(208,231,226,0.5)"/>
+            <rect x="84" y="127" width="12" height="213" fill="rgba(208,231,226,0.8)"/>
+            <rect x="98" y="65" width="12" height="275" fill="rgba(208,231,226,1)"/>
+            
+            <!-- Feb (404, 578, 751) -->
+            <rect x="125" y="206" width="12" height="134" fill="rgba(208,231,226,0.5)"/>
+            <rect x="139" y="148" width="12" height="192" fill="rgba(208,231,226,0.8)"/>
+            <rect x="153" y="90" width="12" height="250" fill="rgba(208,231,226,1)"/>
+            
+            <!-- Mar (371, 530, 689) -->
+            <rect x="180" y="217" width="12" height="123" fill="rgba(208,231,226,0.5)"/>
+            <rect x="194" y="164" width="12" height="176" fill="rgba(208,231,226,0.8)"/>
+            <rect x="208" y="111" width="12" height="229" fill="rgba(208,231,226,1)"/>
+            
+            <!-- Apr (245, 349, 454) -->
+            <rect x="235" y="259" width="12" height="81" fill="rgba(208,231,226,0.5)"/>
+            <rect x="249" y="224" width="12" height="116" fill="rgba(208,231,226,0.8)"/>
+            <rect x="263" y="189" width="12" height="151" fill="rgba(208,231,226,1)"/>
+            
+            <!-- Maj (146, 209, 271) -->
+            <rect x="290" y="291" width="12" height="49" fill="rgba(208,231,226,0.5)"/>
+            <rect x="304" y="270" width="12" height="70" fill="rgba(208,231,226,0.8)"/>
+            <rect x="318" y="250" width="12" height="90" fill="rgba(208,231,226,1)"/>
+            
+            <!-- Jun (64, 91, 119) -->
+            <rect x="345" y="319" width="12" height="21" fill="rgba(255,140,45,0.5)"/>
+            <rect x="359" y="310" width="12" height="30" fill="rgba(255,140,45,0.7)"/>
+            <rect x="373" y="300" width="12" height="40" fill="rgba(255,140,45,0.9)"/>
+            
+            <!-- Jul (33, 47, 61) -->
+            <rect x="400" y="329" width="12" height="11" fill="rgba(255,140,45,0.5)"/>
+            <rect x="414" y="324" width="12" height="16" fill="rgba(255,140,45,0.7)"/>
+            <rect x="428" y="320" width="12" height="20" fill="rgba(255,140,45,0.9)"/>
+            
+            <!-- Aug (33, 47, 61) -->
+            <rect x="455" y="329" width="12" height="11" fill="rgba(255,140,45,0.5)"/>
+            <rect x="469" y="324" width="12" height="16" fill="rgba(255,140,45,0.7)"/>
+            <rect x="483" y="320" width="12" height="20" fill="rgba(255,140,45,0.9)"/>
+            
+            <!-- Sep (112, 160, 208) -->
+            <rect x="510" y="303" width="12" height="37" fill="rgba(208,231,226,0.5)"/>
+            <rect x="524" y="287" width="12" height="53" fill="rgba(208,231,226,0.8)"/>
+            <rect x="538" y="271" width="12" height="69" fill="rgba(208,231,226,1)"/>
+            
+            <!-- Okt (224, 321, 417) -->
+            <rect x="565" y="266" width="12" height="74" fill="rgba(208,231,226,0.5)"/>
+            <rect x="579" y="233" width="12" height="107" fill="rgba(208,231,226,0.8)"/>
+            <rect x="593" y="201" width="12" height="139" fill="rgba(208,231,226,1)"/>
+            
+            <!-- Nov (312, 446, 579) -->
+            <rect x="620" y="236" width="12" height="104" fill="rgba(208,231,226,0.5)"/>
+            <rect x="634" y="192" width="12" height="148" fill="rgba(208,231,226,0.8)"/>
+            <rect x="648" y="147" width="12" height="193" fill="rgba(208,231,226,1)"/>
+            
+            <!-- Dec (404, 577, 750) -->
+            <rect x="675" y="206" width="12" height="134" fill="rgba(208,231,226,0.5)"/>
+            <rect x="689" y="148" width="12" height="192" fill="rgba(208,231,226,0.8)"/>
+            <rect x="703" y="91" width="12" height="249" fill="rgba(208,231,226,1)"/>
+            
+            <!-- X-axel månader -->
+            <text x="83" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Jan</text>
+            <text x="139" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Feb</text>
+            <text x="194" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Mar</text>
+            <text x="249" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Apr</text>
+            <text x="304" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Maj</text>
+            <text x="359" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Jun</text>
+            <text x="414" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Jul</text>
+            <text x="469" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Aug</text>
+            <text x="524" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Sep</text>
+            <text x="579" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Okt</text>
+            <text x="634" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Nov</text>
+            <text x="689" y="358" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle">Dec</text>
+          </svg>
+          
+          <div style="display: flex; gap: 20px; margin-top: 16px; font-size: 11px; justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <div style="width: 16px; height: 12px; background: rgba(208,231,226,0.5);"></div>
+              <span style="color: rgba(255,255,255,0.7);">Låg</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <div style="width: 16px; height: 12px; background: rgba(208,231,226,0.8);"></div>
+              <span style="color: rgba(255,255,255,0.7);">Central</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <div style="width: 16px; height: 12px; background: rgba(208,231,226,1);"></div>
+              <span style="color: rgba(255,255,255,0.7);">Hög</span>
+            </div>
+          </div>
+          
+          <p style="font-size: 12px; line-height: 1.5; margin-top: 16px; color: rgba(255,255,255,0.7);"><strong>Kunden går plus på helåret i alla scenarier.</strong> Sommarmånaderna (jun-aug) visar besparingar under abonnemangskostnaden — därför ska Premium säljas på <strong>smart prisstyrning</strong>, inte på en fast besparingssiffra.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — Punkt 4 -->
+  <div class="slide" data-title="Tre kanaler">
+    <div class="slide-inner" style="background: #ffffff; color: #000000; padding: 40px 60px;">
+      <h2 style="font-size: 36px; margin-bottom: 24px;">4. Tre kanaler</h2>
+      
+      <h3 style="font-size: 24px; margin-bottom: 12px; margin-top: 24px;">A. Enkel återförsäljare — exempel Comfort</h3>
+      <ul style="list-style: none; padding: 0; margin: 0 0 12px 0; font-size: 15px; line-height: 1.7;">
+        <li>• Effira äger kundrelationen och OPTi-abonnemanget.</li>
+        <li>• Återförsäljaren säljer och installerar produkten.</li>
+        <li>• Dashboarden visar när kunden behöver service och när värmepumpen kan behöva bytas.</li>
+        <li>• VPP sker i samarbete med en separat VPP-partner.</li>
+      </ul>
+      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 32px; padding-left: 16px; border-left: 3px solid #000000;"><strong>Värde:</strong> återförsäljaren får bättre service- och bytesunderlag; Effira behåller kunden och abonnemangsintäkten.</p>
+
+      <h3 style="font-size: 24px; margin-bottom: 12px;">B. Smart återförsäljare — exempel Climatime</h3>
+      <ul style="list-style: none; padding: 0; margin: 0 0 12px 0; font-size: 15px; line-height: 1.7;">
+        <li>• Återförsäljaren äger kundrelationen och den löpande affären.</li>
+        <li>• Återförsäljaren säljer och installerar produkten, exempelvis tillsammans med ett serviceavtal.</li>
+        <li>• Lösningen levereras som <strong>white label eller via API</strong> och kan ingå i återförsäljarens eget erbjudande.</li>
+        <li>• Återförsäljaren betalar <strong>49 kr/mån exkl. moms för Bas</strong> och <strong>69 kr/mån exkl. moms för Premium</strong> till Effira. Återförsäljaren bestämmer själv hur kostnaden tas ut av kunden.</li>
+        <li>• VPP sker i samarbete med en separat VPP-partner.</li>
+      </ul>
+      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 32px; padding-left: 16px; border-left: 3px solid #000000;"><strong>Värde:</strong> återförsäljaren får kontinuerlig serviceaffär och kundrelation; Effira levererar teknik och integration.</p>
+
+      <h3 style="font-size: 24px; margin-bottom: 12px;">C. Energibolag — exempel Tibber</h3>
+      <ul style="list-style: none; padding: 0; margin: 0 0 12px 0; font-size: 15px; line-height: 1.7;">
+        <li>• Energibolaget har normalt faktureringen och äger kundrelationen.</li>
+        <li>• Integrationen sker via <strong>API</strong> och OPTi blir en del av energibolagets kunderbjudande.</li>
+        <li>• Energibolaget betalar <strong>49 kr/mån exkl. moms för Bas</strong> och <strong>69 kr/mån exkl. moms för Premium</strong> till Effira. Energibolaget bestämmer själv hur kostnaden tas ut av kunden.</li>
+        <li>• VPP sker genom energibolaget och VPP-intäkten delas mellan energibolaget och Effira.</li>
+        <li>• Energibolaget är VPP-partner även när Effira äger slutkunden från en annan försäljningskanal.</li>
+        <li>• Kundavtalet måste ge Effira rätt att styra pumpen och vid behov tillfälligt begränsa driften.</li>
+      </ul>
+      <p style="font-size: 15px; line-height: 1.6; padding-left: 16px; border-left: 3px solid #000000;"><strong>Värde:</strong> energibolaget får en smart energitjänst och tillgång till energiaffären; Effira får abonnemangs- och VPP-intäkt.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — Punkt 5 & Beslut -->
+  <div class="slide" data-title="Ekonomi & Beslut">
+    <div class="slide-inner" style="background: #000000; color: #ffffff; padding: 40px 60px;">
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+        
+        <!-- Vänster kolumn -->
+        <div>
+          <h2 style="font-size: 32px; margin-bottom: 16px;">5. Ekonomisk innebörd</h2>
+          <p style="font-size: 15px; margin-bottom: 20px; font-style: italic;">Välj kanal baserat på intäktsmål och skalbarhetsbehov.</p>
+          
+          <table style="width: 100%; font-size: 12px; margin-bottom: 20px;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.3);">
+                <th style="padding: 8px 10px; text-align: left; font-weight: 600;">Kanal</th>
+                <th style="padding: 8px 10px; text-align: right; font-weight: 600;">Hårdvara</th>
+                <th style="padding: 8px 10px; text-align: right; font-weight: 600;">Löpande intäkt</th>
+                <th style="padding: 8px 10px; text-align: right; font-weight: 600;">VPP-intäkt</th>
+                <th style="padding: 8px 10px; text-align: right; font-weight: 600;">Kundrelation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.15);">
+                <td style="padding: 8px 10px;">Direkt konsument</td>
+                <td style="padding: 8px 10px; text-align: right;">3 500 / 2 750 kr inkl.</td>
+                <td style="padding: 8px 10px; text-align: right;">69–99 eller 99–129 kr/mån inkl.</td>
+                <td style="padding: 8px 10px; text-align: right;">Ja - med energibolag</td>
+                <td style="padding: 8px 10px; text-align: right;">Effira</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.15);">
+                <td style="padding: 8px 10px;">Enkel återförsäljare</td>
+                <td style="padding: 8px 10px; text-align: right;">2 000 kr exkl.</td>
+                <td style="padding: 8px 10px; text-align: right;">69–99 eller 99–129 kr/mån inkl.</td>
+                <td style="padding: 8px 10px; text-align: right;">Ja - med energibolag</td>
+                <td style="padding: 8px 10px; text-align: right;">Effira</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.15);">
+                <td style="padding: 8px 10px;">Smart återförsäljare</td>
+                <td style="padding: 8px 10px; text-align: right;">2 000 kr exkl.</td>
+                <td style="padding: 8px 10px; text-align: right;">49 (Bas) / 69 (Premium) kr/mån exkl.</td>
+                <td style="padding: 8px 10px; text-align: right;">Ja - med energibolag</td>
+                <td style="padding: 8px 10px; text-align: right;">Återförsäljare</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 10px;">Energibolag</td>
+                <td style="padding: 8px 10px; text-align: right;">2 000 kr exkl.</td>
+                <td style="padding: 8px 10px; text-align: right;">49 (Bas) / 69 (Premium) kr/mån exkl.</td>
+                <td style="padding: 8px 10px; text-align: right;">Ja - med energibolag</td>
+                <td style="padding: 8px 10px; text-align: right;">Energibolag</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p style="font-size: 12px; line-height: 1.6; margin-bottom: 16px; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 6px;"><strong>Observera:</strong> Konsumentpriser är inkl. moms, partnerpriser exkl. moms. Premium 99 kr inkl. moms motsvarar 79,20 kr exkl. moms — vid 69 kr till Effira lämnar det 10,20 kr till partnern. Vid 129 kr inkl. blir utrymmet 34,20 kr.</p>
+
+          <h3 style="font-size: 18px; margin-bottom: 10px; margin-top: 16px; color: #FF8C2D;">VPP är oberoende av kanal</h3>
+          <p style="font-size: 13px; line-height: 1.6; margin-bottom: 12px;"><strong>VPP-intäkt kan realiseras i samtliga kanaler.</strong> Den är inte kopplad till vem som säljer eller äger kundrelationen.</p>
+          <p style="font-size: 13px; line-height: 1.6; margin-bottom: 12px;">VPP kräver alltid ett samarbete med ett energibolag, och intäkten delas alltid. Effira kan inte nå balansmarknaden på egen hand.</p>
+          <p style="font-size: 12px; line-height: 1.6;"><em>VPP är en andra intäktsström ovanpå abonnemanget i alla kanaler. Det som skiljer kanalerna åt är den fasta abonnemangsintäkten och vem som äger kundrelationen.</em></p>
+        </div>
+
+        <!-- Höger kolumn -->
+        <div>
+          <h3 style="font-size: 20px; margin-bottom: 12px;">Trade-offs:</h3>
+          <ul style="list-style: none; padding: 0; margin: 0 0 24px 0; font-size: 13px; line-height: 1.7;">
+            <li style="margin-bottom: 10px;"><strong>Direkt konsument:</strong> högst abonnemangsintäkt per kund, men högst försäljningskostnad och långsammast skalning.</li>
+            <li style="margin-bottom: 10px;"><strong>Enkel återförsäljare:</strong> hög abonnemangsintäkt per kund, lägre försäljningskostnad, men Effira ansvarar för kundrelation.</li>
+            <li style="margin-bottom: 10px;"><strong>Smart återförsäljare:</strong> lägre fast intäkt per kund, men återförsäljaren driver skalning och äger serviceaffären.</li>
+            <li style="margin-bottom: 10px;"><strong>Energibolag:</strong> lägst fast intäkt per kund, men snabbast väg till volym och till den VPP-kapacitet som krävs för att balansaffären ska bli meningsfull.</li>
+          </ul>
+          
+          <h2 style="font-size: 32px; margin-bottom: 16px;">Beslut vi söker</h2>
+          <ol style="list-style: none; counter-reset: item; padding: 0; margin: 0; font-size: 15px; line-height: 1.9;">
+            <li style="counter-increment: item; margin-bottom: 14px;">
+              <span style="font-weight: 600; color: #FF8C2D;">1.</span> Godkänna hårdvarupriserna per kanal.
+            </li>
+            <li style="counter-increment: item; margin-bottom: 14px;">
+              <span style="font-weight: 600; color: #FF8C2D;">2.</span> Godkänna prisramarna <strong>Bas 69–99 kr/mån inkl. moms</strong> och <strong>Premium 99–129 kr/mån inkl. moms</strong>, där Bas alltid ligger 30 kr under Premium.
+            </li>
+            <li style="counter-increment: item; margin-bottom: 14px;">
+              <span style="font-weight: 600; color: #FF8C2D;">3.</span> Godkänna de tre kanalmodellerna: enkel återförsäljare, smart återförsäljare och energibolag.
+            </li>
+            <li style="counter-increment: item; margin-bottom: 14px;">
+              <span style="font-weight: 600; color: #FF8C2D;">4.</span> Godkänna partnerpriserna <strong>49 kr/mån exkl. moms för Bas</strong> och <strong>69 kr/mån exkl. moms för Premium</strong> mot återförsäljare och energibolag.
+            </li>
+            <li style="counter-increment: item; margin-bottom: 14px;">
+              <span style="font-weight: 600; color: #FF8C2D;">5.</span> Godkänna att <strong>VPP drivs oberoende av kanal</strong>, alltid i samarbete med ett energibolag och alltid med delad VPP-intäkt.
+            </li>
+            <li style="counter-increment: item;">
+              <span style="font-weight: 600; color: #FF8C2D;">6.</span> Godkänna att besparingsgarantin avvecklas.
+            </li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PER-SLIDE FEEDBACK (visible when REVIEW_MODE = true) -->
+<div class="fb-overlay" id="fbOverlay"></div>
+<button class="fb-toggle" id="fbToggle">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 2h12v9H5l-3 3V2z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+  Slide Feedback
+  <span class="fb-count" id="fbCount">0</span>
+</button>
+<div class="fb-panel" id="fbPanel">
+  <div class="fb-header">
+    <div>
+      <h3>Slide Feedback</h3>
+      <div class="fb-slide-label" id="fbSlideLabel">Slide 1</div>
+    </div>
+    <button class="fb-close" id="fbClose">&times;</button>
+  </div>
+  <div class="fb-thread" id="fbThread">
+    <div class="fb-empty">No comments yet. Be the first!</div>
+  </div>
+  <div class="fb-compose">
+    <input type="text" id="fbName" placeholder="Your name" />
+    <textarea id="fbText" placeholder="Leave a comment on this slide..."></textarea>
+    <button id="fbSubmit">Post Comment</button>
+  </div>
+</div>
+
+<script>
+  // ═══════════════════════════════════════════
+  // CONFIGURATION — Change these per presentation
+  // ═══════════════════════════════════════════
+  const REVIEW_MODE = false;
+  const PROJECT_ID  = 'effira-styrelsemote-prissattning-2026-08-27';
+  const SCRIPT_URL  = 'https://script.google.com/macros/s/AKfycbwLDprgthWs4-3eOq438xSluigUt31f3Ejs5_IecmmUjg99nIQCMtSRFWKGIOBrILm6Ww/exec';
+
+  const fbToggle = document.getElementById('fbToggle'), fbPanel = document.getElementById('fbPanel'), fbOverlay = document.getElementById('fbOverlay');
+  const fbClose = document.getElementById('fbClose'), fbThread = document.getElementById('fbThread'), fbSlideLabel = document.getElementById('fbSlideLabel');
+  const fbCount = document.getElementById('fbCount'), fbName = document.getElementById('fbName'), fbText = document.getElementById('fbText'), fbSubmit = document.getElementById('fbSubmit');
+  let fbCache = {}, fbOpen = false;
+
+  if (!REVIEW_MODE) { fbToggle.style.display = 'none'; fbPanel.style.display = 'none'; fbOverlay.style.display = 'none'; }
+  else {
+    const savedName = localStorage.getItem('fb_name'); if (savedName) fbName.value = savedName;
+    fbToggle.addEventListener('click', () => { fbOpen = true; fbPanel.classList.add('open'); fbOverlay.classList.add('open'); loadComments(current); });
+    fbClose.addEventListener('click', closeFb); fbOverlay.addEventListener('click', closeFb);
+    function closeFb() { fbOpen = false; fbPanel.classList.remove('open'); fbOverlay.classList.remove('open'); }
+
+    function loadComments(slideIdx) {
+      const slideNum = slideIdx + 1;
+      fbSlideLabel.textContent = 'Slide ' + slideNum + ' — ' + (document.querySelectorAll('.slide')[slideIdx]?.dataset.title || '');
+      if (fbCache[slideNum]) { renderComments(fbCache[slideNum]); } else { fbThread.innerHTML = '<div class="fb-loading">Loading comments...</div>'; }
+      fetch(SCRIPT_URL + '?project=' + encodeURIComponent(PROJECT_ID) + '&slide=' + slideNum)
+        .then(r => r.json()).then(comments => { fbCache[slideNum] = comments; renderComments(comments); updateCount(slideNum, comments.length); })
+        .catch(() => { if (!fbCache[slideNum]) fbThread.innerHTML = '<div class="fb-empty">Could not load comments. Check your Script URL.</div>'; });
+    }
+
+    function renderComments(comments) {
+      if (!comments.length) { fbThread.innerHTML = '<div class="fb-empty">No comments on this slide yet. Be the first!</div>'; return; }
+      fbThread.innerHTML = comments.map(c => '<div class="fb-comment"><div class="fb-meta"><span class="fb-author">' + esc(c.name) + '</span><span class="fb-time">' + timeAgo(c.timestamp) + '</span></div><div class="fb-text">' + esc(c.comment) + '</div></div>').join('');
+      fbThread.scrollTop = fbThread.scrollHeight;
+    }
+
+    function updateCount(slideNum, count) { fbCount.textContent = count; }
+
+    function onSlideChange(slideIdx) {
+      const slideNum = slideIdx + 1; fbCount.textContent = fbCache[slideNum]?.length || 0;
+      if (fbOpen) loadComments(slideIdx);
+      if (!fbCache[slideNum]) { fetch(SCRIPT_URL + '?project=' + encodeURIComponent(PROJECT_ID) + '&slide=' + slideNum).then(r => r.json()).then(comments => { fbCache[slideNum] = comments; fbCount.textContent = comments.length; }).catch(() => {}); }
+    }
+
+    fbSubmit.addEventListener('click', () => {
+      const name = fbName.value.trim(), text = fbText.value.trim(); if (!name || !text) return;
+      localStorage.setItem('fb_name', name); fbSubmit.disabled = true; fbSubmit.textContent = 'Posting...';
+      fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify({ project: PROJECT_ID, slide: current + 1, name, comment: text }), headers: { 'Content-Type': 'text/plain' } })
+      .then(() => { fbText.value = ''; fbSubmit.disabled = false; fbSubmit.textContent = 'Post Comment'; const sn = current + 1; if (!fbCache[sn]) fbCache[sn] = []; fbCache[sn].push({ name, comment: text, timestamp: new Date().toISOString() }); renderComments(fbCache[sn]); updateCount(sn, fbCache[sn].length); })
+      .catch(() => { fbSubmit.disabled = false; fbSubmit.textContent = 'Post Comment'; alert('Could not post comment. Please try again.'); });
+    });
+
+    function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function timeAgo(ts) { const diff = (Date.now() - new Date(ts).getTime()) / 1000; if (diff < 60) return 'just now'; if (diff < 3600) return Math.floor(diff / 60) + 'm ago'; if (diff < 86400) return Math.floor(diff / 3600) + 'h ago'; return Math.floor(diff / 86400) + 'd ago'; }
+    setTimeout(() => { document.querySelectorAll('.slide').forEach((_, i) => { fetch(SCRIPT_URL + '?project=' + encodeURIComponent(PROJECT_ID) + '&slide=' + (i + 1)).then(r => r.json()).then(comments => { fbCache[i + 1] = comments; if (i === current) fbCount.textContent = comments.length; }).catch(() => {}); }); }, 500);
+  }
+
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const tabs = document.querySelectorAll('.tab');
+  const counter = document.getElementById('counter');
+  let current = 0;
+  let mode = 'slides';
+
+  function goTo(n) {
+    const total = slides.length;
+    const next = (n + total) % total;
+
+    if (mode === 'slides') {
+      slides[current].classList.remove('active');
+      slides[next].classList.add('active');
+    } else {
+      slides[next].scrollIntoView({ behavior: 'smooth' });
+    }
+
+    current = next;
+    updateIndicators();
+    if (REVIEW_MODE && typeof onSlideChange === 'function') onSlideChange(current);
+  }
+
+  function updateIndicators() {
+    counter.textContent = `${current + 1} / ${slides.length}`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    tabs.forEach((t, i) => t.classList.toggle('active', i === current));
+    // Adapt logo color to current slide background
+    const inner = slides[current].querySelector('.slide-inner');
+    const isDark = inner && inner.classList.contains('dark');
+    document.body.classList.toggle('slide-dark', isDark);
+    document.body.classList.toggle('slide-light', !isDark);
+  }
+
+  // Arrow buttons
+  document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goTo(current - 1); }
+  });
+
+  // Dot clicks
+  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.slide)));
+
+  // Tab clicks
+  tabs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.slide)));
+
+  // Scroll observer (for scroll + tabs modes)
+  const observer = new IntersectionObserver(entries => {
+    if (mode === 'slides') return;
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        current = [...slides].indexOf(entry.target);
+        updateIndicators();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slides.forEach(s => observer.observe(s));
+
+  // Mode switcher buttons
+  document.querySelectorAll('.mode-switcher button').forEach(b => {
+    b.addEventListener('click', () => setMode(b.dataset.mode));
+  });
+
+  function setMode(newMode) {
+    mode = newMode;
+    document.body.className = `mode-${newMode}`;
+
+    document.querySelectorAll('.mode-switcher button').forEach(b => {
+      b.classList.toggle('active', b.textContent.toLowerCase() === newMode);
+    });
+
+    if (newMode === 'slides') {
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    } else {
+      slides.forEach(s => s.classList.add('active'));
+      setTimeout(() => slides[current].scrollIntoView({ behavior: 'auto' }), 50);
+    }
+  }
+
+  // Initialize
+  updateIndicators();
+</script>
+
+</body>
+</html>
