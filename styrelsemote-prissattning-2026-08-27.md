@@ -52,10 +52,10 @@ Skälen är:
 
 | Nivå | Prisram | Värde |
 |---|---:|---|
-| **Bas** | **69–99 kr/mån inkl. moms** | Effiras grund: trygghet, kontroll, komfort, överblick, styrning och smart integration |
+| **Bas** | **59–69 kr/mån inkl. moms** | Effiras grund: trygghet, kontroll, komfort, överblick, styrning och smart integration |
 | **Premium** | **99–129 kr/mån inkl. moms** | Bas + smart prisstyrning: spotprisoptimering och effekttariffer |
 
-Bas ligger genomgående **30 kr under Premium**. Uppgraderingen på 30 kr/mån är det som köper besparingsfunktionen — besparing ingår endast i Premium.
+Premium ligger **30–60 kr över Bas**. Uppgraderingen köper besparingsfunktionen — besparing ingår endast i Premium.
 
 Logiken är tydlig:
 
@@ -127,7 +127,7 @@ Det är därför Bas och Premium måste sälja **två olika värden**: Bas = try
 - Återförsäljaren äger kundrelationen och den löpande affären.
 - Återförsäljaren säljer och installerar produkten, exempelvis tillsammans med ett serviceavtal.
 - Lösningen levereras som **white label eller via API** och kan ingå i återförsäljarens eget erbjudande.
-- Återförsäljaren betalar **49 kr/mån exkl. moms för Bas** och **69 kr/mån exkl. moms för Premium** till Effira. Återförsäljaren bestämmer själv hur kostnaden tas ut av kunden.
+- Återförsäljaren betalar **45–55 kr/mån exkl. moms för Bas** och **65–75 kr/mån exkl. moms för Premium** till Effira. Återförsäljaren bestämmer själv hur kostnaden tas ut av kunden.
 - VPP sker genom ett samarbetande energibolag och VPP-intäkten delas med det bolaget.
 
 **Värde:** återförsäljaren får kontinuerlig serviceaffär och kundrelation; Effira levererar teknik och integration.
@@ -136,7 +136,7 @@ Det är därför Bas och Premium måste sälja **två olika värden**: Bas = try
 
 - Energibolaget har normalt faktureringen och äger kundrelationen.
 - Integrationen sker via **API** och OPTi blir en del av energibolagets kunderbjudande.
-- Energibolaget betalar **49 kr/mån exkl. moms för Bas** och **69 kr/mån exkl. moms för Premium** till Effira. Energibolaget bestämmer själv hur kostnaden tas ut av kunden.
+- Energibolaget betalar **45–55 kr/mån exkl. moms för Bas** och **65–75 kr/mån exkl. moms för Premium** till Effira. Energibolaget bestämmer själv hur kostnaden tas ut av kunden.
 - VPP sker genom energibolaget och VPP-intäkten delas mellan energibolaget och Effira.
 - Energibolaget är VPP-partner även när Effira äger slutkunden från en annan försäljningskanal.
 - Kundavtalet måste ge Effira rätt att styra pumpen och vid behov tillfälligt begränsa driften. Detta gäller i samtliga kanaler, inte bara denna.
@@ -151,12 +151,12 @@ Det är därför Bas och Premium måste sälja **två olika värden**: Bas = try
 
 | Kanal | Hårdvara | Löpande intäkt till Effira | VPP-intäkt | Vem äger kundrelationen |
 |---|---:|---|---|---|
-| Direkt konsument | 3 500 / 2 750 kr inkl. moms | 69–99 eller 99–129 kr/mån inkl. moms | Ja, delas med energibolag | Effira |
-| Enkel återförsäljare | 2 000 kr exkl. moms | 69–99 eller 99–129 kr/mån inkl. moms | Ja, delas med energibolag | Effira |
-| Smart återförsäljare | 2 000 kr exkl. moms | 49 (Bas) eller 69 (Premium) kr/mån exkl. moms | Ja, delas med energibolag | Återförsäljare |
-| Energibolag | 2 000 kr exkl. moms | 49 (Bas) eller 69 (Premium) kr/mån exkl. moms | Ja, delas med energibolag | Energibolag |
+| Direkt konsument | 3 500 / 2 750 kr inkl. moms | 59–69 eller 99–129 kr/mån inkl. moms | Ja, delas med energibolag | Effira |
+| Enkel återförsäljare | 2 000 kr exkl. moms | 59–69 eller 99–129 kr/mån inkl. moms | Ja, delas med energibolag | Effira |
+| Smart återförsäljare | 2 000 kr exkl. moms | 45–55 (Bas) eller 65–75 (Premium) kr/mån exkl. moms | Ja, delas med energibolag | Återförsäljare |
+| Energibolag | 2 000 kr exkl. moms | 45–55 (Bas) eller 65–75 (Premium) kr/mån exkl. moms | Ja, delas med energibolag | Energibolag |
 
-Observera att konsumentpriserna är inkl. moms och partnerpriserna exkl. moms. Premium 99 kr inkl. moms motsvarar 79,20 kr exkl. moms, vilket vid 69 kr till Effira lämnar 10,20 kr till partnern. Vid 129 kr inkl. moms blir motsvarande utrymme 34,20 kr. Partnerledet behöver alltså den övre delen av prisramen för att få en marginal som motiverar aktiv försäljning.
+Observera att konsumentpriserna är inkl. moms och partnerpriserna exkl. moms. Premium 99 kr inkl. moms motsvarar 79,20 kr exkl. moms, vilket vid 65–75 kr till Effira lämnar 4,20–14,20 kr till partnern. Vid 129 kr inkl. moms (103,20 kr exkl.) blir utrymmet 28,20–38,20 kr. Bas 59 kr inkl. moms motsvarar 47,20 kr exkl. moms, vilket vid 45–55 kr till Effira kräver att partnern tar ut 55–69 kr inkl. moms från kunden för att få marginal.
 
 ### VPP är oberoende av kanal
 
@@ -183,8 +183,8 @@ Praktiska konsekvenser:
 ## Beslut vi söker
 
 1. Godkänna hårdvarupriserna per kanal.
-2. Godkänna prisramarna **Bas 69–99 kr/mån inkl. moms** och **Premium 99–129 kr/mån inkl. moms**, där Bas alltid ligger 30 kr under Premium.
+2. Godkänna prisramarna **Bas 59–69 kr/mån inkl. moms** och **Premium 99–129 kr/mån inkl. moms**.
 3. Godkänna de tre kanalmodellerna: enkel återförsäljare, smart återförsäljare och energibolag.
-4. Godkänna partnerpriserna **49 kr/mån exkl. moms för Bas** och **69 kr/mån exkl. moms för Premium** mot återförsäljare och energibolag.
+4. Godkänna partnerpriserna **45–55 kr/mån exkl. moms för Bas** och **65–75 kr/mån exkl. moms för Premium** mot återförsäljare och energibolag.
 5. Godkänna att **VPP drivs oberoende av kanal**, alltid i samarbete med ett energibolag och alltid med delad VPP-intäkt, samt att kundavtalet i samtliga kanaler ger Effira rätt att styra pumpen.
 6. Godkänna att besparingsgarantin avvecklas.
