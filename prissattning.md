@@ -1,7 +1,7 @@
 # Prissättning OPTi — Pågående resonemang
 
 **Status:** Pågående diskussion, ej beslutad. Fortsätts vid senare tillfälle.
-**Senast uppdaterad:** 2026-08-24
+**Senast uppdaterad:** 2026-08-25
 
 **Källdokument:**
 - `Diskussionsunderlag_OPTi_Ny prissättning.docx` (tidigare underlag, se sammanfattning nedan)
@@ -155,6 +155,153 @@ Vilka av dessa värden är redan starka i produkten idag, och vilka skulle kräv
 
 ---
 
+## 8. Tre-kanalsmodell (tillagt 2026-08-25)
+
+Nytt förslag: prissättning och kanalstruktur uppdelad i tre distinkta spår — elbolag, partners och konsument. Ersätter/kompletterar inte punkt 2.2 (två konsumentnivåer) utan lägger till B2B-kanalerna runt den.
+
+### 8.1 Elbolag
+
+| Post | Värde |
+|---|---|
+| Hårdvarupris till elbolag | 2 000 kr |
+| — exkluderar installation | 1 000 kr (elbolaget/kund hanterar separat) |
+| Abonnemang | 69 kr/mån inkl. moms |
+| VPP | Revenue share mellan Effira och elbolag |
+
+**Kostnadsanalys:** Produktionskostnad hårdvara 2 983 kr (vid 2K-volym, se avsnitt 6). Om installation (1 000 kr) dras bort eftersom elbolaget hanterar den, blir kvarvarande hårdvarukostnad **1 983 kr**. Vid säljpris 2 000 kr ⇒ **+17 kr marginal, i praktiken kostnadsneutralt** — konsekvent med målet i avsnitt 1, löst genom att flytta installationskostnaden dit den faktiskt uppstår.
+
+**Abonnemangsekonomi:** 69 kr inkl. moms ≈ 55 kr exkl. moms. Rörlig kostnad ~18–23 kr/enhet/mån (se avsnitt 6) ⇒ nettobidrag **~32–37 kr/mån**, lägre än konsumentens 60 kr-mål. Antas kompenseras av volym (elbolagets befintliga kundbas, lägre CAC) plus VPP-delning.
+
+### 8.2 Partners (sälj/installation)
+
+| Post | Värde |
+|---|---|
+| Hårdvarupris till partner | 2 000 kr |
+| Installation | Partnern utför och behåller den intäkten |
+| Löpande servicebusiness | Partnern äger relationen, sätter eget pris mot sin kund (jfr avsnitt 2.4 — rev-share-logik mot partners) |
+| Effiras leverans | Dashboard som verktyg åt partnern |
+
+Samma kostnadslogik som elbolag (2 000 kr mot 1 983 kr kostnad exkl. installation ⇒ kostnadsneutralt).
+
+### 8.3 Konsument (direkt eller via partner)
+
+- Fortsätter **129 kr/mån**
+- **Ny bas-nivå införs** (jfr avsnitt 2.2 — 99/129-tankarna, exakt nivå ej låst)
+- Värdekommunikation ska vara tydlig för att undvika "kändes-som-förlust"-situationen (kopplar till avsnitt 5 — icke-monetära värden)
+- **Årsbetalning-rabatt:** betala 10 månader, få 12 (~17 % rabatt). Enklare lösning än fakturerings-varianterna A–D i avsnitt 4 — löser samma problem (undvik betalning i låg-besparingsmånader) genom att kunden själv väljer betalningstillfälle, istället för ett fast säsongsschema.
+
+**Marginalpåverkan av årsrabatt:** 129 × 10 = 1 290 kr/år mot 129 × 12 = 1 548 kr/år ⇒ **−258 kr/år (~−21,5 kr/mån)** jämfört med målet på 60 kr netto/mån. Ej ännu bedömt om detta är en medveten avvägning mot retention/kassaflöde.
+
+### 8.4 Öppna frågor från kanalmodellen (obesvarade)
+
+1. **Är "Partners för sälj" (2 000 kr, partner äger service) och "konsument via partner" (129 kr till Effira) samma partnertyp i två lägen, eller två separata partnermodeller** — en återförsäljarpartner (äger hela kundrelationen) och en distributionspartner (säljer/installerar, men konsumentens 129 kr går fortsatt till Effira)?
+2. **Vad får Effira löpande i partnerkanalen** om partnern äger servicebusinessen — en licensavgift för dashboarden, eller är hela Effiras intäkt där en engångs-hårdvaruförsäljning nära break-even (dvs. partnerkanalen är i första hand en volymkanal för flottans VPP-kapacitet, inte en lönsam kanal i sig)?
+3. **Ersätter eller kompletterar elbolagets VPP-delning Tibber-relationen?** Tar elbolaget rollen som BSP/BRP för just dessa pumpar (konkurrerar med Tibber-modellen i V4-planen), eller delar Effira med elbolaget av det man ändå får via Tibber?
+4. **Är 69 kr/32–37 kr nettobidrag medvetet lägre än konsumentmålet**, med antagandet att VPP-delning och volym kompenserar, eller ska prissättningen justeras?
+5. **Är 10-för-12-rabatten den slutgiltiga nivån**, givet att den äter ~36 % av det avsedda nettobidraget (60 kr → ~38,5 kr/mån för årsbetalande kunder)?
+
+---
+
+## 9. Besparingsgaranti — beslut: avveckla
+
+**Beslut (2026-08-25): Besparingsgarantin (Bilaga B, gäller från 2026-06-01) avvecklas helt.** Ersätts av transparent funktionalitet, tydliga kundförutsättningar och löpande visning av uppnådd optimering — utan ekonomisk garanti. Kopplar direkt till avsnitt 5 (icke-monetära värden).
+
+### 9.1 Underlag
+
+- `Effira - Allmänna villkor - Bilaga B Besparingsgaranti - 2026-06-01.pdf` — gällande juridiska villkor
+- `Effira_besparingsgaranti_diskussionsunderlag.docx` — internt diskussionsunderlag/kritik
+
+### 9.2 Vad garantin i dag kräver (Bilaga B)
+
+Fem samtidiga villkor under 12 obrutna månader:
+1. Spotprisavtal + minst 0,80 kr/kWh genomsnittlig dygnsvolatilitet (SE1–SE4, Nord Pool Day-Ahead)
+2. Över 7 000 kWh/år i uppvärmning
+3. ≥98 % effektiv drift (Effiras styrsystem)
+4. Besparingsläge hela perioden — komfort-/balanserat läge diskvalificerar
+5. Obrutet abonnemang, ingen paus/avbrott
+
+Mål: 3 600 kr besparing/12 mån. Ersättning = Målbesparing − Faktisk besparing (min 0), utbetalas som **krediter** (ej kontant) mot framtida abonnemang — icke återbetalningsbara, icke överlåtbara, förfaller vid uppsägning. Force majeure-undantag vid extrema marknadsförhållanden.
+
+### 9.3 Varför den avvecklas — kärnargument
+
+1. **Samma strukturella problem som customer-facing rev-share (avsnitt 2.3).** Baseline är en modellberäkning kunden inte själv kan verifiera — samma rotorsak till misstro/supportärenden som redan diskvalificerade rev-share mot kund. Garanti och rev-share är två förklädnader av samma sårbarhet.
+2. **Garantin motverkar den nya värdestrategin.** Kravet på konstant besparingsläge diskvalificerar komfortläge — dvs. straffar kunden för att använda just de funktioner (komfort, kontroll) som identifierats som kandidater för icke-monetärt värde (avsnitt 5).
+3. **Golv uppfattas som tak.** 3 600 kr är ett garanterat *minimum*, men kunder tolkar det som ett *maximum* ("mer än så sparar jag inte") — motsatt effekt av avsikten.
+4. **Svag konvertering i säljögonblicket.** Fem villkor är svåra att förklara vid köp; få kunder uppfyller sannolikt alla samtidigt, vilket gör garantin mer friktion än säljargument.
+5. **Dold operativ kostnad.** Manuell hantering av avtalsstatus, drift, Wi-Fi, läge, förbrukning, volatilitet och baseline vid varje tvist — skalar dåligt, saknas i kostnadsunderlaget i avsnitt 6.
+6. **Krediter känns svagare än ersättning.** Ej kontanta, förfaller vid uppsägning — kunden kan hoppa av innan värdet går att använda, trots att Standard/Flex idag saknar bindningstid.
+
+### 9.4 Öppen fråga efter avveckling
+
+Om garantin tas bort helt, vad ersätter 3 600 kr-siffran som konkret "hook" i säljögonblicket? Kopplar till öppen fråga 6 nedan (positionering/marknadsföring givet att OPTi historiskt sålts som en "spara pengar"-produkt).
+
+---
+
+## 10. Styrelsemöte torsdag 2026-08-27 — agenda, beslutsunderlag och kommentarer till anställda
+
+### 10.1 Bakgrund
+
+Två dokument har tagits fram av anställda inför mötet:
+- `Diskussionsunderlag_OPTi_Ny prissättning.docx` (ursprungsunderlaget, modeller A/B/C)
+- `effira_opti_prissattning_2026_presentation_v4.html` (presentation, 24 aug — lägger till Modell D "Bas/Premium" 69/99 kr, rekommenderar D)
+
+Båda dokumenten är **inte uppdaterade** med besluten som fattats i detta arbetsdokument (avsnitt 2, 8, 9). De känner varken till tre-kanalsmodellen, det redan avfärdade rev-share-mot-kund-resonemanget, eller det redan tagna beslutet att avveckla besparingsgarantin med specifika motargument (avsnitt 9).
+
+### 10.2 Föreslagen agenda till styrelsemötet
+
+1. **Bakgrund och problem** — dagens höga köpbarriär (6 995 kr Standard), besparingsgarantins svaghet (avsnitt 9), behov av volym.
+2. **Beslut: besparingsgarantin avvecklas** — presentera avsnitt 9.3 (kärnargument) som färdigt beslutsunderlag, inte öppen diskussion.
+3. **Beslut: ingen revenue-share mot slutkund** — presentera avsnitt 2.3 som färdigt beslutsunderlag. Vikigt att A/B (från anställdas underlag) inte diskuteras som öppna alternativ — de är redan avfärdade med konkreta skäl.
+4. **Prisnivå för konsumentabonnemang** — **öppen fråga att lösa nu**: 99/129 kr (ditt spår) vs 69/99 kr (anställdas D-förslag). Se 10.4 nedan — vi tar denna direkt efter detta avsnitt.
+5. **Tre-kanalsmodellen** — presentera avsnitt 8 (elbolag, partner, konsument) som det nya ramverket runt prisnivån — anställdas underlag känner bara till en kanal (konsument).
+6. **Hårdvarupris** — kostnadsneutralitet vid 2 000 kr (exkl. installation) vs anställdas 3 500/2 750 kr utgångspunkt — kräver beslut om vilket pris som gäller i respektive kanal.
+7. **Öppna frågor kvar att besluta** (avsnitt 7 och 8.4) — lista dem som "till nästa möte", inte som blockerande för lansering.
+
+### 10.3 Kommentarer till anställda (för avstämning innan/efter mötet)
+
+- **Bra jobbat med Modell D** — den landar på samma slutsats vi redan kommit fram till (fast pris, ingen beräkningsberoende debitering) via ett annat resonemang (operationell risk snarare än icke-monetärt värde). Bra oberoende bekräftelse.
+- **Prisnivån i D (69/99 kr) matchar inte vårt mål** (99/129 kr, 60 kr netto/mån). Behöver stämmas av — se 10.4.
+- **Tre-kanalsmodellen (elbolag/partner/konsument) saknas i underlaget.** Deras analys utgår från en enda kanal (konsument, eget köp av hårdvara 3 500 kr). Behöver bygga in elbolags- och partnerspåren i nästa version.
+- **Hårdvarupriset (3 500/2 750 kr) är inte avstämt mot kostnadsneutralitets-analysen** (2 000 kr exkl. installation ≈ break-even). Be dem räkna om marginalerna med rätt kostnadsbas innan nästa version.
+- **Besparingsgarantins avveckling bör motiveras med de konkreta argumenten i avsnitt 9.3** (särskilt "golv uppfattas som tak" och konflikten med komfortläge) snarare än bara "svår att förklara" — starkare underlag för styrelsen.
+- **Fråga tillbaka till dem:** har de sett den nya kanalmodellen och besparingsgaranti-beslutet innan de gjorde presentationen, eller jobbar vi i två spår som behöver synkas snarast?
+
+### 10.5 Fyra diskussionspunkter för mötet
+
+**1. Hårdvarukostnad**
+Nytt pris: **2 000 kr** (ersätter 3 500/2 750 kr i anställdas underlag). Produktionskostnad 2 983 kr vid 2K-volym, men installation (1 000 kr) hanteras separat av kanalen (elbolag/partner). Kvarvarande kostnad 1 983 kr vid 2 000 kr säljpris ⇒ **i praktiken kostnadsneutralt** (+17 kr). Gäller elbolags- och partnerkanalen.
+
+**2. Abonnemang och betalning — konsument**
+**99/129 kr**, inte anställdas 69/99 kr. Tier-logik: 99 kr (Bas) = komfort, styrning, kontroll, smart integration. 129 kr (Premium) = Bas + spotprisoptimering och effekttariffer. Ingen rev-share mot kund, ingen besparingsgaranti. Årsbetalning ger rabatt (10 månader betalas, 12 levereras).
+
+**3. Betalning mot partner**
+Partner köper hårdvara för 2 000 kr, utför och behåller installationsintäkten, äger den löpande kundrelationen och sätter eget pris mot sin slutkund. Effira levererar dashboard som verktyg. Rev-share accepteras här (till skillnad från konsument) eftersom partnern bär väder-/prisrisken själv.
+
+**4. Betalning mot energibolag**
+Energibolag köper hårdvara för 2 000 kr (exkl. installation), betalar 69 kr/mån abonnemang, samt delar VPP-intäkt med Effira. Lägre nettobidrag per enhet (~32–37 kr vs 60 kr-målet för konsument) — kompenseras av volym via energibolagets befintliga kundbas och VPP-delningen.
+
+**5. Beräkning — vad innebär beslutet**
+
+| Kanal | Hårdvara (intäkt−kostnad) | Abonnemang/mån | Nettobidrag/mån | Anmärkning |
+|---|---|---|---|---|
+| Konsument – Bas | 2 000 kr / kostnadsneutralt* | 99 kr | ~lägre än Premium | *vid 3 500 kr hårdvara: högre marginal men högre köpbarriär |
+| Konsument – Premium | samma som ovan | 129 kr | ~60 kr (mål) | Referens-nivå för hela modellen |
+| Partner | 2 000 kr / ~+17 kr | Partnerns eget pris | Ej Effiras — engångsintäkt hårdvara + ev. rev-share | Effiras vinst främst i flottans VPP-kapacitet |
+| Elbolag | 2 000 kr / ~+17 kr | 69 kr | ~32–37 kr | Lägre än mål, kompenseras av volym + VPP-delning |
+
+**Vad det innebär i klartext:** Effira tjänar mest per kund i konsumentkanalen (direkt), mindre per kund i elbolags-/partnerkanalen — men dessa kanaler ger lägre CAC, snabbare volym och flottstorlek för VPP-tröskeln (~250 enheter/1 MW). Modellen bygger medvetet in en avvägning: lägre marginal per enhet i B2B-kanalerna mot högre volym och snabbare väg till VPP-intäkt.
+
+### 10.4 Beslut: prisnivå och tier-innehåll (99/129 kr)
+
+**Beslutat (2026-08-25):** 99/129 kr fastställs, med tydlig innehållslogik per nivå — detta är inte längre en öppen fråga, utan ett beslut att föra fram på styrelsemötet.
+
+- **99 kr — Bas:** komfort, styrning, kontroll, smart integration. Bevisar produktens värde utan att referera till kr-besparing (kopplar till avsnitt 5 — icke-monetära värden).
+- **129 kr — Premium:** allt i Bas + spotprisoptimering och effekttariffer, dvs den faktiska besparingskapabiliteten.
+
+Anställdas Modell D (69/99 kr) är fel prissatt och saknar denna tier-logik — de har byggt en fast-pris-struktur som liknar er modell, men utan kännedom om de fastställda nivåerna eller bas/premium-innehållet. Kommentar till anställda: uppdatera till 99/129 kr med tier-innehållet ovan, inte 69/99 kr.
+
+---
+
 ## 7. Öppna frågor att ta upp nästa gång
 
 1. Vilka icke-monetära värden (trygghet, insyn, automatik, grönt bidrag, förutsägbarhet) är redan starka i produkten idag — vilka kräver nybyggnation?
@@ -163,3 +310,4 @@ Vilka av dessa värden är redan starka i produkten idag, och vilka skulle kräv
 4. Mars — betalmånad eller ej?
 5. Pumpavstängningsklausul — går vidare med (c) obligatoriskt + (b) senare, eller finns invändningar?
 6. Hur kommuniceras/positioneras det nya värdeerbjudandet i marknadsföring och i onboarding, givet att OPTi historiskt sålts som en "spara pengar"-produkt?
+7. Se avsnitt 8.4 för öppna frågor kopplade till den nya kanalmodellen (elbolag/partner/konsument).
