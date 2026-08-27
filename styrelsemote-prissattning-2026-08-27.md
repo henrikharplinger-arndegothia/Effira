@@ -182,9 +182,9 @@ Praktiska konsekvenser:
 
 ## Beslut vi söker
 
-1. Godkänd.
-2. Godkänd, med de förtydliganden jag har ovan.
-3. De tre kanalerna godkända.
-4. Partnerpris godkänt, med förtydligande enligt ovan.
-5. Godkänd.
-6. Godkänd. Dock vill styrelsen se något som ersätter funktionen som besparingsgarantin var tänkt att ha — dvs något som ger trygghet och garanti för att köpet är bra.
+1. Godkänna hårdvarupriserna per kanal.
+2. Godkänna konsumentpriserna: Bas 69 kr/mån (kampanj 59 kr), Premium 129 kr/mån (kampanj 99 kr) inkl. moms.
+3. Godkänna de tre kanalmodellerna: enkel återförsäljare, smart återförsäljare och energibolag.
+4. Godkänna partnerpriserna: Bas 55 kr/mån (kampanj 45 kr), Premium 75 kr/mån (kampanj 65 kr) exkl. moms.
+5. Godkänna att VPP drivs oberoende av kanal, alltid i samarbete med energibolag.
+6. Godkänna att besparingsgarantin avvecklas. Dock vill styrelsen se något som ersätter funktionen som besparingsgarantin var tänkt att ha — dvs något som ger trygghet och garanti för att köpet är bra.
