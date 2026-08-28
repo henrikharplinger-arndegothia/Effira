@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effira OPTi — Annons Villa Livet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --flow: #062121;
+      --pine: #013233;
+      --glacier: #D0E7E2;
+      --mist: #FAFEFE;
+      --ember: #FF8C2D;
+      --white: #ffffff;
+      --black: #000000;
+    }
+    
+    body {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: var(--flow);
+      line-height: 1.5;
+      padding: 40px 20px;
+    }
+    
+    /* Print layout - A4 double-page spread */
+    .spread {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .page {
+      position: relative;
+      overflow: auto;
+      padding: 0;
+      min-height: 900px;
+    }
+    
+    @media screen and (max-width: 1200px) {
+      .spread {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Page 1 - LEFT PAGE - Hero */
+    .page-1 {
+      background: linear-gradient(135deg, var(--flow) 0%, var(--pine) 100%);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 50px;
+    }
+    
+    .page-1 .logo {
+      width: 140px;
+      height: auto;
+      margin-bottom: 40px;
+    }
+    
+    .page-1 .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .page-1 h1 {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 30px;
+      letter-spacing: -0.02em;
+    }
+    
+    .page-1 h1 .highlight {
+      color: var(--ember);
+    }
+    
+    .page-1 .tagline {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 40px;
+      max-width: 90%;
+      opacity: 0.95;
+    }
+    
+    .page-1 .value-props {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 30px;
+    }
+    
+    .value-prop {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    
+    .value-prop-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--ember);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    
+    .value-prop-text {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    
+    /* Page 2 - RIGHT PAGE - Details & CTA */
+    .page-2 {
+      background: var(--white);
+      color: var(--flow);
+      padding: 60px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .page-2 .content-section {
+      flex: 1;
+    }
+    
+    .page-2 h2 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--flow);
+    }
+    
+    .page-2 .intro-text {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 95%;
+    }
+    
+    .comparison {
+      background: var(--glacier);
+      padding: 24px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+    
+    .comparison h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--flow);
+    }
+    
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    
+    .comparison-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .comparison-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 24px;
+    }
+    
+    .comparison-icon.bad { color: #cc0000; }
+    .comparison-icon.good { color: var(--ember); }
+    
+    .comparison-text {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    .comparison-text strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .integration-section {
+      margin: 30px 0;
+    }
+    
+    .integration-section h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--flow);
+    }
+    
+    .integration-logos {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .integration-logo {
+      height: 40px;
+      opacity: 0.7;
+    }
+    
+    .cta-section {
+      background: var(--flow);
+      color: var(--white);
+      padding: 32px;
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      margin-top: 30px;
+    }
+    
+    .cta-content h3 {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    
+    .cta-content .price-highlight {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--ember);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    
+    .cta-content .price-detail {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+    
+    .cta-content .offer {
+      background: var(--ember);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+    
+    .qr-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .qr-code {
+      width: 100px;
+      height: 100px;
+      background: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--flow);
+      font-weight: 600;
+    }
+    
+    .qr-label {
+      font-size: 12px;
+      text-align: center;
+      opacity: 0.9;
+    }
+    
+    .footer-text {
+      text-align: center;
+      font-size: 12px;
+      color: var(--flow);
+      opacity: 0.6;
+      margin-top: 20px;
+    }
+    
+    /* Print styles */
+    @media print {
+      body { margin: 0; padding: 0; }
+      .spread { max-width: none; box-shadow: none; }
+      @page { size: A3 landscape; margin: 0; }
+    }
+    
+    @media screen and (max-width: 1200px) {
+      .spread {
+        grid-template-columns: 1fr;
+      }
+      .page { min-height: 600px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="spread">
+  
+  <!-- PAGE 1 - LEFT - HERO -->
+  <div class="page page-1">
+    <div>
+      <img src="assets/logos/Logo/Web (RGB)/PNG/Medium (1000px)/Main/Main_Mist.png" alt="Effira" class="logo">
+    </div>
+    
+    <div class="hero-content">
+      <h1>
+        Komfort och<br>
+        <span class="highlight">kontroll</span><br>
+        från dag ett
+      </h1>
+      
+      <p class="tagline">
+        6–12 månaders återbetalning.<br>
+        Evig avkastning.<br>
+        <strong style="color: var(--ember); font-weight: 700;">Slå det om ni kan, Nibe.</strong>
+      </p>
+      
+      <div class="value-props">
+        <div class="value-prop">
+          <div class="value-prop-icon">✓</div>
+          <div class="value-prop-text">6–12 månaders återbetalningstid</div>
+        </div>
+        
+        <div class="value-prop">
+          <div class="value-prop-icon">✓</div>
+          <div class="value-prop-text">Ökar effektiviteten på solceller och batterier</div>
+        </div>
+        
+        <div class="value-prop">
+          <div class="value-prop-icon">✓</div>
+          <div class="value-prop-text">Full integration med Homey och Home Assistant</div>
+        </div>
+        
+        <div class="value-prop">
+          <div class="value-prop-icon">✓</div>
+          <div class="value-prop-text">Komfort och kontroll — direkt i din telefon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- PAGE 2 - RIGHT - DETAILS & CTA -->
+  <div class="page page-2">
+    <div class="content-section">
+      <h2>För dig med vattenbaserat värmesystem</h2>
+      
+      <p class="intro-text">
+        Effira OPTi är den smarta lösningen som optimerar din värmepump i realtid. 
+        Ingen annan produkt ger dig samma kombination av snabb återbetalningstid, 
+        låg investeringskostnad och evig avkastning.
+      </p>
+      
+      <div class="comparison">
+        <h3>Så skiljer vi oss från andra</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon bad">✕</div>
+            <div class="comparison-text">
+              <strong>Andra enheter</strong>
+              Lång återbetalningstid och höga investeringskostnader
+            </div>
+          </div>
+          
+          <div class="comparison-item">
+            <div class="comparison-icon good">✓</div>
+            <div class="comparison-text">
+              <strong>Effira OPTi</strong>
+              6–12 månader till återbetalning, sedan evig vinst
+            </div>
+          </div>
+          
+          <div class="comparison-item">
+            <div class="comparison-icon bad">✕</div>
+            <div class="comparison-text">
+              <strong>Andra enheter</strong>
+              Löften utan verklig optimering
+            </div>
+          </div>
+          
+          <div class="comparison-item">
+            <div class="comparison-icon good">✓</div>
+            <div class="comparison-text">
+              <strong>Effira OPTi</strong>
+              Bevisad effekt, konsekvent leverans
+            </div>
+          </div>
+          
+          <div class="comparison-item">
+            <div class="comparison-icon bad">✕</div>
+            <div class="comparison-text">
+              <strong>Andra enheter</strong>
+              Isolerad lösning utan smart hem-integration
+            </div>
+          </div>
+          
+          <div class="comparison-item">
+            <div class="comparison-icon good">✓</div>
+            <div class="comparison-text">
+              <strong>Effira OPTi</strong>
+              Fullt integrerad med Homey och Home Assistant
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="integration-section">
+        <h3>Fungerar med ditt smarta hem</h3>
+        <p style="font-size: 13pt; margin-bottom: 6mm; opacity: 0.8;">
+          OPTi integreras sömlöst med Homey och Home Assistant. Styr, övervaka 
+          och optimera — allt från en app.
+        </p>
+      </div>
+    </div>
+    
+    <div class="cta-section">
+      <div class="cta-content">
+        <h3>Börja spara idag</h3>
+        <div class="price-highlight">3 500 kr</div>
+        <div class="price-detail">Därefter från 69 kr/månad</div>
+        <div class="offer">🎁 3 månader gratis — första 100 kunderna</div>
+      </div>
+      
+      <div class="qr-section">
+        <div class="qr-code">
+          [QR-KOD]
+        </div>
+        <div class="qr-label">
+          Scanna för<br>
+          mer info
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-text">
+      effira.se • För vattenbaserade värmesystem
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
